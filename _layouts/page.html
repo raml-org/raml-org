@@ -1,0 +1,23 @@
+{% include header.html %}
+
+{% include nav.html %}
+
+<div class="container page-content">
+    <div class="row">
+        <aside class="col-md-3 col-xs-12 col-sm-12 well" role = "complementary">
+         <section class="ramlapilinks">
+             <div class="raml-links-wrapper">
+                 <a href="/raml-10-spec" class="raml-links last">RAML 1.0</a>
+                 <a href="/raml-08-spec" class="raml-links first">RAML 0.8</a>
+             </div>
+         </section>
+        </aside>
+        <div class="col-md-9 col-xs-12 col-sm-12">
+            <h1 class="page-header">{{ page.title }}</h1>
+            {{ content }}
+        </div>
+    </div>
+
+</div><!-- /.container -->
+
+{% include footer.html %}
