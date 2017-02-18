@@ -1,0 +1,337 @@
+---
+layout: page
+title: Share & Support Your API
+permalink: /developers/whats-new-raml-10
+---
+
+<p>RAML 1.0 is all about empowering developers with even more extensibility, code reuse options, and flexibility.</p>
+
+<p>This includes exciting new features such as <strong>libraries, overlays, improved examples, improved security schemas, annotations,</strong> and <strong>data-typing</strong>.  Here's just a little bit more on each of these features, and how they make designing, building, testing, documenting, and sharing your API even easier.  Of course, you can always read the <a href="/raml-10-spec">full spec</a> to learn more.</p>
+
+<h2>Libraries</h2>
+<p>Libraries provide the ability to bring in pre-defined sets of data-types, resourceTypes, traits, security schemas, and reusable assets - all in a namespaced environment.</p>
+
+<pre>
+#%RAML 1.0
+title: A CRUD API for Users and Groups
+mediaType: application/json
+
+uses:
+  Common: libraries/types/common.raml
+  User:   libraries/types/user.raml
+  Group:  libraries/types/group.raml
+  CRUD:   libraries/resourceTypes/crud.raml
+
+/users:
+  description: All the users
+  type:
+    CRUD.collection:
+      typename: User.full
+      typename-new: User.new
+</pre>
+
+<h2>Overlays</h2>
+<p>Overlays let you add an additional layer to your RAML file and include new information such as descriptions, annotations, and examples - letting you extend your main RAML file for different internal and external API use cases.</p>
+
+<h2>Improved Security Schemas</h2>
+<p>Substantial improvements have been made to enhance security schema support in RAML 1.0, including improved support for OAuth (1&2) and a brand new "Pass Through" schema
+<pre>
+#%RAML 1.0
+title: Dropbox API
+version: 1
+baseUri: https://api.dropbox.com/{version}
+securitySchemes:
+    oauth_2_0:
+      description: |
+          Dropbox supports OAuth 2.0 for authenticating all API requests.
+      type: OAuth 2.0
+      describedBy:
+          headers:
+              Authorization:
+                  description: |
+                     Used to send a valid OAuth 2 access token. Do not use
+                     with the "access_token" query string parameter.
+                  type: string
+          queryParameters:
+              access_token:
+                  description: |
+                     Used to send a valid OAuth 2 access token. Do not use together with the "Authorization" header
+                  type: string
+          responses:
+              401:
+                  description: |
+                      Bad or expired token. This can happen if the user or Dropbox
+                      revoked or expired an access token. To fix, you should re-
+                      authenticate the user.
+              403:
+                  description: |
+                      Bad OAuth request (wrong consumer key, bad nonce, expired
+                      timestamp...). Unfortunately, re-authenticating the user won't help here.
+      settings:
+        authorizationUri: https://www.dropbox.com/1/oauth2/authorize
+        accessTokenUri: https://api.dropbox.com/1/oauth2/token
+        authorizationGrants: [ authorization_code, refresh_token ]
+    oauth_1_0:
+      description:|
+          OAuth 1.0 continues to be supported for all API requests, but OAuth 2.0 is now preferred.
+      type: OAuth 1.0
+      settings:
+        requestTokenUri: https://api.dropbox.com/1/oauth/request_token
+        authorizationUri: https://www.dropbox.com/1/oauth/authorize
+        tokenCredentialsUri: https://api.dropbox.com/1/oauth/access_token
+    customHeader:
+      description:|
+          A custom header
+</pre>
+
+<h2>Annotations</h2>
+<p>Annotations, or a way to extend your RAML specification to support specific third-party vendor needs without breaking or changing your specification have now been added.  Using annotations and overlays you can now meet specialized use-case needs all without having to worry about breaking backwards compatibility with other services.</p>
+
+<pre>
+#%RAML 1.0
+title: Testing annotations
+mediaType: application/json
+annotationTypes:
+  experimental: null | string
+  feedbackRequested: null | string
+  assertion: string
+  testHarness: string
+  badge: string
+  clearanceLevel:
+    properties:
+      level:
+        enum: [ low, medium, high ]
+        required: true
+      signature:
+        pattern: "\\d{3}-\\w{12}"
+        required: true
+/groups:
+  (experimental):
+  (feedbackRequested):
+/users:
+  (testHarness): usersTest
+  (badge): tested.gif
+  (clearanceLevel):
+    level: high
+    signature: 230-ghtwvfrs1itr
+  get:
+    (experimental):
+    (feedbackRequested):
+    responses:
+      200:
+        (assertion): Condition 1
+</pre>
+
+<h2>Data Types</h2>
+<p>Perhaps the crown jewel in RAML 1.0, data types serve as a way of replacing daunting schemas and provide even more information for consumers and code generators to ensure that they understand and meet your API data type needs.</p>
+<p>Data Types can be used in place of schemas and examples, letting you define one Data Type that can then be converted into an XML or JSON Schema on the fly - letting you simply define your data model, and letting RAML take care of the REST.</p>
+
+<pre>
+#%RAML 1.0
+
+title: A CRUD API for Users and Groups
+mediaType: application/json
+
+types:
+
+  ###############
+  # Common:
+  ###############
+
+  Email:
+    pattern: "^\\w+(\\.\\w+)?@company.com"
+
+  StaticGroupNums:
+    description: Predefined user groups
+    enum: [ 12, 26, 30, 31, 32 ]
+
+  DynamicGroupNum:
+    description: Dynamically-defined user groups
+    pattern: "D\\-\\d+"
+
+  RecordId:
+    usage: An id of any record in the system
+    type: number
+
+  Record-base:
+    usage: Pattern for any record in the system
+    properties:
+      id:
+        type: RecordId
+        required: true
+      created:
+        type: date
+        required: true
+
+  ###############
+  # User:
+  ###############
+
+  User-base:
+    usage: The base type for user records
+    properties:
+      firstname:
+        required: true
+      lastname:
+        required: true
+
+  User-new:
+    usage: Data for creating a new user
+    type: User-base
+    properties:
+      HRAuth:
+        description: Authorization received from HR
+        required: true
+
+  User-update:
+    usage: Changeable properties of an existing user
+    properties:
+      firstname:
+      lastname:
+
+  User:
+    usage: A user in the system
+    type: [ User-base, Record-base ]
+    properties:
+      emails: Email[]
+
+  ###############
+  # Group:
+  ###############
+
+  Group-base:
+    usage: The base type for group records
+    properties:
+      name:
+        required: true
+
+  Group-new:
+    usage: Data for creating a new group
+    type: Group-base
+    properties:
+      ITAuth:
+        description: Authorization received from IT
+        required: true
+
+  Group-update:
+    usage: Changeable properties of an existing group
+    properties:
+      name:
+
+  Group:
+    usage: A group in the system
+    type: [ Group-base, Record-base ]
+    properties:
+      groupnum:
+        type: StaticGroupNums | DynamicGroupNum
+        required: true
+
+resourceTypes:
+
+  ###############
+  # Collection:
+  ###############
+
+  collection:
+    get:
+      responses:
+        200:
+          body:
+            properties:
+              total:
+                type: number
+                required: true
+              members: <<typename>>[]
+    post:
+    body:
+    type: <<typename-new>>
+        responses:
+        201:
+        headers:
+        Location:
+        required: true
+        body:
+        type: <<typename>>
+
+            ###############
+            # Member:
+            ###############
+
+            member:
+            get:
+            responses:
+            200:
+            body:
+            type: <<typename>>
+                patch:
+                body:
+                type: <<typename-update>>
+                    responses:
+                    200:
+                    body:
+                    type: <<typename>>
+                        delete:
+                        responses:
+                        204:
+
+                        deleteOnlyMember:
+                        delete:
+                        responses:
+                        204:
+
+                        ###############
+                        # API:
+                        ###############
+
+                        /users:
+                        description: All the users
+                        type:
+                        collection:
+                        typename: User
+                        typename-new: User-new
+                        /{userId}:
+                        description: A specific user
+                        uriParameters:
+                        userId: RecordId
+                        type:
+                        member:
+                        typename: User
+                        typename-update: User-update
+                        /groups:
+                        description: The groups to which this user belongs
+                        type:
+                        collection:
+                        typename: Group
+                        typename-new: RecordId
+                        /{groupId}:
+                        type: deleteOnlyMember
+                        delete:
+                        description: Remove this user from this group
+                        /groups:
+                        description: All the groups
+                        type:
+                        collection:
+                        typename: Group
+                        typename-new: Group-new
+                        /{groupId}:
+                        description: A specific group
+                        uriParameters:
+                        groupId: RecordId
+                        type:
+                        member:
+                        typename: Group
+                        typename-update: Group-update
+                        /users:
+                        description: The users belonging to this group
+                        type:
+                        collection:
+                        typename: User
+                        typename-new: User-new
+                        /{userId}:
+                        type: deleteOnlyMember
+                        delete:
+                        description: Remove this user from this group
+</pre>
+
+<p>&nbsp;</p>
+<p>To learn more about What's New - check out this <a href="http://blog.raml.org/raml-1-0-final-candidate/">blog post</a></p>

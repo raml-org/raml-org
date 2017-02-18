@@ -7,10 +7,10 @@
     <meta name="viewport" content="width=device-width, target-densitydpi=device-dpi, initial-scale=0, maximum-scale=1, user-scalable=yes">
     <title>{{ page.title }} | {{ site.title }}</title>
 
-    <link rel="stylesheet" type="text/css" href="{{ site.path }}/css/style.css" >
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/css/style.css" >
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="{{ site.path }}/js/bootstrap.min.js"></script>
-    <script src="{{ site.path }}/js/script.js"></script>
+    <script src="{{ site.baseurl }}/js/bootstrap.min.js"></script>
+    <script src="{{ site.baseurl }}/js/script.js"></script>
 </head>
 <body class="{{ page.title | downcase | replace:' ','-' | replace:',','' | strip_html }}">

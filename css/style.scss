@@ -66,6 +66,13 @@ div.top_wrapper {
         background-color: transparent;
       }
     }
+    li.open > a.parentlink {
+      color: #ffffff;
+    }
+    li a.parentlink {
+      color: #ffffff;
+    }
+
   }
 
   .dropdown-submenu {
@@ -84,7 +91,7 @@ div.top_wrapper {
     &:hover > .dropdown-menu, &:focus > .dropdown-menu {
       display: block;
     }
-    > a:after {
+    > a.dropdown-caret:after {
       display: block;
       content: " ";
       float: right;
@@ -93,13 +100,13 @@ div.top_wrapper {
       border-color: transparent;
       border-style: solid;
       border-width: 5px 0 5px 5px;
-      border-left-color: #ccc;
+      border-left-color: #000;
       margin-top: 5px;
       margin-right: -10px;
     }
 
     &:hover > a:after {
-      border-left-color: #fff;
+      border-left-color: #000;
     }
 
     .pull-left {
@@ -112,6 +119,10 @@ div.top_wrapper {
       -webkit-border-radius: 6px 0 6px 6px;
       -moz-border-radius: 6px 0 6px 6px;
       border-radius: 6px 0 6px 6px;
+    }
+
+    .dropdown-menu > li > a {
+      width: 50% !important;
     }
 
   }
@@ -186,6 +197,15 @@ div.top_wrapper {
      }
 
    }
+
+  a.dropdown-link {
+    display: inline-block;
+    margin-right: -6px;
+  }
+  a.dropdown-caret {
+    display: inline-block;
+    padding-left: 0;
+  }
 }
 
 section.homepage-inner-wrapper {
@@ -1231,5 +1251,51 @@ section.ramlapilinks {
     font-size: 14px;
     line-height: 1.42857143;
     color: #333333;
+  }
+}
+
+div.member {
+  float: left;
+  width: 50%;
+  margin-top: 45px;
+
+  .member-photo {
+    img {
+      float: left;
+      border: 4px solid #0b9be6;
+      height: 100px;
+      margin: 0 18px 0 0;
+    }
+  }
+  .member-info {
+    max-width: 50%;
+    float: left;
+
+    h3 {
+      margin-top: 3px;
+      margin-bottom: 0;
+      font-weight: bolder;
+    }
+    p {
+      padding: 0;
+      margin: 0;
+      line-height: 16px;
+    }
+    a {
+      display: block;
+      float: left;
+      height: 25px;
+      width: 25px;
+      margin-top: 3px;
+    }
+    a.linkedin {
+      background-image: url(/images/linkedin.svg);
+      background-size: 100%;
+    }
+    a.twitter {
+      background-image: url(/images/twitter.svg);
+      background-size: 100%;
+      margin-left: 3px;
+    }
   }
 }
