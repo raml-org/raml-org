@@ -12,6 +12,6 @@
       var href_div = $(this).attr('href');
       $(' '+ href_div +' ').show().siblings("section").hide();
 
-    })
+    });
   });
 })(jQuery);

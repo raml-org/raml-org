@@ -9,7 +9,10 @@ title: 'RAML'
 path:
 baseurl:
 url: ""
-permalink: pretty
+permalink: "/blogs/:title"
+paginate: 5
+paginate_path: /blogs/page:num
+timezone:      null
 ########
 # more settings
 
@@ -41,3 +44,16 @@ exclude:      []
 keep_files:   [".git", ".svn"]
 encoding:     "utf-8"
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+
+gems:
+  - jekyll-feed
+  - jekyll-paginate
+  - jekyll-seo-tag
+
+defaults:
+  -
+    scope:
+      path: ""      # empty string for all files
+      type: posts   # limit to posts
+    values:
+      is_post: true # automatically set is_post=true for all posts

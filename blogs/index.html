@@ -1,0 +1,62 @@
+---
+layout: page
+title: Blogs
+---
+
+<div class="wrapper">
+    {% for post in paginator.posts %}
+    <div class="blog">
+        <h2>
+            <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
+        <div class="post_author">By: {{ post.author }}</div>
+        <div class="post_date">{{ post.date | date: "%B %-d, %Y" }}</div>
+        <div class="post_categories"> Category
+            {% if post.categories.size > 0 %} : {% for cat in post.categories %}
+            {% if site.jekyll-archives %}
+            <a href="{{ site.baseurl }}/category/{{ cat }}">{{ cat | capitalize }}</a>{% if forloop.last == false %}, {% endif %}
+            {% else %}
+            <a href="{{ site.baseurl }}/posts/#{{ cat }}">{{ cat | capitalize }}</a>{% if forloop.last == false %}, {% endif %}
+            {% endif %}
+            {% endfor %}{% endif %}
+        </div>
+        <div class="post_tag">Tags: {{ post.tags }}</div>
+        <div class="post_content">
+            <p>{{ post.content | strip_html | truncatewords: 50 }}</p>
+        </div>
+
+        <div class="read_more"><a href="{{ site.baseurl }}/{{ post.url }}" class="btn btn-default">Read More</a> </div>
+    </div>
+
+    {% endfor %}
+
+
+    {% if paginator.total_pages > 1 %}
+    <div class="pagination_section">
+        <ul class="pagination">
+        {% if paginator.previous_page %}
+        <li><a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Prev</a></li>
+        {% else %}
+        <li><span>&laquo; Prev</span></li>
+        {% endif %}
+
+        {% for page in (1..paginator.total_pages) %}
+        {% if page == paginator.page %}
+            <li class="active"><span>{{ page }}</span></li>
+        {% elsif page == 1 %}
+        <li><a href="{{ '/blogs/index.html' | replace: '//', '/' }}">{{ page }}</a></li>
+        {% else %}
+        <li><a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a></li>
+        {% endif %}
+        {% endfor %}
+
+        {% if paginator.next_page %}
+        <li><a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next &raquo;</a></li>
+        {% else %}
+            <li><span>Next &raquo;</span></li>
+        {% endif %}
+        </ul>
+    </div>
+    {% endif %}
+
+</div>
