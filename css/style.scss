@@ -1446,8 +1446,18 @@ li.tab-community {
   display: none !important;
 }
 div.page-meta {
+  margin-bottom: 30px;
+
   div.post_author {
     margin-top: 20px;
+    margin-bottom: 15px;
+  }
+  div.post_categories {
+    font-size: 12px;
+    line-height: 25px;
+  }
+  div.post_tag {
+    font-size: 12px;
   }
 }
 div.blog_post_content {
