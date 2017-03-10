@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "[Guest Post] RESTful API documentation @ePages. RAML rocks!"
-date: 2016-03-04 13:01:26
+date: 2015-06-25
 comments: true
 categories : [Guest Posts , Tooling]
 author: christianvogel

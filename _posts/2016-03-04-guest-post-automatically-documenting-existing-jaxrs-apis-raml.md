@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Guest Post: Automatically documenting existing JAXRS APIs with RAML"
-date: 2016-03-04 12:08:13
+date: 2014-07-26
 comments: true
 categories : [Uncategorized]
 author: Norberto L. Herz

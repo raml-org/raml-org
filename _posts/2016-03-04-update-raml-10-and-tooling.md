@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Update on RAML 1.0 and Tooling"
-date: 2016-03-04 13:45:23
+date: 2015-12-01
 comments: true
 categories : [News , Tooling , Updates ]
 author: Uri Sarid , christianvogel

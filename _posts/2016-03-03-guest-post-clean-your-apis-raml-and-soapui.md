@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Guest Post: Clean Your APIs with RAML and SoapUI"
-date: 2016-03-03 18:22:26
+date: 2013-12-20
 comments: true
 categories : [Uncategorized]
 author: Norberto L. Herz

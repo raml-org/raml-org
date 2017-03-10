@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "[Guest Post] API First with RAML - Development and documentation of REST APIs"
-date: 2016-03-04 13:08:48
+date: 2015-06-22
 comments: true
 categories : [Guest Posts]
 author: christianvogel

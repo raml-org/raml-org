@@ -25,7 +25,7 @@ title: Blogs
             <p>{{ post.content | strip_html | truncatewords: 50 }}</p>
         </div>
 
-        <div class="read_more"><a href="{{ site.baseurl }}/{{ post.url }}" class="btn btn-default">Read More</a> </div>
+        <div class="read_more"><a href="{{ post.url | prepend: site.baseurl }}" class="btn btn-default">Read More</a> </div>
     </div>
 
     {% endfor %}

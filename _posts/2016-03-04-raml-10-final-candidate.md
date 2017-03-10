@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "RAML 1.0 Final Candidate"
-date: 2016-03-04 13:11:43
+date: 2015-10-05
 comments: true
 categories : [News , Updates]
 author: Uri Sarid

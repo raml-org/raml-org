@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "RAML 1.0 Current Status"
-date: 2016-03-07 20:28:40
+date: 2016-02-07
 comments: true
 categories : [News , Updates]
 author: christianvogel

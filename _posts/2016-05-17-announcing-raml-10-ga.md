@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Announcing RAML 1.0 GA"
-date: 2016-05-17 00:42:58
+date: 2016-05-16 00:42:58
 comments: true
 categories : [News , Specification]
 author: Nial Darbey

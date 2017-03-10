@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "New community projects"
-date: 2016-03-04 11:41:48
+date: 2014-04-05
 comments: true
 categories : [Uncategorized]
 author: Norberto L. Herz

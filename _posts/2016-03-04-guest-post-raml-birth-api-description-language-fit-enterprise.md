@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Guest Post: RAML: The Birth of an API Description Language Fit for the Enterprise"
-date: 2016-03-04 12:18:16
+date: 2015-08-15
 comments: true
 categories : [Uncategorized]
 author: Norberto L. Herz

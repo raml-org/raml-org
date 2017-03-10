@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "APX is to API as UX is to UI"
-date: 2016-03-03 17:16:19
+date: 2013-07-23
 comments: true
 categories : [Uncategorized]
 author: Uri Sarid

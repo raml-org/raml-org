@@ -2,10 +2,19 @@
 
 <ul class="vendormenu">
     <li><a href="/enterprises">Why RAML</a> </li>
-    <li><a href="#">RAML in the News</a> </li>
+    {% if page.title == 'RAML in News' %}
+    <li><a href="/enterprise/raml-news" class="active">RAML in the News</a> </li>
+    {% else %}
+    <li><a href="/enterprise/raml-news">RAML in the News</a> </li>
+    {% endif %}
+    {% if page.title == 'Vendor Support' %}
     <li><a href="/enterprise/vendor-support" class="active">Vendor Support</a> </li>
-</ul>
+    {% else %}
+    <li><a href="/enterprise/vendor-support">Vendor Support</a> </li>
+    {% endif %}
 
+</ul>
+{% if page.title == 'Vendor Support' %}
 <h2>Vendor Support</h2>
 
 <ul>
@@ -15,6 +24,5 @@
     <li><a href="#cat-api-testing" class="active">API Testing</a> </li>
     <li><a href="#cat-integration-services" class="active">Integration Services</a> </li>
     <li><a href="#cat-others" class="active">Other Services</a> </li>
-
-
 </ul>
+{% endif %}

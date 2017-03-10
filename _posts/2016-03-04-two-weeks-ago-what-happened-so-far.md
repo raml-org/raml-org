@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Two weeks ago - what happened so far?"
-date: 2016-03-04 13:31:32
+date: 2015-11-17
 comments: true
 categories : [News]
 author: christianvogel
@@ -12,7 +12,7 @@ It’s been two weeks since the release of RAML 1.0 (RC), the new raml.org websi
 
 Details:
 
-*   # of downloads for the API Workbench: 1800
+*   of downloads for the API Workbench: 1800
 *   RAML projects are being viewed over 17,000 times per day
 *   different articles around RAML 1.0 (RC) and the API Workbench:
     *   [Programmable Web](http://www.programmableweb.com/news/raml-workgroup-ships-version-1.0-restful-api-modeling-language/2015/11/04)
