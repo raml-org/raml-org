@@ -48,13 +48,7 @@
         <div class="col-md-9 col-xs-9 col-sm-9">
             <h1 class="page-header">{{ page.title }}</h1>
             {% if page.is_post  and page.title != 'Blogs' and page.title != 'Blogs Archive' %}
-            <div class="a2a_kit a2a_default_style">
-                <a class="a2a_button_facebook a2a_counter"></a>
-                <a class="a2a_button_twitter a2a_counter"></a>
-                <a class="a2a_button_linkedin a2a_counter"></a>
-                <a class="a2a_button_reddit a2a_counter"></a>
-                <a class="a2a_button_email a2a_counter"></a>
-            </div>
+            <div class="sharethis-inline-share-buttons"></div>
             <div class="page-meta">
              <div class="post_author">By : {{ page.author }}</div>
             <div class="post_date"> {{ page.date | date: "%B %-d, %Y" }}</div>
@@ -105,7 +99,7 @@
                 {% endif %}
                 <script id="dsq-count-scr" src="//raml.disqus.com/count.js" async></script>
             </div>
-            <script async src="https://static.addtoany.com/menu/page.js"></script>
+            <script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=58c80890f3235300114bf49f&product=inline-share-buttons"></script>
             {% endif %}
 
         </div>
