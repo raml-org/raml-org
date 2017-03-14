@@ -1631,24 +1631,6 @@ body.contact-us {
       margin-bottom: 15px !important;
       font-size: 14px;
     }
-    label[for="FirstName"]:after {
-      content: "Your First Name";
-    }
-    label[for="LastName"]:after {
-      content: "Your Last Name";
-    }
-    label[for="Email"]:after {
-      content: "Your e-mail address";
-    }
-    label[for="Company"]:after {
-      content: "Your Comapny";
-    }
-    label[for="Phone"]:after {
-      content: "Your Phone Number";
-    }
-    label[for="Comments"]:after {
-      content: "Message";
-    }
 
     input.mktoField {
       height: 35px !important;
