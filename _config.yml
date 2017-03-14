@@ -8,7 +8,7 @@ title: 'RAML'
 #  use site.url only inside the web feed template (e.g. requires full url incl. protocol)
 path:
 baseurl:
-url: ""
+url: "http://ramldev.debugme.in"
 permalink: "/blogs/:title"
 paginate: 5
 paginate_path: /blogs/page:num
