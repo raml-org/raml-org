@@ -17,13 +17,21 @@ h2 {
   font-size: 24px;
 }
 .gap {
-  margin-top: 30px;
+  margin-top: 50px;
   margin-bottom: 30px;
 }
+body.welcome {
+ div.top_wrapper {
+   min-height: 565px;
+   height: 565px;
+ }
 
+
+
+}
 div.top_wrapper {
   background-color: #1e2128;
-  padding: 30px 0;
+  padding: 20px 0;
   background-image: url(/images/homepageherographic.svg);
   background-repeat: no-repeat;
   background-position: left bottom;
@@ -46,12 +54,16 @@ div.top_wrapper {
     border-color: transparent;
   }
 
+  div.navbar-right, ul.navbar-right {
+    margin-right: 0;
+
+  }
   ul.top_menu {
     list-style: none;
 
     li {
       float: left;
-      margin-left: 0.54em;
+      padding-right: 20px;
 
       a {
         color: #ffffff !important;
@@ -63,6 +75,16 @@ div.top_wrapper {
         }
       }
     }
+  }
+
+  ul.top_menu li:first-child {
+    padding-right: 28px;
+  }
+  ul.top_menu li:nth-child(2){
+    padding-right: 26px;
+  }
+  ul.top_menu li:nth-child(3){
+    padding-right: 15px;
   }
 
   .nav {
@@ -135,7 +157,7 @@ div.top_wrapper {
      padding-right: 15%;
 
      h1{
-       margin-top: 0;
+       margin-top: 8px;
        letter-spacing: 0.025em;
        margin-bottom: 5px;
        color: #ffffff;
@@ -185,7 +207,8 @@ div.top_wrapper {
      //}
      div.homepage_icons {
        img {
-         padding-right: 14px;
+         padding-right: 10px;
+         padding-top: 10px;
        }
      }
      .design:hover {
@@ -215,11 +238,26 @@ div.top_wrapper {
     display: inline-block;
     padding-left: 0;
   }
+
+  a.navbar-brand {
+    padding: 10px 0;
+  }
+  div.container {
+    width: 1080px;
+  }
+}
+
+section.region-highlighted {
+
+  img {
+    padding-left: 58px;
+  }
 }
 
 section.homepage-inner-wrapper {
   background: #66c4e8;
-  margin-top: 80px;
+  margin-top: 60px;
+
 
   .console_img {
     position: relative;
@@ -268,12 +306,16 @@ section.map-container {
     text-decoration: none;
     color: #66c4e8;
   }
+  h2 {
+    margin-top: 6px;
+    margin-left: 4px;
+  }
 }
 
 section.open_source_proj {
   background: #2b2b2b;
   color: #8a8a8a;
-  padding: 5% 10%;
+  padding: 2% 0;
 
   .col-md-2 {
     width: 18.66667% ;
@@ -284,18 +326,23 @@ section.open_source_proj {
     font-size: 24px;
     line-height: 30px;
     text-align: center;
+    margin-top: 20px;
   }
 
   h4 {
     font-size: 16px;
     line-height: 22px;
-    padding: 0 24% 1%;
+    padding: 0 26% 1%;
   }
 
   .project-block-content {
     padding: 0 10px;
-    min-height: 380px;
+    min-height: 364px;
     border: 2px solid #404040;
+    float: left;
+    width: 190px;
+    margin-left: 22px;
+    margin-top: 9px;
 
 
     h3 {
@@ -326,13 +373,34 @@ section.open_source_proj {
       height: 15px;
     }
     .project-inner {
-      min-height: 300px;
+      min-height: 282px;
     }
-
+    a.firstlink {
+      padding: 6px 52px;
+    }
+    a.mulelink {
+      margin-right: 7px;
+    }
+    a.moreinfo {
+      padding: 5px 30px;
+    }
 
   }
   .project-block-content:hover {
     border: 2px solid #1584af;
+  }
+
+  div.see-all-project {
+    text-align: center;
+    padding: 4% 0;
+
+    a {
+      padding: 14px 50px;
+      background: #66c4e8;
+      color: #ffffff;
+      border-radius: 3px;
+      text-decoration: none;
+    }
   }
 
 }
@@ -483,13 +551,21 @@ div.bottom-wrapper {
 
 div.ramldevel {
   background: #f6f6f6;
-  padding: 4% 0;
+  padding: 50px 0;
   text-align: center;
+  div.col-md-4 {
+    width: 32%;
+  }
+
 
   div.thumbnail {
     background-color: transparent;
     border: none;
     border-radius: 0;
+
+    img {
+      margin-top: -23px;
+    }
   }
 }
 
@@ -501,42 +577,69 @@ div.design-api {
   h2 {
     line-height: 17px;
     font-size: 24px;
+    margin-left: 12px;
   }
 
   a {
     color: #66c4e8;
+    padding-left: 12px;
+  }
+  p {
+    margin-left: 11px;
+    margin-bottom: 22px;
+  }
+
+  img {
+    margin-top: 20px;
   }
 }
 
 div.build-api {
   background: #2b2b2b;
-  padding: 5% 0;
+  padding: 5.5% 0;
   color: #8a8a8a;
   font-size: 16px;
 
   h2 {
     line-height: 17px;
     font-size: 24px;
+    margin-top: 2px;
   }
 
   a {
     color: #66c4e8;
   }
+  img {
+    margin-top: 3px;
+    margin-left: 15px;
+  }
+  p {
+    margin: 0 0 24px;
+    width: 540px;
+  }
 }
 
 div.test-api {
   background: #66c4e8;
-  padding: 5% 0;
+  padding: 5.7% 0;
   color: #ffffff;
   font-size: 16px;
+
 
   h2 {
     line-height: 17px;
     font-size: 24px;
+    margin-top: -1px;
+    margin-left: 15px;
   }
   a {
     color: #ffffff;
     text-decoration: none;
+    padding-left: 15px;
+  }
+  p {
+    margin: 0 14px 22px;
+    width: 540px;
   }
 }
 
@@ -549,31 +652,48 @@ div.document-api {
   h2 {
     line-height: 17px;
     font-size: 24px;
+    margin-top: 12px;
   }
   a {
     color: #66c4e8;
     text-decoration: none;
   }
+
+  p {
+    margin: 0 0 22px;
+    width: 540px;
+  }
+  img {
+    margin-top: 12px;
+    margin-left: 12px;
+  }
 }
 
 div.share-api {
-  padding: 5% 0;
+  padding: 5.3% 0;
   color: #8a8a8a;
   font-size: 16px;
 
   h2 {
     line-height: 17px;
     font-size: 24px;
+    margin-top: 5px;
+    margin-left: 15px;
   }
   a {
     color: #66c4e8;
     text-decoration: none;
+    padding-left: 15px;
+  }
+  p {
+    margin: 0 14px 22px;
+    width: 540px;
   }
 }
 
 div.do-more-with-less {
   background: #66c4e8;
-  padding: 5% 30%;
+  padding: 5% 28%;
   color: #ffffff;
   font-size: 16px;
   text-align: center;
@@ -588,6 +708,7 @@ div.do-more-with-less {
   h2 {
     font-size: 24px;
     line-height: 30px;
+    margin-top: 8px;
   }
 
   a.raml-links {
@@ -597,6 +718,7 @@ div.do-more-with-less {
     text-decoration: none;
     text-align: center;
     border-radius: 3px;
+    margin: 50px 16px 50px 0;
 
     &:hover {
       background: #1584af;
@@ -623,7 +745,7 @@ div.do-more-with-less {
     -moz-background-size: 44%;
     -o-background-size: 44%;
     background-size: 44%;
-    background-position: 90% 100%;
+    background-position: 94% 100%;
     background-color: #282c35;
     min-height: 475px;
   }
@@ -636,6 +758,7 @@ div.do-more-with-less {
       line-height: 36px;
       font-weight: normal;
       color: #ffffff;
+      margin-top: 26px;
     }
 
     h3 {
@@ -692,26 +815,44 @@ div.ramlenter {
   a {
     color: #66c4e8
   }
+
+  div.caption {
+    padding: 0;
+    margin-top: 8px;
+  }
 }
 
 div.multiple-teams {
-  padding: 5% 0;
+  padding: 6% 0;
   font-size: 16px;
   color: #8a8a8a;
 
   h2 {
     font-size: 24px;
+    margin-top: -6px;
+    margin-left: 16px;
+  }
+  p {
+    margin: 0 16px 4px;
   }
 }
 
 div.enterprise-faster {
-  padding: 5% 0;
+  padding: 5.6% 0;
   background: #2b2b2b;
   color: #8a8a8a;
 
   h2 {
     font-size: 24px;
     line-height: 17px;
+    margin-top: 0;
+  }
+  img {
+    margin-left: 14px;
+  }
+  p {
+    margin: 0 0px 50px;
+    width: 465px;
   }
 }
 
@@ -1466,7 +1607,7 @@ div.blog_post_content {
   }
 }
 .container {
-  width: 1080px;
+  min-width: 1080px;
 }
 
 li.parent_dropdown:hover > .multi-level {
