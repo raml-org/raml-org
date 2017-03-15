@@ -7,7 +7,7 @@
       $(this).parent().toggleClass('open');
     });
 
-    $('#design_desc, #test_desc, #document_desc, #share_desc').hide();
+    $('#build_desc, #test_desc, #document_desc, #share_desc').hide();
     $('.map-container map area').mouseover(function(){
       var href_div = $(this).attr('href');
       $(' '+ href_div +' ').show().siblings("section").hide();

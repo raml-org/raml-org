@@ -213,19 +213,24 @@ div.top_wrapper {
      }
      .design:hover {
        background: url(/images/design.svg) no-repeat;
+       padding-top: 0;
      }
      .build:hover {
        background: url(/images/build.svg) no-repeat;
+       padding-top: 0;
      }
 
      .contest:hover {
        background: url(/images/contest.svg) no-repeat;
+       padding-top: 0;
      }
      .document:hover {
        background: url(/images/document.svg) no-repeat;
+       padding-top: 0;
      }
      .share:hover {
        background: url(/images/share.svg) no-repeat;
+       padding-top: 0;
      }
 
    }
@@ -309,6 +314,9 @@ section.map-container {
   h2 {
     margin-top: 6px;
     margin-left: 4px;
+  }
+  div.learn-more {
+    margin-top: 15px;
   }
 }
 
