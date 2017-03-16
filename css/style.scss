@@ -962,7 +962,12 @@ div.eliminate-support {
         .tag:hover:before {
           background: url(/images/RAML_checkmark_unchecked_rollover-01.svg) no-repeat center center;
         }
-
+        .tag.selected:before {
+          background: url(/images/RAML_checkmark_checked-01.svg) no-repeat center center;
+        }
+        a.tag:visited, a.tag:focus {
+          text-decoration: none;
+        }
       }
     }
 
