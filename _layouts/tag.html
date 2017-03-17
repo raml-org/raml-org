@@ -17,9 +17,9 @@ layout: postcat
     <div class="post_categories"> Category
         {% if post.categories.size > 0 %} : {% for cat in post.categories %}
         {% if site.jekyll-archives %}
-        <a href="{{ site.baseurl }}/category/{{ cat }}">{{ cat | capitalize }}</a>{% if forloop.last == false %}, {% endif %}
+        <a href="{{ site.baseurl }}/category/{{ cat }}">{{ cat | downcase }}</a>{% if forloop.last == false %}, {% endif %}
         {% else %}
-        <a href="{{ site.baseurl }}/blog-category/{{ cat }}">{{ cat | capitalize }}</a>{% if forloop.last == false %}, {% endif %}
+        <a href="{{ site.baseurl }}/blog-category/{{ cat }}">{{ cat | downcase }}</a>{% if forloop.last == false %}, {% endif %}
         {% endif %}
         {% endfor %}{% endif %}
     </div>
