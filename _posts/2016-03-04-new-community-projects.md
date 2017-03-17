@@ -2,10 +2,9 @@
 layout: page
 title: "New community projects"
 date: 2014-04-05
-comments: true
-categories : [Uncategorized]
+categories : [uncategorized]
 author: Norberto L. Herz
-tag:
+tags:
 ---
 
 We're excited that RAML is catching on, the community is growing, and developers from all over the world are building and publishing new and exciting tools  for everyone to **use and contribute to.** We have published two of these tools (details below) on the [RAML projects page](http://raml.org/projects) this week, and hope you get a chance to try them out.

@@ -2,10 +2,9 @@
 layout: page
 title: "Mocking Service walkthrough"
 date: 2014-03-28
-comments: true
-categories : [Uncategorized]
+categories : [uncategorized]
 author: Norberto L. Herz
-tag:
+tags:
 ---
 
 With the recent release of the **RAML Mocking Service** I took a couple of minutes to try it out and put together this walkthrough. I hope you find this useful. **What is it?** A service capable of reacting to http requests by returning the correct responses based on your RAML configuration (it will be a no brainer to use this if you follow the example on this thread). **How can I access and use it?** It's already integrated with the [API Portal](http://api-portal.anypoint.mulesoft.com/) and working directly as part of the API Designer's Console. **Show me the code!** Hold your horses, first a quick "project" description. Let suppose you are trying to write the API for some e-commerce product catalog. Now, let's focus on the "Product" resource, which will have an Id, Name and Price. That's it. Let's create the API that will allow us to retrieve the list of products and to create a new one. Let's start by writing a minimal and valid RAML file, and add the resource and a first **empty response**.

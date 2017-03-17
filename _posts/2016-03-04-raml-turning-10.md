@@ -2,10 +2,9 @@
 layout: page
 title: "RAML is Turning 1.0!"
 date: 2014-10-14
-comments: true
-categories : [Uncategorized]
+categories : [uncategorized]
 author: Uri Sarid
-tag:
+tags :
 ---
 
 Almost exactly a year ago, the [RAML workgroup](http://raml.org/about.html#about-workgroup) released the first public version of the [RESTful API Markup Language spec](http://raml.org/spec.html "RAML 0.8 spec"), RAML 0.8, along with some tooling and a website. It's been one heck of a year, in which we saw massive adoption across users and companies large and small; active discussions online and at conferences and meetups; a community of tool developers [on raml.org](http://raml.org/projects.html) and [on github](https://github.com/search?o=desc&q=%22raml%22+created%3A%3E2013-07-01&s=updated&type=Repositories&utf8=%E2%9C%93) with a vibrancy we could only dream of; and virality: developers leveraging other developers' work in a chain of value. A great example of that was the Google Cloud Platform's documenting their [Kubernetes (docker management) API with RAML](https://github.com/GoogleCloudPlatform/kubernetes/tree/master/api), using Kevin Resker's community contribution of [RAML to HTML](https://github.com/kevinrenskers/raml2html). Equally amazing, at least to those of us in the RAML workgroup, was the robustness of that original RAML spec: we haven't had to touch it since its birth, and yet the value chain keeps growing. It's far from perfect, but it works, it elegantly solves a real problem, and it's furthering the cause of good API design for lots of people. We firmly believed, from the get go, that in order to know if this will really work, and to steer it in the right direction, we should set it loose with minimal "pushing" and just see where people take it. And listen. If something keeps chafing, let's revisit it to see if we can smooth it out. If some area is really valuable but is hampered by a design flaw, let's put time into that. Let's concentrate first on solving real problems. It's a bit like the old adage about where to put down sidewalks on a new campus lawn: watch where the students go on their own, and where you see the grass wearing down, that's where you should put down a path. So, a year in and after many conversations, we believe we've found a few paths to lay down. We've summarized them in [a series of github issues, labeled "milestone 1.0,"](https://github.com/raml-org/raml-spec/milestones/v1.0) and have started to collect a bit of final feedback. They fall into a few categories:

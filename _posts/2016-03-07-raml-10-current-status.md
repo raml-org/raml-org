@@ -2,10 +2,9 @@
 layout: page
 title: "RAML 1.0 Current Status"
 date: 2016-02-07
-comments: true
 categories : [News , Updates]
 author: christianvogel
-tag:
+tags :
 ---
 
 First of all, as it’s been a while, but we should not forget it is a new year, so ***The RAML Workgroup wishes everyone a Happy New Year 2016.***

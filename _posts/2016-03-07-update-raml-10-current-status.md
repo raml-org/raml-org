@@ -2,10 +2,9 @@
 layout: page
 title: "[Update] RAML 1.0 Current Status"
 date: 2016-02-29
-comments: true
 categories : [News , Updates]
 author: christianvogel
-tag:
+tags :
 ---
 
 As our journey to finalize RAML 1.0 continues, let us do a short stop talking about our the next release candidate RC2. When we released the very first release candidate (RC1) for RAML 1.0 back in November, who would have thought that we get the tremendous amount of feedback in the form of excellent reviews for the newly added features, but also in a fair amount of constructive feedback. For us, that was already a huge success and has shown us that we are on the right track. Now that we collected all the feedback for RC1, we need to do another analysis on all the open issues around that, decide what to do with them in RC2, before we start working to incorporate these changes.

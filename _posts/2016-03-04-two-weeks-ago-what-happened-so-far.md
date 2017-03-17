@@ -2,10 +2,9 @@
 layout: page
 title: "Two weeks ago - what happened so far?"
 date: 2015-11-17
-comments: true
 categories : [News]
 author: christianvogel
-tag:
+tags :
 ---
 
 It’s been two weeks since the release of RAML 1.0 (RC), the new raml.org website, and the API Workbench; all been very well received in the community. A lot happened in this two weeks, so let me share some details on the release and quotes we had from the community on different channels.

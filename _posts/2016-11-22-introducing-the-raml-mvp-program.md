@@ -2,10 +2,9 @@
 layout: page
 title: "Introducing the RAML MVP Program"
 date: 2016-11-22
-comments: true
 categories : [News]
 author: christianvogel
-tag: raml mvp
+tags : [raml mvp]
 ---
 
 Communities are the backbone of every open-source technology. In fact, the RAML community made RAML what it is today. The time people spend to help on the specification and building tools cannot be valued, especially that most of you do that on their free will.

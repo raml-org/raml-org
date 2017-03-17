@@ -2,10 +2,9 @@
 layout: page
 title: "Guest Post: MuleSoft Unleashes RAML Web Tooling"
 date: 2013-11-04
-comments: true
-categories : [Uncategorized]
+categories : [uncategorized]
 author: Uri Sarid
-tag:
+tags:
 ---
 
 _Uri Sarid is MuleSoft's CTO, as well as a member of the RAML Workgroup.

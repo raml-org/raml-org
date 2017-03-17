@@ -2,10 +2,9 @@
 layout: page
 title: "RAML 1.0 Final Candidate"
 date: 2015-10-05
-comments: true
 categories : [News , Updates]
 author: Uri Sarid
-tag:
+tags:
 ---
 
 We’re about to finalize the next version of RAML. Last month we published the result of many months of community feedback, development modeling, and API analysis, in which we figured out how [a rather small number of changes in RAML 1.0][1] (relative to its predecessor, RAML 0.8) could result in dramatic improvements to the modeling capabilities. The list resolves some gaps, enhances capabilities, and maintains the simplicity of RAML. This month, that list will turn into RAML 1.0.

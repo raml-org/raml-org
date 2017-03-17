@@ -2,10 +2,9 @@
 layout: page
 title: "RAML Console 2.0"
 date: 2015-03-03
-comments: true
 categories : [Tooling , Updates]
 author: christianvogel
-tag: raml-console, tooling
+tags : [raml-console, tooling]
 ---
 
 MuleSoft has released a couple of new key features around their Anypoint Platform offering in February 2015. One in particular is interesting for the RAML community. The RAML console got a refreshed UI as well as new features which I will briefly explain here.Before we start, for everyone who does not know the console, let’s have a quick overview of it. The RAML console is an open source application and gives you a graphical insight of your API specification. It lists all resources and by clicking on the attached HTTP verbs on a specific resource you will be able to deep dive into the resource details. The detail page features a general description, descriptions of every possible HTTP status, examples and schemas on the response’s and/or request’s body, and other aspects you defined in your RAML specification.So what really is new? As I said - the UI was completely refreshed and got a more modern look & feel.  Below you can see before and after examples of the changes made:  

@@ -2,10 +2,9 @@
 layout: page
 title: "Announcing RAML"
 date: 2013-10-02
-comments: true
-categories : [Uncategorized]
+categories : [uncategorized]
 author: Uri Sarid
-tag:
+tags:
 ---
 
 On behalf of the RAML Workgroup, I am excited to unveil the RESTful API Modeling Language today as an open spec. This project’s been under development for quite some time, while we’ve been battle testing it and utilizing it to improve our own internal APIs. As we began socializing the spec for feedback from several API experts, we were humbled to see mounting interest from folks who got deeply interested in collaborating on the direction of the spec. As a provider, an API is the capability you offer others (inside your company or outside) to derive your value, to add theirs, to create and realize opportunities. As a consumer, an API is what you build on to realize the provider's value or to generate even more value. So an API is a contract between provider and consumer, around an interface. Both the provider and the consumer have to build around a common definition for that API. The success of the API depends on how well this contract works, as well as how well it’s implemented on both sides. RAML is a language for expressing that interface, that contract, optimized for the users of the contract: the consumers and the providers. In defining RAML, we looked to address some of the practical and pervasive problems across nearly all APIs. It seeks to address the overarching concerns of any API strategy, in as lightweight a way as possible:

@@ -2,10 +2,9 @@
 layout: page
 title: "Guest Post: Clean Your APIs with RAML and SoapUI"
 date: 2013-12-20
-comments: true
-categories : [Uncategorized]
+categories : [uncategorized]
 author: Norberto L. Herz
-tag:
+tags:
 ---
 
 _Federico Bongiovanni is a Development Engineering Manager at MuleSoft._ 

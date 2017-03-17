@@ -2,10 +2,9 @@
 layout: page
 title: "[Guest Post] RESTful API documentation @ePages. RAML rocks!"
 date: 2015-06-25
-comments: true
 categories : [Guest Posts , Tooling]
 author: christianvogel
-tag: guest posts, raml-parser, tooling
+tags: [guest posts, raml-parser, tooling]
 ---
 
 Currently we are compiling a series of guest posts where we ask happy RAML user to tell their stories about how they are using RAML, or their tools they developed and contributed to the RAML community. In our very first post in this series, I am happy to have [ePages](http://www.epages.com/us/ "ePages") to talk about their experience and the tool they developed. If you want to talk about your story or tool, why not sending us an email to info@raml.org.

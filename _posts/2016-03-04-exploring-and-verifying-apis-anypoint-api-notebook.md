@@ -2,10 +2,9 @@
 layout: page
 title: "Exploring and Verifying APIs with Anypoint API Notebook"
 date: 2014-07-10
-comments: true
-categories : [Uncategorized]
+categories : [uncategorized]
 author: Norberto L. Herz
-tag:
+tags:
 ---
 
 <h1 dir="ltr">

@@ -3,9 +3,8 @@ layout: page
 title: "Welcome Rob Daigneau to the RAML Workgroup"
 date: 2016-08-01 17:24:16
 author: christianvogel
-category: News
-tag:
-comments: true
+category: [News]
+tags :
 ---
 
 We are so happy to welcome our new member for the RAML Workgroup - Rob Daigneau.

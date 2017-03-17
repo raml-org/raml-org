@@ -2,10 +2,9 @@
 layout: page
 title: "Guest Post: RAML: The Birth of an API Description Language Fit for the Enterprise"
 date: 2015-08-15
-comments: true
-categories : [Uncategorized]
+categories : [uncategorized]
 author: Norberto L. Herz
-tag:
+tags:
 ---
 
 _[Laura Heritage](https://twitter.com/heritagelaura) is the Director of API Strategy at SOA Software and an Open Group certified Master IT Specialist in Application & Integration Middleware.  She has over 16 years of experience working with enterprises around the world establishing SOA and API strategies.  _

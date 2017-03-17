@@ -2,10 +2,9 @@
 layout: page
 title: "Update on RAML 1.0 and Tooling"
 date: 2015-12-01
-comments: true
 categories : [News , Tooling , Updates ]
 author: Uri Sarid , christianvogel
-tag:
+tags :
 ---
 
 Wow, the 2 weeks since our last blog posts have been amazing, again. We've received an incredible amount of great feedback for the RAML 1.0 RC specification itself, and for the tooling (especially API Workbench), via email, and twitter, and the RAML.org forum, and github, even in person. Reading all these has been a real pleasure, and had demonstrated not only that things are on the right track with 1.0 and the tooling but also generally the value that a very broad community gets from RAML and its ecosystem. So where are things now -- how close are we to finalizing 1.0?

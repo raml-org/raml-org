@@ -2,10 +2,9 @@
 layout: page
 title: "The RESTful Robots Project"
 date: 2014-09-16
-comments: true
-categories : [Uncategorized]
+categories : [uncategorized]
 author: Uri Sarid
-tag:
+tags :
 ---
 
 ## A Deep Dive into IoT, RAML, and Robot APIs

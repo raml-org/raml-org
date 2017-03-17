@@ -3,9 +3,8 @@ layout: page
 title: "Releasing RAML 1.0 RC2"
 date: 2016-05-05
 author: christianvogel
-comments: true
 categories : [News , Specification]
-tag: raml, rc2
+tags : [raml, rc2]
 ---
 
 People that carefully watch our specification repository might have already realized that we were able to close all issues and merge the RAML 1.0 RC2 branch into its predecessor. Therefore, we are very happy to finally announce the official release of our next release candidate RAML 1.0 RC2.

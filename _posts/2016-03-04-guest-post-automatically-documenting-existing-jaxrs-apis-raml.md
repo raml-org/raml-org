@@ -2,10 +2,9 @@
 layout: page
 title: "Guest Post: Automatically documenting existing JAXRS APIs with RAML"
 date: 2014-07-26
-comments: true
-categories : [Uncategorized]
+categories : [uncategorized]
 author: Norberto L. Herz
-tag:
+tags:
 ---
 
 _[Steven Butt](http://twitter.com/@stevenbutt24) is a Senior Software Engineer working on cloud platforms at MuleSoft. He moonlights as an advocate for API cleanliness._

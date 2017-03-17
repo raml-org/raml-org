@@ -2,10 +2,9 @@
 layout: page
 title: "Looking back on RAML 1.0"
 date: 2016-10-28
-comments: true
 categories : [Specification, Tooling, Updates]
 author: christianvogel
-tag: raml, update
+tags : [raml, update]
 ---
 
 It's been a while since the release of RAML 1.0, and we would like to do a reflection on where we are with regards to the specification, tools, and community.

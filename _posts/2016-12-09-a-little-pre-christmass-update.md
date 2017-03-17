@@ -2,10 +2,9 @@
 layout: page
 title: "A little pre-Christmas Update"
 date: 2016-12-09
-comments: true
 categories : [News, Tooling, Updates]
 author: christianvogel
-tag: raml2html, documentation, testing, parser
+tags : [raml2html, documentation, testing, parser]
 ---
 
 On behalf of the RAML Workgroup, I am really excited to announce the release of the [RAML Test Compatability Kit (TCK)](https://github.com/raml-org/raml-tck) and a new [raml2html](https://github.com/raml2html/raml2html) version with RAML 1.0 support.

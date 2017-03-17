@@ -2,10 +2,9 @@
 layout: page
 title: "[Guest Post] API First with RAML - Development and documentation of REST APIs"
 date: 2015-06-22
-comments: true
 categories : [Guest Posts]
 author: christianvogel
-tag:
+tags:
 ---
 
 I am really happy to post a new article in our category [Guest Posts]. This time, Kai Spichale talks a little bit about the API first approach with RAML. I hope you will enjoy his article and thank you Kai for contributing!

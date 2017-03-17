@@ -2,10 +2,9 @@
 layout: page
 title: "[Update] Checkout our new projects"
 date: 2015-07-04
-comments: true
 categories : [News , Updates]
 author: christianvogel
-tag: projects
+tags : [projects]
 ---
 
 Hi @all, we are proud to announce that we were able to add a couple of new projects to our list. Check them out on: [raml.org/projects.html][1] Here an overview:

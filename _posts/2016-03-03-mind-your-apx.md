@@ -2,10 +2,9 @@
 layout: page
 title: "Mind your APX"
 date: 2013-07-24
-comments: true
-categories : [Uncategorized]
+categories : [uncategorized]
 author: Uri Sarid
-tag:
+tags:
 ---
 
 There’s a saying that goes something like: to err is human, to really screw up big time takes a computer. But if you really want to have some fun, connect that computer to another computer, and you soon have a veritable nuclear chain reaction. The key to unlocking this energy? The lowly 

@@ -2,10 +2,9 @@
 layout: page
 title: "Osprey is out!"
 date: 2014-05-16
-comments: true
-categories : [Uncategorized]
+categories : [uncategorized]
 author: Norberto L. Herz
-tag:
+tags:
 ---
 
 **MuleSoft releases the first NodeJS RAML implementation and its name is Osprey.**

@@ -2,10 +2,9 @@
 layout: page
 title: "A Review of Austin"
 date: 2015-12-14
-comments: true
-categories : [uncategorized ]
+categories : [uncategorized]
 author: Mike Stowe
-tag:
+tags :
 ---
 
 A few weeks ago I had the privilege of attending and speaking at the API Strategy and Design Conference in Austin, TX. First and foremost, if you haven't been to Austin, and you get the chance to go - do. The key takeaway, Frank's - a hotdog joint where you can order ridiculous hotdogs and get cheesy fries with salsa (absolutely a delicious heart attack waiting to happen).
