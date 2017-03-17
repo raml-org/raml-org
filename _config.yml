@@ -13,6 +13,7 @@ permalink: "/blogs/:title"
 paginate: 5
 paginate_path: /blogs/page:num
 timezone:      null
+
 ########
 # more settings
 
@@ -49,6 +50,8 @@ gems:
   - jekyll-feed
   - jekyll-paginate
   - jekyll-seo-tag
+  - jekyll-paginate-categories
+  - jekyll-paginate-tags
 
 defaults:
   -
@@ -57,3 +60,11 @@ defaults:
       type: posts   # limit to posts
     values:
       is_post: true # automatically set is_post=true for all posts
+
+paginate_category_basepath: '/blog-category/:name/'
+paginate_category_layout: 'categories.html'
+paginate_category_path: 'blogs/page:num'
+
+paginate_tag_basepath: '/blog-tag/:name/'
+paginate_tag_path: '/page/:num'
+paginate_tag_layout: 'tag.html'
