@@ -891,15 +891,21 @@ div.eliminate-support {
 .projects{
 
   aside {
-    margin-top: 5%;
+    margin-top: 20px;
+    width: 22%;
+    margin-left: 29px;
 
     section.project_category {
-      min-height: 150px;
+      min-height: 153px;
+      height: auto;
+      margin-left: -10px;
+      margin-top: 0px;
+      margin-right: 13px;
     }
 
     a.raml-links {
       color: #ffffff;
-      padding: 10px 50px;
+      padding: 10px 40px;
       background: #66c4e8;
       text-decoration: none;
       text-align: center;
@@ -912,9 +918,9 @@ div.eliminate-support {
     a.raml-links.last:after {
       content: '';
       background: url(/images/new.png) no-repeat right top transparent;
-      padding: 35px;
+      padding: 37px;
       position: absolute;
-      margin-top: -30px;
+      margin-top: -28px;
     }
 
     div.filters {
@@ -923,8 +929,8 @@ div.eliminate-support {
         background-size: 9%;
         border: none;
         border-bottom: 1px solid #66c4e8;
-        width: 80%;
-        padding: 3px 5px;
+        width: 86%;
+        padding: 4px 9px;
       }
       #categories {
         h4 {
@@ -932,7 +938,7 @@ div.eliminate-support {
           font-size: 14px;
           color: #404040;
           line-height: 22px;
-          margin-top: 24px;
+          margin-top: 35px;
         }
         .tag {
           border: none;
@@ -942,7 +948,7 @@ div.eliminate-support {
           font-size: 14px;
           float: left;
           width: 100%;
-          padding-bottom: 15px;
+          padding-bottom: 12px;
 
           &:before {
             content: "";
@@ -993,9 +999,10 @@ div.eliminate-support {
     h2 {
       font-size: 24px;
       color: #515151;
-      margin-top: 0;
-      margin-right: 20px;
+      margin-top: 22px;
+      margin-right: 18px;
       float: left;
+      margin-left: 12px;
     }
 
     h2 + p {
@@ -1010,6 +1017,9 @@ div.eliminate-support {
       background-position: center center;
       background-repeat: no-repeat;
       background-size: 100%;
+      margin-top: 19px;
+      margin-left: 0;
+      margin-right: 5px;
     }
 
     h2 + p > a:first-child {
@@ -1026,8 +1036,8 @@ div.eliminate-support {
 
       .listing {
         border: 1px solid #d2d2d2;
-        padding: 28px;
-        margin: 15px 0;
+        padding: 13px 41px;
+        margin: 17px 0 25px 0px;
         display: inline-block;
         background: #fff;
         width: 100%;
@@ -1062,7 +1072,7 @@ div.eliminate-support {
           width: 45%;
           display: inline-block;
           vertical-align: top;
-          margin-top: 20px;
+          margin-top: 15px;
 
           p {
             color: #8a8a8a;
@@ -1082,13 +1092,13 @@ div.eliminate-support {
             -moz-border-radius: 0px 0px 0px 0px;
             -webkit-border-radius: 0px 0px 0px 0px;
             background-color: white;
-            padding: 10px;
+            padding: 8px;
             font-size: 12px;
             text-align: center;
             float: left;
-            margin-bottom: 10px;
-            margin-left: 30px;
-            width: 120px;
+            margin-bottom: 15px;
+            margin-left: 32px;
+            width: 121px;
             font-weight: bold;
 
             &:hover {
@@ -1388,6 +1398,7 @@ div.prize-sponsored {
 }
 section.ramlapilinks {
   min-height: 120px;
+  padding-top: 13px;
 
   div.raml-links-wrapper {
     margin-top: -10px;
@@ -1398,7 +1409,7 @@ section.ramlapilinks {
     background: #66c4e8;
     text-decoration: none;
     text-align: center;
-    margin: 10px;
+    margin: 8px;
     border-radius: 3px;
     float: left;
     width: 90%;
@@ -1454,13 +1465,15 @@ section.ramlapilinks {
     top: 20px;
   }
   div.region-sidebar {
-    min-height: 155px;
+    min-height: 159px;
     height: auto;
     margin-left: 30px;
-    margin-top: 1px;
+    margin-top: -6px;
+    margin-right: -15px;
 
     h2 {
       margin-left: 0 !important;
+      margin-top: 31px;
     }
   }
 
@@ -1473,8 +1486,11 @@ section.ramlapilinks {
   }
 
   pre {
-    padding: 9.5px 9px;
+    padding: 0.6em 0.8em;
     margin: 0 18px 10px;
+    font-size: 0.9em;
+    line-height: 1.3;
+    text-align: left;
   }
 }
 
@@ -1564,19 +1580,26 @@ div.member {
 }
 
 div.blog {
-  padding: 2% 0;
+  padding: 16px 15px;
 
   h2 {
     font-size: 24px;
     line-height: 30px;
-    margin-left: 0;
+    margin-left: 0px;
   }
-  div.post_categories,div.post_tag {
+  div.post_categories, div.post_tag {
     font-size: 12px;
+    margin-top: 3px;
   }
-  div.post_content p {
+  div.post_content {
+    margin-top: 8px;
+  p {
     line-height: 24px;
     padding-left: 0;
+  }
+}
+  div.post_date {
+    margin-top: 8px;
   }
 }
 
@@ -1589,7 +1612,7 @@ ul.recent_post {
   background-color: transparent;
   border: 0 none;
   box-shadow: none;
-  margin-top: 0;
+  margin-top: 15px;
   position: static;
   width: 100%;
 
@@ -1701,7 +1724,7 @@ body.contact-us {
 
 }
 
-.page, .postcat  {
+.page, .postcat, .projects  {
   div.top_wrapper {
     height: 100px;
   }
@@ -1709,10 +1732,64 @@ body.contact-us {
 
 .blogs ,.postcat ,.blogs-archive  {
   h1 {
-    margin: 13px 0 10px !important;
+    margin: 13px 14px 0 !important;
   }
 }
 
 .blogs-archive h2 {
   margin-left: 0 !important;
 }
+
+nav.navbar ul li {
+  font-size: 15px;
+
+  span.caret {
+    margin-left: 0;
+  }
+}
+
+nav.navbar ul {
+  li.parent_dropdown:nth-child(1) {
+    a.parentlink {
+      padding: 16px 33px;
+    }
+  }
+  li.parent_dropdown:nth-child(2) {
+    a.parentlink {
+      padding: 14px 4px;
+    }
+  }
+
+  li.parent_dropdown:nth-child(3) {
+    a.parentlink {
+      padding: 15px 2px 0 35px;
+    }
+  }
+
+  li.parent_dropdown:nth-child(4) {
+    a.parentlink {
+      padding: 15px 5px 0 25px;
+    }
+  }
+
+  li.parent_dropdown:nth-child(5) {
+    a.parentlink {
+      padding: 14px 6px 0 26px;
+    }
+  }
+  li.parent_dropdown:nth-child(6) {
+    a.parentlink {
+      padding: 14px 0 0 21px;
+    }
+  }
+
+  li.parent_dropdown:nth-child(7) {
+    a.parentlink {
+      padding: 15px 2px 0 30px;
+    }
+  }
+
+}
+
+
+

@@ -29,7 +29,7 @@ layout: postcat
         {% endfor %}{% endif %}
     </div>
     <div class="post_content">
-        <p>{{ post.content | strip_html | truncatewords: 50 }}</p>
+        <p>{{ post.content | strip_html | truncatewords: 160 }}</p>
     </div>
 
     <div class="read_more"><a href="{{ post.url | prepend: site.baseurl }}" class="btn btn-default">Read More</a> </div>
