@@ -57,14 +57,13 @@
                     <a href="{{ site.baseurl }}/blog-category/{{ cat }}">{{ cat | capitalize }}</a>{% if forloop.last == false %}, {% endif %}
                     {% endfor %}{% endif %}
                 </div>
-
                 <div class="post_tag"> Tags
                     {% if page.tags.size > 0 %} : {% for tag in page.tags %}
                     <a href="{{ site.baseurl }}/blog-tag/{{ tag }}">{{ tag | capitalize }}</a>{% if forloop.last == false %}, {% endif %}
                     {% endfor %}{% endif %}
                 </div>
+             </div>
             {% endif %}
-            </div>
             {% if page.is_post  and page.title != 'Blogs' and page.title != 'Blogs Archive' %}
             <div class="blog_post_content">
                 {{ content }}
@@ -81,6 +80,6 @@
     </div>
 
 </div><!-- /.container -->
-    </div>
+</div>
 
 {% include footer.html %}

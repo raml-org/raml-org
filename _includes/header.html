@@ -17,4 +17,4 @@
     <script src = "{{ site.baseurl }}/js/affixtop.js"></script>
     {% endif %}
 </head>
-<body class="{{ page.title | downcase | replace:' ','-' | replace:',','' | strip_html }}">
+<body class="{{ page.title | downcase | replace:' ','-' | replace:',','' | strip_html }} {{ page.layout }} {{ page.is_post }}">

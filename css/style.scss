@@ -1388,6 +1388,10 @@ div.prize-sponsored {
 }
 section.ramlapilinks {
   min-height: 120px;
+
+  div.raml-links-wrapper {
+    margin-top: -10px;
+  }
   a {
     color: #ffffff;
     padding: 10px 50px;
@@ -1402,9 +1406,9 @@ section.ramlapilinks {
   a.raml-links.last:after {
     content: '';
     background: url(/images/new.png) no-repeat right top transparent;
-    padding: 36px;
+    padding: 38px;
     position: absolute;
-    top: 12px;
+    top: 5px;
   }
 
 }
@@ -1412,7 +1416,8 @@ section.ramlapilinks {
   padding: 2% 0;
 
   h1.page-header {
-    margin: 18px 0 20px;
+    margin: 13px 14px 26px;
+    font-size: 32px;
   }
 
   a.info {
@@ -1439,8 +1444,9 @@ section.ramlapilinks {
   p {
     font-family: Arial,sans-serif;
     font-size: 14px;
-    line-height: 1.42857143;
     color: #333333;
+    padding-top: 2px;
+    padding-left: 15px;
   }
   .fixed {
     position: fixed;
@@ -1448,12 +1454,27 @@ section.ramlapilinks {
     top: 20px;
   }
   div.region-sidebar {
-    min-height: 165px;
+    min-height: 155px;
     height: auto;
+    margin-left: 30px;
+    margin-top: 1px;
+
+    h2 {
+      margin-left: 0 !important;
+    }
   }
 
   #st-1 {
     text-align: left;
+    padding-left: 12px;
+  }
+  h2 {
+    margin-left: 18px;
+  }
+
+  pre {
+    padding: 9.5px 9px;
+    margin: 0 18px 10px;
   }
 }
 
@@ -1548,12 +1569,14 @@ div.blog {
   h2 {
     font-size: 24px;
     line-height: 30px;
+    margin-left: 0;
   }
   div.post_categories,div.post_tag {
     font-size: 12px;
   }
   div.post_content p {
     line-height: 24px;
+    padding-left: 0;
   }
 }
 
@@ -1605,6 +1628,7 @@ li.tab-community {
 }
 div.page-meta {
   margin-bottom: 30px;
+  margin-left: 15px;
 
   div.post_author {
     margin-top: 20px;
@@ -1675,4 +1699,20 @@ body.contact-us {
     }
   }
 
+}
+
+.page, .postcat  {
+  div.top_wrapper {
+    height: 100px;
+  }
+}
+
+.blogs ,.postcat ,.blogs-archive  {
+  h1 {
+    margin: 13px 0 10px !important;
+  }
+}
+
+.blogs-archive h2 {
+  margin-left: 0 !important;
 }
