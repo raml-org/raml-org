@@ -1,0 +1,13 @@
+---
+---
+
+[
+   {% for testimonial in site.testimonials %}
+     {
+        "author"    : "{{ testimonial.author }}",
+        "location"     : "{{ testimonial.location }}",
+        "content"  : "{{ testimonial.content }}"
+     }
+    {% unless forloop.last %},{% endunless %}
+   {% endfor %}
+]
