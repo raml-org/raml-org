@@ -16,5 +16,23 @@
     {% if page.title == 'Vendor Support' %}
     <script src = "{{ site.baseurl }}/js/affixtop.js"></script>
     {% endif %}
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+//            $.getJSON("/testimonial.json", function (data) {
+//                console.log(data);
+//            });
+
+            $.ajax({
+                type: 'GET',
+                url: "http://127.0.0.1:4000/testimonial.json",
+                dataType: 'json',
+                success: function (data) {
+                    //Do stuff with the JSON data
+                    console.log( "data" + data);
+                }
+            });
+        });
+    </script>
 </head>
 <body class="{{ page.title | downcase | replace:' ','-' | replace:',','' | strip_html }} {{ page.layout }} {{ page.is_post }}">
