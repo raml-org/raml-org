@@ -1,0 +1,24 @@
+[
+
+  {
+    "author"    : "Jerry Weng",
+    "location"     : "Co-founder, CHOCOLABS",
+    "content"  : "There are many advantages to taking an API-first development approach. And with the help of tools like RAML, APIs have become more elastic and easier to use."
+  }
+,
+
+  {
+    "author"    : "Renzo Kottmann",
+    "location"     : "Microbial Genomics and Bioinformatics Research GroupMax Planck Institute for marine Microbiology",
+    "content"  : "We started using RAML for API specification. It helps us a lot with communicating requirements to our offshore partner. I was comparing it to Swagger and WADL and found that RAML strikes a better balance between technical aspects and human readability … I like the simple API versioning feature of RAML."
+  }
+,
+
+  {
+    "author"    : "Mark Lowe",
+    "location"     : "Solutions Architect, Britsh Sky Broadcasting",
+    "content"  : "By adopting RAML, our design-first ethos has been significantly improved by having a single source of truth for all the APIs we publish."
+  }
+
+
+]

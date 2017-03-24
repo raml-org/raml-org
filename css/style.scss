@@ -1858,13 +1858,58 @@ nav.navbar ul {
 
 }
 
-#overlayone_build {
+#one_build_img {
   background: url(/images/build1over.svg) no-repeat;
   position: absolute;
   width: 120px;
   height: 130px;
-  top: -6px;
-  left: 168px;
+  top: -4px;
+  left: 173px;
+  z-index:100;
+  display:none;
+}
+
+#one_test_img {
+  background: url(/images/testover.svg) no-repeat;
+  position: absolute;
+  width: 120px;
+  height: 130px;
+  top: 115px;
+  right: 32px;
+  z-index:100;
+  display:none;
+}
+
+#one_document_img {
+  background: url(/images/documentover.svg) no-repeat;
+  position: absolute;
+  width: 120px;
+  height: 130px;
+  bottom: -1px;
+  right: 69px;
+  z-index:100;
+  display:none;
+}
+
+
+#one_share_img {
+  background: url(/images/shareover.svg) no-repeat;
+  position: absolute;
+  width: 120px;
+  height: 130px;
+  bottom: -3px;
+  left: 49px;
+  z-index:100;
+  display:none;
+}
+
+#one_design_img {
+  background: url(/images/designover.svg) no-repeat;
+  position: absolute;
+  width: 120px;
+  height: 130px;
+  top: 114px;
+  left: 9px;
   z-index:100;
   display:none;
 }

@@ -8,8 +8,11 @@
     });
 
     $('#build_desc, #test_desc, #document_desc, #share_desc').hide();
+    $('#one_design_img').show();
     $('.map-container map area').mouseover(function(){
       var href_div = $(this).attr('href');
+      var id = $(this).attr('id');
+      $('#'+id+'_img').show().siblings(".hmapimg").hide();
       $(' '+ href_div +' ').show().siblings("section").hide();
 
     });

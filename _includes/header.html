@@ -16,23 +16,47 @@
     {% if page.title == 'Vendor Support' %}
     <script src = "{{ site.baseurl }}/js/affixtop.js"></script>
     {% endif %}
-
+    {% if page.title == 'Welcome' %}
     <script type="text/javascript">
         $(document).ready(function() {
-//            $.getJSON("/testimonial.json", function (data) {
-//                console.log(data);
-//            });
+            $.getJSON("/test.json", function (data) {
+                var postsCount = data.length;
+                var posts = data;
 
-            $.ajax({
-                type: 'GET',
-                url: "http://127.0.0.1:4000/testimonial.json",
-                dataType: 'json',
-                success: function (data) {
-                    //Do stuff with the JSON data
-                    console.log( "data" + data);
+                var randomIndexUsed = [];
+                var counter = 0;
+                var numberOfPosts = 1;
+
+                var divRandomPosts = $(".testimonial");
+
+                while (counter < numberOfPosts)
+                {
+                    var randomIndex = Math.floor(Math.random() * postsCount);
+
+                    if (randomIndexUsed.indexOf(randomIndex) == "-1")
+                    {
+                        var testimonial_content = posts[randomIndex].content;
+                        var testimonial_author = posts[randomIndex].author;
+                        var testimonial_location = posts[randomIndex].location;
+
+
+                        if (counter == (numberOfPosts - 1))
+                        {
+                            divRandomPosts.append('<blockquote><h2>' + testimonial_content + '</h2></blockquote><div class="author_name">' + testimonial_author + '</div><div class="author_location">' + testimonial_location + '</div>');
+                        }
+                        else
+                        {
+                            divRandomPosts.append('<blockquote><h2>' + testimonial_content + '</h2></blockquote><div class="author_name">' + testimonial_author + '</div><div class="author_location">' + testimonial_location + '</div>');
+                        }
+
+                        randomIndexUsed.push(randomIndex);
+
+                        counter++;
+                    }
                 }
             });
         });
     </script>
+    {% endif %}
 </head>
 <body class="{{ page.title | downcase | replace:' ','-' | replace:',','' | strip_html }} {{ page.layout }} {{ page.is_post }}">
