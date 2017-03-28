@@ -400,7 +400,7 @@ section.open_source_proj {
       padding: 6px 52px;
     }
     a.mulelink {
-      margin-right: 7px;
+      margin-right: 5px;
     }
     a.moreinfo {
       padding: 5px 30px;
@@ -760,9 +760,6 @@ div.do-more-with-less {
   .row {
     padding: 6% 8%;
   }
-  div.do-more-content {
-    padding: 0 427px;
-  }
 
   h2 {
     font-size: 24px;
@@ -772,6 +769,8 @@ div.do-more-with-less {
   p {
     width: 540px;
     padding-bottom: 8px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   a.raml-links {
@@ -1961,5 +1960,14 @@ nav.navbar ul {
   left: 9px;
   z-index:100;
   display:none;
+}
+
+@media screen and (max-width: 1600px) {
+  .developer, .enterprises {
+    div.top_wrapper {
+      background-size: 38%;
+      background-position: 90% 119%;
+    }
+  }
 }
 
