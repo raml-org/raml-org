@@ -1230,6 +1230,7 @@ div.eliminate-support {
   div.top_wrapper {
     background-color: #282d36;
     background-image: none;
+    min-width: 565px;
   }
   .raml-mvp {
     margin-top: 35%;
@@ -1981,7 +1982,7 @@ nav.navbar ul {
   display:none;
 }
 
-@media screen and (max-width: 1600px) {
+@media screen and (min-width: 1600px) {
   .developer, .enterprises {
     div.top_wrapper {
       background-size: 38%;
@@ -1992,7 +1993,6 @@ nav.navbar ul {
 
 body:not(.mvp) {
   div.top_wrapper {
-    min-height: 565px;
     div.container {
       width: 1080px;
     }
