@@ -1,4 +1,4 @@
-fs_requestURL = 'http://api.raml.org/api.php?api=';
+fs_requestURL = 'https://api.raml.org/api.php?api=';
 fs_prop = [];
 fs_search = '';
 fs_page = 1;
