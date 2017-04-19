@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    {% seo %}
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">-->
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">-->
+    <meta name="viewport" content="width=device-width, initial-scale=0, maximum-scale=1, user-scalable=yes">
+    <title>{{ page.title }} | {{ site.title }}</title>
+    <link rel="icon" href="/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/css/style.css" >
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="{{ site.baseurl }}/js/bootstrap.min.js"></script>
+    <script src="{{ site.baseurl }}/js/script.js"></script>
+    {% if page.title == 'Vendor Support' %}
+    <script src = "{{ site.baseurl }}/js/affixtop.js"></script>
+    {% endif %}
+    {% if page.title == 'Welcome' %}
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $.getJSON("/test.json", function (data) {
+                var postsCount = data.length;
+                var posts = data;
+
+                var randomIndexUsed = [];
+                var counter = 0;
+                var numberOfPosts = 1;
+
+                var divRandomPosts = $(".testimonial");
+
+                while (counter < numberOfPosts)
+                {
+                    var randomIndex = Math.floor(Math.random() * postsCount);
+
+                    if (randomIndexUsed.indexOf(randomIndex) == "-1")
+                    {
+                        var testimonial_content = posts[randomIndex].content;
+                        var testimonial_author = posts[randomIndex].author;
+                        var testimonial_location = posts[randomIndex].location;
+
+
+                        if (counter == (numberOfPosts - 1))
+                        {
+                            divRandomPosts.append('<blockquote><h2>' + testimonial_content + '</h2></blockquote><div class="author_name">' + testimonial_author + '</div><div class="author_location">' + testimonial_location + '</div>');
+                        }
+                        else
+                        {
+                            divRandomPosts.append('<blockquote><h2>' + testimonial_content + '</h2></blockquote><div class="author_name">' + testimonial_author + '</div><div class="author_location">' + testimonial_location + '</div>');
+                        }
+
+                        randomIndexUsed.push(randomIndex);
+
+                        counter++;
+                    }
+                }
+            });
+        });
+    </script>
+    {% endif %}
+</head>
+<body class="{{ page.title | downcase | replace:' ','-' | replace:',','' | strip_html }} {{ page.layout }} {{ page.is_post }}">

@@ -1,0 +1,30 @@
+{% include header.html %}
+
+{% include nav.html %}
+
+<div class="container page-content">
+    <div class="row">
+        <aside class="col-md-3 col-xs-3 col-sm-3" role = "complementary">
+            <div class="region-sidebar well">
+                <section class="ramlapilinks">
+                    <div class="raml-links-wrapper">
+                        <a href="https://github.com/raml-org/raml-spec/blob/master/versions/raml-10/raml-10.md/" class="raml-links last" target="_blank">RAML 1.0</a>
+                        <a href="https://github.com/raml-org/raml-spec/blob/master/versions/raml-08/raml-08.md" class="raml-links first" target="_blank">RAML 0.8</a>
+                    </div>
+                </section>
+
+                <section class="sidebar-menu">
+                    {% include recent-post.html %}
+                </section>
+
+            </div>
+        </aside>
+        <div class="col-md-9 col-xs-9 col-sm-9">
+
+            <div class="blog_post_content">
+                {{ content }}
+            </div>
+        </div>
+      </div>
+    </div>
+{% include footer.html %}

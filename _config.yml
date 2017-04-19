@@ -1,0 +1,74 @@
+###########
+# site.url, site.title
+
+title: 'RAML'
+
+## note: 
+#  use site.path in your templates to make it work for both protocols e.g. http and https
+#  use site.url only inside the web feed template (e.g. requires full url incl. protocol)
+path:
+baseurl:
+url: ""
+permalink: "/blogs/:title"
+paginate: 5
+paginate_path: /blogs/page:num
+timezone:      null
+
+########
+# more settings
+
+markdown: kramdown
+
+sass:
+  sass_dir: css
+  style:    expanded
+
+
+
+exclude:
+- README.md
+
+
+safe: true
+lsi: false
+
+# Where things are
+source:      .
+destination: ./_site
+layouts_dir:     ./_layouts
+data_dir: ./_data
+# collections: null
+
+# Handling Reading
+include:      [".htaccess"]
+exclude:      []
+keep_files:   [".git", ".svn"]
+encoding:     "utf-8"
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+
+gems:
+  - jekyll-feed
+  - jekyll-paginate
+  - jekyll-seo-tag
+  - jekyll-paginate-categories
+  - jekyll-paginate-tags
+
+defaults:
+  -
+    scope:
+      path: ""      # empty string for all files
+      type: posts   # limit to posts
+    values:
+      is_post: true # automatically set is_post=true for all posts
+
+paginate_category_basepath: '/blog-category/:name/'
+paginate_category_layout: 'categories.html'
+paginate_category_path: 'blogs/page:num'
+
+paginate_tag_basepath: '/blog-tag/:name/'
+paginate_tag_path: '/page/:num'
+paginate_tag_layout: 'tag.html'
+
+collections:
+    testimonials:
+        output: true

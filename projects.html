@@ -1,0 +1,48 @@
+---
+layout: default
+title: Projects
+permalink: /projects
+---
+
+<div class="container">
+    <div class="row">
+        <aside class="col-md-3 col-xs-12 col-sm-12 well" role="complementary">
+            <section class="project_category">
+                <div class="raml-links-wrapper">
+                    <a href="https://github.com/raml-org/raml-spec/blob/master/versions/raml-10/raml-10.md/" class="raml-links last" target="_blank">RAML 1.0</a><br />
+                    <a href="https://github.com/raml-org/raml-spec/blob/master/versions/raml-08/raml-08.md" class="raml-links first" target="_blank">RAML 0.8</a>
+                </div>
+            </section>
+            <section>
+                <div class="filters">
+                    <input type="text" id="search" onKeyUp="addSearch();" />
+                    <div id="categories"></div>
+                </div>
+
+
+                <a href="http://goo.gl/forms/szK4ytT2jL" target="_blank" class="add_proj_link">+ Add Your Project</a>
+            </section>
+        </aside>
+
+        <section class="col-sm-9 col-xs-9">
+            <div class="content-wrapper"><div class="content">
+                <div class="responses">
+                    <h2>Project Library</h2>
+                    <p><a href="#" onclick="listLayout();">List</a>  <a href="#" onclick="boxLayoutOn();">Tiles</a></p>
+                    <div style="float: right; margin-top: 25px; margin-right: 15px;">Sort By:
+                        <select name="project_sort" onChange="doSort(this.value);">
+                            <option value="popular">Popularity</option>
+                            <option value="newest">Newest</option>
+                            <option value="oldest">Oldest</option>
+                        </select></div>
+                    <div id="projects"></div>
+                    <div style="margin-top: 20px;"><strong>Page</strong> &nbsp; <span id="projects_pages"></span></div>
+                </div>
+            </div></div>
+        </section>
+
+
+    </div>
+
+</div>
+<script src="/js/project.js"></script>
