@@ -792,7 +792,7 @@ div.do-more-with-less {
 
 }
 
-.enterprises {
+.enterprises,.projects {
   div.top_wrapper {
     background-image: url(/images/enterprises_hero.svg);
     background-repeat: no-repeat;
@@ -843,6 +843,10 @@ div.do-more-with-less {
     }
     .row {
       width: 45%;
+    }
+
+    p {
+      width: 50%;
     }
     //a.raml-links.last:after {
     //  content: '';
@@ -1994,6 +1998,95 @@ body:not(.mvp) {
   div.top_wrapper {
     div.container {
       width: 1080px;
+    }
+  }
+}
+
+.projectdiv {
+  padding: 35px 0;
+
+  input#search {
+    width: 400px;
+    height: 45px;
+    border: 1px solid #696868;
+    padding: 0 15px;
+  }
+  i.glyphicon-search {
+    margin-left: -27px;
+    color: #696868;
+  }
+  .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+    color: #fff;
+    background-color: #585858;
+  }
+  .nav-pills > li > a {
+    border-radius: 20px;
+  }
+  .nav > li > a {
+    padding: 5px 15px;
+  }
+  div.projecttab {
+    ul {
+      li a {
+        color: #696868 ;
+      }
+    }
+
+    div.projectblock {
+      border: 1px solid #afadad;
+      margin-top: 20px;
+      padding: 15px;
+
+      &:hover {
+        background: #f2f2f2;
+      }
+
+      span.version {
+        color: #616060;
+      }
+
+      div.projname {
+        margin-top: 15px;
+
+        h3 {
+          font-size: 15px;
+          margin-top: 0;
+          margin-bottom: 0;
+          line-height: 0.5;
+        }
+      }
+      div.projdesc {
+        p {
+          color: #8a8a8a;
+          font-size: 12px;
+          line-height: 18px;
+        }
+      }
+
+      div.projlink {
+        float: right;
+
+        a {
+          color: #66c4e8;
+          border: 1px solid #66c4e8;
+          border-radius: 0 0 0 0;
+          background-color: white;
+          padding: 10px;
+          font-size: 12px;
+          text-align: center;
+
+          &:hover {
+            text-decoration: none;
+          }
+        }
+      }
+      span.projtag {
+        border: 1px solid #8e8a8a;
+        padding: 3px 10px;
+        font-size: 12px;
+        background: #cecece;
+        color: #333333;
+      }
     }
   }
 }

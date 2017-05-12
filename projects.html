@@ -6,43 +6,273 @@ permalink: /projects
 
 <div class="container">
     <div class="row">
-        <aside class="col-md-3 col-xs-12 col-sm-12 well" role="complementary">
-            <section class="project_category">
-                <div class="raml-links-wrapper">
-                    <a href="https://github.com/raml-org/raml-spec/blob/master/versions/raml-10/raml-10.md/" class="raml-links last" target="_blank">RAML 1.0</a><br />
-                    <a href="https://github.com/raml-org/raml-spec/blob/master/versions/raml-08/raml-08.md" class="raml-links first" target="_blank">RAML 0.8</a>
-                </div>
-            </section>
-            <section>
-                <div class="filters">
-                    <input type="text" id="search" onKeyUp="addSearch();" />
-                    <div id="categories"></div>
-                </div>
+        <section class="col-md-12 projectdiv">
+           <div class="row">
+               <div class="col-md-6">
+                   <p>you want to list your own project on raml.org? Add it <a href="#">here</a>. </p>
+               </div>
+
+               <div class="col-md-6">
+                   <form id="submit_form" action="javascript:void(0);">
+                       <div class="form-group">
+                           <input type="text" class="" id="search" placeholder = "Search.." /><i class="glyphicon glyphicon-search"></i>
+                           <input type="button" id="submit_search" style="display: none" >
+                       </div>
+                   </form>
+               </div>
+           </div>
+
+           <div class="projecttab">
+               <ul class="nav nav-pills">
+                   <li class="active"><a data-toggle="pill" href="#all">All</a></li>
+                   <li><a data-toggle="pill" href="#design">Design</a></li>
+                   <li><a data-toggle="pill" href="#build">Build</a></li>
+                   <li><a data-toggle="pill" href="#test">Test</a></li>
+                   <li><a data-toggle="pill" href="#document">Document</a></li>
+                   <li><a data-toggle="pill" href="#parsers">Parsers</a></li>
+                   <li><a data-toggle="pill" href="#converters">Converters</a></li>
+               </ul>
+
+               <div class="tab-content">
+                   <div id="all" class="tab-pane fade in active">
+                       {% for projects in site.data.projects %}
+                       <div class="projectblock">
+                           <span class="version">{{ projects.version }}</span>
 
 
-                <a href="http://goo.gl/forms/szK4ytT2jL" target="_blank" class="add_proj_link">+ Add Your Project</a>
-            </section>
-        </aside>
+                           <div class="row">
 
-        <section class="col-sm-9 col-xs-9">
-            <div class="content-wrapper"><div class="content">
-                <div class="responses">
-                    <h2>Project Library</h2>
-                    <p><a href="#" onclick="listLayout();">List</a>  <a href="#" onclick="boxLayoutOn();">Tiles</a></p>
-                    <div style="float: right; margin-top: 25px; margin-right: 15px;">Sort By:
-                        <select name="project_sort" onChange="doSort(this.value);">
-                            <option value="popular">Popularity</option>
-                            <option value="newest">Newest</option>
-                            <option value="oldest">Oldest</option>
-                        </select></div>
-                    <div id="projects"></div>
-                    <div style="margin-top: 20px;"><strong>Page</strong> &nbsp; <span id="projects_pages"></span></div>
-                </div>
-            </div></div>
-        </section>
+                               <div class="projname col-md-2">
+                                   <h3>{{ projects.name }}</h3>
+                               </div>
+
+                               <div class="projdesc col-md-8">
+                                   <p>{{ projects.description }}</p>
+                               </div>
+
+                               <div class="projlink col-md-2">
+                                   <a href = "{{ projects.description }}">View Project Page</a>
+                               </div>
+
+                           </div>
+
+                           <span class="projtag">
+                               {{ projects.tags }}
+                           </span>
+
+                       </div>
+                       {% endfor %}
+                        <div class="pagination-page"></div>
+                   </div>
 
 
-    </div>
+                   <div id="design" class="tab-pane fade in">
+                       {% for projects in site.data.projects %}
+                       {% if projects.tags == 'Design' %}
 
+                       <div class="projectblock">
+                           <span class="version">{{ projects.version }}</span>
+
+
+                           <div class="row">
+
+                               <div class="projname col-md-2">
+                                   <h3>{{ projects.name }}</h3>
+                               </div>
+
+                               <div class="projdesc col-md-8">
+                                   <p>{{ projects.description }}</p>
+                               </div>
+
+                               <div class="projlink col-md-2">
+                                   <a href = "{{ projects.description }}">View Project Page</a>
+                               </div>
+
+                           </div>
+
+                           <span class="projtag">
+                               {{ projects.tags }}
+                           </span>
+
+                       </div>
+                       {% endif %}
+                       {% endfor %}
+                       <div class="pagination-page-design"></div>
+
+                   </div>
+                   <div id="build" class="tab-pane fade">
+                       {% for projects in site.data.projects %}
+                       {% if projects.tags == 'Build' %}
+
+                       <div class="projectblock">
+                           <span class="version">{{ projects.version }}</span>
+
+
+                           <div class="row">
+
+                               <div class="projname col-md-2">
+                                   <h3>{{ projects.name }}</h3>
+                               </div>
+
+                               <div class="projdesc col-md-8">
+                                   <p>{{ projects.description }}</p>
+                               </div>
+
+                               <div class="projlink col-md-2">
+                                   <a href = "{{ projects.description }}">View Project Page</a>
+                               </div>
+
+                           </div>
+
+                           <span class="projtag">
+                               {{ projects.tags }}
+                           </span>
+
+                       </div>
+                       {% endif %}
+                       {% endfor %}
+                       <div class="pagination-page-build"></div>
+                   </div>
+                   <div id="test" class="tab-pane fade">
+                       {% for projects in site.data.projects %}
+                       {% if projects.tags == 'Test' %}
+
+                       <div class="projectblock">
+                           <span class="version">{{ projects.version }}</span>
+
+
+                           <div class="row">
+
+                               <div class="projname col-md-2">
+                                   <h3>{{ projects.name }}</h3>
+                               </div>
+
+                               <div class="projdesc col-md-8">
+                                   <p>{{ projects.description }}</p>
+                               </div>
+
+                               <div class="projlink col-md-2">
+                                   <a href = "{{ projects.description }}">View Project Page</a>
+                               </div>
+
+                           </div>
+
+                           <span class="projtag">
+                               {{ projects.tags }}
+                           </span>
+
+                       </div>
+                       {% endif %}
+                       {% endfor %}
+                       <div class="pagination-page-test"></div>
+                   </div>
+                   <div id="document" class="tab-pane fade">
+                       {% for projects in site.data.projects %}
+                       {% if projects.tags == 'Document' %}
+
+                       <div class="projectblock">
+                           <span class="version">{{ projects.version }}</span>
+
+
+                           <div class="row">
+
+                               <div class="projname col-md-2">
+                                   <h3>{{ projects.name }}</h3>
+                               </div>
+
+                               <div class="projdesc col-md-8">
+                                   <p>{{ projects.description }}</p>
+                               </div>
+
+                               <div class="projlink col-md-2">
+                                   <a href = "{{ projects.description }}">View Project Page</a>
+                               </div>
+
+                           </div>
+
+                           <span class="projtag">
+                               {{ projects.tags }}
+                           </span>
+
+                       </div>
+                       {% endif %}
+                       {% endfor %}
+                       <div class="pagination-page-document"></div>
+                   </div>
+                   <div id="parsers" class="tab-pane fade">
+                       {% for projects in site.data.projects %}
+                       {% if projects.tags == 'Parsers' %}
+
+                       <div class="projectblock">
+                           <span class="version">{{ projects.version }}</span>
+
+
+                           <div class="row">
+
+                               <div class="projname col-md-2">
+                                   <h3>{{ projects.name }}</h3>
+                               </div>
+
+                               <div class="projdesc col-md-8">
+                                   <p>{{ projects.description }}</p>
+                               </div>
+
+                               <div class="projlink col-md-2">
+                                   <a href = "{{ projects.description }}">View Project Page</a>
+                               </div>
+
+                           </div>
+
+                           <span class="projtag">
+                               {{ projects.tags }}
+                           </span>
+
+                       </div>
+                       {% endif %}
+                       {% endfor %}
+                       <div class="pagination-page-parsers"></div>
+                   </div>
+                   <div id="converters" class="tab-pane fade">
+                       {% for projects in site.data.projects %}
+                       {% if projects.tags == 'Converters' %}
+
+                       <div class="projectblock">
+                           <span class="version">{{ projects.version }}</span>
+
+
+                           <div class="row">
+
+                               <div class="projname col-md-2">
+                                   <h3>{{ projects.name }}</h3>
+                               </div>
+
+                               <div class="projdesc col-md-8">
+                                   <p>{{ projects.description }}</p>
+                               </div>
+
+                               <div class="projlink col-md-2">
+                                   <a href = "{{ projects.description }}">View Project Page</a>
+                               </div>
+
+                           </div>
+
+                           <span class="projtag">
+                               {{ projects.tags }}
+                           </span>
+
+                       </div>
+                       {% endif %}
+                       {% endfor %}
+                       <div class="pagination-page-converters"></div>
+                   </div>
+
+           </div>
+        </div>
+    </section>
+  </div>
 </div>
-<script src="/js/project.js"></script>
+
+<script src="/js/pagination.js"></script>
+<script src="js/main.js"></script>
+<script src="/js/search.js"></script>
+<!--<script src="/js/project.js"></script>-->
