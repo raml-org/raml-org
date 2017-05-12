@@ -2003,7 +2003,7 @@ body:not(.mvp) {
 }
 
 .projectdiv {
-  padding: 35px 0;
+  padding: 55px 0;
 
   input#search {
     width: 400px;
@@ -2088,5 +2088,21 @@ body:not(.mvp) {
         color: #333333;
       }
     }
+  }
+
+  form#submit_form {
+    float: right;
+  }
+}
+
+section.projectlinks {
+  background: #282c35;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  color: #fff;
+  font-size: 14px;
+
+  img {
+    width: 35px;
   }
 }
