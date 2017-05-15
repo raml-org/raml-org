@@ -1,6 +1,19 @@
 jQuery(function($) {
+  var current_id;
+  $('ul.nav-pills li a').click(function() {
+    current_id = $(this).attr('href');
+  });
 
-  var items = $("div#all > div.projectblock");
+  page(current_id);
+
+});
+
+function page(current_id) {
+  if(current_id == undefined) {
+    current_id = '#all';
+  }
+  var page_divname = current_id.replace('#','');
+  var items = $("div" + current_id +" > div.projectblock");
 
   var numItems = items.length;
   var perPage = 5;
@@ -9,7 +22,7 @@ jQuery(function($) {
   items.slice(perPage).hide();
 
   // Now setup the pagination using the `.pagination-page` div.
-  $(".pagination-page").pagination({
+  $(".pagination-page-all").pagination({
     items: numItems,
     itemsOnPage: perPage,
 
@@ -44,7 +57,7 @@ jQuery(function($) {
     if(hash) {
       // The `selectPage` function is described in the documentation.
       // We've captured the page number in a regex group: `(\d+)`.
-      $(".pagination-page").pagination("selectPage", parseInt(hash[1]));
+      $(".pagination-page-all").pagination("selectPage", parseInt(hash[1]));
     }
   }
 
@@ -54,7 +67,7 @@ jQuery(function($) {
   // ... and we'll also call it when the page has loaded
   // (which is right now).
   checkFragment();
-});
+}
 
 jQuery(function($) {
 
@@ -102,7 +115,7 @@ jQuery(function($) {
     if(hash) {
       // The `selectPage` function is described in the documentation.
       // We've captured the page number in a regex group: `(\d+)`.
-      $(".pagination-page").pagination("selectPage", parseInt(hash[1]));
+      $(".pagination-page-design").pagination("selectPage", parseInt(hash[1]));
     }
   }
 
@@ -160,7 +173,7 @@ jQuery(function($) {
     if(hash) {
       // The `selectPage` function is described in the documentation.
       // We've captured the page number in a regex group: `(\d+)`.
-      $(".pagination-page").pagination("selectPage", parseInt(hash[1]));
+      $(".pagination-page-build").pagination("selectPage", parseInt(hash[1]));
     }
   }
 
@@ -218,7 +231,7 @@ jQuery(function($) {
     if(hash) {
       // The `selectPage` function is described in the documentation.
       // We've captured the page number in a regex group: `(\d+)`.
-      $(".pagination-page").pagination("selectPage", parseInt(hash[1]));
+      $(".pagination-page-test").pagination("selectPage", parseInt(hash[1]));
     }
   }
 
@@ -276,7 +289,7 @@ jQuery(function($) {
     if(hash) {
       // The `selectPage` function is described in the documentation.
       // We've captured the page number in a regex group: `(\d+)`.
-      $(".pagination-page").pagination("selectPage", parseInt(hash[1]));
+      $(".pagination-page-document").pagination("selectPage", parseInt(hash[1]));
     }
   }
 
@@ -334,7 +347,7 @@ jQuery(function($) {
     if(hash) {
       // The `selectPage` function is described in the documentation.
       // We've captured the page number in a regex group: `(\d+)`.
-      $(".pagination-page").pagination("selectPage", parseInt(hash[1]));
+      $(".pagination-page-parsers").pagination("selectPage", parseInt(hash[1]));
     }
   }
 
@@ -392,7 +405,7 @@ jQuery(function($) {
     if(hash) {
       // The `selectPage` function is described in the documentation.
       // We've captured the page number in a regex group: `(\d+)`.
-      $(".pagination-page").pagination("selectPage", parseInt(hash[1]));
+      $(".pagination-page-converters").pagination("selectPage", parseInt(hash[1]));
     }
   }
 
