@@ -42,8 +42,6 @@
       div_id = $(this).attr('href');
       $('#search').keyup();
       var get_idname = div_id.replace('#','');
-      $(div_id + ' > div.pagination-page-' + get_idname).hide();
-
     });
 
 
