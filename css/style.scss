@@ -2020,7 +2020,7 @@ body:not(.mvp) {
     background-color: #585858;
   }
   .nav-pills > li > a {
-    border-radius: 20px;
+    border-radius: 8px;
   }
   .nav > li > a {
     padding: 5px 15px;
@@ -2096,10 +2096,9 @@ body:not(.mvp) {
 }
 
 section.projectlinks {
-  background: #282c35;
   padding-top: 40px;
   padding-bottom: 40px;
-  color: #fff;
+  color: #333;
   font-size: 14px;
 
   img {
