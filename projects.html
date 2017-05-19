@@ -39,8 +39,6 @@ permalink: /projects
                        <div class = "nosearch"></div>
                        {% for projects in site.data.projects %}
                        <div class="projectblock">
-                           <span class="version">0.8,1.0</span>
-
 
                            <div class="row">
 
@@ -74,9 +72,6 @@ permalink: /projects
                        {% for item in projects.topics %}
                        {% if item == 'Design' %}
                        <div class="projectblock">
-                           <span class="version">0.8,1.0</span>
-
-
                            <div class="row">
 
                                <div class="projname col-md-2">
@@ -110,9 +105,6 @@ permalink: /projects
                        {% for item in projects.topics %}
                        {% if item == 'Build' %}
                        <div class="projectblock">
-                           <span class="version">0.8,1.0</span>
-
-
                            <div class="row">
 
                                <div class="projname col-md-2">
@@ -145,9 +137,6 @@ permalink: /projects
                        {% for item in projects.topics %}
                        {% if item == 'Test' %}
                        <div class="projectblock">
-                           <span class="version">0.8,1.0</span>
-
-
                            <div class="row">
 
                                <div class="projname col-md-2">
@@ -180,9 +169,6 @@ permalink: /projects
                        {% for item in projects.topics %}
                        {% if item == 'Document' %}
                        <div class="projectblock">
-                           <span class="version">0.8,1.0</span>
-
-
                            <div class="row">
 
                                <div class="projname col-md-2">
@@ -215,9 +201,6 @@ permalink: /projects
                        {% for item in projects.topics %}
                        {% if item == 'Parsers' %}
                        <div class="projectblock">
-                           <span class="version">0.8,1.0</span>
-
-
                            <div class="row">
 
                                <div class="projname col-md-2">
@@ -250,9 +233,6 @@ permalink: /projects
                        {% for item in projects.topics %}
                        {% if item == 'Converters' %}
                        <div class="projectblock">
-                           <span class="version">0.8,1.0</span>
-
-
                            <div class="row">
 
                                <div class="projname col-md-2">
@@ -285,9 +265,6 @@ permalink: /projects
                        {% for item in projects.topics %}
                        {% if item == 'Converters' %}
                        <div class="projectblock">
-                           <span class="version">0.8,1.0</span>
-
-
                            <div class="row">
 
                                <div class="projname col-md-2">
@@ -323,41 +300,34 @@ permalink: /projects
 <section class="projectlinks">
     <div class="container">
         <div class="row">
-            <div class="col-md-5">
-                <div class = "proj_logo">
-                    <div class="row">
-                        <div class="col-md-2">
-                            <a href="https://github.com/search?utf8=✓&q=topic%3Araml-design" target="_blank" rel="nofollow"> <img src="images/RAMLicondesign.png" style="width: 40px;" /> </a>
-                        </div>
-                        <div class="col-md-2">
-                            <a href="https://github.com/search?utf8=✓&q=topic%3Araml-build" target="_blank" rel="nofollow"> <img src="images/RAMLiconbuild.png" style="width: 28px;" /></a>
-                        </div>
-                        <div class="col-md-2">
-                            <a href="https://github.com/search?utf8=✓&q=topic%3Araml-test" target="_blank" rel="nofollow"> <img src="images/RAMLicontest.svg" /></a>
-                        </div>
-                    </div>
-                    <br />
-                    <div class="row">
-                        <div class="col-md-2">
-                            <a href="https://github.com/search?utf8=✓&q=topic%3Araml-document" target="_blank" rel="nofollow"> <img src="images/RAMLicondocument.png" /></a>
-                        </div>
-                        <div class="col-md-2">
-                           <a href = "https://github.com/search?utf8=✓&q=topic%3Araml-parsers" target="_blank" rel="nofollow"> <img src="images/missing_icon.png" /><br />
-                            <img src="images/PARSERS.png" style="margin-top: -6px; width: 26px; margin-left: 4px;" /></a>
-                        </div>
-                        <div class="col-md-2">
-                            <a href="https://github.com/search?utf8=✓&q=topic%3Araml-converters" target="_blank" rel="nofollow"> <img src="images/missing_icon.png" /><br />
-                            <img src="images/CONVERTERS.png" style="margin-top: -6px; width: 26px; margin-left: 5px;" /></a>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="col-md-7">
+            <div class="col-md-12" style="width: 65%;">
                 <p><img src="images/githubicon_01.png" /> &nbsp;<strong>Github</strong></p>
                 <p>Can’t find the RAML project you are searching for on this page? Try looking for it in Github! We created some useful categories to help filter your search. Simply click on one of the icons on the left and see all the Github projects related to that category.</p>
+            </div>
+        </div>
 
+        <div class="row" style="margin-bottom: 5px;">
+            <div class="col-md-1">
+                <a href="https://github.com/search?utf8=✓&q=topic%3Araml-design" target="_blank" rel="nofollow">Design</a>
+            </div>
+            <div class="col-md-1">
+                <a href="https://github.com/search?utf8=✓&q=topic%3Araml-document" target="_blank" rel="nofollow">Document</a>
+            </div>
+        </div>
+        <div class="row" style="margin-bottom: 5px;">
+            <div class="col-md-1">
+                <a href="https://github.com/search?utf8=✓&q=topic%3Araml-build" target="_blank" rel="nofollow">Build</a>
+            </div>
+            <div class="col-md-1">
+                <a href = "https://github.com/search?utf8=✓&q=topic%3Araml-parsers" target="_blank" rel="nofollow">Parsers</a>
+            </div>
+        </div>
+        <div class="row" style="margin-bottom: 5px;">
+            <div class="col-md-1">
+                <a href="https://github.com/search?utf8=✓&q=topic%3Araml-test" target="_blank" rel="nofollow">Test</a>
+            </div>
+            <div class="col-md-1">
+                <a href="https://github.com/search?utf8=✓&q=topic%3Araml-converters" target="_blank" rel="nofollow">Converters</a>
             </div>
         </div>
     </div>
