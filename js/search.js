@@ -1,6 +1,7 @@
 (function($){
   $(document).ready(function(){
     var div_id;
+    //$('div.nosearch').html('');
     $('#search').keyup(function() {
       var search_val = $(this).val().toLowerCase();
       if(div_id == undefined) {
@@ -46,6 +47,7 @@
     $('ul.nav-pills li a').click(function() {
       div_id = $(this).attr('href');
       $('#search').keyup();
+      $(div_id + '> div.nosearch').html('');
     });
 
 

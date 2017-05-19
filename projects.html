@@ -31,6 +31,7 @@ permalink: /projects
                    <li><a data-toggle="pill" href="#document">Document</a></li>
                    <li><a data-toggle="pill" href="#parsers">Parsers</a></li>
                    <li><a data-toggle="pill" href="#converters">Converters</a></li>
+                   <li><a data-toggle="pill" href="#utility">Utility</a></li>
                </ul>
 
                <div class="tab-content">
@@ -271,6 +272,40 @@ permalink: /projects
                        {% endif %}
                        {% endfor %}
                        <div class="pagination-page-converters"></div>
+                   </div>
+                   <div id="utility" class="tab-pane fade">
+                       <div class = "nosearch"></div>
+                       {% for projects in site.data.projects %}
+                       {% if projects.tags == 'Utility' %}
+
+                       <div class="projectblock">
+                           <span class="version">{{ projects.version }}</span>
+
+
+                           <div class="row">
+
+                               <div class="projname col-md-2">
+                                   <h3>{{ projects.name }}</h3>
+                               </div>
+
+                               <div class="projdesc col-md-8">
+                                   <p>{{ projects.description }}</p>
+                               </div>
+
+                               <div class="projlink col-md-2">
+                                   <a href = "{{ projects.url }}" rel="nofollow">View Project Page</a>
+                               </div>
+
+                           </div>
+
+                           <span class="projtag">
+                               {{ projects.tags }}
+                           </span>
+
+                       </div>
+                       {% endif %}
+                       {% endfor %}
+                       <div class="pagination-page-utility"></div>
                    </div>
 
            </div>
