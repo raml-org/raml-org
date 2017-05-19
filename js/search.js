@@ -5,7 +5,7 @@
     //var get_idname = div_id.replace('#','');
     //$(div_id + ' > div.pagination-page-' + get_idname).hide();
     $('#search').keyup(function() {
-      var search_val = $(this).val();
+      var search_val = $(this).val().toLowerCase();
       var active_text;
       var div_length;
       var active_div;
@@ -37,6 +37,22 @@
             console.log('search string empty');
           }
         });
+
+      var counts;
+      $(div_id).each(function(j) {
+        var final_count = $('div.projectblock', $(this)).length;
+        counts =  $('div.projectblock:hidden', $(this)).length;
+        console.log(counts + 'count' + final_count);
+
+        if(final_count == counts ) {
+          $(div_id + '> div.nosearch').html('<h2>Sorry,no results for '+ search_val +'</h2>');
+        } else {
+          $(div_id + '> div.nosearch').html('');
+        }
+      });
+
+
+
     });
     $('ul.nav-pills li a').click(function() {
       div_id = $(this).attr('href');

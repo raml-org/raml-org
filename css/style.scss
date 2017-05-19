@@ -1986,7 +1986,7 @@ nav.navbar ul {
 }
 
 @media screen and (min-width: 1600px) {
-  .developer, .enterprises {
+  .developer, .enterprises,.projetcs {
     div.top_wrapper {
       background-size: 38%;
       background-position: 90% 119%;
@@ -2004,6 +2004,7 @@ body:not(.mvp) {
 
 .projectdiv {
   padding: 55px 0;
+  padding-left: 55px;
 
   input#search {
     width: 400px;
@@ -2100,8 +2101,14 @@ section.projectlinks {
   padding-bottom: 40px;
   color: #333;
   font-size: 14px;
+  padding-left: 70px;
 
   img {
     width: 35px;
+  }
+}
+.projetcs {
+  footer.footer {
+    padding-left: 30px;
   }
 }
