@@ -39,7 +39,7 @@ permalink: /projects
                        <div class = "nosearch"></div>
                        {% for projects in site.data.projects %}
                        <div class="projectblock">
-                           <span class="version">{{ projects.version }}</span>
+                           <span class="version">0.8,1.0</span>
 
 
                            <div class="row">
@@ -57,11 +57,11 @@ permalink: /projects
                                </div>
 
                            </div>
-
+                           {% for items in projects.topics %}
                            <span class="projtag">
-                               {{ projects.tags }}
+                               {{ items }}
                            </span>
-
+                           {% endfor %}
                        </div>
                        {% endfor %}
                         <div class="pagination-page-all"></div>
@@ -71,10 +71,10 @@ permalink: /projects
                    <div id="design" class="tab-pane fade in">
                        <div class = "nosearch"></div>
                        {% for projects in site.data.projects %}
-                       {% if projects.tags == 'Design' %}
-
+                       {% for item in projects.topics %}
+                       {% if item == 'Design' %}
                        <div class="projectblock">
-                           <span class="version">{{ projects.version }}</span>
+                           <span class="version">0.8,1.0</span>
 
 
                            <div class="row">
@@ -92,13 +92,14 @@ permalink: /projects
                                </div>
 
                            </div>
-
+                           {% for items in projects.topics %}
                            <span class="projtag">
-                               {{ projects.tags }}
+                               {{ items }}
                            </span>
-
+                           {% endfor %}
                        </div>
                        {% endif %}
+                       {% endfor %}
                        {% endfor %}
                        <div class="pagination-page-design"></div>
 
@@ -106,10 +107,10 @@ permalink: /projects
                    <div id="build" class="tab-pane fade">
                        <div class = "nosearch"></div>
                        {% for projects in site.data.projects %}
-                       {% if projects.tags == 'Build' %}
-
+                       {% for item in projects.topics %}
+                       {% if item == 'Build' %}
                        <div class="projectblock">
-                           <span class="version">{{ projects.version }}</span>
+                           <span class="version">0.8,1.0</span>
 
 
                            <div class="row">
@@ -123,27 +124,28 @@ permalink: /projects
                                </div>
 
                                <div class="projlink col-md-2">
-                                   <a href = "{{ projects.url }}" rel="nofollow">View Project Page</a>
+                                   <a href = "{{ projects.url }}" rel="nofollow" >View Project Page</a>
                                </div>
 
                            </div>
-
+                           {% for items in projects.topics %}
                            <span class="projtag">
-                               {{ projects.tags }}
+                               {{ items }}
                            </span>
-
+                           {% endfor %}
                        </div>
                        {% endif %}
+                       {% endfor %}
                        {% endfor %}
                        <div class="pagination-page-build"></div>
                    </div>
                    <div id="test" class="tab-pane fade">
                        <div class = "nosearch"></div>
                        {% for projects in site.data.projects %}
-                       {% if projects.tags == 'Test' %}
-
+                       {% for item in projects.topics %}
+                       {% if item == 'Test' %}
                        <div class="projectblock">
-                           <span class="version">{{ projects.version }}</span>
+                           <span class="version">0.8,1.0</span>
 
 
                            <div class="row">
@@ -157,27 +159,28 @@ permalink: /projects
                                </div>
 
                                <div class="projlink col-md-2">
-                                   <a href = "{{ projects.url }}" rel="nofollow">View Project Page</a>
+                                   <a href = "{{ projects.url }}" rel="nofollow" >View Project Page</a>
                                </div>
 
                            </div>
-
+                           {% for items in projects.topics %}
                            <span class="projtag">
-                               {{ projects.tags }}
+                               {{ items }}
                            </span>
-
+                           {% endfor %}
                        </div>
                        {% endif %}
+                       {% endfor %}
                        {% endfor %}
                        <div class="pagination-page-test"></div>
                    </div>
                    <div id="document" class="tab-pane fade">
                        <div class = "nosearch"></div>
                        {% for projects in site.data.projects %}
-                       {% if projects.tags == 'Document' %}
-
+                       {% for item in projects.topics %}
+                       {% if item == 'Document' %}
                        <div class="projectblock">
-                           <span class="version">{{ projects.version }}</span>
+                           <span class="version">0.8,1.0</span>
 
 
                            <div class="row">
@@ -191,27 +194,28 @@ permalink: /projects
                                </div>
 
                                <div class="projlink col-md-2">
-                                   <a href = "{{ projects.url }}" rel="nofollow">View Project Page</a>
+                                   <a href = "{{ projects.url }}" rel="nofollow" >View Project Page</a>
                                </div>
 
                            </div>
-
+                           {% for items in projects.topics %}
                            <span class="projtag">
-                               {{ projects.tags }}
+                               {{ items }}
                            </span>
-
+                           {% endfor %}
                        </div>
                        {% endif %}
+                       {% endfor %}
                        {% endfor %}
                        <div class="pagination-page-document"></div>
                    </div>
                    <div id="parsers" class="tab-pane fade">
                        <div class = "nosearch"></div>
                        {% for projects in site.data.projects %}
-                       {% if projects.tags == 'Parsers' %}
-
+                       {% for item in projects.topics %}
+                       {% if item == 'Parsers' %}
                        <div class="projectblock">
-                           <span class="version">{{ projects.version }}</span>
+                           <span class="version">0.8,1.0</span>
 
 
                            <div class="row">
@@ -225,27 +229,28 @@ permalink: /projects
                                </div>
 
                                <div class="projlink col-md-2">
-                                   <a href = "{{ projects.url }}" rel="nofollow">View Project Page</a>
+                                   <a href = "{{ projects.url }}" rel="nofollow" >View Project Page</a>
                                </div>
 
                            </div>
-
+                           {% for items in projects.topics %}
                            <span class="projtag">
-                               {{ projects.tags }}
+                               {{ items }}
                            </span>
-
+                           {% endfor %}
                        </div>
                        {% endif %}
+                       {% endfor %}
                        {% endfor %}
                        <div class="pagination-page-parsers"></div>
                    </div>
                    <div id="converters" class="tab-pane fade">
                        <div class = "nosearch"></div>
                        {% for projects in site.data.projects %}
-                       {% if projects.tags == 'Converters' %}
-
+                       {% for item in projects.topics %}
+                       {% if item == 'Converters' %}
                        <div class="projectblock">
-                           <span class="version">{{ projects.version }}</span>
+                           <span class="version">0.8,1.0</span>
 
 
                            <div class="row">
@@ -259,27 +264,28 @@ permalink: /projects
                                </div>
 
                                <div class="projlink col-md-2">
-                                   <a href = "{{ projects.url }}" rel="nofollow">View Project Page</a>
+                                   <a href = "{{ projects.url }}" rel="nofollow" >View Project Page</a>
                                </div>
 
                            </div>
-
+                           {% for items in projects.topics %}
                            <span class="projtag">
-                               {{ projects.tags }}
+                               {{ items }}
                            </span>
-
+                           {% endfor %}
                        </div>
                        {% endif %}
+                       {% endfor %}
                        {% endfor %}
                        <div class="pagination-page-converters"></div>
                    </div>
                    <div id="utility" class="tab-pane fade">
                        <div class = "nosearch"></div>
                        {% for projects in site.data.projects %}
-                       {% if projects.tags == 'Utility' %}
-
+                       {% for item in projects.topics %}
+                       {% if item == 'Converters' %}
                        <div class="projectblock">
-                           <span class="version">{{ projects.version }}</span>
+                           <span class="version">0.8,1.0</span>
 
 
                            <div class="row">
@@ -293,17 +299,18 @@ permalink: /projects
                                </div>
 
                                <div class="projlink col-md-2">
-                                   <a href = "{{ projects.url }}" rel="nofollow">View Project Page</a>
+                                   <a href = "{{ projects.url }}" rel="nofollow" >View Project Page</a>
                                </div>
 
                            </div>
-
+                           {% for items in projects.topics %}
                            <span class="projtag">
-                               {{ projects.tags }}
+                               {{ items }}
                            </span>
-
+                           {% endfor %}
                        </div>
                        {% endif %}
+                       {% endfor %}
                        {% endfor %}
                        <div class="pagination-page-utility"></div>
                    </div>
