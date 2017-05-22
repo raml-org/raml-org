@@ -1504,7 +1504,7 @@ section.ramlapilinks {
   }
   a {
     color: #ffffff;
-    padding: 10px 25px;
+    padding: 12px 16px;
     background: #66c4e8;
     text-decoration: none;
     text-align: center;
@@ -1577,7 +1577,7 @@ section.ramlapilinks {
   div.region-sidebar {
     min-height: 80px;
     height: auto;
-    margin-left: 30px;
+    margin-left: 9px;
     margin-top: -6px;
     margin-right: -15px;
 
@@ -2004,7 +2004,7 @@ body:not(.mvp) {
 
 .projectdiv {
   padding: 55px 0;
-  padding-left: 55px;
+  //padding-left: 55px;
 
   input#search {
     width: 400px;
@@ -2051,7 +2051,7 @@ body:not(.mvp) {
 
         h3 {
           font-size: 15px;
-          margin-top: 0;
+          margin-top: -15px;
           margin-bottom: 0;
           line-height: 1.5;
         }
@@ -2066,6 +2066,7 @@ body:not(.mvp) {
 
       div.projlink {
         float: right;
+        margin-top: 8px;
 
         a {
           color: #66c4e8;
@@ -2102,7 +2103,6 @@ section.projectlinks {
   padding-bottom: 40px;
   color: #333;
   font-size: 14px;
-  padding-left: 70px;
 
   img {
     width: 35px;
@@ -2112,8 +2112,21 @@ section.projectlinks {
       text-decoration: none;
   }
 }
-.projetcs {
+.projects {
+  div.main-wrapper {
+    div.container {
+      width: 1080px;
+    }
+  }
   footer.footer {
     padding-left: 30px;
+  }
+}
+.page,.postcat  {
+  div.page-content {
+    width: 1080px;
+  }
+  footer.container {
+    width: 1080px;
   }
 }
