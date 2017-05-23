@@ -1,0 +1,27 @@
+---
+layout: page
+title: "Guest Post: RAML: The Birth of an API Description Language Fit for the Enterprise"
+date: 2015-08-15
+categories : [uncategorized]
+author: Norberto L. Herz
+tags:
+comments: true
+---
+
+_[Laura Heritage](https://twitter.com/heritagelaura) is the Director of API Strategy at SOA Software and an Open Group certified Master IT Specialist in Application & Integration Middleware.  She has over 16 years of experience working with enterprises around the world establishing SOA and API strategies.  _
+
+While every enterprise wants to innovate and move as quickly as a startup, it is important to remember that enterprises face many obstacles that are non-existent in the startup world. These include organizational politics, sheer size, and depth of product/service offerings. Enterprises are also held to a different standard from startups. They have existing customers, government regulations, and – let’s face it - a lot more capital, which makes them targets for all sorts of attacks on technical, political, and legal fronts. Because of these obstacles, enterprises that are adopting RESTful APIs and embracing the digital economy need to be more methodical about their strategies in order to gain the agility and innovation of a startup without taking the risks that startup can afford to take.  Enterprises need the ability to govern, share and communicate their API offerings.  And [RAML](http://raml.org), the RESTful API Modeling Language, may be just the ticket. REST APIs have been floating around in the industry for several years now.  I remember enterprises contemplating REST back in 2006\.  One of the barriers to their adoption was that there wasn’t a good way to describe them. Therefore, it was nearly impossible to manage them, share, or communicate the API.  WSDL 2.0 and WADL came on the scene to try to solve this issue, but were either not adequate or just not adopted.  Then in 2011, Swagger, an API Description Language, appeared and was quite pivotal for industry and enterprise adoption of REST.  There was now at least a way to share and communicate APIs.  Swagger takes a bottom-up approach to document APIs by generating the documentation from  the  APIs annotated code.  It was around this time where I saw a huge shift in the enterprise, from developing 90% SOAP and 10%REST APIs to a 90% REST to 10% SOAP!  It happened very quickly.  There was still the issue of governance for the enterprise and the ability to describe an API from a top-down perspective before you went to code.  In 2013, the RAML workgroup was born to tackle this issue and to take API Description Languages to next level for the enterprise. An API Description Language for an enterprise should serve four aspects of an API’s life in an enterprise.
+
+![blueprint.png](/post_images/blueprint.png "blueprint.png")
+
+The API Description Language should be the blueprint that allows you to design the API from top-down with your team, before you decide on an implementation or begin to code.  Considering that large enterprises have potentially hundreds of APIs, the blueprint should allow for inheritance and include a way to simplify management and speed up design and development.  Once an implementation has been selected, this blueprint should be able to stub out interfaces and document the code.
+
+![contract.png](/post_images/contract.png "contract.png")
+
+The API Description Language should be the contract by which you communicate with the API Consumers/Partners/Developers what this API will do.  It is important to note however, the API consumers/partners/developers should not need to know or understand what API Description Language you are using.  That is where the “Human Docs” aspect comes in.
+
+![metadata.png](/post_images/metadata.png "metadata.png") The API Description Language should be the metadata that facilitates system-to-system and machine-to-machine interactions as well as a place to describe human readable descriptions about the API.
+
+![human-doc.png](/post_images/human-doc.png "human-doc.png")
+
+Finally, the API Description Language should be human readable in a couple of aspects.  The first aspect is from blueprint perspective.  The tool and language that the API stakeholders will use to design the API needs to be simple and clean enough to read that API stakeholders who don’t know the API DL can understand what the API is being designed to do.  The second aspect is for the API to be able to generate human readable documentation that is consumed by all types of API consumers through the use of with community tools. RAML is one of the only API Description languages to date that exhibits all four aspects of an API’s life in the enterprise.  Though it is still in its early stages of evolution, when speaking to customers I find that RAML has the underpinnings of what most large enterprise will want from an API Description Language.  I believe this affinity for RAML is due to its focus and understanding of the obstacles that an enterprise needs to overcome to adopt RESTful APIs and enter the digital economy.  This is why SOA Software actively participates and supports the development of the RAML specification and its inclusion in our end-to-end API management solution.
