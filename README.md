@@ -41,10 +41,7 @@ This repository contains the source code for the raml.org website written in Jek
    ```
    jekyll serve --port=80 --detach
    ```
-   
-   
-   
-   
+
 # To run the jekyll site on the prod or stagging server
 
 1. Pull the code on your server
@@ -65,11 +62,7 @@ This repository contains the source code for the raml.org website written in Jek
    ```
    jekyll serve --host=<ip of the server> --port=80 --detach
    ```
-       
-       
-       
-       
-   
-   
 
-   
+# How to add projects to the projects page?
+
+RAML.org includes a projects page that lists tools around RAML that either are community or commercial driven. If you think, your project should be in this list, please fork this repository, add it into the [projects.yml](_data/projecs.yml) file, and send us a PR. We will review and let you know if we will be able to list it. 
