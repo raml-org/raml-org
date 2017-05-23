@@ -52,6 +52,7 @@ gems:
   - jekyll-seo-tag
   - jekyll-paginate-categories
   - jekyll-paginate-tags
+  - jekyll-redirect-from
 
 defaults:
   -
