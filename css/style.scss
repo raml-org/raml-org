@@ -2249,3 +2249,10 @@ section.projectlinks {
 .navbarright {
   float: right;
 }
+
+@media screen and (min-width: 1024px) {
+  body {
+    min-width: 1200px;
+  }
+
+}
