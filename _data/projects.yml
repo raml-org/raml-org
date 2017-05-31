@@ -135,7 +135,7 @@
     Swagger2RAML is an utility to generate RAML from Swagger JSON.
   url: https://github.com/8x8Cloud/swagger2raml
   topics:
-    - Converters
+    - Utilities
 - name: RAML Java Parser
   author: MuleSoft
   description: |
@@ -244,7 +244,7 @@
     Validate your RAML documentation, and turn it into HTML. Based on raml2html.
   url: https://github.com/ajbrown/gradle-raml-plugin
   topics:
-    - Utility
+    - Utilities
 - name: raml-tester
   author: Stefan Niederhauser
   description: |
@@ -281,7 +281,7 @@
     Swagger, RAML, StopLight).
   url: https://github.com/stoplightio/api-spec-converter
   topics:
-    - Converters
+    - Utilities
 - name: OAS RAML Converter
   author: MuleSoft
   description: |
@@ -289,7 +289,7 @@
     It was originally forked from the stoplight.io converter but has been
     greatly improved. It supports OAS 2.0 <> RAML 1.0, 0.8
   topics:
-    - Converters
+    - Utilities
 - name: RAML Store
   author: brianmc
   description: |
@@ -324,7 +324,7 @@
     based on a RAML API.
   url: https://github.com/walling/gulp-raml2html
   topics:
-    - Utility
+    - Utilities
 - name: RAMLRenderer
   author: beno
   description: |
@@ -677,7 +677,7 @@
     for parsing, and can optionally output the parsed RAML as JSON.
   url: https://github.com/thebinarypenguin/raml-cop
   topics:
-    - Utility
+    - Utilities
 - name: hapi-raml
   author: Dave Irvine
   description: |
@@ -693,7 +693,7 @@
     the javascript-raml-generator node module with gulp even easier!
   url: https://github.com/bigbam505/gulp-raml-client-generator
   topics:
-    - Utility
+    - Utilities
 - name: vim-raml
   author: Kenneth Feng
   description: |
@@ -714,7 +714,7 @@
     Eslint rules for RAML. You can use it for testing your RAML in Continuous Integration.
   url: https://github.com/galk-in/eslint-plugin-raml
   topics:
-    - Utility
+    - Utilities
 - name: php-ramlMerge
   author: Mike Stowe
   description: |
@@ -722,7 +722,7 @@
     a single RAML file via the command line.
   url: https://github.com/mikestowe/php-ramlMerge
   topics:
-    - Utility
+    - Utilities
 - name: raml-fleece
   author: Janrain
   description: |
@@ -737,7 +737,7 @@
     Command-line RAML to PDF converter.
   url: https://github.com/cheindl/raml2pdf-cli
   topics:
-    - Utility
+    - Utilities
 - name: Diet RAML generator
   author: Oscar Reyes
   description: |
@@ -762,7 +762,7 @@
     a RAML definition as a GULP Task. It's based on the JavaScript RAML Parser.
   url: https://github.com/JohanObrink/gulp-raml
   topics:
-    - Utility
+    - Utilities
 - name: DropWizard RAML View
   author: OzWolf
   description: |
@@ -779,7 +779,7 @@
     RAML types, as well as store them back to JSON.
   url: https://github.com/raml-org/typesystem-ts
   topics:
-    - Utility
+    - Utilities
 - name: metalsmith-raml
   author: Lotaris SA
   description: |
@@ -808,7 +808,7 @@
     the examples defined in RAML against its schema.
   url: https://github.com/cybertk/ramlev
   topics:
-    - Utility
+    - Utilities
 - name: Autocode RAML Processor
   author: Autocode
   description: |
@@ -823,7 +823,7 @@
     1.0 type specifications.
   url: https://github.com/wavesoft/raml-lipsum
   topics:
-    - Utility
+    - Utilities
 - name: raml2mocha
   author: Miles Oldenburg
   description: |
@@ -840,14 +840,14 @@
     "$ref": "foo.json#".
   url: https://github.com/br-adam-newman/raml-jsonschema-expander
   topics:
-    - Utility
+    - Utilities
 - name: raml2travis
   author: Innova Co S.à r.l
   description: |
     Travis CI plugin for RAML
   url: https://github.com/InnovaCo/raml2travis
   topics:
-    - Utility
+    - Utilities
 - name: PAW RAML Specification Importer
   author: A.J. Brown
   description: |
@@ -876,7 +876,7 @@
     A Grunt Plugin for validating RAML files
   url: https://github.com/mulesoft-labs/grunt-raml
   topics:
-    - Utility
+    - Utilities
 - name: RAML CLI Validator
   author: A.J. Brown
   description: |
@@ -891,4 +891,4 @@
   url: https://github.com/mulesoft-labs/raml-tck
   topics:
     - Parsers
-    - Utility
+    - Utilities
