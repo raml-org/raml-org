@@ -95,7 +95,6 @@ permalink: /testprojects
         var search_val = '';
         var current_page = 1;
         getJsonData("All",search_val);
-        //console.log(no_of_links);
 
         $('#search').keyup(function() {
            search_val = $(this).val().toLowerCase();
@@ -122,9 +121,6 @@ permalink: /testprojects
         function getJsonData(active_text,search_val) {
             $.getJSON("/project.json", function (data) {
                 var getData = [];
-                //console.log(data);
-                //max_size = data.length;
-                //console.log(active_text);
                 if(active_text != 'All' && search_val == '' ) {
                     $.each(data, function(i) {
                         if(data[i].topics.indexOf(active_text) >= 0 ) {
@@ -141,7 +137,6 @@ permalink: /testprojects
                         }
                     });
                 }
-                //console.log(search_val);
                 if(getData.length == 0 && search_val == '') {
                     max_size = data.length;
                     datas = data;
@@ -163,50 +158,42 @@ permalink: /testprojects
             });
         }
         $('#next').click(function() {
-            //console.log("next");
             var next = limit;
             if(max_size>=next) {
-                if(Math.floor(max_size/per_page) == current_page ) {
-                    limit = max_size;
-                    $("#next").addClass("disabled").attr("tabindex", "-1");
-                } else {
-                    limit = limit+per_page;
-                }
-
-                $('div.result').empty();
-                //console.log(next +' -next- '+limit);
+               limit = limit+per_page;
+               $("#next").removeClass("disabled");
+               $("#pre").removeClass("disabled");
+               $('div.result').empty();
                 current_page++;
                 get_jsonData(next,limit,datas);
             }
         });
 
         $('#pre').click(function() {
-
             var pre = limit-(2*per_page);
             if(pre >=0) {
-                limit = limit-per_page;
-                //console.log(pre +' -pre- '+limit);
+                limit = (limit-per_page);
+                //console.log(pre +' -pre- '+ limit);
                 --current_page;
                 $('div.result').empty();
                 get_jsonData(pre,limit,datas);
-            } else {
-                $("#pre").addClass("disabled");
+                $("#pre").removeClass("disabled");
+                $("#next").removeClass("disabled");
             }
         });
 
         function get_jsonData(start,limit,datas) {
-            //console.log(datas);
             no_of_links = (max_size/per_page);
             var total_links = Math.ceil(no_of_links);
-            if(datas.length <= 10) {
-                limit = datas.length;
+            if(datas.length <= 5) {
                 $('ul.pagination').hide();
             } else {
                 $('ul.pagination').show();
             }
             for (var i = start ; i < limit; i++) {
-                //console.log(datas[i].name);
-
+                if(datas[i] === undefined) {
+                    continue;
+                }
                 var project_name = datas[i].name;
                 var project_desc = datas[i].description;
                 var project_url = datas[i].url;
@@ -214,12 +201,9 @@ permalink: /testprojects
                 var topic = "";
                 var project_div;
                 if(datas[i].topics.indexOf(',') > -1) {
-                    //console.log(data[i].topics + "pos" + i);
                     var get_topics = datas[i].topics.split(",");
-
                        for (var j = 0; j < get_topics.length; j++ ) {
                            topic += '<span class="projtag">' + get_topics[j] + '</span>';
-                           //console.log(get_topics[j]);
                        }
                      join_topic = topic;
                 } else {
@@ -227,17 +211,14 @@ permalink: /testprojects
                 }
                 project_div = '<div class="projectblock"><div class="row"><div class="projname col-md-2"><h3>' + project_name + '</h3></div><div class="projdesc col-md-8"><p>' + project_desc + '</p></div>' +
                             '<div class="projlink col-md-2"><a href ="' + project_url + '" rel="nofollow">View Project Page</a></div></div><div class="proj_topics">'+ join_topic +'</div> ';
-                 if(datas.length <=10) {
+                 if(datas.length <=5) {
                      $('div.result').html(project_div);
                  } else {
                      $('div.result').append(project_div);
-
                  }
             }
             $('ul.pagination li a#list').text(current_page + ' of ' + total_links );
 
         }
     });
-
-
 </script>
