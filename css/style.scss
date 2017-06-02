@@ -2143,9 +2143,43 @@ body:not(.mvp) {
     padding: 5px 15px;
   }
   div.projecttab {
-    ul {
+    ul.proj_cat {
+      list-style: none;
+      height: 40px;
+      margin-left: -40px;
+
+      li  {
+        float: left;
+      }
+      a {
+        color: #696868 ;
+        padding: 5px 15px;
+        text-decoration: none;
+        &.active{
+          color: #fff;
+          background-color: #585858;
+          border-radius: 9px;
+          text-decoration: none;
+        }
+      }
+
+      a:hover {
+        text-decoration: none;
+      }
+    }
+
+    ul.pagination {
       li a {
         color: #696868 ;
+      }
+      li span {
+        color: #fff;
+        background-color: #585858;
+      }
+      a.disabled {
+        pointer-events: none;
+        cursor: default;
+        background-color: #585858;
       }
     }
 
