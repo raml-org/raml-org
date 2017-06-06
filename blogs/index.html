@@ -24,7 +24,7 @@ title: Blogs
             {% endfor %}{% endif %}
         </div>
 
-        <div class="post_categories"> Tags
+        <div class="post_tag"> Tags
             {% if post.tags.size > 0 %} : {% for tag in post.tags %}
             {% assign wordCount = tag | number_of_words %}
             {% if wordCount > 1 %}
@@ -37,8 +37,17 @@ title: Blogs
             {% endfor %}{% endif %}
         </div>
         <!--<div class="post_tag">Tags: {{ post.tags }}</div>-->
-        <div class="post_content">
-            <p>{{ post.content | strip_html | truncatewords: 160 }}</p>
+        <div class="post_tag"> Tags
+            {% if post.tags.size > 0 %} : {% for tag in post.tags %}
+            {% assign wordCount = tag | number_of_words %}
+            {% if wordCount > 1 %}
+            {% assign my_array_tag = tag | split: " " | join: "-" %}
+            <a href="{{ site.baseurl }}/blog-tag/{{ my_array_tag | downcase }}">{{ tag | capitalize }}</a>
+            {% else %}
+            <a href="{{ site.baseurl }}/blog-tag/{{ tag | downcase }}">{{ tag | capitalize }}</a>
+            {% endif %}
+            {% if forloop.last == false %}, {% endif %}
+            {% endfor %}{% endif %}
         </div>
 
         <div class="read_more"><a href="{{ post.url | prepend: site.baseurl }}" class="btn btn-default">Read More</a> </div>
