@@ -1,0 +1,224 @@
+---
+layout: default
+title: Projects
+permalink: /testprojects
+---
+
+<div class="container">
+    <div class="row">
+        <section class="col-md-12 projectdiv">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>Do you want to list your own project on raml.org? Add it <a
+                            href="{{ site.projectsgithuburl }}#how-to-add-projects-to-the-projects-page" rel="nofollow">here</a>.
+                    </p>
+                </div>
+
+                <div class="col-md-6">
+                    <form id="submit_form" action="javascript:void(0);">
+                        <div class="form-group">
+                            <input type="text" class="" id="search" placeholder="Search.."/><i
+                                class="glyphicon glyphicon-search"></i>
+                            <input type="button" id="submit_search" style="display: none">
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="projecttab">
+                <ul class="proj_cat">
+                    <li><a href="javascript:void(0);" id="all" class="active">All</a> </li>
+                    <li><a href="javascript:void(0);" id="design">Design</a> </li>
+                    <li><a href="javascript:void(0);" id="build">Build</a> </li>
+                    <li><a href="javascript:void(0);" id="test">Test</a> </li>
+                    <li><a href="javascript:void(0);" id="document">Document</a> </li>
+                    <li><a href="javascript:void(0);" id="parser">Parser</a> </li>
+                    <li><a href="javascript:void(0);" id="utilities">Utilities</a> </li>
+                </ul>
+
+                   <div class="result"></div>
+                   <div class="no_result"></div>
+                <ul class="pagination">
+                    <li><a href="javascript:void(0);" id="pre">&#171; Prev</a></li>
+                    <li><a href="javascript:void(0);" id="list"></a></li>
+                    <li><a href="javascript:void(0);" id="next">next &#187;</a></li>
+                    </ul>
+
+
+</div>
+</section>
+        <section class="col-md-12 projectlinks">
+            <div class="row">
+                <div class="col-md-12" style="width: 65%;">
+                    <p><img src="images/githubicon_01.png" /> &nbsp;<strong>Github</strong></p>
+                    <p>Can’t find the RAML project you are searching for on this page? Try looking for it in Github! We created some useful categories to help filter your search. Simply click on one of the icons on the left and see all the Github projects related to that category. More information can be found <a href="{{ site. projectsgithuburl }}#how-to-add-projects-to-the-projects-page" target="_blank">here</a>.</p>
+                </div>
+            </div>
+
+            <div class="row" style="margin-bottom: 5px;">
+                <div class="col-md-1">
+                    <a href="https://github.com/search?utf8=✓&q=topic%3Araml-design" target="_blank" rel="nofollow">Design</a>
+                </div>
+                <div class="col-md-1">
+                    <a href="https://github.com/search?utf8=✓&q=topic%3Araml-document" target="_blank" rel="nofollow">Document</a>
+                </div>
+            </div>
+            <div class="row" style="margin-bottom: 5px;">
+                <div class="col-md-1">
+                    <a href="https://github.com/search?utf8=✓&q=topic%3Araml-build" target="_blank" rel="nofollow">Build</a>
+                </div>
+                <div class="col-md-1">
+                    <a href = "https://github.com/search?utf8=✓&q=topic%3Araml-parser" target="_blank" rel="nofollow">Parser</a>
+                </div>
+            </div>
+            <div class="row" style="margin-bottom: 5px;">
+                <div class="col-md-1">
+                    <a href="https://github.com/search?utf8=✓&q=topic%3Araml-test" target="_blank" rel="nofollow">Test</a>
+                </div>
+                <div class="col-md-1">
+                    <a href="https://github.com/search?utf8=✓&q=topic%3Araml-utilities" target="_blank" rel="nofollow">Utilities</a>
+                </div>
+            </div>
+    </section>
+
+</div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function() {
+        var max_size;
+        var start = 0;
+        var per_page = 5;
+        var limit = per_page;
+        var no_of_links;
+        var datas;
+        var active_text;
+        var search_val = '';
+        var current_page = 1;
+        getJsonData("All",search_val);
+
+        $('#search').keyup(function() {
+           search_val = $(this).val().toLowerCase();
+            var actext = $('ul.proj_cat li a.active').text();
+            getJsonData(actext,search_val);
+
+        });
+
+        $('ul.proj_cat li a').click(function() {
+            active_text = $(this).text();
+            $('ul.proj_cat li a').removeClass('active');
+            $(this).addClass('active');
+            $('div.result').empty();
+            limit = 5;
+            current_page = 1;
+            $("#next").removeClass("disabled");
+            $("#pre").removeClass("disabled");
+            getJsonData(active_text,search_val);
+        });
+
+
+
+
+        function getJsonData(active_text,search_val) {
+            $.getJSON("/project.json", function (data) {
+                var getData = [];
+                if(active_text != 'All' && search_val == '' ) {
+                    $.each(data, function(i) {
+                        if(data[i].topics.indexOf(active_text) >= 0 ) {
+                            getData.push(data[i]);
+                        }
+                    });
+                } else if(search_val != '') {
+                    $.each(data, function(i) {
+                        if((data[i].name.toLowerCase().indexOf(search_val) >= 0) && (active_text == 'All')) {
+                            getData.push(data[i]);
+                    } else if((data[i].name.toLowerCase().indexOf(search_val) >= 0) && (data[i].topics.indexOf(active_text) >= 0)) {
+                            getData.push(data[i]);
+
+                        }
+                    });
+                }
+                if(getData.length == 0 && search_val == '') {
+                    max_size = data.length;
+                    datas = data;
+                    $('div.result').html('');
+                    $('div.no_result').html('');
+                } else if(getData.length == 0 && search_val != '' ) {
+                    max_size = getData.length;
+                    datas = [];
+                    $('div.result').html('');
+                    $('div.no_result').html('<h2>Sorry,no results for '+ search_val +'</h2>');
+                } else {
+                    max_size = getData.length;
+                    datas = getData;
+                    $('div.result').html('');
+                    $('div.no_result').html('');
+                }
+                get_jsonData(start,limit,datas);
+
+            });
+        }
+        $('#next').click(function() {
+            var next = limit;
+            if(max_size>=next) {
+               limit = limit+per_page;
+               $("#next").removeClass("disabled");
+               $("#pre").removeClass("disabled");
+               $('div.result').empty();
+                current_page++;
+                get_jsonData(next,limit,datas);
+            }
+        });
+
+        $('#pre').click(function() {
+            var pre = limit-(2*per_page);
+            if(pre >=0) {
+                limit = (limit-per_page);
+                //console.log(pre +' -pre- '+ limit);
+                --current_page;
+                $('div.result').empty();
+                get_jsonData(pre,limit,datas);
+                $("#pre").removeClass("disabled");
+                $("#next").removeClass("disabled");
+            }
+        });
+
+        function get_jsonData(start,limit,datas) {
+            no_of_links = (max_size/per_page);
+            var total_links = Math.ceil(no_of_links);
+            if(datas.length <= 5) {
+                $('ul.pagination').hide();
+            } else {
+                $('ul.pagination').show();
+            }
+            for (var i = start ; i < limit; i++) {
+                if(datas[i] === undefined) {
+                    continue;
+                }
+                var project_name = datas[i].name;
+                var project_desc = datas[i].description;
+                var project_url = datas[i].url;
+                var join_topic;
+                var topic = "";
+                var project_div;
+                if(datas[i].topics.indexOf(',') > -1) {
+                    var get_topics = datas[i].topics.split(",");
+                       for (var j = 0; j < get_topics.length; j++ ) {
+                           topic += '<span class="projtag">' + get_topics[j] + '</span>';
+                       }
+                     join_topic = topic;
+                } else {
+                    join_topic = '<span class="projtag">' + datas[i].topics + '</span>';
+                }
+                project_div = '<div class="projectblock"><div class="row"><div class="projname col-md-2"><h3>' + project_name + '</h3></div><div class="projdesc col-md-8"><p>' + project_desc + '</p></div>' +
+                            '<div class="projlink col-md-2"><a href ="' + project_url + '" rel="nofollow">View Project Page</a></div></div><div class="proj_topics">'+ join_topic +'</div> ';
+                 if(datas.length <=5) {
+                     $('div.result').html(project_div);
+                 } else {
+                     $('div.result').append(project_div);
+                 }
+            }
+            $('ul.pagination li a#list').text(current_page + ' of ' + total_links );
+
+        }
+    });
+</script>

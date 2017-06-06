@@ -9,7 +9,7 @@ permalink: /projects
         <section class="col-md-12 projectdiv">
            <div class="row">
                <div class="col-md-6">
-                   <p>Do you want to list your own project on raml.org? Add it <a href="https://github.com/raml-org/raml-org/tree/stg#how-to-add-projects-to-the-projects-page" rel="nofollow">Here</a>. </p>
+                   <p>Do you want to list your own project on raml.org? Add it <a href="{{ site.projectsgithuburl }}#how-to-add-projects-to-the-projects-page" rel="nofollow">here</a>. </p>
                </div>
 
                <div class="col-md-6">
@@ -30,8 +30,7 @@ permalink: /projects
                    <li><a data-toggle="pill" href="#test">Test</a></li>
                    <li><a data-toggle="pill" href="#document">Document</a></li>
                    <li><a data-toggle="pill" href="#parsers">Parsers</a></li>
-                   <li><a data-toggle="pill" href="#converters">Converters</a></li>
-                   <li><a data-toggle="pill" href="#utility">Utility</a></li>
+                   <li><a data-toggle="pill" href="#utility">Utilities</a></li>
                </ul>
 
                <div class="tab-content">
@@ -227,43 +226,11 @@ permalink: /projects
                        {% endfor %}
                        <div class="pagination-page-parsers"></div>
                    </div>
-                   <div id="converters" class="tab-pane fade">
-                       <div class = "nosearch"></div>
-                       {% for projects in site.data.projects %}
-                       {% for item in projects.topics %}
-                       {% if item == 'Converters' %}
-                       <div class="projectblock">
-                           <div class="row">
-
-                               <div class="projname col-md-2">
-                                   <h3>{{ projects.name }}</h3>
-                               </div>
-
-                               <div class="projdesc col-md-8">
-                                   <p>{{ projects.description }}</p>
-                               </div>
-
-                               <div class="projlink col-md-2">
-                                   <a href = "{{ projects.url }}" rel="nofollow" >View Project Page</a>
-                               </div>
-
-                           </div>
-                           {% for items in projects.topics %}
-                           <span class="projtag">
-                               {{ items }}
-                           </span>
-                           {% endfor %}
-                       </div>
-                       {% endif %}
-                       {% endfor %}
-                       {% endfor %}
-                       <div class="pagination-page-converters"></div>
-                   </div>
                    <div id="utility" class="tab-pane fade">
                        <div class = "nosearch"></div>
                        {% for projects in site.data.projects %}
                        {% for item in projects.topics %}
-                       {% if item == 'Converters' %}
+                       {% if item == 'Utilities' %}
                        <div class="projectblock">
                            <div class="row">
 
@@ -301,7 +268,7 @@ permalink: /projects
     <div class="row">
             <div class="col-md-12" style="width: 65%;">
                 <p><img src="images/githubicon_01.png" /> &nbsp;<strong>Github</strong></p>
-                <p>Can’t find the RAML project you are searching for on this page? Try looking for it in Github! We created some useful categories to help filter your search. Simply click on one of the icons on the left and see all the Github projects related to that category.</p>
+                <p>Can’t find the RAML project you are searching for on this page? Try looking for it in Github! We created some useful categories to help filter your search. Simply click on one of the icons on the left and see all the Github projects related to that category. More information can be found <a href="{{ site. projectsgithuburl }}#how-to-add-projects-to-the-projects-page" target="_blank">here</a>.</p>
             </div>
     </div>
 
@@ -318,7 +285,7 @@ permalink: /projects
                 <a href="https://github.com/search?utf8=✓&q=topic%3Araml-build" target="_blank" rel="nofollow">Build</a>
             </div>
             <div class="col-md-1">
-                <a href = "https://github.com/search?utf8=✓&q=topic%3Araml-parsers" target="_blank" rel="nofollow">Parsers</a>
+                <a href = "https://github.com/search?utf8=✓&q=topic%3Araml-parser" target="_blank" rel="nofollow">Parser</a>
             </div>
         </div>
         <div class="row" style="margin-bottom: 5px;">
@@ -326,7 +293,7 @@ permalink: /projects
                 <a href="https://github.com/search?utf8=✓&q=topic%3Araml-test" target="_blank" rel="nofollow">Test</a>
             </div>
             <div class="col-md-1">
-                <a href="https://github.com/search?utf8=✓&q=topic%3Araml-converters" target="_blank" rel="nofollow">Converters</a>
+                <a href="https://github.com/search?utf8=✓&q=topic%3Araml-utilities" target="_blank" rel="nofollow">Utilities</a>
             </div>
         </div>
     </div>

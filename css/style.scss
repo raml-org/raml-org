@@ -13,6 +13,7 @@ body {
   font-size: 14px;
   line-height: 1.42857143;
 
+
   a {
     cursor: pointer;
     color: #66c4e8;
@@ -430,7 +431,7 @@ section.open_source_proj {
 
   section.homepage_topcontent {
     .gap {
-      margin-top: 0;
+      margin-top: 35px;
       margin-bottom: 30px;
       padding-left: 0;
       padding-right: 0;
@@ -439,6 +440,114 @@ section.open_source_proj {
       margin-top: 20%;
     }
   }
+  body {
+    min-width: 1110px;
+  }
+  .navbarright {
+    margin-right: 16px;
+  }
+  .navbar-header {
+    width: 30%;
+    float: left;
+  }
+  #navbar {
+    width: 70%;
+    float: left;
+  }
+  nav.navbar ul li {
+    float: left;
+  }
+  .map-container {
+    .col-md-5 {
+      width: 41.6667%;
+      float: left;
+    }
+    .col-md-7 {
+      width: 58.33333%;
+      float: left;
+    }
+  }
+  .multiple-teams, .enterprise-faster, .open-source-com, .eliminate-support, div.design-api, div.build-api, div.test-api, div.document-api, div.share-api {
+     .col-md-6 {
+       width: 50%;
+       float: left;
+     }
+  }
+  body.mvp {
+    .col-md-4 {
+      width: 33.33333%;
+      float: left;
+    }
+    .col-md-8 {
+      width: 66.66667%;
+      float: left;
+    }
+  }
+  div.mvp-signup {
+    .form-group {
+      display: inline-block;
+    }
+    .btn-default  {
+      margin-top: -66px;
+    }
+  }
+
+  div.how-it-works {
+    .col-md-3 {
+      width: 25%;
+      float: left;
+    }
+    .col-md-1 {
+      width: 8.33333%;
+      float: left;
+    }
+  }
+  div.our-mvps {
+     .col-md-6 {
+       width: 50%;
+       float: left;
+     }
+  }
+  div.prize-sponsored {
+    .col-md-2 {
+      width: 16%;
+      float: left;
+    }
+  }
+  div.awesome-prize {
+    .col-md-3 {
+      width: 25%;
+      float: left;
+    }
+  }
+  div.ramldevel {
+    .col-md-4 {
+      float: left;
+    }
+  }
+  div.bottom-wrapper {
+    footer {
+      .col-md-4 {
+        width: 33.33333%;
+        float: left;
+      }
+      .col-md-8 {
+        width: 66.66667%;
+        float: left;
+      }
+    }
+  }
+  div.top_wrapper {
+    .dropdown-submenu {
+      width: 100%;
+    }
+    .dropdown-menu > li > a {
+      width: 169px;
+    }
+  }
+
+
+
 }
 
 
@@ -1218,7 +1327,7 @@ div.eliminate-support {
       }
 
       h3 {
-        width: 100%;
+        width: 50%;
       }
     }
   }
@@ -1227,6 +1336,13 @@ div.eliminate-support {
     padding: 5% 0;
     .col-md-12 {
       width: 100%;
+    }
+  }
+
+  div.ramlenter {
+    div.col-md-4 {
+      width: 33.33333%;
+      float: left;
     }
   }
 }
@@ -2027,9 +2143,43 @@ body:not(.mvp) {
     padding: 5px 15px;
   }
   div.projecttab {
-    ul {
+    ul.proj_cat {
+      list-style: none;
+      height: 40px;
+      margin-left: -40px;
+
+      li  {
+        float: left;
+      }
+      a {
+        color: #696868 ;
+        padding: 5px 15px;
+        text-decoration: none;
+        &.active{
+          color: #fff;
+          background-color: #585858;
+          border-radius: 9px;
+          text-decoration: none;
+        }
+      }
+
+      a:hover {
+        text-decoration: none;
+      }
+    }
+
+    ul.pagination {
       li a {
         color: #696868 ;
+      }
+      //li span {
+      //  color: #fff;
+      //  background-color: #585858;
+      //}
+      a.disabled {
+        pointer-events: none;
+        cursor: default;
+        background-color: #585858;
       }
     }
 
@@ -2129,4 +2279,14 @@ section.projectlinks {
   footer.container {
     width: 1080px;
   }
+}
+.navbarright {
+  float: right;
+}
+
+@media screen and (min-width: 1024px) {
+  body {
+    min-width: 1200px;
+  }
+
 }

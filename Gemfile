@@ -8,5 +8,6 @@ group :jekyll_plugins do
    gem "jekyll-seo-tag"
    gem 'jekyll-paginate-categories'
    gem 'jekyll-paginate-tags'
+   gem "jekyll-redirect-from", "~> 0.11.0"
 
 end

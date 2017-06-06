@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Blogs
+permalink: /blogs
 ---
 
 <div class="wrapper">
@@ -24,7 +25,7 @@ title: Blogs
             {% endfor %}{% endif %}
         </div>
 
-        <div class="post_categories"> Tags
+        <div class="post_tag"> Tags
             {% if post.tags.size > 0 %} : {% for tag in post.tags %}
             {% assign wordCount = tag | number_of_words %}
             {% if wordCount > 1 %}

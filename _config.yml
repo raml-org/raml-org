@@ -52,6 +52,7 @@ gems:
   - jekyll-seo-tag
   - jekyll-paginate-categories
   - jekyll-paginate-tags
+  - jekyll-redirect-from
 
 defaults:
   -
@@ -72,3 +73,5 @@ paginate_tag_layout: 'tag.html'
 collections:
     testimonials:
         output: true
+
+projectsgithuburl: https://github.com/raml-org/raml-org/tree/develop

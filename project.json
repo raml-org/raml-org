@@ -1,0 +1,14 @@
+---
+---
+[
+{% for projects in site.data.projects %}
+  {
+    "name"    : "{{ projects.name }}",
+    "url"     : "{{ projects.url }}",
+    "author"     : "{{ projects.author }}",
+    "description"     : "{{ projects.description | escape | strip_newlines }}",
+    "topics"     : "{{ projects.topics | join: ', ' }}"
+  }
+{% if forloop.last %}{% else %},{% endif %}
+{% endfor %}
+]
