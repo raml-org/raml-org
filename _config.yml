@@ -9,6 +9,7 @@ title: 'RAML'
 path:
 baseurl:
 url: ""
+permalink: "/blogs/:title"
 timezone:      null
 
 ########
