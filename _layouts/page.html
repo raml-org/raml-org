@@ -5,7 +5,10 @@
 <div class="container page-content">
     <div class="row">
         <aside class="col-md-3 col-xs-3 col-sm-3" role = "complementary">
-            <div class="region-sidebar well">
+
+
+            {% if page.title == 'RAML 100 Tutorial' or page.title == 'Vendor Support' or page.title == 'RAML 200 Tutorial' %}
+            <div class="region-sidebar well" data-spy="affix" data-offset-top="105">
                 <section class="ramlapilinks">
                     <div class="raml-links-wrapper">
                         <a href ="https://github.com/raml-org/raml-spec/blob/master/versions/raml-10/raml-10.md/" target="_blank" class="raml-links">Read the Specification</a>
@@ -22,11 +25,19 @@
                     {% include raml-200-sidebar.html %}
                 </section>
                 {% endif %}
-                {% if page.title == 'Vendor Support' or page.title == 'RAML in News' %}
+                {% if page.title == 'Vendor Support' %}
                 <section class="sidebar-menu">
                     {% include vendor-support-sidebar.html %}
                 </section>
                 {% endif %}
+            </div>
+            {% else %}
+            <div class="region-sidebar well" >
+                <section class="ramlapilinks">
+                    <div class="raml-links-wrapper">
+                        <a href ="https://github.com/raml-org/raml-spec/blob/master/versions/raml-10/raml-10.md/" target="_blank" class="raml-links">Read the Specification</a>
+                    </div>
+                </section>
 
                 {% if page.title == 'About RAML' or page.title == 'Workgroup' or page.title == 'Legal' %}
                 <section class="sidebar-menu">
@@ -40,6 +51,7 @@
                 </section>
                 {% endif %}
             </div>
+            {% endif %}
 
 
 
