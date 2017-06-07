@@ -100,7 +100,7 @@ permalink: /blog-cat
 //                         blogcategory += '<a href = "/blog-category/' +
                                 var getblogtag = data[i].tags.split(",");
                                 for(var k = 0; k < getblogcat.length; k++ ) {
-                                    blogtag += '<a href="/blogtag?tag=' + getblogtag[k].trim() + '">' + getblogtag[k] +'</a>' + ' , ';
+                                    blogtag += '<a href="/blogtag?tag=' + getblogtag[k] + '">' + getblogtag[k] +'</a>' + ' , ';
                                 }
                             } else {
                                 blogtag = '<a href="/blogtag?tag=' + data[i].tags.trim() + '">' + data[i].tags +'</a>';
