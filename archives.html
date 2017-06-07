@@ -1,0 +1,107 @@
+---
+layout: page
+title: Blog Archives
+permalink: /archives
+---
+
+<div class="wrapper">
+    <div class = "renderblog"></div>
+    <ul id="pagination-demo" class="paginationqw"></ul>
+
+</div>
+
+<script src="js/jquery.twbsPagination.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('h1.page-header').text("Blog Archive");
+
+        //console.log(queryStingval);
+        fetchJsonData();
+        function fetchJsonData() {
+            var dataarray =[];
+            var currentdate = new Date($.now());
+            console.log(currentdate);
+            $.getJSON("/blog.json", function (data) {
+                $.each(data,function(l) {
+                    var date = new Date(data[l].date);
+                    var newDate = date.toString('dd-MM-yy');
+                    if(date < currentdate) {
+                        dataarray.push(data[l]);
+                    }
+                });
+                if(dataarray.length >= 0) {
+                    renderJsonData(dataarray)
+                }
+
+            });
+        }
+
+        function renderJsonData(data) {
+            //console.log(data);
+            var perpage = 5;
+            var datalimit = perpage;
+            var maxdatalength = data.length;
+            var totallinks = Math.ceil(maxdatalength/perpage);
+            var renderblog = $('div.renderblog');
+            console.log(totallinks);
+
+            $('#pagination-demo').twbsPagination({
+                totalPages: totallinks,
+                visiblePages: 5,
+                next: 'Next',
+                prev: 'Prev',
+                onPageClick: function (event, page) {
+
+//                 var current_page = page;
+                    datalimit =  (page*perpage);
+                    var start;
+                    if(page == 1) {
+                        start = 0;
+                    } else {
+                        start = (datalimit+perpage)-(2*perpage);
+                        datalimit = (datalimit+perpage)-perpage;
+                    }
+
+                    console.log( page + " start " + start + " limit " + datalimit );
+                    renderblog.empty();
+                    var blogcategory = '';
+                    for(var i = start; i < datalimit; i++ ) {
+                        if(data[i] === undefined) {
+                            continue;
+                        }
+                        if(data[i].categories.indexOf(',') > -1) {
+//                         blogcategory += '<a href = "/blog-category/' +
+                            var getblogcat = data[i].categories.split(",");
+                            for(var j = 0; j < getblogcat.length; j++ ) {
+                                blogcategory += '<a href="/blog-cat?cat=' + getblogcat[j].trim() + '">' + getblogcat[j] +'</a>' + ' , ';
+                            }
+                        } else {
+                            blogcategory = '<a href="/blog-cat?cat=' + data[i].categories + '">' + data[i].categories +'</a>';
+                        }
+
+                        var blogtag = '';
+                        if(data[i].tags != '') {
+                            if(data[i].tags.indexOf(',') > -1) {
+//                         blogcategory += '<a href = "/blog-category/' +
+                                var getblogtag = data[i].tags.split(",");
+                                for(var k = 0; k < getblogcat.length; k++ ) {
+                                    blogtag += '<a href="/blogtag?tag=' + getblogtag[k] + '">' + getblogtag[k] +'</a>' + ' , ';
+                                }
+                            } else {
+                                blogtag = '<a href="/blogtag?tag=' + data[i].tags + '">' + data[i].tags +'</a>';
+                            }
+                        } else {
+                            blogtag = '';
+                        }
+
+                        var blogDiv = '<div class="blog"><h2><a class="post-link" href="'+ data[i].url +'">'+ data[i].title +'</a></h2>' + '' +
+                                '<div class="post_author">By: '+ data[i].author + '</div><div class="post_date">'+ data[i].date + '</div><div class="post_categories"> Category: ' + blogcategory + '</div><div class="post_tag"> Tags: ' + blogtag +'</div>' +
+                                '<div class="post_content">' + data[i].content + '</div><div class="read_more"><a href="' + data[i].url + '" class="btn btn-default">Read More</a></div></div>';
+                        renderblog.append(blogDiv);
+                    }
+
+                }
+            });
+        }
+    });
+</script>
