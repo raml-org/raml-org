@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Blogs
-permalink: /blogs
 ---
 
 <div class="wrapper">
@@ -19,7 +18,7 @@ permalink: /blogs
      function fetchJsonData() {
          var dataarray =[];
          $.getJSON("/blog.json", function (data) {
-           console.log(data);
+           //console.log(data);
              renderJsonData(data)
          });
      }
@@ -31,7 +30,7 @@ permalink: /blogs
          var maxdatalength = data.length;
          var totallinks = Math.ceil(maxdatalength/perpage);
          var renderblog = $('div.renderblog');
-         console.log(totallinks);
+         //console.log(totallinks);
 
          $('#pagination-demo').twbsPagination({
              totalPages: totallinks,
@@ -48,9 +47,9 @@ permalink: /blogs
                      datalimit = (datalimit+perpage)-perpage;
                  }
 
-                 console.log( page + " start " + start + " limit " + datalimit );
+                 //console.log( page + " start " + start + " limit " + datalimit );
                  renderblog.empty();
-
+                 var regex = /\s+/gi;
                  for(var i = start; i < datalimit; i++ ) {
                      if(data[i] === undefined) {
                          continue;
@@ -58,28 +57,54 @@ permalink: /blogs
                      var joinblogcategory;
                      if(data[i].categories.indexOf(',') > -1) {
                          var blogcategory = [];
-
                          var getblogcat = data[i].categories.split(",");
                          for(var j = 0; j < getblogcat.length; j++ ) {
+                             var getcat;
+                             var wordCounts = getblogcat[j].trim().replace(regex, " ").split(" ").length;
+                             if(wordCounts > 1) {
+                                 getcat = getblogcat[j].trim().replace(" ", "+");
+                             } else {
+                                 getcat = getblogcat[j].trim();
+                             }
                              //blogcategory += '<a href="/blog-cat?cat=' + getblogcat[j].trim() + '">' + getblogcat[j] +'</a>' + ' , ';
-                             blogcategory.push('<a href="/blog-cat?cat=' + getblogcat[j].trim() + '">' + getblogcat[j] +'</a>');
+                             blogcategory.push('<a href="/blog-cat?cat=' + getcat + '">' + getblogcat[j] +'</a>');
                          }
                          joinblogcategory = blogcategory.join(', ');
                      } else {
-                         joinblogcategory = '<a href="/blog-cat?cat=' + data[i].categories.trim() + '">' + data[i].categories +'</a>';
-                     }
-                     var blogtag;
-                     if(data[i].tags != '') {
-                         if(data[i].tags.indexOf(',') > -1) {
-                             var blogtags = [];
+                         if(data[i].categories.trim().replace(regex, " ").split(" ").length > 1) {
+                             joinblogcategory = '<a href="/blog-cat?cat=' + data[i].categories.trim().replace(" ", "+") + '">' + data[i].categories +'</a>';
+                         } else {
+                             joinblogcategory = '<a href="/blog-cat?cat=' + data[i].categories.trim() + '">' + data[i].categories +'</a>';
+                         }
 
+                     }
+
+                     var blogtag;
+
+                     if(data[i].tags.length >= 1) {
+                         if(data[i].tags.indexOf(',') > 0) {
+                             var blogtags = [];
                              var getblogtag = data[i].tags.split(",");
                              for(var k = 0; k < getblogcat.length; k++ ) {
-                                 blogtags.push('<a href="/blogtag?tag=' + getblogtag[k] + '">' + getblogtag[k] +'</a>');
+                                 if(getblogtag[k] != undefined) {
+                                     var getVal;
+                                     var wordCount = getblogtag[k].trim().replace(regex, " ").split(" ").length;
+                                     if(wordCount > 1) {
+                                         getVal = getblogtag[k].trim().replace(" ", "+");
+                                     } else {
+                                         getVal = getblogtag[k].trim();
+                                     }
+
+                                     blogtags.push('<a href="/blogtag?tag=' + getVal + '">' + getblogtag[k] +'</a>');
+                                 }
                              }
                              blogtag = blogtags.join(', ');
                          } else {
-                             blogtag = '<a href="/blogtag?tag=' + data[i].tags + '">' + data[i].tags +'</a>';
+                             if(data[i].tags.trim().replace(regex, " ").split(" ").length > 1) {
+                                 blogtag = '<a href="/blogtag?tag=' + data[i].tags.trim().replace(" ", "+") + '">' + data[i].tags +'</a>';
+                             } else {
+                                 blogtag = '<a href="/blogtag?tag=' + data[i].tags.trim() + '">' + data[i].tags +'</a>';
+                             }
                          }
                      } else {
                          blogtag = '';
