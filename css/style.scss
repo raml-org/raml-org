@@ -1808,7 +1808,7 @@ div.member {
 }
 
 div.blog {
-  padding: 16px 15px;
+  padding: 0;
 
   h2 {
     font-size: 24px;
@@ -1828,6 +1828,9 @@ div.blog {
 }
   div.post_date {
     margin-top: 8px;
+  }
+  div.read_more {
+    margin-top: 20px;
   }
 }
 
