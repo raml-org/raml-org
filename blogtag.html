@@ -39,7 +39,7 @@ permalink: /blogtag
             $.getJSON("/blog.json", function (data) {
                 //console.log(data);
                 $.each(data,function(l) {
-                    if(data[l].tags.indexOf(queryStingval) >= 0) {
+                    if(data[l].tags.toLowerCase().indexOf(queryStingval) >= 0) {
                         dataarray.push(data[l]);
                     }
                 });
@@ -93,9 +93,9 @@ permalink: /blogtag
                                 var getcat;
                                 var wordCounts = getblogcat[j].trim().replace(regex, " ").split(" ").length;
                                 if(wordCounts > 1) {
-                                    getcat = getblogcat[j].trim().replace(" ", "+");
+                                    getcat = getblogcat[j].trim().replace(" ", "+").toLowerCase();
                                 } else {
-                                    getcat = getblogcat[j].trim();
+                                    getcat = getblogcat[j].trim().toLowerCase();
                                 }
                                 //blogcategory += '<a href="/blog-cat?cat=' + getblogcat[j].trim() + '">' + getblogcat[j] +'</a>' + ' , ';
                                 blogcategory.push('<a href="/blog-cat?cat=' + getcat + '">' + getblogcat[j] +'</a>');
@@ -103,9 +103,9 @@ permalink: /blogtag
                             joinblogcategory = blogcategory.join(', ');
                         } else {
                             if(data[i].categories.trim().replace(regex, " ").split(" ").length > 1) {
-                                joinblogcategory = '<a href="/blog-cat?cat=' + data[i].categories.trim().replace(" ", "+") + '">' + data[i].categories +'</a>';
+                                joinblogcategory = '<a href="/blog-cat?cat=' + data[i].categories.trim().replace(" ", "+").toLowerCase() + '">' + data[i].categories +'</a>';
                             } else {
-                                joinblogcategory = '<a href="/blog-cat?cat=' + data[i].categories.trim() + '">' + data[i].categories +'</a>';
+                                joinblogcategory = '<a href="/blog-cat?cat=' + data[i].categories.trim().toLowerCase() + '">' + data[i].categories +'</a>';
                             }
 
                         }
@@ -120,9 +120,9 @@ permalink: /blogtag
                                         var getVal;
                                         var wordCount = getblogtag[k].trim().replace(regex, " ").split(" ").length;
                                         if(wordCount > 1) {
-                                            getVal = getblogtag[k].trim().replace(" ", "+");
+                                            getVal = getblogtag[k].trim().replace(" ", "+").toLowerCase();
                                         } else {
-                                            getVal = getblogtag[k].trim();
+                                            getVal = getblogtag[k].trim().toLowerCase();
                                         }
 
                                         blogtags.push('<a href="/blogtag?tag=' + getVal + '">' + getblogtag[k] +'</a>');
@@ -131,9 +131,9 @@ permalink: /blogtag
                                 blogtag = blogtags.join(', ');
                             } else {
                                 if(data[i].tags.trim().replace(regex, " ").split(" ").length > 1) {
-                                    blogtag = '<a href="/blogtag?tag=' + data[i].tags.trim().replace(" ", "+") + '">' + data[i].tags +'</a>';
+                                    blogtag = '<a href="/blogtag?tag=' + data[i].tags.trim().replace(" ", "+").toLowerCase() + '">' + data[i].tags +'</a>';
                                 } else {
-                                    blogtag = '<a href="/blogtag?tag=' + data[i].tags.trim() + '">' + data[i].tags +'</a>';
+                                    blogtag = '<a href="/blogtag?tag=' + data[i].tags.trim().toLowerCase() + '">' + data[i].tags +'</a>';
                                 }
                             }
                         } else {
