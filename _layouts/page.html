@@ -68,9 +68,9 @@
                     {% assign wordCount = cat | number_of_words %}
                     {% if wordCount > 1 %}
                     {% assign my_array_cat = cat | split: " " | join: "+" %}
-                    <a href="{{ site.baseurl }}/blog-cat?cat={{ my_array_cat | downcase }}">{{ cat | capitalize }}</a>
+                    <a href="{{ site.baseurl }}/blog-cat?cat={{ my_array_cat | downcase }}">{{ cat }}</a>
                     {% else %}
-                    <a href="{{ site.baseurl }}/blog-cat?cat={{ cat | downcase }}">{{ cat | capitalize }}</a>
+                    <a href="{{ site.baseurl }}/blog-cat?cat={{ cat | downcase }}">{{ cat }}</a>
                     {% endif %}
                     {% if forloop.last == false %}, {% endif %}
                     {% endfor %}{% endif %}
@@ -80,9 +80,9 @@
                     {% assign wordCounts = tag | number_of_words %}
                     {% if wordCounts > 1 %}
                     {% assign my_array_tag = tag | split: " " | join: "+" %}
-                    <a href="{{ site.baseurl }}/blogtag?tag={{ my_array_tag | downcase }}">{{ tag | capitalize }}</a>
+                    <a href="{{ site.baseurl }}/blogtag?tag={{ my_array_tag | downcase }}">{{ tag }}</a>
                     {% else %}
-                    <a href="{{ site.baseurl }}/blogtag?tag={{ tag | downcase }}">{{ tag | capitalize }}</a>
+                    <a href="{{ site.baseurl }}/blogtag?tag={{ tag | downcase }}">{{ tag }}</a>
                     {% endif %}
                     {% if forloop.last == false %}, {% endif %}
                     {% endfor %}{% endif %}
