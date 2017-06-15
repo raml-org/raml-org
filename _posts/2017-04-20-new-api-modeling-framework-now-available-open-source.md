@@ -4,7 +4,7 @@ title: "New API Modeling Framework now available as open source"
 date: 2017-04-20
 categories : [News, Specification, Tooling, Updates]
 author: christianvogel
-tags : [AMF , OAI , Linux Foundation , Open Source , raml , MuleSoft]
+tags : [AMF , OAI , Linux Foundation , Open Source , RAML , MuleSoft]
 comments: true
 ---
 
