@@ -117,7 +117,7 @@ permalink: /blog-cat
                             if(data[i].tags.indexOf(',') > 0) {
                                 var blogtags = [];
                                 var getblogtag = data[i].tags.split(",");
-                                for(var k = 0; k < getblogcat.length; k++ ) {
+                                for(var k = 0; k < getblogtag.length; k++ ) {
                                     if(getblogtag[k] != undefined) {
                                         var getVal;
                                         var wordCount = getblogtag[k].trim().replace(regex, " ").split(" ").length;
