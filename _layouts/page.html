@@ -65,12 +65,26 @@
             <div class="post_date"> {{ page.date | date: "%B %-d, %Y" }}</div>
                 <div class="post_categories"> Category
                     {% if page.categories.size > 0 %} : {% for cat in page.categories %}
-                    <a href="{{ site.baseurl }}/blog-category/{{ cat }}">{{ cat | capitalize }}</a>{% if forloop.last == false %}, {% endif %}
+                    {% assign wordCount = cat | number_of_words %}
+                    {% if wordCount > 1 %}
+                    {% assign my_array_cat = cat | split: " " | join: "+" %}
+                    <a href="{{ site.baseurl }}/blog-cat?cat={{ my_array_cat | downcase }}">{{ cat }}</a>
+                    {% else %}
+                    <a href="{{ site.baseurl }}/blog-cat?cat={{ cat | downcase }}">{{ cat }}</a>
+                    {% endif %}
+                    {% if forloop.last == false %}, {% endif %}
                     {% endfor %}{% endif %}
                 </div>
                 <div class="post_tag"> Tags
                     {% if page.tags.size > 0 %} : {% for tag in page.tags %}
-                    <a href="{{ site.baseurl }}/blog-tag/{{ tag }}">{{ tag | capitalize }}</a>{% if forloop.last == false %}, {% endif %}
+                    {% assign wordCounts = tag | number_of_words %}
+                    {% if wordCounts > 1 %}
+                    {% assign my_array_tag = tag | split: " " | join: "+" %}
+                    <a href="{{ site.baseurl }}/blogtag?tag={{ my_array_tag | downcase }}">{{ tag }}</a>
+                    {% else %}
+                    <a href="{{ site.baseurl }}/blogtag?tag={{ tag | downcase }}">{{ tag }}</a>
+                    {% endif %}
+                    {% if forloop.last == false %}, {% endif %}
                     {% endfor %}{% endif %}
                 </div>
              </div>

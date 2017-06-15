@@ -37,13 +37,15 @@ permalink: /blog-cat
         function fetchJsonData() {
             var dataarray =[];
             $.getJSON("/blog.json", function (data) {
+                //console.log(data);
                 $.each(data,function(l) {
-                    if(data[l].categories.indexOf(queryStingval) >= 0) {
+                    //console.log("test" + data[l].categories.toLowerCase().indexOf(queryStingval));
+                    if(data[l].categories.toLowerCase().indexOf(queryStingval) >= 0) {
                         dataarray.push(data[l]);
                     }
                 });
 
-                //console.log(data);
+                //console.log(dataarray);
                 if(dataarray.length >= 0) {
                     renderJsonData(dataarray)
                 }
@@ -92,9 +94,9 @@ permalink: /blog-cat
                                 var getcat;
                                 var wordCounts = getblogcat[j].trim().replace(regex, " ").split(" ").length;
                                 if(wordCounts > 1) {
-                                    getcat = getblogcat[j].trim().replace(" ", "+");
+                                    getcat = getblogcat[j].trim().replace(" ", "+").toLowerCase();
                                 } else {
-                                    getcat = getblogcat[j].trim();
+                                    getcat = getblogcat[j].trim().toLowerCase();
                                 }
                                 //blogcategory += '<a href="/blog-cat?cat=' + getblogcat[j].trim() + '">' + getblogcat[j] +'</a>' + ' , ';
                                 blogcategory.push('<a href="/blog-cat?cat=' + getcat + '">' + getblogcat[j] +'</a>');
@@ -102,9 +104,9 @@ permalink: /blog-cat
                             joinblogcategory = blogcategory.join(', ');
                         } else {
                             if(data[i].categories.trim().replace(regex, " ").split(" ").length > 1) {
-                                joinblogcategory = '<a href="/blog-cat?cat=' + data[i].categories.trim().replace(" ", "+") + '">' + data[i].categories +'</a>';
+                                joinblogcategory = '<a href="/blog-cat?cat=' + data[i].categories.trim().replace(" ", "+").toLowerCase() + '">' + data[i].categories +'</a>';
                             } else {
-                                joinblogcategory = '<a href="/blog-cat?cat=' + data[i].categories.trim() + '">' + data[i].categories +'</a>';
+                                joinblogcategory = '<a href="/blog-cat?cat=' + data[i].categories.trim().toLowerCase() + '">' + data[i].categories +'</a>';
                             }
 
                         }
@@ -115,14 +117,14 @@ permalink: /blog-cat
                             if(data[i].tags.indexOf(',') > 0) {
                                 var blogtags = [];
                                 var getblogtag = data[i].tags.split(",");
-                                for(var k = 0; k < getblogcat.length; k++ ) {
+                                for(var k = 0; k < getblogtag.length; k++ ) {
                                     if(getblogtag[k] != undefined) {
                                         var getVal;
                                         var wordCount = getblogtag[k].trim().replace(regex, " ").split(" ").length;
                                         if(wordCount > 1) {
-                                            getVal = getblogtag[k].trim().replace(" ", "+");
+                                            getVal = getblogtag[k].trim().replace(" ", "+").toLowerCase();
                                         } else {
-                                            getVal = getblogtag[k].trim();
+                                            getVal = getblogtag[k].trim().toLowerCase();
                                         }
 
                                         blogtags.push('<a href="/blogtag?tag=' + getVal + '">' + getblogtag[k] +'</a>');
@@ -131,9 +133,9 @@ permalink: /blog-cat
                                 blogtag = blogtags.join(', ');
                             } else {
                                 if(data[i].tags.trim().replace(regex, " ").split(" ").length > 1) {
-                                    blogtag = '<a href="/blogtag?tag=' + data[i].tags.trim().replace(" ", "+") + '">' + data[i].tags +'</a>';
+                                    blogtag = '<a href="/blogtag?tag=' + data[i].tags.trim().replace(" ", "+").toLowerCase() + '">' + data[i].tags +'</a>';
                                 } else {
-                                    blogtag = '<a href="/blogtag?tag=' + data[i].tags.trim() + '">' + data[i].tags +'</a>';
+                                    blogtag = '<a href="/blogtag?tag=' + data[i].tags.trim().toLowerCase() + '">' + data[i].tags +'</a>';
                                 }
                             }
                         } else {
