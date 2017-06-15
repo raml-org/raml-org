@@ -1714,6 +1714,10 @@ section.ramlapilinks {
     line-height: 1.3;
     text-align: left;
   }
+
+  .post_tag a , .post_categories a  {
+    text-transform: capitalize;
+  }
 }
 
 div.member {
