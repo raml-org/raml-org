@@ -19,14 +19,20 @@ This repository contains the source code for the raml.org website written in Jek
     ```
     cd raml-org
     ```
-    
-3. run this command 
+
+3. remove the below line in blogs/index.html in case you are testing locally 
+
+   ```
+   permlaink: /blogs
+   ```
+   
+4. run this command 
 
    ```
    bundle install
    ```
    
-4. Run this command to build the jekyll site 
+5. Run this command to build the jekyll site 
    
    ```
    jekyll serve --detach
