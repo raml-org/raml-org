@@ -35,7 +35,7 @@
         console.log(counts + 'count' + final_count);
 
         if(final_count == counts ) {
-          $(div_id + '> div.nosearch').html('<h2>Sorry,no results for '+ search_val +'</h2>');
+          $(div_id + '> div.nosearch').html('<h2>Sorry, no results for '+ search_val +'</h2>');
         } else {
           $(div_id + '> div.nosearch').html('');
         }
