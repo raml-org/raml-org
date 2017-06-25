@@ -9,5 +9,5 @@ group :jekyll_plugins do
    gem 'jekyll-paginate-categories'
    gem 'jekyll-paginate-tags'
    gem "jekyll-redirect-from", "~> 0.11.0"
-
+   gem 'jekyll-minifier'
 end
