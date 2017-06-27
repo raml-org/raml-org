@@ -1,0 +1,909 @@
+- name: API Workbench
+  author: MuleSoft
+  description: |
+    API Workbench, a rich, full-featured integrated development environment
+    (IDE) for designing, building, testing, documenting and sharing RESTful HTTP APIs.
+    It supports both RAML 0.8 and the recently launched RAML 1.0. RAML makes it easy
+    to manage the whole API lifecycle.
+  url: http://apiworkbench.com/
+  topics:
+    - Design
+- name: raml2html
+  author: kevinrenskers
+  description: |
+    raml2html is a documentation tool that outputs a single HTML page console
+    based on a RAML definition. It's written in NodeJS and it can be executed as a
+    command line.
+  url: https://github.com/raml2html/raml2html
+  topics:
+    - Document
+- name: raml-json-api
+  author: Arthur
+  description: |
+    RAML-JSON-API PHP-code generator (based on RAML-types) for Laravel
+    framework, with complete support of JSON-API data format.
+  url: https://github.com/RJAPI/raml-json-api
+  topics:
+    - Build
+- name: API Designer
+  author: MuleSoft
+  description: |
+    API Designer is a web-based API development tool that allows API providers
+    to design their API quickly, efficiently, and consistently, and socialize the
+    design. It consists of a RAML editor side-by-side with an embedded RAML console
+    (the API Console).
+  url: https://github.com/mulesoft/api-designer
+  topics:
+    - Design
+- name: API Console
+  author: MuleSoft
+  description: |
+    API Console is a graphical user interface for a RAML-defined API that
+    visually exposes the API's structure and important patterns and serves as interactive
+    API documentation.
+  url: https://github.com/mulesoft/api-console
+  topics:
+    - Document
+- name: RAML for JAX-RS
+  author: MuleSoft
+  description: |
+    The goal of RAML for JAX-RS is to provide a set of tools to work with
+    these technologies in a way of being able to scaffold a JAVA + JAX-RS application
+    based on an existing RAML API definition (Code Generation), or its roundtrip,
+    generate the RAML API def
+  url: https://github.com/mulesoft/raml-for-jax-rs
+  topics:
+    - Build
+- name: RAML2HTML for PHP
+  author: Mike Stowe
+  description: |
+    RAML 2 HTML for PHP is a simple application that makes use of multiple
+    templates to allow you to build and customize your API Docs using RAML.
+  url: http://www.mikestowe.com/2014/05/raml-2-html.php
+  topics:
+    - Document
+- name: Osprey
+  author: MuleSoft
+  description: |
+    Osprey is a JavaScript framework for rapidly building applications
+    that expose RAML APIs. It's based on Node and Express.
+  url: https://github.com/mulesoft/osprey
+  topics:
+    - Build
+- name: Restlet Studio
+  author: Restlet
+  description: |
+    Restlet Studio is a lightweight web-based development environment that
+    accelerates the design of APIs.
+  url: http://restlet.com/products/restlet-studio/
+  topics:
+    - Design
+    - Build
+- name: API Notebook
+  author: MuleSoft
+  description: |
+    API Notebook is a web-based, persistent, JavaScript scripting workspace
+    that enables live testing and exploring of APIs, and saving API use cases as markdown
+    gists, so they are versioned, forkable and shareable. It's an example of literate
+    programming.
+  url: https://api-notebook.anypoint.mulesoft.com
+  topics:
+    - Document
+- name: Abao
+  author: cybertk
+  description: |
+    Abao is a command-line tool for testing API documentation written in
+    RAML format against its backend implementation.
+  url: https://github.com/cybertk/abao
+  topics:
+    - Test
+- name: ramlfications
+  author: Spotify
+  description: |
+    RAML reference implementation in Python
+  url: https://github.com/spotify/ramlfications
+  topics:
+    - Parsers
+    - Document
+- name: RAML Tools for .NET
+  author: MuleSoft
+  description: |
+    RAML Tools for .NET allows developers to easily integrate and consume
+    APIs that expose a RAML definition, or create a new ASP.NET Web API implementation
+    using a contract-first approach from a previously created RAML definition.
+  url: https://github.com/mulesoft-labs/raml-dotnet-tools
+  topics:
+    - Build
+- name: raml-server
+  author: Franco Arolfo
+  description: |
+    RAML Server exposes a full fake REST API with zero coding by writing a RAML spec.
+  url: https://github.com/farolfo/raml-server
+  topics:
+    - Build
+- name: Vigia
+  author: nogates
+  description: |
+    Vigia is a adaptable API integration test suite which supports test
+    generation based on a RAML definition file.
+  url: https://github.com/nogates/vigia
+  topics:
+    - Test
+- name: swagger2raml
+  author: rucek
+  description: |
+    Swagger2RAML is an utility to generate RAML from Swagger JSON.
+  url: https://github.com/8x8Cloud/swagger2raml
+  topics:
+    - Utilities
+- name: RAML Java Parser
+  author: MuleSoft
+  description: |
+    A reference implementation of a RAML parser for Java. The parser is
+    based on SnakeYAML, and written in Java. It can be added as a Java library either
+    into a project directly or through Apache Maven. Compliant with RAML 0.8 and 1.0.
+  url: https://github.com/raml-org/raml-java-parser
+  topics:
+    - Parsers
+- name: Sandbox
+  author: Sandbox
+  description: |
+    Quick and easy mock RESTful API and SOAP webservices. Generate from API definitions, 
+    instant deploy, collaborative build, and debugging tools for integration.
+  url: https://getsandbox.com/
+  topics:
+    - Test
+- name: Postman
+  author: Postman
+  description: |
+    Postman is a chrome app that lets you import RAML to easily call and
+    test APIs.
+  url: https://www.getpostman.com/
+  topics:
+    - Test
+- name: APIkit 1.0
+  author: MuleSoft
+  description: |
+    APIkit is a declarative toolkit that leverages RAML to facilitate the
+    implementation of APIs.
+  url: https://docs.mulesoft.com/anypoint-platform-for-apis/apikit-tutorial#sts=APIkit%20Tutorial
+  topics:
+    - Build
+- name: RAML2Wiki
+  author: jhitchcock
+  description: |
+    A simple RAML to Wiki (Confluence / JIRA Markup) documentation generator,
+    written for Node.js.
+  url: https://github.com/jhitchcock/raml2wiki
+  topics:
+    - Document
+- name: RAMSES
+  author: Brandicted
+  description: |
+    RAML + Elasticsearch + Pyramid = REST API. Ramses is a library that
+    generates a RESTful API using RAML. It uses Pyramid and Nefertari which provides
+    ElasticSearch-powered views.
+  url: https://ramses.readthedocs.org/en/latest/
+  topics:
+    - Build
+- name: RAML JavaScript Parser
+  author: MuleSoft
+  description: |
+    Official JavaScript parser for RAML. Supports versions 0.8 and 1.0
+  url: https://github.com/raml-org/raml-js-parser-2
+  topics:
+    - Parsers
+- name: ramlapi
+  author: The Economist Group
+  description: |
+    This package is designed to work with RAML files and build the appropriate
+    handlers and routing rules in Go projects.
+  url: https://github.com/EconomistDigitalSolutions/ramlapi
+  topics:
+    - Build
+- name: SDK/DOC generator
+  author: IsaaCloud
+  description: |
+    Generate docs or SDKs in Java, JavaScript, and PHP
+  url: https://github.com/isaacloud/sdk-gen
+  topics:
+    - Document
+- name: Spring MVC - RAML Spec Synchroniser Plugin
+  author: phoenixNAP
+  description: |
+    Spring MVC - RAML Spec Synchroniser Plugin. A Maven plugin designed
+    to Generate Server & Client code in Spring from a RAML API descriptor
+    and conversely, a RAML API document from the SpringMVC Server implementation.
+  url: https://github.com/phoenixnap/springmvc-raml-plugin
+  topics:
+    - Build
+- name: RAMLSharp
+  author: Quicken Loans
+  description: |
+    This is a tool for ASP.net Web API that will allow you to build RAML documentation.
+  url: https://github.com/QuickenLoans/RAMLsharp
+  topics:
+    - Document
+- name: RAML to Bootstrap
+  author: Probe Dock
+  description: |
+    Generate a Bootstrap page for your API documentation in RAML
+  url: https://github.com/probedock/raml2boot
+  topics:
+    - Document
+- name: RAML Ruby
+  author: kgorin @ coub
+  description: |
+    A reference implementation of a RAML parser in Ruby. It uses Psych
+    YAML parser and is written in Ruby. Compliant with RAML 0.8.
+  url: https://github.com/coub/raml_ruby
+  topics:
+    - Parsers
+- name: Api2Symfony Bundle
+  author: Creads
+  description: |
+    A Symfony2 bundle to automatically generate controllers from RAML API specifications
+  url: https://github.com/creads/api2symfony-bundle
+  topics:
+    - Build
+- name: Gradle RAML Plugin
+  author: A.J. Brown
+  description: |
+    Validate your RAML documentation, and turn it into HTML. Based on raml2html.
+  url: https://github.com/ajbrown/gradle-raml-plugin
+  topics:
+    - Utilities
+- name: raml-tester
+  author: Stefan Niederhauser
+  description: |
+    Test if a request/response matches a given raml definition.
+  url: https://github.com/nidi3/raml-tester
+  topics:
+    - Test
+- name: RAML Client Generator
+  author: MuleSoft
+  description: |
+    Template-driven generator of clients for APIs described by RAML.
+  url: https://github.com/mulesoft/raml-client-generator
+  topics:
+    - Build
+- name: jooby-raml
+  author: Jooby
+  description: |
+    Export Jooby routes to RAML 1.0 and give you live doc and testing wit no extra effort.
+  url: https://github.com/jooby-project/jooby/tree/master/jooby-raml
+  topics:
+    - Test
+    - Document
+- name: go-raml
+  author: Alon Diamant
+  description: |
+    An implementation of a RAML parser for Go. Compliant with RAML 0.8.
+  url: https://github.com/go-raml/raml
+  topics:
+    - Parsers
+- name: API Spec Converter
+  author: StopLight.io
+  description: |
+    This package helps to convert between different API specifications (Postman,
+    Swagger, RAML, StopLight).
+  url: https://github.com/stoplightio/api-spec-converter
+  topics:
+    - Utilities
+- name: OAS RAML Converter
+  author: MuleSoft
+  description: |
+    This package helps to convert between different API specifications.
+    It was originally forked from the stoplight.io converter but has been
+    greatly improved. It supports OAS 2.0 <> RAML 1.0, 0.8
+  topics:
+    - Utilities
+- name: RAML Store
+  author: brianmc
+  description: |
+    This project provides an persistent store for RAML files created using then
+    embedded API Designer.
+  url: https://github.com/brianmc/raml-store
+  topics:
+    - Design
+- name: API designer using local filesystem
+  author: sichvoge
+  description: |
+    An implementation of MuleSoft's API designer using the local filesystem.
+  url: https://github.com/sichvoge/api-designer-fs
+  topics:
+    - Design
+- name: raml2html PHP
+  author: LeanLabs
+  description: |
+    raml2html documentation generator based on PHP
+  url: https://github.com/raml-leanlabsio/raml2html
+  topics:
+    - Document
+- name: Jumpscale go-raml
+  author: Jumpscale
+  description: |
+    Server and client generation for RAML 1.0
+  url: ""
+- name: gulp-RAML2HTML
+  author: walling
+  description: |
+    A simple gulp plugin to automate the process of generating HTML documentation
+    based on a RAML API.
+  url: https://github.com/walling/gulp-raml2html
+  topics:
+    - Utilities
+- name: RAMLRenderer
+  author: beno
+  description: |
+    HTML documentation builder for RAML 1.0 written in Crystal
+  url: https://github.com/beno/ramlrenderer
+  topics:
+    - Document
+- name: PHP RAML Parser
+  author: alecsammon
+  description: |
+    A reference implementation of a RAML parser in PHP. Compliant with
+    RAML 0.8.
+  url: https://github.com/alecsammon/php-raml-parser
+  topics:
+    - Parsers
+- name: RAML2Java
+  author: Juan Desimoni
+  description: |
+    Web app that generate a consumable Java interface based on Retrofit
+    annotations from a RAML spec file.  Requires SBT & Scala 2.11+
+  url: https://github.com/juandesi/raml-to-java-app
+  topics:
+    - Build
+- name: ramlo
+  author: PGS Software
+  description: |
+    Command line tool based on Node.js for generating RESTful API documentations
+    written in RAML.
+  url: https://github.com/PGSSoft/ramlo
+  topics:
+    - Document
+- name: LocalAPI
+  author: IsaaCloud
+  description: |
+    LocalAPI is application based on Node.js library and allows for running
+    a fully functional API on the basis of definitions included in a raml file. The
+    application also generates dummy data json files from templates and serve them
+    as a response body in AP
+  url: https://github.com/isaacloud/local-api
+  topics:
+    - Build
+- name: RAML Builder
+  author: Eric Neuhauser
+  description: |
+    This tool builds separate RAML, YAML, Schema, and JSON files into a
+    single RAML and generates it to HTML.
+  url: https://github.com/eneuhauser/raml-builder
+  topics:
+    - Document
+- name: RAML Sublime Plugin
+  author: MuleSoft
+  description: |
+    RAML Sublime Plugin is a syntax highlighter for Sublime (the popular text editor).
+  url: https://github.com/mulesoft/raml-sublime-plugin
+  topics:
+    - Design
+- name: API Designer for Git FS
+  author: Stephane
+  description: |
+    api-designer console fork for pulling github hosted raml/json-schema files.
+  url: https://github.com/stephanesan/api-designer
+  topics:
+    - Document
+- name: raml-mocker
+  author: David Vega Fontelos
+  description: |
+    Node module to create random responses to requests based on RAML REST definition.
+  url: https://github.com/RePoChO/raml-mocker
+  topics:
+    - Build
+- name: ramltomd
+  author: Diego Gurgel
+  description: |
+    A RAML to markdown converter made in modejs.
+  url: https://github.com/diegogurgel/ramltomd
+  topics:
+    - Document
+- name: pyraml-parser
+  author: an2deg
+  description: |
+    A reference implementation of a RAML parser for Python. It's based
+    on PyYAML and written in Python. Compliant with RAML 0.8.
+  url: https://github.com/an2deg/pyraml-parser
+  topics:
+    - Parsers
+- name: RAML PHP Client Generator
+  author: jayS-de
+  description: |
+    Generate a PHP API client from RAML.
+  url: https://github.com/jayS-de/raml-php-generator
+  topics:
+    - Build
+- name: sphinx-raml
+  author: Pierre Tardy
+  description: |
+    A sphinx extension to include raml based documentation into a sphinx doc
+  url: https://github.com/tardyp/sphinx-raml
+  topics:
+    - Document
+- name: SCRAML
+  author: Atomic BITS
+  description: |
+    Scraml generates a typesafe Java or Scala client library based on a
+    RAML specification. It transforms JSON schema into fully typed Java POJOs or Scala
+    case classes and a REST resources DSL that enforces your RAML specification.
+  url: http://scraml.io/
+  topics:
+    - Build
+- name: PSX Framework
+  author: Christoph Kappestein
+  description: |
+    PSX is a framework written in PHP to create REST APIs. It provides
+    tools to handle routing, API versioning, data transformation, authentication,
+    documentation and testing.
+  url: http://phpsx.org/
+  topics:
+    - Build
+- name: RAML Maven Plugin
+  author: Hubrick
+  description: |
+    Provides generation of Spring Web resource interfaces based on RAML files.
+  url: https://github.com/hubrick/raml-maven-plugin
+  topics:
+    - Build
+- name: RAML Parser for .NET
+  author: MuleSoft
+  description: |
+    A RAML Parser implementation in .NET for all CLR languages. The parser
+    is implemented as a strongly-typed wrapper around the JavaScript parser, leveraging
+    Edge.js as a Node.js host.
+  url: https://github.com/raml-org/raml-dotnet-parser
+  topics:
+    - Parsers
+- name: SoapUI RAML Plugin
+  author: SmartBear
+  description: |
+    SoapUI is a very popular functional testing tool, broadly used for
+    testing any HTTP APIs including both SOAP and REST, as well as JMS, AMF, and JDBC.
+    The RAML plugin for SoapUI allows the importing of RAML APIs into SoapUI for testing.
+  url: http://olensmar.blogspot.se/2013/12/a-raml-apihub-plugin-for-soapui.html
+  topics:
+    - Test
+- name: ATOM RAML package
+  author: n4ch03
+  description: |
+    ATOM RAML Package is a plugin (package) for ATOM (Github's text editor)
+    that helps the user to write RAML specs by providing highlighting capabilities
+    and snippets autocompletion.
+  url: https://github.com/n4ch03/atom-raml
+  topics:
+    - Design
+- name: Ruby RamlParser
+  author: ePages
+  description: |
+    A Ruby based parser for the RAML API modeling language.
+  url: https://github.com/ePages-de/raml_parser
+  topics:
+    - Parsers
+- name: Ra
+  author: Ramses
+  description: |
+    Ra is a test suite generator and helper library for testing APIs described
+    in RAML.  Out of the box, Ra provides a basic, automated test suite to test the
+    routes declared in the RAML document. It provides test helpers for augmenting
+    these with custom test
+  url: https://github.com/ramses-tech/ra
+  topics:
+    - Test
+- name: Nobel
+  author: nohorbee
+  description: |
+    Nobel (code-generator) creates a REST API for your Arduino board, based
+    on a RAML definition.
+  url: https://github.com/nohorbee/nobel
+  topics:
+    - Build
+- name: RAML Syntax Highlighting for Visual Studio Code
+  author: Jeppe Lund Andersen
+  description: |
+    This is a RAML syntax highlighting implementation for VS Code based
+    on the official Sublime Text version language file.
+  url: https://github.com/jlandersen/vscode-raml
+  topics:
+    - Design
+- name: raml-1-mocker
+  author: Artem Soltynskiy
+  description: |
+    Node module to create mock service based on RAML 1.0 specification.
+  url: https://github.com/artemkaint/raml-1-mocker
+  topics:
+    - Test
+- name: RAML Mock-ups
+  author: Alvaro Cabrera
+  description: |
+    Express-based mocking service for RAML development.
+  url: https://github.com/gextech/raml-mockup
+  topics:
+    - Test
+- name: RamlParser
+  author: Nat Chapman
+  description: |
+    An Elixir parser for RAML API spec files
+  url: https://github.com/natchapman/raml_parser
+  topics:
+    - Parsers
+- name: RAML JavaScript Generator
+  author: jayS-de
+  description: |
+    Generate a JavaScript API client from RAML.
+  url: https://github.com/jayS-de/raml-php-generator
+  topics:
+    - Build
+- name: ramlnova
+  author: ANAS IT Inc.
+  description: |
+    ramlnova is the next-generation RESTful-APIs Generator software (Laravel
+    5.2, golang, etc) that makes you Reduce the 70% server coding workload. It's scalable,
+    intelligent, and fast.
+  url: https://github.com/anasinc/ramlnova
+  topics:
+    - Build
+- name: raml-scaffold
+  author: Benjamin Ihrig
+  description: |
+    Scaffolding for RAML
+  url: https://github.com/ihrigb/raml-scaffolding
+  topics:
+    - Build
+- name: Raml Ruby Client Generator
+  author: Newell Zhu
+  description: |
+    Auto Generate Ruby Client from Raml.
+  url: https://github.com/zlx/raml-ruby-client-generator
+  topics:
+    - Build
+- name: Rambo
+  author: Dana Scheider
+  description: |
+    Rambo is a gem that generates API contract tests from API docs in RAML.
+  url: https://github.com/danascheider/rambo
+  topics:
+    - Test
+- name: Brújula
+  author: nogates
+  description: |
+    Yet another Ruby RAML parser aiming for version 1.0 fully support
+  url: https://github.com/nogates/brujula
+  topics:
+    - Parsers
+- name: RAML Linter
+  author: Quicken Loans
+  description: |
+    RAML Linter is a static analysis, linter-like, utility that will enforce
+    rules on a given RAML document, ensuring consistency and quality.
+  url: https://github.com/QuickenLoans/ramllint
+  topics:
+    - Design
+- name: express-raml-store
+  author: colthreepv
+  description: |
+    This project makes the api-designer work with a persistence layer to
+    a specified directory, so the users can code into the designer and output into
+    filesystem (and version control!).
+  url: https://github.com/mrgamer/express-raml-store
+  topics:
+    - Design
+- name: SBT RAML Plugin
+  author: Eigengo
+  description: |
+    The purpose of this plugin is to provide syntax checking and documentation
+    generator for your RAML API definitions.
+  url: https://github.com/eigengo/sbt-raml-plugin
+  topics:
+    - Document
+- name: RAML Mock Server
+  author: OzWolf
+  description: |
+    Java + JUnit library for running a Mock Server then verifying interactions
+    match the API specifications defined in the RAML specification
+  url: https://github.com/ozwolf-software/raml-mock-server
+  topics:
+    - Test
+- name: go-raml-parser
+  author: tsaikd
+  description: |
+    RAML (1.0) parser implementation in golang
+  url: https://github.com/tsaikd/go-raml-parser
+  topics:
+    - Parsers
+- name: Amazon API Gateway Importer
+  author: AWS Labs
+  description: |
+    The Amazon API Gateway Importer lets you create or update Amazon API
+    Gateway APIs from a RAML API representation.
+  url: https://github.com/awslabs/aws-apigateway-importer
+  topics:
+    - Build
+- name: RAML 1.0 Parser for .NET
+  author: MuleSoft
+  description: |
+    A RAML Parser implementation in .NET for all CLR languages. The parser
+    is implemented as a strongly-typed wrapper around the JavaScript parser, leveraging
+    Edge.js as a Node.js host.
+  url: https://github.com/raml-org/raml-dotnet-parser-2
+  topics:
+    - Parsers
+- name: raml-jaxrs
+  author: CJS Common Platform
+  description: |
+    RAML to JAXRS generator
+  url: https://github.com/cjsCommonPlatform/raml-maven
+  topics:
+    - Build
+- name: raml-csharp-parser
+  author: Martin Pueyo
+  description: |
+    This project contains a RAML csharp parser compatible with version
+    0.8 of the RAML specification.
+  url: https://github.com/martineo14/raml-csharp-parser
+  topics:
+    - Parsers
+- name: PHP RAML Server (fork)
+  author: jasir
+  description: |
+    This is an implementation of a Apache/PHP server which takes a RAML
+    API specification and stubs a working API server leveraging the Slim Microframework.
+  url: https://github.com/jasir/php-raml-server
+  topics:
+    - Test
+- name: RAML Perl Parser
+  author: Sean P Quinlan
+  description: |
+    Perl parser for RAML API definitions
+  url: https://github.com/spq-easy/raml
+  topics:
+    - Parsers
+- name: play-raml
+  author: Vadim
+  description: |
+    play-raml is a sbt plugin for play framework 2.4, which replaces the
+    default routes definition syntax used in conf/routes with RAML. This plugin inspired
+    by sbt-play-raml.
+  url: https://github.com/bavadim/play-raml
+  topics:
+    - Build
+- name: RAML Cop
+  author: thebinarypenguin
+  description: |
+    A command line tool for validating RAML files. It uses raml-org/raml-js-parser
+    for parsing, and can optionally output the parsed RAML as JSON.
+  url: https://github.com/thebinarypenguin/raml-cop
+  topics:
+    - Utilities
+- name: hapi-raml
+  author: Dave Irvine
+  description: |
+    This library will take your RAML, parse it using raml-parser, and then
+    set up routes in hapi to match your RAML.
+  url: https://github.com/dave-irvine/node-hapi-raml
+  topics:
+    - Build
+- name: RAML Client Generator for Gulp
+  author: Brent Montague
+  description: |
+    This allows for a raml file to be turned into a client library via
+    the javascript-raml-generator node module with gulp even easier!
+  url: https://github.com/bigbam505/gulp-raml-client-generator
+  topics:
+    - Utilities
+- name: vim-raml
+  author: Kenneth Feng
+  description: |
+    RAML plugin for VIM
+  url: https://github.com/kennethzfeng/vim-raml
+  topics:
+    - Design
+- name: RAML Validate
+  author: MuleSoft
+  description: |
+    Strict and pluginable validation of RAML parameters.
+  url: https://github.com/mulesoft/node-raml-validate
+  topics:
+    - Test
+- name: eslint-plugin-raml
+  author: Nikita Galkin
+  description: |
+    Eslint rules for RAML. You can use it for testing your RAML in Continuous Integration.
+  url: https://github.com/galk-in/eslint-plugin-raml
+  topics:
+    - Utilities
+- name: php-ramlMerge
+  author: Mike Stowe
+  description: |
+    RAML Merge lets you merge in any included RAML files (!include) into
+    a single RAML file via the command line.
+  url: https://github.com/mikestowe/php-ramlMerge
+  topics:
+    - Utilities
+- name: raml-fleece
+  author: Janrain
+  description: |
+    raml-fleece turns RAML into a readable HTML file. It currently supports
+    version 0.8 as defined in the 0.8 RAML specification.
+  url: https://github.com/janrain/raml-fleece
+  topics:
+    - Document
+- name: raml2pdf-cli
+  author: Christian Heindl
+  description: |
+    Command-line RAML to PDF converter.
+  url: https://github.com/cheindl/raml2pdf-cli
+  topics:
+    - Utilities
+- name: Diet RAML generator
+  author: Oscar Reyes
+  description: |
+    A resource code generator for diet with raml
+  url: https://github.com/Nosthertus/diet-raml-generator
+  topics:
+    - Build
+- name: generator-ramlang
+  author: Syple Technologies
+  description: |
+    RAMLang is a simple and easy to use command line tool. It's main goal
+    is to provide AngularJS services which help communicate with RESTful API's. How
+    it works is it takes a RAML spec document and generates the RESTful resources
+    in a contained module.
+  url: https://github.com/syple/generator-ramlang
+  topics:
+    - Build
+- name: GULP RAML plugin
+  author: JohanObrink
+  description: |
+    GULP RAML Plugin is a GULP based add-on that allows to parse and validate
+    a RAML definition as a GULP Task. It's based on the JavaScript RAML Parser.
+  url: https://github.com/JohanObrink/gulp-raml
+  topics:
+    - Utilities
+- name: DropWizard RAML View
+  author: OzWolf
+  description: |
+    Allow the adding of an API resource to a DropWizard service that displays
+    the RAML specification for that service in a human-readable format.
+  url: https://github.com/ozwolf-software/dropwizard-raml-view
+  topics:
+    - Document
+- name: RAML Data Type System
+  author: MuleSoft
+  description: |
+    This module contains a lightweight implementation of the type system
+    that was introduced with RAML 1.0.  It allows you to to parse, validate , modify
+    RAML types, as well as store them back to JSON.
+  url: https://github.com/raml-org/typesystem-ts
+  topics:
+    - Utilities
+- name: metalsmith-raml
+  author: Lotaris SA
+  description: |
+    This is a plugin for Metalsmith that parses RAML API Specifications
+    and renders them using any templating engine.
+  url: https://github.com/lotaris/metalsmith-raml
+  topics:
+    - Build
+- name: vim-raml
+  author: Eric Hopkins
+  description: Vim syntax and language settings for RAML
+  url: https://github.com/IN3D/vim-raml
+  topics:
+    - Design
+- name: linter-raml
+  author: Cyprien Quilici
+  description: |
+    Lint RAML documentation on the fly in atom using raml-js-parser
+  url: https://atom.io/packages/linter-raml
+  topics:
+    - Design
+- name: ramlev
+  author: cybertk
+  description: |
+    ramlev is a simple RAML Example Validator, which is used to validate
+    the examples defined in RAML against its schema.
+  url: https://github.com/cybertk/ramlev
+  topics:
+    - Utilities
+- name: Autocode RAML Processor
+  author: Autocode
+  description: |
+    Process models and export them as RAML with Autocode
+  url: https://github.com/crystal/raml
+  topics:
+    - Build
+- name: RAML Lorem-Impsum
+  author: Ioannis Charalampidis
+  description: |
+    A simple library and CLI utility for generating random data from RAML
+    1.0 type specifications.
+  url: https://github.com/wavesoft/raml-lipsum
+  topics:
+    - Utilities
+- name: raml2mocha
+  author: Miles Oldenburg
+  description: |
+    Automated mocha.js test generation for RAML API specs.
+  url: https://github.com/milesoldenburg/raml2mocha
+  topics:
+    - Test
+- name: RAML JSON Schema Expander
+  author: Adam Newman
+  description: |
+    This library will expand JSON Schema draft 4 schema references in
+    a raml object created by raml2obj. It was primarily created for use in raml2html
+    so that schemas which reference other schemas will be expanded instead of leaving
+    "$ref": "foo.json#".
+  url: https://github.com/br-adam-newman/raml-jsonschema-expander
+  topics:
+    - Utilities
+- name: raml2travis
+  author: Innova Co S.à r.l
+  description: |
+    Travis CI plugin for RAML
+  url: https://github.com/InnovaCo/raml2travis
+  topics:
+    - Utilities
+- name: PAW RAML Specification Importer 0.8
+  author: A.J. Brown
+  description: |
+    A Paw Extension to import RAML 0.8 Specification into Paw.
+  url: https://paw.cloud/extensions/RAMLImporter
+  topics:
+    - Test
+- name: PAW RAML Specification Importer 1.0
+  author: A.J. Brown
+  description: |
+    A Paw Extension to import RAML 1.0 Specification into Paw.
+  url: https://paw.cloud/extensions/RAML1Importer
+  topics:
+    - Test
+- name: raml2test
+  author: aisensiy
+  description: |
+    A tool to translate raml to mocha api test
+  url: https://github.com/aisensiy/raml2test
+  topics:
+    - Test
+- name: raml-olingo-codegen
+  author: Subhobrata Dey
+  description: |
+    The raml-olingo-codegen project provides a tool to generate a scaffolding
+    for an Apache Olingo application from a given set of Raml files.
+  url: https://github.com/sbcd90/raml-olingo-codegen
+  topics:
+    - Build
+- name: grunt-raml
+  author: MuleSoft
+  description: |
+    A Grunt Plugin for validating RAML files
+  url: https://github.com/mulesoft-labs/grunt-raml
+  topics:
+    - Utilities
+- name: RAML CLI Validator
+  author: A.J. Brown
+  description: |
+    The command line utility can be used for validating the syntax of
+    a RAML file.
+  url: https://github.com/mulesoft-labs/cli
+- name: Test Compatibility Kit for RAML Parsers
+  author: MuleSoft
+  description: |
+    A collection of RAML specifications for use to test a RAML Parsers
+    capability, or for use when developing your own parser.
+  url: https://github.com/mulesoft-labs/raml-tck
+  topics:
+    - Parsers
+    - Utilities

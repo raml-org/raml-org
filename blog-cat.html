@@ -1,0 +1,155 @@
+---
+layout: page
+title: Blogs category
+permalink: /blog-cat
+---
+
+<div class="wrapper">
+    <div class = "renderblog"></div>
+    <ul id="pagination-demo" class="paginationqw"></ul>
+
+</div>
+
+<script src="js/jquery.twbsPagination.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        var query = getUrlVars();
+        var queryStingval = query['cat'].replace("+", " ");
+        $('h1.page-header').text("Blog: " + queryStingval );
+
+        //console.log(queryStingval);
+        fetchJsonData();
+
+        function getUrlVars()
+        {
+            var vars = [], hash;
+            var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+            for(var i = 0; i < hashes.length; i++)
+            {
+                hash = hashes[i].split('=');
+                vars.push(hash[0]);
+                vars[hash[0]] = hash[1];
+            }
+            return vars;
+        }
+
+        function fetchJsonData() {
+            var dataarray =[];
+            $.getJSON("/blog.json", function (data) {
+                //console.log(data);
+                $.each(data,function(l) {
+                    //console.log("test" + data[l].categories.toLowerCase().indexOf(queryStingval));
+                    if(data[l].categories.toLowerCase().indexOf(queryStingval) >= 0) {
+                        dataarray.push(data[l]);
+                    }
+                });
+
+                //console.log(dataarray);
+                if(dataarray.length >= 0) {
+                    renderJsonData(dataarray)
+                }
+                //renderJsonData(data)
+            });
+        }
+
+        function renderJsonData(data) {
+            //console.log(data);
+            var perpage = 5;
+            var datalimit = perpage;
+            var maxdatalength = data.length;
+            var totallinks = Math.ceil(maxdatalength/perpage);
+            var renderblog = $('div.renderblog');
+            //console.log(totallinks);
+
+            $('#pagination-demo').twbsPagination({
+                totalPages: totallinks,
+                visiblePages: 5,
+                next: 'Next',
+                prev: 'Prev',
+                onPageClick: function (event, page) {
+
+//                 var current_page = page;
+                    datalimit =  (page*perpage);
+                    var start;
+                    if(page == 1) {
+                        start = 0;
+                    } else {
+                        start = (datalimit+perpage)-(2*perpage);
+                        datalimit = (datalimit+perpage)-perpage;
+                    }
+
+                    //console.log( page + " start " + start + " limit " + datalimit );
+                    renderblog.empty();
+                    var regex = /\s+/gi;
+                    for(var i = start; i < datalimit; i++ ) {
+                        if(data[i] === undefined) {
+                            continue;
+                        }
+                        var joinblogcategory;
+                        if(data[i].categories.indexOf(',') > -1) {
+                            var blogcategory = [];
+                            var getblogcat = data[i].categories.split(",");
+                            for(var j = 0; j < getblogcat.length; j++ ) {
+                                var getcat;
+                                var wordCounts = getblogcat[j].trim().replace(regex, " ").split(" ").length;
+                                if(wordCounts > 1) {
+                                    getcat = getblogcat[j].trim().replace(" ", "+").toLowerCase();
+                                } else {
+                                    getcat = getblogcat[j].trim().toLowerCase();
+                                }
+                                //blogcategory += '<a href="/blog-cat?cat=' + getblogcat[j].trim() + '">' + getblogcat[j] +'</a>' + ' , ';
+                                blogcategory.push('<a href="/blog-cat?cat=' + getcat + '">' + getblogcat[j] +'</a>');
+                            }
+                            joinblogcategory = blogcategory.join(', ');
+                        } else {
+                            if(data[i].categories.trim().replace(regex, " ").split(" ").length > 1) {
+                                joinblogcategory = '<a href="/blog-cat?cat=' + data[i].categories.trim().replace(" ", "+").toLowerCase() + '">' + data[i].categories +'</a>';
+                            } else {
+                                joinblogcategory = '<a href="/blog-cat?cat=' + data[i].categories.trim().toLowerCase() + '">' + data[i].categories +'</a>';
+                            }
+
+                        }
+
+                        var blogtag;
+
+                        if(data[i].tags.length >= 1) {
+                            if(data[i].tags.indexOf(',') > 0) {
+                                var blogtags = [];
+                                var getblogtag = data[i].tags.split(",");
+                                for(var k = 0; k < getblogtag.length; k++ ) {
+                                    if(getblogtag[k] != undefined) {
+                                        var getVal;
+                                        var wordCount = getblogtag[k].trim().replace(regex, " ").split(" ").length;
+                                        if(wordCount > 1) {
+                                            getVal = getblogtag[k].trim().replace(" ", "+").toLowerCase();
+                                        } else {
+                                            getVal = getblogtag[k].trim().toLowerCase();
+                                        }
+
+                                        blogtags.push('<a href="/blogtag?tag=' + getVal + '">' + getblogtag[k] +'</a>');
+                                    }
+                                }
+                                blogtag = blogtags.join(', ');
+                            } else {
+                                if(data[i].tags.trim().replace(regex, " ").split(" ").length > 1) {
+                                    blogtag = '<a href="/blogtag?tag=' + data[i].tags.trim().replace(" ", "+").toLowerCase() + '">' + data[i].tags +'</a>';
+                                } else {
+                                    blogtag = '<a href="/blogtag?tag=' + data[i].tags.trim().toLowerCase() + '">' + data[i].tags +'</a>';
+                                }
+                            }
+                        } else {
+                            blogtag = '';
+                        }
+
+                        var blogDiv = '<div class="blog"><h2><a class="post-link" href="'+ data[i].url +'">'+ data[i].title +'</a></h2>' + '' +
+                                '<div class="post_author">By: '+ data[i].author + '</div><div class="post_date">'+ data[i].date + '</div><div class="post_categories"> Category: ' + joinblogcategory + '</div><div class="post_tag"> Tags: ' + blogtag +'</div>' +
+                                '<div class="post_content">' + data[i].content + '</div><div class="read_more"><a href="' + data[i].url + '" class="btn btn-default">Read More</a></div></div>';
+                        renderblog.append(blogDiv);
+                    }
+
+                }
+            });
+        }
+    });
+</script>

@@ -1,0 +1,19 @@
+<h2>About</h2>
+
+<ul class="vendormenu">
+    <li>
+        {% if page.title == 'Workgroup' %}
+        <a href="/workgroup" class="active">Workgroup</a>
+        {% else %}
+        <a href="/workgroup">Workgroup</a>
+        {% endif %}
+
+    </li>
+    <li>
+        {% if page.title == 'Legal' %}
+        <a href="/legal" class="active">Legal</a>
+        {% else %}
+        <a href="/legal">Legal</a>
+        {% endif %}
+    </li>
+</ul>
