@@ -1,0 +1,90 @@
+###########
+# site.url, site.title
+
+title: 'RAML'
+
+## note: 
+#  use site.path in your templates to make it work for both protocols e.g. http and https
+#  use site.url only inside the web feed template (e.g. requires full url incl. protocol)
+path:
+baseurl:
+url: "https://raml.org"
+permalink: "/blogs/:title"
+timezone:      null
+
+########
+# more settings
+
+markdown: kramdown
+
+sass:
+  sass_dir: css
+  style:    expanded
+
+
+
+exclude:
+- README.md
+
+
+safe: true
+lsi: false
+
+# Where things are
+source:      .
+destination: ./_site
+layouts_dir:     ./_layouts
+data_dir: ./_data
+# collections: null
+
+# Handling Reading
+include:      [".htaccess"]
+exclude:      []
+keep_files:   [".git", ".svn"]
+encoding:     "utf-8"
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+
+gems:
+  - jekyll-feed
+  - jekyll-paginate
+  - jekyll-seo-tag
+  - jekyll-redirect-from
+  - jekyll-minifier
+
+defaults:
+  -
+    scope:
+      path: ""      # empty string for all files
+      type: posts   # limit to posts
+    values:
+      is_post: true # automatically set is_post=true for all posts
+
+collections:
+    testimonials:
+        output: true
+
+projectsgithuburl: https://github.com/raml-org/raml-org/tree/develop
+projectnoofpages: 10
+
+jekyll-minifier:
+  exclude: 'atom.xml'
+  preserve_php: true                # Default: false
+  remove_spaces_inside_tags: true   # Default: true
+  remove_multi_spaces: true         # Default: true
+  remove_comments: true             # Default: true
+  remove_intertag_spaces: true      # Default: false
+  remove_quotes: false              # Default: false
+  compress_css: true                # Default: true
+  compress_javascript: false         # Default: true
+  simple_doctype: false             # Default: false
+  remove_script_attributes: false   # Default: false
+  remove_style_attributes: false    # Default: false
+  remove_link_attributes: false     # Default: false
+  remove_form_attributes: false     # Default: false
+  remove_input_attributes: false    # Default: false
+  remove_javascript_protocol: false # Default: false
+  remove_http_protocol: false       # Default: false
+  remove_https_protocol: false      # Default: false
+  preserve_line_breaks: false       # Default: false
+  simple_boolean_attributes: false  # Default: false
+  compress_js_templates: false      # Default: false
