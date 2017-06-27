@@ -206,7 +206,7 @@ permalink: /projects
                 }
                 project_div = '<div class="projectblock"><div class="row"><div class="projname col-md-2"><h3>' + project_name + '</h3></div><div class="projdesc col-md-8"><p>' + project_desc + '</p></div>' +
                             '<div class="projlink col-md-2"><a href ="' + project_url + '" rel="nofollow">View Project Page</a></div></div><div class="proj_topics">'+ join_topic +'</div> ';
-                 if(datas.length <=5) {
+                 if(datas.length <= per_page) {
                      $('div.result').html(project_div);
                  } else {
                      $('div.result').append(project_div);
