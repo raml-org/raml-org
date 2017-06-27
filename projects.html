@@ -35,14 +35,14 @@ permalink: /projects
                     <li><a href="javascript:void(0);" id="parser">Parser</a> </li>
                     <li><a href="javascript:void(0);" id="utilities">Utilities</a> </li>
                 </ul>
-
-                   <div class="result"></div>
-                   <div class="no_result"></div>
                 <ul class="pagination">
                     <li><a href="javascript:void(0);" id="pre">&#171; Prev</a></li>
                     <li><a href="javascript:void(0);" id="list"></a></li>
                     <li><a href="javascript:void(0);" id="next">next &#187;</a></li>
-                    </ul>
+                </ul>
+                   <div class="result"></div>
+                   <div class="no_result"></div>
+
 
 
 </div>
@@ -87,7 +87,7 @@ permalink: /projects
     $(document).ready(function() {
         var max_size;
         var start = 0;
-        var per_page = 5;
+        var per_page = {{ site.projectnoofpages }};
         var limit = per_page;
         var no_of_links;
         var datas;
@@ -102,22 +102,17 @@ permalink: /projects
             getJsonData(actext,search_val);
 
         });
-
         $('ul.proj_cat li a').click(function() {
             active_text = $(this).text();
             $('ul.proj_cat li a').removeClass('active');
             $(this).addClass('active');
             $('div.result').empty();
-            limit = 5;
+            limit = per_page;
             current_page = 1;
             $("#next").removeClass("disabled");
             $("#pre").removeClass("disabled");
             getJsonData(active_text,search_val);
         });
-
-
-
-
         function getJsonData(active_text,search_val) {
             $.getJSON("/project.json", function (data) {
                 var getData = [];
@@ -185,7 +180,7 @@ permalink: /projects
         function get_jsonData(start,limit,datas) {
             no_of_links = (max_size/per_page);
             var total_links = Math.ceil(no_of_links);
-            if(datas.length <= 5) {
+            if(datas.length <= per_page) {
                 $('ul.pagination').hide();
             } else {
                 $('ul.pagination').show();
@@ -211,14 +206,13 @@ permalink: /projects
                 }
                 project_div = '<div class="projectblock"><div class="row"><div class="projname col-md-2"><h3>' + project_name + '</h3></div><div class="projdesc col-md-8"><p>' + project_desc + '</p></div>' +
                             '<div class="projlink col-md-2"><a href ="' + project_url + '" rel="nofollow">View Project Page</a></div></div><div class="proj_topics">'+ join_topic +'</div> ';
-                 if(datas.length <=5) {
+                 if(datas.length <= per_page) {
                      $('div.result').html(project_div);
                  } else {
                      $('div.result').append(project_div);
                  }
             }
-            $('ul.pagination li a#list').text(current_page + ' of ' + total_links );
-
+            $('ul.pagination li a#list').text('Page ' + current_page + ' of ' + total_links );
         }
     });
 </script>
