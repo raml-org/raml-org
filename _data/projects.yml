@@ -540,7 +540,7 @@
     - Parsers
 - name: RAML JavaScript Generator
   author: MuleSoft
-  description: |	
+  description: |
     Generate a JavaScript API client from RAML.
   url: https://github.com/mulesoft-labs/raml-javascript-generator
   topics:
