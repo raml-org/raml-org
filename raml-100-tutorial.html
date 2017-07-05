@@ -15,27 +15,27 @@ permalink: /developers/raml-100-tutorial
 <h2 id="enter-the-root">ENTER THE ROOT</h2>
 <p>Let&#39;s say you are the API designer for a BookMobile startup. You&#39;ve worked out a business plan, a scaling plan, and Ashton Kutcher is an angel investor. You know you want developers to capitalize on what you&#39;ve built, so that you can capitalize on what THEY build. You know having a RESTful API is one way to make that happen. So, let&#39;s get started by writing a spec.</p>
 <p><strong>First, you&#39;ll enter some basic information in a text editor. You can save your API&#39;s RAML definition as a text file with a recommended extension .raml:</strong></p>
-<pre><code class="lang-yaml">#%RAML 0.8
-    ---
-    title: e-BookMobile API
-    baseUri: http://api.e-bookmobile.com/{version}
-    version: v1
+<pre><code class="lang-yaml">#%RAML 1.0
+---
+title: e-BookMobile API
+baseUri: http://api.e-bookmobile.com/{version}
+version: v1
 </code></pre>
-<p>Everything you enter in at the <a href="https://github.com/raml-org/raml-spec/blob/master/versions/raml-08/raml-08.md#root-section">root</a> (or top) of the spec applies to the rest of your API. This is going to come in very handy later as you discover patterns in how you build your API. The baseURI you choose will be used with every call made, so make sure it&#39;s as clean and concise as can be.</p>
+<p>Everything you enter in at the <a href="https://github.com/raml-org/raml-spec/blob/master/versions/raml-10/raml-10.md#the-root-of-the-document">root</a> (or top) of the spec applies to the rest of your API. This is going to come in very handy later as you discover patterns in how you build your API. The baseURI you choose will be used with every call made, so make sure it&#39;s as clean and concise as can be.</p>
 <a name="enter-resources"></a>
 <h2 id="enter-resources">ENTER RESOURCES</h2>
-<p>As a thoughtful API designer, it&#39;s important to consider how your API consumers will use your API. It&#39;s especially important because in many ways, as the API designer YOU control the consumption. For example, consider the functionality of the BookMobile API. You know you want your users to be able to keep track of what they&#39;ve read and their favorites. Users should also be able to discover new books and look at other titles written by their favorite authors. To do this, you define various <em>collections</em> as your <a href="https://github.com/raml-org/raml-spec/blob/master/versions/raml-08/raml-08.md#resources-and-nested-resources">resources</a>.</p>
+<p>As a thoughtful API designer, it&#39;s important to consider how your API consumers will use your API. It&#39;s especially important because in many ways, as the API designer YOU control the consumption. For example, consider the functionality of the BookMobile API. You know you want your users to be able to keep track of what they&#39;ve read and their favorites. Users should also be able to discover new books and look at other titles written by their favorite authors. To do this, you define various <em>collections</em> as your <a href="https://github.com/raml-org/raml-spec/blob/master/versions/raml-10/raml-10.md#resources-and-nested-resources">resources</a>.</p>
 <p><strong>Recalling how your API consumers will use your API, enter the following three resources under your root:</strong></p>
-<pre><code class="lang-yaml">  /users:
-    /authors:
-    /books:
+<pre><code class="lang-yaml">/users:
+  /authors:
+  /books:
 </code></pre>
 <p>Notice that these resources all begin with a slash (/). In RAML, this is how you indicate a resource. Any methods and parameters nested under these top level resources belong to and act upon that resource. Now, since each of these resources is a collection of individual objects (specific authors, books, and users), we&#39;ll need to define some sub-resources to fill out the collection.</p>
 <p><strong>Nested resources are useful when you want to call out a particular subset of your resource in order to narrow it. For example:</strong></p>
-<pre><code class="lang-yaml">  /authors:
-    /{authorname}:
+<pre><code class="lang-yaml">/authors:
+  /{authorname}:
 </code></pre>
-<p>This lets the API consumer interact with the key resource and its nested resources. For example a GET request to <a href="http://api.e-bookmobile.com/authors/Mary_Roach">http://api.e-bookmobile.com/authors/Mary_Roach</a> returns details about science writer and humorist Mary Roach. Now, let&#39;s think about what we want developers and API consumers to DO.</p>
+<p>This lets the API consumer interact with the key resource and its nested resources. For example a GET request to <i>http://api.e-bookmobile.com/authors/Mary_Roach</i> returns details about science writer and humorist Mary Roach. Now, let&#39;s think about what we want developers and API consumers to DO.</p>
 <a name="enter-methods"></a>
 <h2 id="enter-methods">ENTER METHODS</h2>
 <p>Here&#39;s where it starts to get interesting, as you decide what you want the developer to be able to do with the resources you&#39;ve made available. <strong>Let&#39;s quickly review the 4 most common HTTP verbs:</strong></p>
@@ -46,122 +46,122 @@ permalink: /developers/raml-100-tutorial
 <p>You can add as many methods as you like to each resource of your BookMobile API, at any level. However, each HTTP method can only be used once per resource. Do not overload the GET (you know who you are).</p>
 <p>In this example, you want developers to be able to work at the collection level. For example, your API consumers can retrieve a book from the collection (GET), add a book (POST), or update the entire library (PUT). You do not want them to be able to delete information at the highest level. Let&#39;s focus on building out the /books resource.</p>
 <p><strong>Nest the methods to allow developers to perform these actions under your resources. Note that you must use lower-case for methods in your RAML API definition:</strong></p>
-<pre><code class="lang-yaml">  /books:
-    get:
-    post:
-    put:
+<pre><code class="lang-yaml">/books:
+  get:
+  post:
+  put:
 </code></pre>
 <a name="enter-uri-parameters"></a>
 <h2 id="enter-uri-parameters">ENTER URI PARAMETERS</h2>
 <p>The resources that we defined are collections of smaller, relevant objects. You, as the thoughtful API designer, have realized that developers will most likely want to act upon these more granular objects. Remember the example of nested resources above? /authors is made up of individual authors, referenced by {authorName}, for example. This is a URI parameter, denoted by surrounding curly brackets in RAML:</p>
-<pre><code class="lang-yaml">  /books:
-    /{bookTitle}:
+<pre><code class="lang-yaml">/books:
+  /{bookTitle}:
 </code></pre>
-<p>So, to make a request to this nested resource, the URI for Mary Roach&#39;s book, Stiff would look like <a href="http://api.e-bookmobile.com/v1/books/Stiff">http://api.e-bookmobile.com/v1/books/Stiff</a></p>
+<p>So, to make a request to this nested resource, the URI for Mary Roach&#39;s book, Stiff would look like <i>http://api.e-bookmobile.com/v1/books/Stiff</i></p>
 <p><strong>Time to edit your spec to reflect the inherent granular characteristics of your resources:</strong></p>
-<pre><code class="lang-yaml"> /books:
-    get:
-    put:
-    post:
-    /{bookTitle}:
+<pre><code class="lang-yaml">/books:
+  get:
+  put:
+  post:
+  /{bookTitle}:
     get:
     put:
     delete:
     /author:
-    get:
+      get:
     /publisher:
-    get:
+      get:
 </code></pre>
 <a name="enter-query-parameters"></a>
 <h2 id="enter-query-parameters">ENTER QUERY PARAMETERS</h2>
 <p>Great job so far! Now, let&#39;s say you want your API to allow even more powerful operations. You already have collections-based resource types that are further defined by object-based URI parameters. But you also want developers to be able perform actions like filtering a collection. Query parameters are a great way to accomplish this.</p>
 <p><strong>Start by adding some query parameters under the GET method for books. These can be specific characteristics, like the year a book was published:</strong></p>
-<pre><code class="lang-yaml">  /books:
-    get:
+<pre><code class="lang-yaml">/books:
+  get:
     queryParameters:
-    author:
-    publicationYear:
-    rating:
-    isbn:
-    put:
-    post:
+      author:
+      publicationYear:
+      rating:
+      isbn:
+  put:
+  post:
 </code></pre>
 <p>Query parameters may also be something that the server requires to process the API consumer&#39;s request, like an access token. Often, you need security authorization to alter a collection or record.</p>
 <p><strong>Nest the access-token query parameter under the PUT method for a specific title:</strong></p>
-<pre><code class="lang-yaml"> /books:
-    /{bookTitle}
+<pre><code class="lang-yaml">/books:
+  /{bookTitle}
     get:
-    queryParameters:
-    author:
-    publicationYear:
-    rating:
-    isbn:
+      queryParameters:
+        author:
+        publicationYear:
+        rating:
+        isbn:
     put:
-    queryParameters:
-    access_token:
+      queryParameters:
+        access_token:
 </code></pre>
 <p>An API&#39;s resources and methods often have a number of associated query parameters. Each query parameter may have any number of optional attributes to further define it. The Quick reference guide contains a full listing.</p>
 <p><strong>Now, specify attributes for each of the query parameters you defined above. As always, be as complete in your documentation as possible:</strong></p>
-<pre><code class="lang-yaml"> /books:
-    /{bookTitle}
+<pre><code class="lang-yaml">/books:
+  /{bookTitle}
     get:
-    queryParameters:
-    author:
-    displayName: Author
-    type: string
-    description: An author&#39;s full name
-    example: Mary Roach
-    required: false
-    publicationYear:
-    displayName: Pub Year
-    type: number
-    description: The year released for the first time in the US
-    example: 1984
-    required: false
-    rating:
-    displayName: Rating
-    type: number
-    description: Average rating (1-5) submitted by users
-    example: 3.14
-    required: false
-    isbn:
-    displayName: ISBN
-    type: string
-    minLength: 10
-    example: 0321736079?
+      queryParameters:
+        author:
+          displayName: Author
+          type: string
+          description: An author&#39;s full name
+          example: Mary Roach
+          required: false
+        publicationYear:
+          displayName: Pub Year
+          type: number
+          description: The year released for the first time in the US
+          example: 1984
+          required: false
+        rating:
+          displayName: Rating
+          type: number
+          description: Average rating (1-5) submitted by users
+          example: 3.14
+          required: false
+        isbn:
+          displayName: ISBN
+          type: string
+          minLength: 10
+          example: 0321736079?
     put:
-    queryParameters:
-    access_token:
-    displayName: Access Token
-    type: string
-    description: Token giving you permission to make call
-    required: true
+      queryParameters:
+        access_token:
+          displayName: Access Token
+          type: string
+          description: Token giving you permission to make call
+          required: true
 </code></pre>
-<p>To make a PUT call, your URI looks like <a href="http://api.e-bookmobile.com/books/Stiff?access_token=ACCESS">http://api.e-bookmobile.com/books/Stiff?access_token=ACCESS</a> TOKEN</p>
+<p>To make a PUT call, your URI looks like <i>http://api.e-bookmobile.com/books/Stiff?access_token=ACCESS</i> TOKEN</p>
 <a name="enter-responses"></a>
 <h2 id="enter-responses">ENTER RESPONSES</h2>
 <p>Responses MUST be a map of one or more HTTP status codes, and each response may include descriptions, examples, or schemas. Schemas are more fully explained in the Level 200 tutorial.</p>
-<pre><code class="lang-yaml"> /books:
-    /{bookTitle}:
+<pre><code class="lang-yaml">/books:
+  /{bookTitle}:
     get:
-    description: Retrieve a specific book title
-    responses:
-    200:
-    body:
-    application/json:
-    example: |
-    {
-    &quot;data&quot;: {
-    &quot;id&quot;: &quot;SbBGk&quot;,
-    &quot;title&quot;: &quot;Stiff: The Curious Lives of Human Cadavers&quot;,
-    &quot;description&quot;: null,
-    &quot;datetime&quot;: 1341533193,
-    &quot;genre&quot;: &quot;science&quot;,
-    &quot;author&quot;: &quot;Mary Roach&quot;,
-    &quot;link&quot;: &quot;http://e-bookmobile.com/books/Stiff&quot;,
-    },
-    &quot;success&quot;: true,
-    &quot;status&quot;: 200
-    }
+      description: Retrieve a specific book title
+      responses:
+        200:
+          body:
+            application/json:
+              example: |
+                {
+                  &quot;data&quot;: {
+                    &quot;id&quot;: &quot;SbBGk&quot;,
+                    &quot;title&quot;: &quot;Stiff: The Curious Lives of Human Cadavers&quot;,
+                    &quot;description&quot;: null,
+                    &quot;datetime&quot;: 1341533193,
+                    &quot;genre&quot;: &quot;science&quot;,
+                    &quot;author&quot;: &quot;Mary Roach&quot;,
+                    &quot;link&quot;: &quot;http://e-bookmobile.com/books/Stiff&quot;,
+                  },
+                  &quot;success&quot;: true,
+                  &quot;status&quot;: 200
+                }
 </code></pre>
 <p><strong>Congratulations! You&#39;ve just written your first API definition in RAML.  <a href="/developers/raml-200-tutorial">Continue to the 200 Tutorial &raquo;</a></strong></p>
