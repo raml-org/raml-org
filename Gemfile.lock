@@ -4,11 +4,8 @@ GEM
     addressable (2.5.0)
       public_suffix (~> 2.0, >= 2.0.2)
     colorator (1.1.0)
-    cssminify2 (2.0.1)
-    execjs (2.7.0)
     ffi (1.9.17)
     forwardable-extended (2.6.0)
-    htmlcompressor (0.3.1)
     jekyll (3.4.0)
       addressable (~> 2.4)
       colorator (~> 1.0)
@@ -22,27 +19,13 @@ GEM
       safe_yaml (~> 1.0)
     jekyll-feed (0.8.0)
       jekyll (~> 3.3)
-    jekyll-minifier (0.1.2)
-      cssminify2 (~> 2.0)
-      htmlcompressor (~> 0.3)
-      jekyll (~> 3.0)
-      uglifier (~> 2.7)
     jekyll-paginate (1.1.0)
-    jekyll-paginate-categories (1.0.1)
-      jekyll (>= 2.5)
-      jekyll-paginate (~> 1.1)
-    jekyll-paginate-tags (2.0.4)
-      jekyll (>= 2.5)
-      jekyll-paginate (~> 1.1)
-    jekyll-redirect-from (0.11.0)
-      jekyll (>= 2.0)
     jekyll-sass-converter (1.5.0)
       sass (~> 3.4)
     jekyll-seo-tag (2.1.0)
       jekyll (~> 3.3)
     jekyll-watch (1.5.0)
       listen (~> 3.0, < 3.1)
-    json (2.1.0)
     kramdown (1.13.2)
     liquid (3.0.6)
     listen (3.0.8)
@@ -58,9 +41,6 @@ GEM
     rouge (1.11.1)
     safe_yaml (1.0.4)
     sass (3.4.23)
-    uglifier (2.7.2)
-      execjs (>= 0.3.0)
-      json (>= 1.8.0)
 
 PLATFORMS
   ruby
@@ -68,15 +48,11 @@ PLATFORMS
 DEPENDENCIES
   jekyll (= 3.4.0)
   jekyll-feed (~> 0.6)
-  jekyll-minifier
   jekyll-paginate
-  jekyll-paginate-categories
-  jekyll-paginate-tags
-  jekyll-redirect-from (~> 0.11.0)
   jekyll-seo-tag
 
 RUBY VERSION
-   ruby 2.4.0p0
+   ruby 2.0.0p481
 
 BUNDLED WITH
-   1.14.6
+   1.14.3
