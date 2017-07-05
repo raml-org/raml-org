@@ -538,6 +538,13 @@
   url: https://github.com/natchapman/raml_parser
   topics:
     - Parsers
+- name: RAML JavaScript Generator		
+  author: MuleSoft
+  description: |		
+    Generate a JavaScript API client from RAML.		
+  url: https://github.com/mulesoft-labs/raml-javascript-generator		
+  topics:		
+    - Build    
 - name: ramlnova
   author: ANAS IT Inc.
   description: |
