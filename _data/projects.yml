@@ -538,13 +538,6 @@
   url: https://github.com/natchapman/raml_parser
   topics:
     - Parsers
-- name: RAML JavaScript Generator
-  author: jayS-de
-  description: |
-    Generate a JavaScript API client from RAML.
-  url: https://github.com/jayS-de/raml-php-generator
-  topics:
-    - Build
 - name: ramlnova
   author: ANAS IT Inc.
   description: |
@@ -856,11 +849,18 @@
   url: https://github.com/InnovaCo/raml2travis
   topics:
     - Utilities
-- name: PAW RAML Specification Importer
+- name: PAW RAML Specification Importer 0.8
   author: A.J. Brown
   description: |
-    A Paw Extension to import RAML Specification into Paw.
+    A Paw Extension to import RAML 0.8 Specification into Paw.
   url: https://paw.cloud/extensions/RAMLImporter
+  topics:
+    - Test
+- name: PAW RAML Specification Importer 1.0
+  author: A.J. Brown
+  description: |
+    A Paw Extension to import RAML 1.0 Specification into Paw.
+  url: https://paw.cloud/extensions/RAML1Importer
   topics:
     - Test
 - name: raml2test
