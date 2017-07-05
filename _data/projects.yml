@@ -539,10 +539,10 @@
   topics:
     - Parsers
 - name: RAML JavaScript Generator
-  author: jayS-de
+  author: MuleSoft
   description: |
     Generate a JavaScript API client from RAML.
-  url: https://github.com/jayS-de/raml-php-generator
+  url: https://github.com/mulesoft-labs/raml-javascript-generator
   topics:
     - Build
 - name: ramlnova
