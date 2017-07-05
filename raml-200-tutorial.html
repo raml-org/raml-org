@@ -4,12 +4,21 @@ title: RAML 200 Tutorial
 permalink: /developers/raml-200-tutorial
 ---
 
-<div class="tutorial-intro"><p><strong>Objective:</strong> Once you’re familiar with the <a href="https://raml.org/developers/raml-100-tutorial">basics of RAML</a>, it&#39;s time to dig into the more complex features of the language itself and take full advantage of what RAML can offer.</p>
+<div class="tutorial-intro"><p><strong>Objective:</strong> Once you’re familiar with the <a href="http://raml.org/docs.html">basics of RAML</a>, it&#39;s time to dig into the more complex features of the language itself and take full advantage of what RAML can offer</p>
     <p><strong>Introduction</strong></p>
-    <p>This tutorial will guide you through a complete use case for a jukebox API. You’ll learn how to optimize and reuse your code by applying concepts such as resourceTypes and traits, and RAML utilities such as !includes. The tutorial will also demonstrate how RAML uses schemas, and show how to use them to validate an HTTP body.</p><p>Please click <a href="https://github.com/raml-org/raml-examples/tree/master/others/tutorial-jukebox-api" target="_blank">here</a>, if you want to look at the complete RAML you will build in this tutorial.</p>
+    <p>This tutorial will guide you through a complete use case for a jukebox API. You’ll learn how to optimize and reuse your code by applying concepts such as resourceTypes and traits, and RAML utilities such as !includes. The tutorial will also demonstrate how RAML uses schemas, and show how to use them to validate an HTTP body.</p>
     <p><strong>Assumptions</strong></p>
-    <p>You know the <a href="https://raml.org/developers/raml-100-tutorial">basics of RAML</a>: how to write a RAML file with resources, parameters, methods, and responses.</p>
-</div><h2 id="use-case">USE CASE</h2>
+    <p>You know the <a href="http://raml.org/docs.html">basics of RAML</a>: how to write a RAML file with resources, parameters, methods, and responses.</p>
+    <p><strong>Hands on!</strong></p>
+    <p>This tutorial will explain and show snippets of RAML definitions. However, the best learning is to be fully hands-on and play with the code directly. Now, you can easily setup a workspace, mess with the code, and reset it at any step of this tutorial.</p>
+</div><h2 id="setting-up-the-workspace">SETTING UP THE WORKSPACE</h2>
+<p>If you decided to be &quot;hands-on&quot;, please clone the GitHub repository</p>
+<pre><code>git clone https://github.com/raml-org/raml-tutorial-200.git
+</code></pre><p><strong>Spoiler alert:</strong> After cloning, the repository will be in its final state. You can browse the code as is, but it will be like reading the last chapter of a book.
+    Before each step, we recommend you &quot;sync&quot; the code with the step you are about to read, like this:</p>
+<pre><code>git checkout -f [stepX]
+</code></pre><p>Note: after cloning the repository, you will need to access to its folder on your local computer. Don’t worry! We’ll remind you each time.</p>
+<h2 id="use-case">USE CASE</h2>
 <p>Build a music Jukebox. While the physical device will be responsible for displaying the information and capturing the user input, it will be relying on your API to retrieve the information requested. The Jukebox needs to be able to:</p>
 <ul>
     <li>Show the full list of artists.</li>
@@ -24,162 +33,170 @@ permalink: /developers/raml-200-tutorial
 </ul>
 <p><strong>Consideration:</strong> This is a jukebox, not a command line. People in pubs might be unable to type lots of characters, so a user friendly UI (paging, image-based, etc) would be very appreciated.</p>
 <h2 id="base-raml-file">BASE RAML FILE</h2>
-<p>If you have read the <a href="https://raml.org/developers/raml-100-tutorial">RAML 100 Tutorial</a>, you should be able to understand our base RAML API definition without major difficulties. Its basic structure could be described as:</p>
-<pre><code>/songs:
-  get:
-  post:
-  /{songId}:
-    get:
-    /file-content:
-      get:
-      post:
-/artists:
-  get:
-  post:
-  /{artistId}:
-    get:
-    /albums
-      get:
-/albums:
-  get:
-  post:
-  /{albumId}:
-    get:
-    /songs:
-      get:
+<p>Reset your workspace:</p>
+<pre><code class="lang-shell">git checkout -f step0
 </code></pre>
-<p>As you can see in the following example, the resource &quot;/songs&quot; doesn&#39;t have a well defined POST: body parameters are missing.</p>
+<p>If you have read the <a href="http://raml.org/docs.html">RAML 100 Tutorial</a>, you should be able to understand our base RAML API definition without major difficulties. Its basic structure could be described as:</p>
+<pre><code>/songs
+    get
+    post
+    /{songId}
+    get
+    /file-content
+    get
+    post
+    /artists
+    get
+    post
+    /{artistId}
+    get
+    /albums
+    get
+    /albums
+    get
+    post
+    /{albumId}
+    get
+    /songs
+    get
+</code></pre><p>If you look into jukebox-api.raml you will find all the resources defined, their GET methods described, and POST methods nearly empty.</p>
+<p>As you can see in the following example (extracted from jukebox-api.raml), the resource &quot;/songs&quot; doesn&#39;t have a well defined POST: body parameters are missing.</p>
 <pre><code class="lang-yaml">/songs:
-  description: Collection of available songs in Jukebox
-  get:
+    description: Collection of available songs in Jukebox
+    get:
     description: Get a list of songs based on the song title.
     queryParameters:
-      songTitle:
-        description: &quot;The title of the song to search (it is case insensitive and doesn&#39;t need to match the whole title)&quot;
-        required: true
-        minLength: 3
-        type: string
-        example: &quot;Get L&quot;
+    songTitle:
+    description: &quot;The title of the song to search (it is case insensitive and doesn&#39;t need to match the whole title)&quot;
+    required: true
+    minLength: 3
+    type: string
+    example: &quot;Get L&quot;
     responses:
-      200:
-        body:
-          application/json:
-            example: |
-              {
-                &quot;songs&quot;: [
-                  {
-                    &quot;songId&quot;: &quot;550e8400-e29b-41d4-a716-446655440000&quot;,
-                    &quot;songTitle&quot;: &quot;Get Lucky&quot;
-                  },
-                  {
-                    &quot;songId&quot;: &quot;550e8400-e29b-41d4-a716-446655440111&quot;,
-                    &quot;songTitle&quot;: &quot;Loose yourself to dance&quot;
-                  },
-                  {
-                    &quot;songId&quot;: &quot;550e8400-e29b-41d4-a716-446655440222&quot;,
-                    &quot;songTitle&quot;: &quot;Gio sorgio by Moroder&quot;
-                  }
-                ]
-              }
-  /{songId}:
+    200:
+    body:
+    application/json:
+    example: |
+    &quot;songs&quot;: [
+    {
+    &quot;songId&quot;: &quot;550e8400-e29b-41d4-a716-446655440000&quot;,
+    &quot;songTitle&quot;: &quot;Get Lucky&quot;
+    },
+    {
+    &quot;songId&quot;: &quot;550e8400-e29b-41d4-a716-446655440111&quot;,
+    &quot;songTitle&quot;: &quot;Loose yourself to dance&quot;
+    },
+    {
+    &quot;songId&quot;: &quot;550e8400-e29b-41d4-a716-446655440222&quot;,
+    &quot;songTitle&quot;: &quot;Gio sorgio by Moroder&quot;
+    }
+    ]
+    /{songId}:
     description: Song entity
     get:
-      description: Get the song with `songId = {songId}`
-      responses:
-        200:
-          body:
-            application/json:
-              example: |
-                {
-                  &quot;songId&quot;: &quot;550e8400-e29b-41d4-a716-446655440000&quot;,
-                  &quot;songTitle&quot;: &quot;Get Lucky&quot;,
-                  &quot;duration&quot;: &quot;6:07&quot;,
-                  &quot;artist&quot;: {
-                    &quot;artistId&quot;: &quot;110e8300-e32b-41d4-a716-664400445500&quot;
-                    &quot;artistName&quot;: &quot;Daft Punk&quot;,
-                    &quot;imageURL&quot;: &quot;http://travelhymns.com/wp-content/uploads/2013/06/random-access-memories1.jpg&quot;
-                  },
-                  &quot;album&quot;: {
-                    &quot;albumId&quot;: &quot;183100e3-0e2b-4404-a716-66104d440550&quot;,
-                    &quot;albumName&quot;: &quot;Random Access Memories&quot;,
-                    &quot;imageURL&quot;: &quot;http://upload.wikimedia.org/wikipedia/en/a/a7/Random_Access_Memories.jpg&quot;
-                  }
-                }
-        404:
-          body:
-            application/json:
-              example: |
-                {&quot;message&quot;: &quot;Song not found&quot;}
+    description: Get the song with `songId = {songId}`
+    responses:
+    200:
+    body:
+    application/json:
+    example: |
+    {
+    &quot;songId&quot;: &quot;550e8400-e29b-41d4-a716-446655440000&quot;,
+    &quot;songTitle&quot;: &quot;Get Lucky&quot;,
+    &quot;duration&quot;: &quot;6:07&quot;,
+    &quot;artist&quot;: {
+    &quot;artistId&quot;: &quot;110e8300-e32b-41d4-a716-664400445500&quot;
+    &quot;artistName&quot;: &quot;Daft Punk&quot;,
+    &quot;imageURL&quot;: &quot;http://travelhymns.com/wp-content/uploads/2013/06/random-access-memories1.jpg&quot;
+    },
+    &quot;album&quot;: {
+    &quot;albumId&quot;: &quot;183100e3-0e2b-4404-a716-66104d440550&quot;,
+    &quot;albumName&quot;: &quot;Random Access Memories&quot;,
+    &quot;imageURL&quot;: &quot;http://upload.wikimedia.org/wikipedia/en/a/a7/Random_Access_Memories.jpg&quot;
+    }
+    }
+    404:
+    body:
+    application/json:
+    example: |
+    {&quot;message&quot;: &quot;Song not found&quot;}
     /file-content:
-      description: The file to be reproduced by the client
-      get:
-        description: Get the file content
-        responses:
-          200:
-      post:
-  post:
+    description: The file to be reproduced by the client
+    get:
+    description: Get the file content
+    responses:
+    200:
+    post:
+    post:
 </code></pre>
 <h2 id="body-parameters">BODY PARAMETERS</h2>
 <p><strong>Form Parameters</strong></p>
-<p>There are several ways of defining the body parameters for an HTTP method. For example:</p>
+<p>Reset your workspace:</p>
+<pre><code class="lang-shell">git checkout -f step1a
+</code></pre>
+<p>There are several ways of defining the body parameters for an HTTP method. You can check the jukebox-api.raml file looking for the <code>/songs/{songId}/file-content</code> definition and you will find one of these.</p>
 <pre><code class="lang-yaml">/file-content:
-  description: The file to be reproduced by the client
-  get:
+    description: The file to be reproduced by the client
+    get:
     description: Get the file content
     responses:
-      200:
-        body:
-          binary/octet-stream:
-            example: !include heybulldog.mp3
-  post:
-    description: |
-      Enters the file content for an existing song entity.
-
-      Use the &quot;binary/octet-stream&quot; content type to specify the content from any consumer (excepting web-browsers).
-      Use the &quot;multipart-form/data&quot; content type to upload a file which content will become the file-content
+    200:
     body:
-      binary/octet-stream:
-      multipart/form-data:
-        properties:
-          file:
-            description: The file to be uploaded
-            required: true
-            type: file
+    binary/octet-stream:
+    example:
+    !include heybulldog.mp3
+    post:
+    description: |
+    Enters the file content for an existing song entity.
+
+    Use the &quot;binary/octet-stream&quot; content type to specify the content from any consumer (excepting web-browsers).
+    Use the &quot;multipart-form/data&quot; content type to upload a file which content will become the file-content
+    body:
+    binary/octet-stream:
+    multipart/form-data:
+    formParameters:
+    file:
+    description: The file to be uploaded
+    required: true
+    type: file
 </code></pre>
 <p><code>/file-content</code> resource represents the file to reproduce when a Jukebox user select a particular song, although, there are tons of ways of modeling this scenario on a RESTful API. We&#39;ve chosen this one for this tutorial purposes. It doesn&#39;t mean it&#39;s a best practice at all.</p>
 <p>As you can see in the POST definition, its body contains two possible content-types.
     The <code>binary/octet-stream</code> simply expects <code>file-content</code> to be sent as a parameter. It&#39;s a valid and popular technique for APIs that supporting files. Unfortunately, it makes the API impossible to call from a web browser (at least with the purpose of uploading a file).</p>
 <p>For the <code>multipart/form-data</code> (and also the <code>application/x-www-form-urlencoded</code>), it is possible to define a map of &quot;formParameters&quot;, defining this map the same way that the rest of the RAML ones (in this case, the &quot;file&quot; field is required and of type &quot;file&quot;).</p>
 <p><strong>Schemas</strong></p>
+<p>Reset your workspace:</p>
+<pre><code class="lang-shell">git checkout -f step1b
+</code></pre>
 <p>A body also can be of <code>application/json</code> content-type (among others, like <code>application/xml</code>) and for these, the expected body parameter will be a string with a valid JSON (or XML). So, this is another way of defining a method&#39;s body parameter.
-    One of the RAML supported features is the possibility of defining schemas and apply these to the body parameters as well, as shown in the example below.</p>
+    One of the RAML supported features is the possibility of defining schemas and apply these to the body parameters as well, as it is shown on the code of jukebox-api.raml</p>
 <pre><code class="lang-yaml">body:
-  application/json:
-    type: |
-      {
-        &quot;type&quot;: &quot;object&quot;,
-        &quot;$schema&quot;: &quot;http://json-schema.org/draft-03/schema&quot;,
-        &quot;id&quot;: &quot;http://jsonschema.net&quot;,
-        &quot;required&quot;: true,
-        &quot;properties&quot;: {
-          &quot;songTitle&quot;: {
-            &quot;type&quot;: &quot;string&quot;,
-            &quot;required&quot;: true
-          },
-          &quot;albumId&quot;: {
-            &quot;type&quot;: &quot;string&quot;,
-            &quot;required&quot;: true,
-            &quot;minLength&quot;: 36,
-            &quot;maxLength&quot;: 36
-          }
-        }
-      }
+    application/json:
+    schema: |
+    {
+    &quot;type&quot;: &quot;object&quot;,
+    &quot;$schema&quot;: &quot;http://json-schema.org/draft-03/schema&quot;,
+    &quot;id&quot;: &quot;http://jsonschema.net&quot;,
+    &quot;required&quot;: true,
+    &quot;properties&quot;: {
+    &quot;songTitle&quot;: {
+    &quot;type&quot;: &quot;string&quot;,
+    &quot;required&quot;: true
+    },
+    &quot;albumId&quot;: {
+    &quot;type&quot;: &quot;string&quot;,
+    &quot;required&quot;: true,
+    &quot;minLength&quot;: 36,
+    &quot;maxLength&quot;: 36
+    }
+    }
+    }
     example: |
-      {
-        &quot;songId&quot;: &quot;550e8400-e29b-41d4-a716-446655440000&quot;,
-        &quot;songTitle&quot;: &quot;Get Lucky&quot;,
-        &quot;albumId&quot;: &quot;183100e3-0e2b-4404-a716-66104d440550&quot;
-      }
+    {
+    &quot;songId&quot;: &quot;550e8400-e29b-41d4-a716-446655440000&quot;,
+    &quot;songTitle&quot;: &quot;Get Lucky&quot;,
+    &quot;albumId&quot;: &quot;183100e3-0e2b-4404-a716-66104d440550&quot;
+    }
 </code></pre>
 <p>What the example is basically saying is: &quot;The expected parameter is a valid json, and for valid, it needs to fulfill the specified schema definition&quot;. In this case, the represented object has:</p>
 <ul>
@@ -188,72 +205,83 @@ permalink: /developers/raml-200-tutorial
 </ul>
 <p>It&#39;s not the intention of this tutorial explain how JSON and XML schemas work, but you can learn more at <a href="http://json-schema.org/">http://json-schema.org/</a> and <a href="http://json-schema.org/">http://www.w3.org/XML/Schema.html</a>.</p>
 <h2 id="extract-schemas">EXTRACT SCHEMAS</h2>
+<p>Reset your workspace:</p>
+<pre><code class="lang-shell">git checkout -f step2
+</code></pre>
 <p>One interesting RAML feature is the ability to extract the schemas and reference them by name. There are three major advantages of doing this, and the first two might look a bit obvious:</p>
 <ul>
     <li>Improve RAML readability</li>
     <li>Allow reusing the schemas in several sections.</li>
 </ul>
 <p>The third advantage will become clear in following sections, when trying to use &quot;resource types&quot; and parameterize these.</p>
-<pre><code class="lang-yaml">types:
-  song: |
+<pre><code class="lang-yaml">schemas:
+    - song: |
     {
-      &quot;type&quot;: &quot;object&quot;,
-      &quot;$schema&quot;: &quot;http://json-schema.org/draft-03/schema&quot;,
-      &quot;id&quot;: &quot;http://jsonschema.net&quot;,
-      &quot;required&quot;: true,
-      &quot;properties&quot;: {
-        &quot;songTitle&quot;: {
-          &quot;type&quot;: &quot;string&quot;,
-          &quot;required&quot;: true
-        },
-        &quot;albumId&quot;: {
-          &quot;type&quot;: &quot;string&quot;,
-          &quot;required&quot;: true,
-          &quot;minLength&quot;: 36,
-          &quot;maxLength&quot;: 36
-        }
-      }
+    &quot;type&quot;: &quot;object&quot;,
+    &quot;$schema&quot;: &quot;http://json-schema.org/draft-03/schema&quot;,
+    &quot;id&quot;: &quot;http://jsonschema.net&quot;,
+    &quot;required&quot;: true,
+    &quot;properties&quot;: {
+    &quot;songTitle&quot;: {
+    &quot;type&quot;: &quot;string&quot;,
+    &quot;required&quot;: true
+    },
+    &quot;albumId&quot;: {
+    &quot;type&quot;: &quot;string&quot;,
+    &quot;required&quot;: true,
+    &quot;minLength&quot;: 36,
+    &quot;maxLength&quot;: 36
+    }
+    }
     }
 </code></pre>
 <pre><code class="lang-yaml">body:
-  application/json:
-    type: song
+    application/json:
+    schema: song
     example: |
-      {
-        &quot;songId&quot;: &quot;550e8400-e29b-41d4-a716-446655440000&quot;,
-        &quot;songTitle&quot;: &quot;Get Lucky&quot;,
-        &quot;albumId&quot;: &quot;183100e3-0e2b-4404-a716-66104d440550&quot;
-      }
+    {
+    &quot;songId&quot;: &quot;550e8400-e29b-41d4-a716-446655440000&quot;,
+    &quot;songTitle&quot;: &quot;Get Lucky&quot;,
+    &quot;albumId&quot;: &quot;183100e3-0e2b-4404-a716-66104d440550&quot;
+    }
 </code></pre>
 <p>As you can see in the code example, the schema described in previous sections is now being defined and referenced by the name &quot;song&quot;. The name choice is not random, and the correct convention will allow you to parameterize resource types and reuse a lot of code (this will be explained in following sections).</p>
 <h2 id="resource-types">RESOURCE TYPES</h2>
 <p><strong>The &quot;collection/collection-item&quot; pattern</strong></p>
 <p><strong>We are definitively not saying that all RESTful APIs are the same.</strong> I don’t want to even suggest it. But there are absolutely some common behaviors. For example, if we are trying to represent resources that could be inferred from a business model, it will likely be analogous with the CRUD model. Given a resource, you can <strong>c</strong>reate a new one, <strong>r</strong>etrieve one or all of them and <strong>u</strong>pdate or <strong>d</strong>elete an existing one.</p>
 <p>In that sense, we can easily identify an existing resource (to be fetched, deleted or updated), a new one (to be added to a collection) and the collection itself (to be retrieved).</p>
-<pre><code class="lang-yaml">#%RAML 1.0
-  title:
+<pre><code class="lang-yaml">
+    #%RAML 0.8
+    title:
 
-  /resources:
+    /resources:
     get:
     post:
     /{resourceId}:
-      get:
-      put:
-      delete:
+    get:
+    put:
+    delete:
 </code></pre>
 <p>So, we found two different type of resources. The item (represented by an id), and the collection (containing all the items). It would be nice to be able to define these types, and declare the resources of those types. Luckily, there is a way to do this in RAML.
     <strong>Resource Types in RAML</strong></p>
+<p>Reset your workspace:</p>
+<pre><code class="lang-shell">git checkout -f step3a
+</code></pre>
 <p>Similar to the last example code, where we only showed the resources and supported methods, this step consists in just creating the &quot;resourceTypes&quot; with their supported methods.</p>
 <pre><code class="lang-yaml">resourceTypes:
-  collection:
+    - collection:
     get:
     post:
-  collection-item:
+    - collection-item:
     get:
 </code></pre>
 <p>As you may notice, the PUT and DELETE methods are not defined for the collection-item resourceType. This is basically because the use case does not request any resource to be deleted or updated.
-    So, what this version is saying is &quot;There are two resource types: collection, which has the GET and POST methods defined, and collection-item which has the GET method defined&quot;. Standing alone, it doesn&#39;t really seem to be very useful. However, it&#39;s important to understand as the first step of defining good resourceTypes and reusing patterns in the code.</p>
+    So, what this version of the jukebox-api.raml is saying is &quot;There are two resource types: collection, which has the GET and POST methods defined, and collection-item which has the GET method defined&quot;. Standing alone, it doesn&#39;t really seem to be very useful. However, it&#39;s important to understand as the first step of defining good resourceTypes and reusing patterns in the code.</p>
 <p><strong>Defining and parameterizing resourceTypes</strong></p>
+<p>The following explanation and code snippets will guide you step by step on how to get the next version of the jukebox-api.raml.</p>
+<p>Reset your workspace:</p>
+<pre><code class="lang-shell">git checkout -f step3b
+</code></pre>
 <p>What do we know about our collections thus far? Let&#39;s check what &quot;/songs&quot;, &quot;/artists&quot;, and &quot;/albums&quot; have in common:</p>
 <ul>
     <li>Description</li>
@@ -272,32 +300,32 @@ permalink: /developers/raml-200-tutorial
 </ul>
 <p>So, let&#39;s extract this from one of the resources (I will take &quot;/songs&quot; for this example, but we will end up parameterizing the resourceType, so it doesn&#39;t matter which one you choose to start).</p>
 <pre><code class="lang-yaml">resourceTypes:
-  collection:
+    - collection:
     description: Collection of available songs in Jukebox
     get:
-      description: Get a list of songs based on the song title.
-      responses:
-        200:
-          body:
-            application/json:
+    description: Get a list of songs based on the song title.
+    responses:
+    200:
+    body:
+    application/json:
     post:
-      description: |
-        Add a new song to Jukebox.
-      queryParameters:
-        access_token:
-          description: &quot;The access token provided by the authentication application&quot;
-          example: AABBCCDD 
-          required: true
-          type: string
-      body:
-        application/json:
-          type: song
-      responses:
-        200:
-          body:
-            application/json:
-              example: |
-                { &quot;message&quot;: &quot;The song has been properly entered&quot; }
+    description: |
+    Add a new song to Jukebox.
+    queryParameters:
+    access_token:
+    description: &quot;The access token provided by the authentication application&quot;
+    example: AABBCCDD
+    required: true
+    type: string
+    body:
+    application/json:
+    schema: song
+    responses:
+    200:
+    body:
+    application/json:
+    example: |
+    { &quot;message&quot;: &quot;The song has been properly entered&quot; }
 </code></pre>
 <p>With the <code>collection</code> resourceType as it is right now, there is not much we can do. Applying it to the <code>/songs</code> resource is a possibility, but we don&#39;t want those descriptions, schemas, or even the POST response to be applied to all the resources since the collection is specific to <code>/songs</code>.
     Parameters are useful here. Suppose that you can write a &quot;placeholder&quot; on the resourceType to be filled with a value specified on the resource. For instance:</p>
@@ -310,291 +338,304 @@ permalink: /developers/raml-200-tutorial
 <p>There are two Parameters Transformers we could use for this example: <code>!singularize</code> and <code>!pluralize</code> (note: The only locale supported by the current version of RAML is &quot;United States English&quot;).</p>
 <p>So combining this, let&#39;s update our latest code snippet:</p>
 <pre><code class="lang-yaml">resourceTypes:
-  collection:
-    description: Collection of available &lt;&lt;resourcePathName&gt;&gt; in Jukebox
+    - collection:
+    description: Collection of available &lt;&lt;resourcePathName&gt;&gt; in Jukebox.
     get:
-      description: Get a list of &lt;&lt;resourcePathName&gt;&gt; based on the song title.
-      responses:
-        200:
-          body:
-            application/json:
+    description: Get a list of &lt;&lt;resourcePathName&gt;&gt;.
+    responses:
+    200:
+    body:
+    application/json:
     post:
-      description: |
-        Add a new &lt;&lt;resourcePathName|!singularize&gt;&gt; to Jukebox.
-      queryParameters:
-        access_token:
-          description: &quot;The access token provided by the authentication application&quot;
-          example: AABBCCDD 
-          required: true
-          type: string
-      body:
-        application/json:
-          type: &lt;&lt;resourcePathName|!singularize&gt;&gt;
-      responses:
-        200:
-          body:
-            application/json:
-              example: |
-                { &quot;message&quot;: &quot;The &lt;&lt;resourcePathName|!singularize&gt;&gt; has been properly entered&quot; }
+    description: |
+    Add a new &lt;&lt;resourcePathName|!singularize&gt;&gt; to Jukebox.
+    queryParameters:
+    access_token:
+    description: &quot;The access token provided by the authentication application&quot;
+    example: AABBCCDD
+    required: true
+    type: string
+    body:
+    application/json:
+    schema: &lt;&lt;resourcePathName|!singularize&gt;&gt;
+    responses:
+    200:
+    body:
+    application/json:
+    example: |
+    { &quot;message&quot;: &quot;The &lt;&lt;resourcePathName|!singularize&gt;&gt; has been properly entered&quot; }
 </code></pre>
 <pre><code class="lang-yaml">/songs:
-  type: collection
-  get:
+    type: collection
+    get:
     queryParameters:
-      songTitle:
-        description: &quot;The title of the song to search (it is case insensitive and doesn&#39;t need to match the whole title)&quot;
-        required: true
-        minLength: 3
-        type: string
-        example: &quot;Get L&quot;
+    songTitle:
+    description: &quot;The title of the song to search (it is case insensitive and doesn&#39;t need to match the whole title)&quot;
+    required: true
+    minLength: 3
+    type: string
+    example: &quot;Get L&quot;
     responses:
-      200:
-        body:
-          application/json:
-            example: |
-              {
-                &quot;songs&quot;: [
-                  {
-                    &quot;songId&quot;: &quot;550e8400-e29b-41d4-a716-446655440000&quot;,
-                    &quot;songTitle&quot;: &quot;Get Lucky&quot;
-                  },
-                  {
-                    &quot;songId&quot;: &quot;550e8400-e29b-41d4-a716-446655440111&quot;,
-                    &quot;songTitle&quot;: &quot;Loose yourself to dance&quot;
-                  },
-                  {
-                    &quot;songId&quot;: &quot;550e8400-e29b-41d4-a716-446655440222&quot;,
-                    &quot;songTitle&quot;: &quot;Gio sorgio by Moroder&quot;
-                  }
-                ]
-              }
-  post:
+    200:
     body:
-      application/json:
-        example: |
-          {
-            &quot;songId&quot;: &quot;550e8400-e29b-41d4-a716-446655440000&quot;,
-            &quot;songTitle&quot;: &quot;Get Lucky&quot;,
-            &quot;albumId&quot;: &quot;183100e3-0e2b-4404-a716-66104d440550&quot;
-          }
+    application/json:
+    example: |
+    &quot;songs&quot;: [
+    {
+    &quot;songId&quot;: &quot;550e8400-e29b-41d4-a716-446655440000&quot;,
+    &quot;songTitle&quot;: &quot;Get Lucky&quot;
+    },
+    {
+    &quot;songId&quot;: &quot;550e8400-e29b-41d4-a716-446655440111&quot;,
+    &quot;songTitle&quot;: &quot;Loose yourself to dance&quot;
+    },
+    {
+    &quot;songId&quot;: &quot;550e8400-e29b-41d4-a716-446655440222&quot;,
+    &quot;songTitle&quot;: &quot;Gio sorgio by Moroder&quot;
+    }
+    ]
+    post:
+    body:
+    application/json:
+    example: |
+    {
+    &quot;songId&quot;: &quot;550e8400-e29b-41d4-a716-446655440000&quot;,
+    &quot;songTitle&quot;: &quot;Get Lucky&quot;,
+    &quot;albumId&quot;: &quot;183100e3-0e2b-4404-a716-66104d440550&quot;
+    }
 </code></pre>
-<p>Note that even the Schema name is specified with this parameter (singular in this case). We mentioned before that the schema name was not random - this is why.
+<p>Note that even the Schema name is specified with this parameter (singular in this case). Do you remember when we extracted the schemas at step 2? We mentioned that the schema name was not random - this is why.
     Another important aspect to stress is that defining and applying a resourceType to a resource doesn&#39;t forbid you from overwriting any of the map&#39;s elements. In this example, we still see that GET method is present in both, resource and resourceType (the same for the responses, POST, etc). Not only is this allowed, but also is the way of redefining something that changes from one resource to other. <strong>If you think this looks like OOP inheritance, you’re right!</strong></p>
 <p>Now, let&#39;s work with the &quot;collection-item&quot; resourceType.</p>
+<p>Reset your workspace:</p>
+<pre><code class="lang-shell">git checkout -f step3c
+</code></pre>
 <p>There is nothing new with this code. More resourceType definitions, parameterization, and usage:</p>
-<pre><code class="lang-yaml">collection-item:
-  description: Entity representing a &lt;&lt;resourcePathName|!singularize&gt;&gt;
-  get:
+<pre><code class="lang-yaml">- collection-item:
+    description: Entity representing a &lt;&lt;resourcePathName|!singularize&gt;&gt;
+    get:
     description: |
-      Get the &lt;&lt;resourcePathName|!singularize&gt;&gt;
-      with &lt;&lt;resourcePathName|!singularize&gt;&gt;Id =
-      {&lt;&lt;resourcePathName|!singularize&gt;&gt;Id}
+    Get the &lt;&lt;resourcePathName|!singularize&gt;&gt;
+    with &lt;&lt;resourcePathName|!singularize&gt;&gt;Id =
+    {&lt;&lt;resourcePathName|!singularize&gt;&gt;Id}
     responses:
-      200:
-        body:
-          application/json:
-      404:
-        body:
-          application/json:
-            example: |
-              {&quot;message&quot;: &quot;&lt;&lt;resourcePathName|!singularize&gt;&gt; not found&quot; }
+    200:
+    body:
+    application/json:
+    404:
+    body:
+    application/json:
+    example: |
+    {&quot;message&quot;: &quot;&lt;&lt;resourcePathName|!singularize&gt;&gt; not found&quot; }
 </code></pre>
 <pre><code class="lang-yaml">/songs:
-  ...
-  /{songId}:
+    ...
+    /{songId}:
     type: collection-item
     get:
-      responses:
-        200:
-          body:
-            application/json:
-              example: |
-                {
-                  &quot;songId&quot;: &quot;550e8400-e29b-41d4-a716-446655440000&quot;,
-                  &quot;songTitle&quot;: &quot;Get Lucky&quot;,
-                  &quot;duration&quot;: &quot;6:07&quot;,
-                  &quot;artist&quot;: {
-                    &quot;artistId&quot;: &quot;110e8300-e32b-41d4-a716-664400445500&quot;
-                    &quot;artistName&quot;: &quot;Daft Punk&quot;,
-                    &quot;imageURL&quot;: &quot;http://travelhymns.com/wp-content/uploads/2013/06/random-access-memories1.jpg&quot;
-                  },
-                  &quot;album&quot;: {
-                    &quot;albumId&quot;: &quot;183100e3-0e2b-4404-a716-66104d440550&quot;,
-                    &quot;albumName&quot;: &quot;Random Access Memories&quot;,
-                    &quot;imageURL&quot;: &quot;http://upload.wikimedia.org/wikipedia/en/a/a7/Random_Access_Memories.jpg&quot;
-                  }
-                }
+    responses:
+    200:
+    body:
+    application/json:
+    example: |
+    {
+    &quot;songId&quot;: &quot;550e8400-e29b-41d4-a716-446655440000&quot;,
+    &quot;songTitle&quot;: &quot;Get Lucky&quot;,
+    &quot;duration&quot;: &quot;6:07&quot;,
+    &quot;artist&quot;: {
+    &quot;artistId&quot;: &quot;110e8300-e32b-41d4-a716-664400445500&quot;
+    &quot;artistName&quot;: &quot;Daft Punk&quot;,
+    &quot;imageURL&quot;: &quot;http://travelhymns.com/wp-content/uploads/2013/06/random-access-memories1.jpg&quot;
+    },
+    &quot;album&quot;: {
+    &quot;albumId&quot;: &quot;183100e3-0e2b-4404-a716-66104d440550&quot;,
+    &quot;albumName&quot;: &quot;Random Access Memories&quot;,
+    &quot;imageURL&quot;: &quot;http://upload.wikimedia.org/wikipedia/en/a/a7/Random_Access_Memories.jpg&quot;
+    }
+    }
 </code></pre>
 <p>But as you can see, we are still repeating lot of code. Specifically:</p>
 <pre><code class="lang-yaml">get:
-  responses:
+    responses:
     200:
-      body:
-        application/json:
-          example: |
+    body:
+    application/json:
+    example: |
 </code></pre>
 <p>Basically, every piece of code needed to define the <strong>examples</strong>. And this is basically because we have only learned how to use Reserved Parameters. However, we have also mentioned that the idea of parameterizing is to specify &quot;placeholder&quot; to be filled with a specified value.
     That would solve our &quot;examples problem&quot;.</p>
 <h2 id="parameters">PARAMETERS</h2>
+<p>Reset your workspace:</p>
+<pre><code class="lang-shell">git checkout -f step4
+</code></pre>
 <p>At the moment of defining the parameter in the resourceType (with the placeholder), there is no difference between a parameter and a reserved parameter. The actual difference only appears when passing the parameter at the resource level. For instance, a parameter named as <code>exampleItem</code> will need to be passed this way:</p>
 <pre><code class="lang-yaml">/{songId}:
-  type:
+    type:
     collection-item:
-      exampleItem: THIS IS THE EXAMPLE
+    exampleItem: THIS IS THE EXAMPLE
 </code></pre>
-<p>In &quot;human language&quot;, it&#39;s basically saying that <code>/{songId}</code> resource is of <code>collection-item</code> type. But now, it&#39;s also indicating that the value for the <code>collection-item</code> parameter <code>exampleItem</code> is &quot;THIS IS THE EXAMPLE&quot;. Since this is a string, all the YAML rules for strings are valid.
+<p>In &quot;human language&quot;, it&#39;s basically saying that <code>/{songId}</code> resource is of <code>collection-item</code> type (the same as on the previous step). But now, it&#39;s also indicating that the value for the <code>collection-item</code> parameter <code>exampleItem</code> is &quot;THIS IS THE EXAMPLE&quot;. Since this is a string, all the YAML rules for strings are valid.
     Having said that, let&#39;s take a look at some relevant code pieces.</p>
 <pre><code class="lang-yaml">resourceTypes:
-  collection:
-    description: Collection of available &lt;&lt;resourcePathName&gt;&gt; in Jukebox
+    - collection:
+    description: Collection of available &lt;&lt;resourcePathName&gt;&gt; in Jukebox.
     get:
-      description: Get a list of &lt;&lt;resourcePathName&gt;&gt; based on the song title.
-      responses:
-        200:
-          body:
-            application/json:
+    description: Get a list of &lt;&lt;resourcePathName&gt;&gt;.
+    responses:
+    200:
+    body:
+    application/json:
+    example: |
+    &lt;&lt;exampleCollection&gt;&gt;
     post:
-      description: |
-        Add a new &lt;&lt;resourcePathName|!singularize&gt;&gt; to Jukebox.
-      queryParameters:
-        access_token:
-          description: &quot;The access token provided by the authentication application&quot;
-          example: AABBCCDD 
-          required: true
-          type: string
-      body:
-        application/json:
-          type: &lt;&lt;resourcePathName|!singularize&gt;&gt;
-      responses:
-        200:
-          body:
-            application/json:
-              example: |
-                { &quot;message&quot;: &quot;The &lt;&lt;resourcePathName|!singularize&gt;&gt; has been properly entered&quot; }
-  collection-item:
+    description: |
+    Add a new &lt;&lt;resourcePathName|!singularize&gt;&gt; to Jukebox.
+    queryParameters:
+    access_token:
+    description: &quot;The access token provided by the authentication application&quot;
+    example: AABBCCDD
+    required: true
+    type: string
+    body:
+    application/json:
+    schema: &lt;&lt;resourcePathName|!singularize&gt;&gt;
+    example: |
+    &lt;&lt;exampleItem&gt;&gt;
+    responses:
+    200:
+    body:
+    application/json:
+    example: |
+    { &quot;message&quot;: &quot;The &lt;&lt;resourcePathName|!singularize&gt;&gt; has been properly entered&quot; }
+    - collection-item:
     description: Entity representing a &lt;&lt;resourcePathName|!singularize&gt;&gt;
     get:
-      description: |
-        Get the &lt;&lt;resourcePathName|!singularize&gt;&gt;
-        with &lt;&lt;resourcePathName|!singularize&gt;&gt;Id =
-        {&lt;&lt;resourcePathName|!singularize&gt;&gt;Id}
-      responses:
-        200:
-          body:
-            application/json:
-        404:
-          body:
-            application/json:
-              example: |
-                {&quot;message&quot;: &quot;&lt;&lt;resourcePathName|!singularize&gt;&gt; not found&quot; }
+    description: |
+    Get the &lt;&lt;resourcePathName|!singularize&gt;&gt;
+    with &lt;&lt;resourcePathName|!singularize&gt;&gt;Id =
+    {&lt;&lt;resourcePathName|!singularize&gt;&gt;Id}
+    responses:
+    200:
+    body:
+    application/json:
+    example: |
+    &lt;&lt;exampleItem&gt;&gt;
+    404:
+    body:
+    application/json:
+    example: |
+    {&quot;message&quot;: &quot;&lt;&lt;resourcePathName|!singularize&gt;&gt; not found&quot; }
 </code></pre>
 <pre><code class="lang-yaml">/songs:
-  type:
-    collection:
-      exampleCollection: |
-        [
-          {
-            &quot;songId&quot;: &quot;550e8400-e29b-41d4-a716-446655440000&quot;,
-            &quot;songTitle&quot;: &quot;Get Lucky&quot;
-          },
-          {
-            &quot;songId&quot;: &quot;550e8400-e29b-41d4-a716-446655440111&quot;,
-            &quot;songTitle&quot;: &quot;Loose yourself to dance&quot;
-          },
-          {
-            &quot;songId&quot;: &quot;550e8400-e29b-41d4-a716-446655440222&quot;,
-            &quot;songTitle&quot;: &quot;Gio sorgio by Morodera&quot;
-          }
-        ]
-      exampleItem: |
-        {
-          &quot;songId&quot;: &quot;550e8400-e29b-41d4-a716-446655440000&quot;,
-          &quot;songTitle&quot;: &quot;Get Lucky&quot;,
-          &quot;albumId&quot;: &quot;183100e3-0e2b-4404-a716-66104d440550&quot;
-        }
-  get:
-    queryParameters:
-      songTitle:
-        description: &quot;The title of the song to search (it is case insensitive and doesn&#39;t need to match the whole title)&quot;
-        required: true
-        minLength: 3
-        type: string
-        example: &quot;Get L&quot;
-  /{songId}:
     type:
-      collection-item:
-        exampleItem: |
-          {
-            &quot;songId&quot;: &quot;550e8400-e29b-41d4-a716-446655440000&quot;,
-            &quot;songTitle&quot;: &quot;Get Lucky&quot;,
-            &quot;duration&quot;: &quot;6:07&quot;,
-            &quot;artist&quot;: {
-              &quot;artistId&quot;: &quot;110e8300-e32b-41d4-a716-664400445500&quot;
-              &quot;artistName&quot;: &quot;Daft Punk&quot;,
-              &quot;imageURL&quot;: &quot;http://travelhymns.com/wp-content/uploads/2013/06/random-access-memories1.jpg&quot;
-            },
-            &quot;album&quot;: {
-              &quot;albumId&quot;: &quot;183100e3-0e2b-4404-a716-66104d440550&quot;,
-              &quot;albumName&quot;: &quot;Random Access Memories&quot;,
-              &quot;imageURL&quot;: &quot;http://upload.wikimedia.org/wikipedia/en/a/a7/Random_Access_Memories.jpg&quot;
-            }
-          }
+    collection:
+    exampleCollection: |
+    [
+    {
+    &quot;songId&quot;: &quot;550e8400-e29b-41d4-a716-446655440000&quot;,
+    &quot;songTitle&quot;: &quot;Get Lucky&quot;
+    },
+    {
+    &quot;songId&quot;: &quot;550e8400-e29b-41d4-a716-446655440111&quot;,
+    &quot;songTitle&quot;: &quot;Loose yourself to dance&quot;
+    },
+    {
+    &quot;songId&quot;: &quot;550e8400-e29b-41d4-a716-446655440222&quot;,
+    &quot;songTitle&quot;: &quot;Gio sorgio by Morodera&quot;
+    }
+    ]
+    exampleItem: |
+    {
+    &quot;songId&quot;: &quot;550e8400-e29b-41d4-a716-446655440000&quot;,
+    &quot;songTitle&quot;: &quot;Get Lucky&quot;,
+    &quot;albumId&quot;: &quot;183100e3-0e2b-4404-a716-66104d440550&quot;
+    }
+    get:
+    queryParameters:
+    songTitle:
+    description: &quot;The title of the song to search (it is case insensitive and doesn&#39;t need to match the whole title)&quot;
+    required: true
+    minLength: 3
+    type: string
+    example: &quot;Get L&quot;
+    /{songId}:
+    type:
+    collection-item:
+    exampleItem: |
+    {
+    &quot;songId&quot;: &quot;550e8400-e29b-41d4-a716-446655440000&quot;,
+    &quot;songTitle&quot;: &quot;Get Lucky&quot;,
+    &quot;duration&quot;: &quot;6:07&quot;,
+    &quot;artist&quot;: {
+    &quot;artistId&quot;: &quot;110e8300-e32b-41d4-a716-664400445500&quot;
+    &quot;artistName&quot;: &quot;Daft Punk&quot;,
+    &quot;imageURL&quot;: &quot;http://travelhymns.com/wp-content/uploads/2013/06/random-access-memories1.jpg&quot;
+    },
+    &quot;album&quot;: {
+    &quot;albumId&quot;: &quot;183100e3-0e2b-4404-a716-66104d440550&quot;,
+    &quot;albumName&quot;: &quot;Random Access Memories&quot;,
+    &quot;imageURL&quot;: &quot;http://upload.wikimedia.org/wikipedia/en/a/a7/Random_Access_Memories.jpg&quot;
+    }
+    }
 </code></pre>
 <p>As you can see, the same concept shown in the previous example was applied to both the <code>/songs</code>, and <code>/songs/{songId}</code> resources.
-    In a previous example, the code that was repeated at the end and is now completely within the resourceType at the point that the POST definition directly disappeared from the resources. <strong>That&#39;s correct. Now, every <code>collection-item</code> typed resources will have a valid (generic) POST definition without you ever writing it.</strong></p>
+    The code that was repeated at the end of the step 3 is now completely within the resourceType at the point that the POST definition directly disappeared from the resources. <strong>That&#39;s correct. Now, every <code>collection-item</code> typed resources will have a valid (generic) POST definition without you ever writing it.</strong></p>
 <h2 id="includes">INCLUDES</h2>
+<p>Reset your workspace:</p>
+<pre><code class="lang-shell">git checkout -f step5
+</code></pre>
 <p>We have improved our RAML definition a lot during the last step with resourceTypes. We were able to extract common components of the resources and encapsulate these with a structure that grants inheritance-like capabilities.</p>
 <p>Nevertheless, the RAML file still contains lot of information that could be considered as &quot;not API-describing&quot;. Sort of &quot;economy-class&quot; members, if you will. <strong>Equally important, but not necessarily part of the main RAML file</strong>.</p>
 <p>Through <code>!includes</code>, RAML allows us to build file-distributed API definitions, which is not only useful to encourage code reuse but also improves readability.</p>
 <p>Here, we will extract the examples used for <code>/songs</code> resource to different files and include these in the main RAML definition.</p>
 <pre><code class="lang-json">{
-  &quot;songId&quot;: &quot;550e8400-e29b-41d4-a716-446655440000&quot;,
-  &quot;songTitle&quot;: &quot;Get Lucky&quot;,
-  &quot;albumId&quot;: &quot;183100e3-0e2b-4404-a716-66104d440550&quot;
-}
+    &quot;songId&quot;: &quot;550e8400-e29b-41d4-a716-446655440000&quot;,
+    &quot;songTitle&quot;: &quot;Get Lucky&quot;,
+    &quot;albumId&quot;: &quot;183100e3-0e2b-4404-a716-66104d440550&quot;
+    }
 </code></pre>
 <pre><code class="lang-json">{
-  &quot;songId&quot;: &quot;550e8400-e29b-41d4-a716-446655440000&quot;,
-  &quot;songTitle&quot;: &quot;Get Lucky&quot;,
-  &quot;duration&quot;: &quot;6:07&quot;,
-  &quot;artist&quot;: {
+    &quot;songId&quot;: &quot;550e8400-e29b-41d4-a716-446655440000&quot;,
+    &quot;songTitle&quot;: &quot;Get Lucky&quot;,
+    &quot;duration&quot;: &quot;6:07&quot;,
+    &quot;artist&quot;: {
     &quot;artistId&quot;: &quot;110e8300-e32b-41d4-a716-664400445500&quot;
     &quot;artistName&quot;: &quot;Daft Punk&quot;,
     &quot;imageURL&quot;: &quot;http://travelhymns.com/wp-content/uploads/2013/06/random-access-memories1.jpg&quot;
-  },
-  &quot;album&quot;: {
+    },
+    &quot;album&quot;: {
     &quot;albumId&quot;: &quot;183100e3-0e2b-4404-a716-66104d440550&quot;,
     &quot;albumName&quot;: &quot;Random Access Memories&quot;,
     &quot;imageURL&quot;: &quot;http://upload.wikimedia.org/wikipedia/en/a/a7/Random_Access_Memories.jpg&quot;
-  }
-}
+    }
+    }
 </code></pre>
 <pre><code class="lang-json">[
-  {
+    {
     &quot;songId&quot;: &quot;550e8400-e29b-41d4-a716-446655440000&quot;,
     &quot;songTitle&quot;: &quot;Get Lucky&quot;
-  },
-  {
+    },
+    {
     &quot;songId&quot;: &quot;550e8400-e29b-41d4-a716-446655440111&quot;,
     &quot;songTitle&quot;: &quot;Loose yourself to dance&quot;
-  },
-  {
+    },
+    {
     &quot;songId&quot;: &quot;550e8400-e29b-41d4-a716-446655440222&quot;,
     &quot;songTitle&quot;: &quot;Gio sorgio by Morodera&quot;
-  }
-]
+    }
+    ]
 </code></pre>
 <p>As you can see, the extracted files contain raw strings. It&#39;s important to stress that every included file is treated as a string by RAML, which presents some well known restrictions regarding how to distribute the definition among files. More than limitations, these restrictions attempt to define a common way to work with !includes and avoid free-form defined APIs. Remember that one of RAML’s major goals is to unify criteria and encourage best-practices.
     The following code snippet shows how to include or &quot;call&quot; the extracted files from the main definition.</p>
 <pre><code class="lang-yaml">/songs:
-  type:
-    collection:
-      exampleCollection: !include jukebox-include-songs.sample
-      exampleItem: !include jukebox-include-song-new.sample
-  /{songId}:
     type:
-      collection-item:
-        exampleItem: !include jukebox-include-song-retrieve.sample
+    collection:
+    exampleCollection: !include jukebox-include-songs.sample
+    exampleItem: !include jukebox-include-song-new.sample
+    /{songId}:
+    type:
+    collection-item:
+    exampleItem: !include jukebox-include-song-retrieve.sample
 </code></pre>
 <p>As shown in the last snippet, RAML features encourage you to reduce the quantity of code you write, while making it more reusable and maintainable.</p>
 <h2 id="refactor">REFACTOR</h2>
@@ -605,51 +646,57 @@ permalink: /developers/raml-200-tutorial
     <li>pass the correct parameters</li>
     <li>extract the belonging examples into separated files</li>
 </ul>
-<p>As you might notice, the quantity of lines in the RAML file has been significantly reduced and there are more files than before. Most important: It&#39;s visibly simpler!
+<p>When you finish with that your workspace should look like the following one.</p>
+<p>Reset your workspace:</p>
+<pre><code>git checkout -f step6a
+</code></pre><p>As you might notice, the quantity of lines in the RAML file has been significantly reduced and there are more files than before. Most important: It&#39;s visibly simpler!
     But not everything went so smoothly. If you look carefully, there is a problem with sub-collections (<code>/artists/{artistId}/albums</code> and <code>/albums/{albumId}/songs</code>). Since these aren&#39;t the main collections of each resource, we decided not to allow new elements to be created on them. In other words, these collections were READ-ONLY. When applying the <code>collection</code> resourceType, we also automatically added the &quot;POST&quot; method. As an additional consequence, the RAML definition now requires the <code>exampleItem</code> parameter to be passed for those resources too (which we have temporarily resolved by passing <code>{}</code>).</p>
 <pre><code class="lang-yaml">/artists:
-  /{artistId}:
+    /{artistId}:
     /albums:
-      type:
-        collection:
-          exampleCollection: !include jukebox-include-artist-albums.sample
-          exampleItem: {}
-      description: Collection of albulms belonging to the artist
-      get:
-        description: Get a specific artist&#39;s albums list
+    type:
+    collection:
+    exampleCollection: !include jukebox-include-artist-albums.sample
+    exampleItem: {}
+    description: Collection of albulms belonging to the artist
+    get:
+    description: Get a specific artist&#39;s albums list
 </code></pre>
 <p>While that&#39;s awkward, it’s not a big deal and it will actually help us go further in order to solve it.</p>
 <p>Let&#39;s create another resourceType called <code>readOnlyCollection</code>. It will be similar to <code>collection</code> but without the &quot;POST method&quot;. And let&#39;s apply this new resourceType to its corresponding collections: <code>artists/{artistId}/albums</code> and <code>/albums/{albumId}/songs</code>:</p>
-<pre><code class="lang-yaml">readOnlyCollection:
-  description: Collection of available &lt;&lt;resourcePathName&gt;&gt; in Jukebox.
-  get:
+<pre><code class="lang-yaml">- readOnlyCollection:
+    description: Collection of available &lt;&lt;resourcePathName&gt;&gt; in Jukebox.
+    get:
     description: Get a list of &lt;&lt;resourcePathName&gt;&gt;.
     responses:
-      200:
-        body:
-          application/json:
-            example: |
-              &lt;&lt;exampleCollection&gt;&gt;
+    200:
+    body:
+    application/json:
+    example: |
+    &lt;&lt;exampleCollection&gt;&gt;
 </code></pre>
 <pre><code class="lang-yaml">/artists:
-  /{artistId}:
+    /{artistId}:
     /albums:
-      type:
-        readOnlyCollection:
-          exampleCollection: !include jukebox-include-artist-albums.sample
-      description: Collection of albums belonging to the artist
-      get:
+    type:
+    readOnlyCollection:
+    exampleCollection: !include jukebox-include-artist-albums.sample
+    description: Collection of albulms belonging to the artist
+    get:
     description: Get a specific artist&#39;s albums list
-/albums:
-  /{albumId}:
+    /albums:
+    /{albumId}:
     /songs:
-      type:
-        readOnlyCollection:
-          exampleCollection: !include jukebox-include-album-songs.sample
-      get:
-        description: Get the list of songs for the album with `albumId = {albumId}`
+    type:
+    readOnlyCollection:
+    exampleCollection: !include jukebox-include-album-songs.sample
+    get:
+    description: Get the list of songs for the album with `albumId = {albumId}`
 </code></pre>
-<p>If you are following the code in detail, you will have already noticed something: <code>collection</code> and <code>readOnlyCollection</code> resourceTypes are repeating some code. Actually, <code>readOnlyCollection</code> code is completely included in <code>collection</code> code. That’s correct! And there is a way of making this even more efficient. It&#39;s all about &quot;types composing&quot; and it will be totally covered in a later tutorial.</p>
+<p>The result should be similar to the step6b workspace.</p>
+<p>Reset your workspace:</p>
+<pre><code>git checkout -f step6b
+</code></pre><p>If you are following the code in detail, you will have already noticed something: <code>collection</code> and <code>readOnlyCollection</code> resourceTypes are repeating some code. Actually, <code>readOnlyCollection</code> code is completely included in <code>collection</code> code. That’s correct! And there is a way of making this even more efficient. It&#39;s all about &quot;types composing&quot; and it will be totally covered in a later tutorial.</p>
 <h2 id="traits">TRAITS</h2>
 <p>We are almost done! We are busy fulfilling all the requirements for the described use case. As usual however, we’ve discovered something while building, and this tutorial cannot be the exception.
     Will I be able to sort my collections? Shouldn&#39;t my API give users the chance of paging these? Is the strategy we chose for searching a collection good enough? What if we need to enhance and make more complex queries in the future?
@@ -702,117 +749,130 @@ permalink: /developers/raml-200-tutorial
 <p><strong>Fixing the Searchable collections</strong></p>
 <p>Before getting involved with the Traits concept, let&#39;s enhance the Searchable fixed parameters by applying a generic &quot;query&quot; queryParameter.</p>
 <pre><code class="lang-yaml">/songs:
-  type:
+    type:
     collection:
-      exampleCollection: !include jukebox-include-songs.sample
-      exampleItem: !include jukebox-include-song-new.sample
-  get:
+    exampleCollection: !include jukebox-include-songs.sample
+    exampleItem: !include jukebox-include-song-new.sample
+    get:
     queryParameters:
-      songTitle:
-        description: &quot;The title of the song to search (it is case insensitive and doesn&#39;t need to match the whole title)&quot;
-        required: true
-        minLength: 3
-        type: string
-        example: &quot;Get L&quot;
+    songTitle:
+    description: &quot;The title of the song to search (it is case insensitive and doesn&#39;t need to match the whole title)&quot;
+    required: true
+    minLength: 3
+    type: string
+    example: &quot;Get L&quot;
 </code></pre>
 <pre><code class="lang-yaml">/songs:
-  type:
+    type:
     collection:
-      exampleCollection: !include jukebox-include-songs.sample
-      exampleItem: !include jukebox-include-song-new.sample
-  get:
+    exampleCollection: !include jukebox-include-songs.sample
+    exampleItem: !include jukebox-include-song-new.sample
+    get:
     queryParameters:
-      query:
-        description: |
-          JSON array [{&quot;field1&quot;,&quot;value1&quot;,&quot;operator1&quot;},{&quot;field2&quot;,&quot;value2&quot;,&quot;operator2&quot;},...,{&quot;fieldN&quot;,&quot;valueN&quot;,&quot;operatorN&quot;}] with valid searchable fields: songTitle
-        example: |
-          [&quot;songTitle&quot;, &quot;Get L&quot;, &quot;like&quot;]
+    query:
+    description: |
+    JSON array [{&quot;field1&quot;,&quot;value1&quot;,&quot;operator1&quot;},{&quot;field2&quot;,&quot;value2&quot;,&quot;operator2&quot;},...,{&quot;fieldN&quot;,&quot;valueN&quot;,&quot;operatorN&quot;}] with valid searchable fields: songTitle
+    example: |
+    [&quot;songTitle&quot;, &quot;Get L&quot;, &quot;like&quot;]
 </code></pre>
-<p><strong>Searchable Trait</strong></p>
+<p>If you reset your workspace, you will see this enhancement applied to every Searchable resource.</p>
+<p>Reset your workspace:</p>
+<pre><code>git checkout -f step7a
+</code></pre><p><strong>Searchable Trait</strong></p>
 <p>The same way that several resources might utilize a specific resourceType, it&#39;s possible to define and reuse similar behavior with traits. This is one of these concepts that are better explained by code:</p>
 <pre><code class="lang-yaml">/songs:
-  type:
+    type:
     collection:
-      exampleCollection: !include jukebox-include-songs.sample
-      exampleItem: !include jukebox-include-song-new.sample
-  get:
+    exampleCollection: !include jukebox-include-songs.sample
+    exampleItem: !include jukebox-include-song-new.sample
+    get:
     queryParameters:
-      query:
-        description: |
-          JSON array [{&quot;field1&quot;,&quot;value1&quot;,&quot;operator1&quot;},{&quot;field2&quot;,&quot;value2&quot;,&quot;operator2&quot;},...,{&quot;fieldN&quot;,&quot;valueN&quot;,&quot;operatorN&quot;}] with valid searchable fields: songTitle
-        example: |
-          [&quot;songTitle&quot;, &quot;Get L&quot;, &quot;like&quot;]
+    query:
+    description: |
+    JSON array [{&quot;field1&quot;,&quot;value1&quot;,&quot;operator1&quot;},{&quot;field2&quot;,&quot;value2&quot;,&quot;operator2&quot;},...,{&quot;fieldN&quot;,&quot;valueN&quot;,&quot;operatorN&quot;}] with valid searchable fields: songTitle
+    example: |
+    [&quot;songTitle&quot;, &quot;Get L&quot;, &quot;like&quot;]
 </code></pre>
 <pre><code class="lang-yaml">traits:
-  searchable:
+    - searchable:
     queryParameters:
-      query:
-        description: |
-          JSON array [{&quot;field1&quot;,&quot;value1&quot;,&quot;operator1&quot;},{&quot;field2&quot;,&quot;value2&quot;,&quot;operator2&quot;},...,{&quot;fieldN&quot;,&quot;valueN&quot;,&quot;operatorN&quot;}] &lt;&lt;description&gt;&gt;
-        example: |
-          &lt;&lt;example&gt;&gt;
+    query:
+    description: |
+    JSON array [{&quot;field1&quot;,&quot;value1&quot;,&quot;operator1&quot;},{&quot;field2&quot;,&quot;value2&quot;,&quot;operator2&quot;},...,{&quot;fieldN&quot;,&quot;valueN&quot;,&quot;operatorN&quot;}] &lt;&lt;description&gt;&gt;
+    example: |
+    &lt;&lt;example&gt;&gt;
 </code></pre>
 <p>As you can see, this Searchable trait is comprised of a name and an applicable parameter. It is also evident in the example above that traits can be parameterized. Let&#39;s check how the trait can be applied to a method:</p>
 <pre><code class="lang-yaml">/songs:
-  type:
+    type:
     collection:
-      exampleCollection: !include jukebox-include-songs.sample
-      exampleItem: !include jukebox-include-song-new.sample
-  get:
+    exampleCollection: !include jukebox-include-songs.sample
+    exampleItem: !include jukebox-include-song-new.sample
+    get:
     is: [searchable: {description: &quot;with valid searchable fields: songTitle&quot;, example: &quot;[\&quot;songTitle\&quot;, \&quot;Get L\&quot;, \&quot;like\&quot;]&quot;}]
 </code></pre>
 <p>So, what the definition is really saying is that there is a trait called &quot;Searchable&quot; and that the &quot;/songs&quot; resource utilizes it. Furthermore, the trait is applied to the GET method itself, since the &quot;Searchable&quot; contract should only be applied to that particular method.  In other cases, you could apply a trait to the whole resource, and even more: <strong>traits can also be applied to resourceTypes.</strong> This topic should and will be covered in a separate tutorial (types composition). Feel free to try this out anyway, and always remember that you can:</p>
-<p>Note that we have already applied the Searchable trait to <code>/songs</code>, <code>/artists</code> and <code>/albums</code> resources.</p>
+<p>Reset your workspace:</p>
+<pre><code>git checkout -f step7b
+</code></pre><p>Note that in the step7b workspace, we have already applied the Searchable trait to <code>/songs</code>, <code>/artists</code> and <code>/albums</code> resources.</p>
 <p><strong>Other traits</strong></p>
 <p>Considering our table, we need to create 2 additional traits: Orderable and Pageable. The creation is trivial, and when applied we confirm something that you might have noticed during  the previous step: traits are a collection (that&#39;s why they are applied within an array).</p>
-<pre><code class="lang-yaml">orderable:
-  queryParameters:
+<pre><code class="lang-yaml">  - orderable:
+    queryParameters:
     orderBy:
-      description: |
-        Order by field: &lt;&lt;fieldsList&gt;&gt;
-      type: string
-      required: false
+    description: |
+    Order by field: &lt;&lt;fieldsList&gt;&gt;
+    type: string
+    required: false
     order:
-      description: Order
-      enum: [desc, asc]
-      default: desc
-      required: false
-pageable:
-  queryParameters:
+    description: Order
+    enum: [desc, asc]
+    default: desc
+    required: false
+    - pageable:
+    queryParameters:
     offset:
-      description: Skip over a number of elements by specifying an offset value for the query
-      type: integer
-      required: false
-      example: 20
-      default: 0
+    description: Skip over a number of elements by specifying an offset value for the query
+    type: integer
+    required: false
+    example: 20
+    default: 0
     limit:
-      description: Limit the number of elements on the response
-      type: integer
-      required: false
-      example: 80
-      default: 10
+    description: Limit the number of elements on the response
+    type: integer
+    required: false
+    example: 80
+    default: 10
 </code></pre>
 <pre><code class="lang-yaml">/songs:
-  type:
+    type:
     collection:
-      exampleCollection: !include jukebox-include-songs.sample
-      exampleItem: !include jukebox-include-song-new.sample
-  get:
+    exampleCollection: !include jukebox-include-songs.sample
+    exampleItem: !include jukebox-include-song-new.sample
+    get:
     is: [
-      searchable: {description: &quot;with valid searchable fields: songTitle&quot;, example: &quot;[\&quot;songTitle\&quot;, \&quot;Get L\&quot;, \&quot;like\&quot;]&quot;},
-      orderable: {fieldsList: &quot;songTitle&quot;},
-      pageable
+    searchable: {description: &quot;with valid searchable fields: songTitle&quot;, example: &quot;[\&quot;songTitle\&quot;, \&quot;Get L\&quot;, \&quot;like\&quot;]&quot;},
+    orderable: {fieldsList: &quot;songTitle&quot;},
+    pageable
     ]
 </code></pre>
 <p>In this case, you can see that the &quot;Pageable&quot; trait receives no parameter.</p>
-<p>Go ahead! Apply the proper traits to the proper resources as we defined in the table.</p>
+<p>Go ahead! Apply the proper traits to the proper resources as we defined in the table.
+    Once done, the code should look like the one on step7c</p>
+<p>Reset your workspace:</p>
+<pre><code class="lang-shell">git checkout -f step7c
+</code></pre>
 <h2 id="final-tuning">FINAL TUNING</h2>
 <p>We could say that our RAML file has been properly refactored and is now much more readable, reusable, and maintainable. Maybe a last step would be to double-check which parts of the RAML definition could now be extracted to other files (the same way we have done with the &quot;examples&quot;).
     Starting at the root, we find the schemas, and it seems a no-brainer that each JSON (in this case) could be extracted and included as we have learned.</p>
-<pre><code class="lang-yaml">types:
-  song: !include jukebox-include-song.schema
-  artist: !include jukebox-include-artist.schema
-  album: !include jukebox-include-album.schema
+<p>Reset your workspace:</p>
+<pre><code class="lang-shell">git checkout -f step8
+</code></pre>
+<p>You will see that the schemas section ended as:</p>
+<pre><code class="lang-yaml">schemas:
+    - song: !include jukebox-include-song.schema
+    - artist: !include jukebox-include-artist.schema
+    - album: !include jukebox-include-album.schema
 </code></pre>
 <p>and of course, three new files will appear in your file system.</p>
 <p>While this doesn&#39;t seem to be a revelation (it isn&#39;t), let&#39;s keep checking our RAML file to discover what else can be extracted. Honestly, resourceTypes and traits are really tempting. But if you try to follow the same strategy, you will surely fail. Remember in previous sections that we explained that the <code>!include</code> function would just take the content of the file and embed its contents as a string? That’s precisely what we wanted to do with the examples and the schemas. However, if we look at the resourceTypes and traits again, we will notice that they are not just strings, but maps (just like the rest of the RAML file). So basically, NO! You CANNOT extract these with the same approach you used to extract examples and schemas.</p>
