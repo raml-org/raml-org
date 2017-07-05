@@ -900,3 +900,10 @@
   topics:
     - Parsers
     - Utilities
+- name: Vrap
+  author: vrap.io
+  description: |
+    Validating Rest API proxy
+  url: http://www.vrap.io/
+  topics:
+    - Test
