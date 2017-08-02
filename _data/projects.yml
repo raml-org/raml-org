@@ -17,6 +17,14 @@
   url: https://github.com/raml2html/raml2html
   topics:
     - Document
+- name: RAML-to-Swagger2-converter
+  author: eshwanth
+  description: |
+    The goal of RAML-to-Swagger-converter is to provide a tool (in this case, a java project) 
+    which supports converting RAML 0.8 API definition to Swagger 2.0 API definition.
+  url: https://github.com/esh-b/RAML-to-Swagger-Converter
+  topics:
+    - Utilities
 - name: raml-json-api
   author: Arthur
   description: |
@@ -907,3 +915,10 @@
   topics:
     - Parsers
     - Utilities
+- name: Vrap
+  author: vrap.io
+  description: |
+    Validating Rest API proxy
+  url: http://www.vrap.io/
+  topics:
+    - Test
