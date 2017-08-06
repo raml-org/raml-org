@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+ <meta charset=utf-8>
+ <title>Slack Invite</title>
+ <style type="text/css">
+  <!--
+   .main{
+       margin-top: 100px;
+   }
+   .main-content {
+       border: 2px solid #009edf;
+       margin: 0 auto;
+       max-width: 396px;
+       padding: 20px 40px;
+       color: #ccc;
+       text-shadow: none;
+   }
+   .input-group{
+    margin: 20px 0px;
+   }
+   .input-group-addon {
+       color: #009edf ;
+       font-size: 17px;
+   }
+   .invite-button{
+       margin: 0px auto;
+       max-width: 396px;;
+   }
+   .form-header{
+       max-width: 400px;
+       margin: 0 auto;
+       background-color: #009edf;
+       color: #fff;
+       width: 100% ;
+       padding: 20px 0px;
+       border-top-right-radius:10px ;
+       border-top-left-radius:10px 
+   }
+   .remember{
+       color: black;
+   }
+   -->
+ </style>
+
+ <!-- Latest compiled and minified CSS -->
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ <!-- jQuery library -->
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ <!-- Latest compiled JavaScript -->
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+ <script type="text/javascript">
+  $(document).ready(function() {
+
+   // used only to allow local serving of files
+   $.ajaxSetup({
+         beforeSend: function(xhr) {
+             if (xhr.overrideMimeType) {
+                 xhr.overrideMimeType("application/json");
+             }
+         }
+   });
+
+   $('#email').focus();
+   $.ajax({
+    type        : 'GET',
+    url         : '/api/teamactivity'
+   })
+   .done(function(data,textStatus, jqXHR) {
+    if (data) {
+     $('#team_activity').html(data.active + " users online now of " + data.total + " registered.");
+    }
+   });
+
+   $('form#submit').submit(function(event) {
+    $('#input_submit').prop('disabled', true);
+
+    // process the form
+    $.ajax({
+     type        : 'POST',
+     url         : '/api/invites',
+     data        : JSON.stringify({ 'email' : $('#email').val(), 'g-recaptcha-response' : $('#g-recaptcha-response').val() }),
+     contentType : 'application/json; charset=utf-8',
+     dataType    : 'json',
+     encode      : true
+    })
+    .done(function(data,textStatus, jqXHR) {
+     $('#input_submit').prop('disabled', false);
+     if (data.ok) {
+      $('form#submit').hide();
+      $('form#result').show();
+      $('#email').text(data.email);
+     } else {
+      $('#input-group').addClass('has-error');
+      $('#input-error').show().text(data.error);
+     }
+    })
+    .fail(function(_, _, errorThrown) {
+     $('#input_submit').prop('disabled', false);
+     $('#input-group').addClass('has-error');
+     $('#input-error').show().text("Server error: "+errorThrown);
+    });
+
+    // stop the form from submitting the normal way and refreshing the page
+    event.preventDefault();
+   });
+
+   $('form#result').submit(function(event) {
+    location.reload();
+   });
+  });
+ </script>
+
+ <script src='https://www.google.com/recaptcha/api.js'></script>
+</head>
+
+<body>
+ <section class="invite-info">
+  <div class="container">
+   <div class="row main">
+    <div class="form-header">
+     <h1 class="text-center ">Slack Invitation</h1>
+    </div>
+    <div class="main-content">
+
+     <form id="submit">
+      <div class="row">
+       <img src="/images/ramllogo.png" alt=""/>
+       <br/><br/>Join the <b>RAML Community</b> on Slack.
+       <div id="team_activity"/>
+      </div>
+      <div class="input-group">
+       <span class="input-group-addon"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></span>
+       <input id="email" type="email" required class="form-control" name="email" placeholder="Enter your Email">
+      </div>
+      <div class="input-group">
+       <span class="input-group-addon"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></span>
+       <div class="g-recaptcha" style="display:block;" data-sitekey="6LfDhysUAAAAAFUPavagId9DvdRSMR9i5v11wXBz"></div>
+      </div>
+      <div class="form-group">
+       <button id="input_submit" class="btn btn-lg btn-danger btn-block invite-button">Request Invite</button>
+      </div>
+     </form>
+
+     <form id="result" style="display: none">
+      <div class="alert alert-success">Invite Created. <br/><span id="email"></span></div>
+      <button type="submit" class="btn btn-success" id="page_reload">New Invite</button><div>
+      </div>
+     </form>
+
+     <div class="row">
+      Already have an account? <a href="https://raml-api.slack.com/" alt="">Sign In</a>
+     </div>
+    </div>
+   </div>
+  </div>
+ </section>
+</body>
+</html>
