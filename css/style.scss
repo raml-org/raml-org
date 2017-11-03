@@ -473,24 +473,6 @@ section.open_source_proj {
        float: left;
      }
   }
-  body.mvp {
-    .col-md-4 {
-      width: 33.33333%;
-      float: left;
-    }
-    .col-md-8 {
-      width: 66.66667%;
-      float: left;
-    }
-  }
-  div.mvp-signup {
-    .form-group {
-      display: inline-block;
-    }
-    .btn-default  {
-      margin-top: -66px;
-    }
-  }
 
   div.how-it-works {
     .col-md-3 {
@@ -501,12 +483,6 @@ section.open_source_proj {
       width: 8.33333%;
       float: left;
     }
-  }
-  div.our-mvps {
-     .col-md-6 {
-       width: 50%;
-       float: left;
-     }
   }
   div.prize-sponsored {
     .col-md-2 {
@@ -1346,98 +1322,6 @@ div.eliminate-support {
     }
   }
 }
-.mvp {
-  div.top_wrapper {
-    background-color: #282d36;
-    background-image: none;
-    min-width: 565px;
-  }
-  .raml-mvp {
-    margin-top: 35%;
-    h2 {
-      font-weight: bold;
-      font-size: 30px;
-      color: #FFFFFF;
-    }
-
-    p {
-      font-family: Arial,sans-serif;
-      font-size: 16px;
-      line-height: 28px;
-      color: #DDDDDD;
-    }
-    .btn-signup {
-      margin-top: 12%;
-
-      a {
-        color: #ffffff;
-        padding: 9px 50px;
-        background: #66c4e8;
-        text-decoration: none;
-        text-align: center;
-        border-radius: 3px;
-        margin-left: 0;
-      }
-    }
-  }
-
-  div.background-banner {
-    background: url(/images/hero-image.svg) no-repeat;
-    background-size: 106%;
-    height: 500px;
-    background-position-y: -75px;
-  }
-}
-
-div.mvp-signup {
-  padding: 83px 0 85px;
-  background: #F6F6F6;
-
-  p {
-    font-family: Arial,sans-serif;
-    font-size: 18px;
-    line-height: 25px;
-    color: #777777;
-    margin-top: 25px;
-    text-align: center;
-  }
-  .form-inline {
-    text-align: center;
-  }
-  .form-group {
-    padding: 5px 5px;
-  }
-  .form-control {
-    font-family: Arial,sans-serif;
-    border: 1px solid #f6f6f6;
-    border-radius: 0;
-    width: 215px;
-  }
-  p.already_mem {
-    font-family: Arial,sans-serif;
-    font-size: 14px;
-    line-height: 25px;
-    color: #777777;
-    margin-bottom: 25px;
-
-    a {
-      color: #66c4e8;
-    }
-    img {
-      height: 18px;
-    }
-  }
-
-  .btn-default {
-    background: #68C3E3;
-    border-radius: 3px;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-    width: 180px;
-    color: #feffff;
-    border-color: #68C3E3;
-  }
-}
 
 .how-it-works {
   padding: 52px 0 40px;
@@ -1456,99 +1340,6 @@ div.mvp-signup {
     line-height: 25px;
     color: #777777;
     padding-top: 30px;
-  }
-}
-
-div.our-mvps {
-  padding: 37px 0 61px;
-  background-color: #282d36;
-
-  h2 {
-    font-family: Arial,sans-serif;
-    font-size: 20px;
-    line-height: 25px;
-    color: #FFFFFF;
-    margin-left: 16px;
-    margin-top: 23px;
-  }
-
-  div.leaderboard_link {
-    padding: 11px 0 0 14px;
-
-    a {
-      color: #66c4e8;
-    }
-  }
-  table {
-    margin-left: 5px;
-  }
-  table > tbody > tr > td {
-    border-top: 0;
-    color: #ffffff;
-    height: 60px;
-  }
-  table > tbody > tr > td > img {
-    padding-left: 9px;
-  }
-  table > tbody > tr > td:nth-child(2) {
-    padding-left: 2px;
-  }
-  table > tbody > tr > td:nth-child(3) {
-    padding-left: 6px;
-  }
-  table > tbody > tr > td:nth-child(4) {
-    padding-left: 5px;
-  }
-
-  div.challenge_content {
-    display: block;
-    background: #393d46;
-    padding: 27px 27px 25px 26px;
-    min-height: 205px;
-    margin-top: 25px;
-    border-radius: 2px;
-    font-family: Arial,sans-serif;
-    margin-left: 0;
-    width: 540px;
-
-    span.ch_title {
-      font-size: 12px;
-      line-height: 22px;
-      text-transform: uppercase;
-      color: #AFAFAF;
-    }
-
-    span.ch_points {
-      font-size: 15px;
-      line-height: 20px;
-      color: #31C600;
-      float: right;
-    }
-    h3 {
-      font-size: 20px;
-      line-height: 20px;
-      color: #FFFFFF;
-    }
-
-    p {
-      font-size: 14px;
-      line-height: 25px;
-      color: #AFAFAF;
-    }
-    span.ch_do {
-      font-size: 14px;
-      line-height: 20px;
-      color: #68C3E3;
-      float: right;
-    }
-  }
-
-  div.sign_earning {
-    margin: 25px 0 25px 0;
-
-    a {
-      color: #66c4e8;
-    }
   }
 }
 
@@ -2117,7 +1908,7 @@ nav.navbar ul {
   }
 }
 
-body:not(.mvp) {
+body {
   div.top_wrapper {
     div.container {
       width: 1080px;
