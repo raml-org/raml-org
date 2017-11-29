@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Slack Invite
-permalink: /slack-invite
+permalink: /slack
 ---
 
 <style type="text/css">
@@ -9,22 +9,9 @@ permalink: /slack-invite
     margin: 50px 0px;
   }
   .invite-content {
-    border: 2px solid #009edf;
     margin: 0 auto;
     max-width: 396px;
     padding: 20px 40px;
-    color: #ccc;
-    text-shadow: none;
-  }
-  .form-header {
-    max-width: 400px;
-    margin: 0 auto;
-    background-color: #009edf;
-    color: #fff;
-    width: 100% ;
-    padding: 20px 0px;
-    border-top-right-radius:10px ;
-    border-top-left-radius:10px 
   }
   .input-group {
     margin: 20px 0px;
@@ -33,22 +20,17 @@ permalink: /slack-invite
     color: #009edf ;
     font-size: 17px;
   }
-  .invite-button {
-    margin: 0px auto;
-    max-width: 396px;;
-  }
 </style>
 
 <div class="container">
   <div class="row invite-form">
-    <div class="form-header">
-      <h1 class="text-center ">Slack Invitation</h1>
-    </div>
     <div class="invite-content">
       <form id="submit">
+        <div class="row text-center">
+          <img src="/images/slack.png" alt="Slack"/>
+          <br><br>Join the <b>RAML Community</b> on Slack.
+        </div>
         <div class="row">
-          <img src="/images/ramllogo.png" alt=""/>
-          <br/><br/>Join the <b>RAML Community</b> on Slack.
           <div id="team_activity"/>
         </div>
         <div class="input-group">
@@ -60,7 +42,7 @@ permalink: /slack-invite
           <div class="g-recaptcha" style="display:block;" data-sitekey="6LfDhysUAAAAAFUPavagId9DvdRSMR9i5v11wXBz"></div>
         </div>
         <div class="form-group">
-          <button id="input_submit" class="btn btn-lg btn-danger btn-block invite-button">Request Invite</button>
+          <button id="input_submit" class="btn btn-success btn-lg btn-block">Request Invite</button>
         </div>
       </form>
 
