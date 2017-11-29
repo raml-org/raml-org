@@ -21,7 +21,7 @@
 3. remove the below line in blogs/index.html in case you are testing locally 
 
    ```
-   permlaink: /blogs
+   permalink: /blogs
    ```
    
 4. run this command 
