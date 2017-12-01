@@ -17,7 +17,7 @@ permalink: /slack
     margin: 20px 0px;
   }
   .input-group-addon {
-    color: #009edf ;
+    color: #009edf;
     font-size: 17px;
   }
 </style>
@@ -33,26 +33,28 @@ permalink: /slack
         <div class="row">
           <div id="team_activity"></div>
         </div>
-        <div class="input-group">
-          <span class="input-group-addon"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></span>
-          <input id="email" type="email" required class="form-control" name="email" placeholder="Enter your Email">
+        <div class="row">
+          <div class="input-group">
+            <span class="input-group-addon"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></span>
+            <input id="email" type="email" required class="form-control" name="email" placeholder="Enter your Email">
+          </div>
+          <div class="input-group">
+            <span class="input-group-addon"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></span>
+            <div class="g-recaptcha" style="display: block; border-bottom-left-radius: 0; border-top-left-radius: 0;" data-sitekey="6LfDhysUAAAAAFUPavagId9DvdRSMR9i5v11wXBz"></div>
+          </div>
         </div>
-        <div class="input-group">
-          <span class="input-group-addon"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></span>
-          <div class="g-recaptcha" style="display:block;" data-sitekey="6LfDhysUAAAAAFUPavagId9DvdRSMR9i5v11wXBz"></div>
-        </div>
-        <div class="form-group">
-          <button id="input_submit" class="btn btn-success btn-lg btn-block">Request Invite</button>
+        <div class="row">
+          <div class="form-group">
+            <button id="input_submit" class="btn btn-success btn-lg btn-block">Request Invite</button>
+          </div>
         </div>
       </form>
-
       <form id="result" style="display: none">
         <div class="alert alert-success">Invite sent to <br/><span id="email_confirm"></span></div>
         <div class="form-group">
           <button type="submit" class="btn btn-success btn-lg btn-block" id="page_reload">New Invite</button>
         </div>
       </form>
-
       <div class="row">
         Already have an account? <a href="https://raml-api.slack.com/" alt="">Sign In</a>
       </div>
