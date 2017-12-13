@@ -922,3 +922,11 @@
   url: http://www.vrap.io/
   topics:
     - Test
+- name: restdocs-raml
+  author: ePages
+  description: |
+    An extension to Spring REST Docs that adds RAML as an output format.
+  url: https://github.com/ePages-de/restdocs-raml
+  topics:
+    - Document
+    - Test
