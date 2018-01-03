@@ -453,6 +453,8 @@ permalink: /developers/raml-200-tutorial
         200:
           body:
             application/json:
+              example: |
+                &lt;&lt;exampleCollection&gt;&gt;
     post:
       description: |
         Add a new &lt;&lt;resourcePathName|!singularize&gt;&gt; to Jukebox.
@@ -470,7 +472,7 @@ permalink: /developers/raml-200-tutorial
           body:
             application/json:
               example: |
-                { &quot;message&quot;: &quot;The &lt;&lt;resourcePathName|!singularize&gt;&gt; has been properly entered&quot; }
+                &lt;&lt;exampleItem&gt;&gt;
   collection-item:
     description: Entity representing a &lt;&lt;resourcePathName|!singularize&gt;&gt;
     get:
@@ -614,7 +616,7 @@ permalink: /developers/raml-200-tutorial
         collection:
           exampleCollection: !include jukebox-include-artist-albums.sample
           exampleItem: {}
-      description: Collection of albulms belonging to the artist
+      description: Collection of albums belonging to the artist
       get:
         description: Get a specific artist&#39;s albums list
 </code></pre>
