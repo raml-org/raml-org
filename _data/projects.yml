@@ -922,3 +922,11 @@
   url: http://www.vrap.io/
   topics:
     - Test
+- name: cookiecutter-raml
+  author: genzj
+  description: |
+    Cookiecutter template for creating a RAML 1.0 project.
+  url: https://github.com/genzj/cookiecutter-raml
+  topics:
+    - Design
+    - Utilities
