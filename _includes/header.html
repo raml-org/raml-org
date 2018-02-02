@@ -11,6 +11,7 @@
     <script src="{{ site.baseurl }}/js/jquery.min.js"></script>
     <script src="{{ site.baseurl }}/js/bootstrap.min.js"></script>
     <script src="{{ site.baseurl }}/js/script.js"></script>
+	
     {% if page.title == 'Welcome' %}
     <script type="text/javascript">
         $(document).ready(function() {
@@ -61,7 +62,14 @@
         })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
         ga('create', 'UA-44483523-1', 'auto');
         ga('send', 'pageview');
+		var a = document.getElementsByTagName(‘a’);
+		for(i = 0; i < a.length; i++){
+		if (a[i].href.indexOf(location.host) == -1 && a[i].href.match(/^http:///i)){
+		a[i].onclick = function(){
+		_gaq.push([‘_trackEvent’, ‘outgoing_links’, this.href.replace(/^http:///i, ”)]);
+		}
+		}
+		}
     </script>
 </head>
 <body class="{{ page.title | downcase | replace:' ','-' | replace:',','' | strip_html }} {{ page.layout }} {{ page.is_post }}">
-
