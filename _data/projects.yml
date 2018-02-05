@@ -922,3 +922,10 @@
   url: http://www.vrap.io/
   topics:
     - Test
+- name: AriesDoc
+  author: Victor.X.Qu
+  description: |
+    AriesDoc is help we generate raml doc file form asp.net core.
+  url: https://github.com/CodeBabyBear/AriesDoc
+  topics:
+    - Utilities
