@@ -6,7 +6,7 @@
     "name"    : "{{ projects.name }}",
     "url"     : "{{ projects.url }}",
     "author"     : "{{ projects.author }}",
-    "description"     : "{{ projects.description | escape | strip_newlines }}",
+    "description"     : "{{ projects.description | escape | replace: '\n', ' ' | strip }}",
     "topics"     : "{{ projects.topics | join: ', ' }}"
   }
 {% if forloop.last %}{% else %},{% endif %}
