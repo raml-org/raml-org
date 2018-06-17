@@ -922,3 +922,11 @@
   url: http://www.vrap.io/
   topics:
     - Test
+- name: uml2raml
+  author: Davide Rossi
+  description: |
+    UML to RAML generator for MDE toolchains.
+    Available as command-line utility and Maven plugin.
+  url: https://github.com/DavideRossi/uml2raml
+  topics:
+    - Design
