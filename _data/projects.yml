@@ -923,6 +923,14 @@
   url: http://www.vrap.io/
   topics:
     - Test
+- name: RAML API Tester
+  author: Michael Fischer
+  description: |
+    The RAML API Tester (RAT) is a simple javascript library and cli that can
+    be used to test an enpoint serving the api implemenation of a RAML spec.
+  url: https://github.com/mafischer/raml-api-tester
+  topics:
+    - Test
 - name: cookiecutter-raml
   author: genzj
   description: |
