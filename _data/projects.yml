@@ -306,6 +306,7 @@
     greatly improved. It supports OAS 2.0 <> RAML 1.0, 0.8
   topics:
     - Utilities
+  url: https://github.com/mulesoft/oas-raml-converter
 - name: RAML Store
   author: brianmc
   description: |
@@ -930,3 +931,17 @@
   topics:
     - Design
     - Utilities
+- name: restdocs-raml
+  author: ePages
+  description: |
+    An extension to Spring REST Docs that adds RAML as an output format.
+  url: https://github.com/ePages-de/restdocs-raml
+  topics:
+    - Document
+- name: angular-http-raml
+  author: Bence Eros
+  description: |
+    Library for building HTTP stubs and mocks for Angular apps, based on RAML definitions
+  url: https://github.com/patientsknowbest/angular-http-raml
+  topics:
+    - Test
