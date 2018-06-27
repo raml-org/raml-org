@@ -923,3 +923,10 @@
   url: http://www.vrap.io/
   topics:
     - Test
+- name: angular-http-raml
+  author: Bence Eros
+  description: |
+    Library for building HTTP stubs and mocks for Angular apps, based on RAML definitions
+  url: https://github.com/patientsknowbest/angular-http-raml
+  topics:
+    - Test
