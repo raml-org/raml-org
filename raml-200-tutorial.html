@@ -146,7 +146,7 @@ permalink: /developers/raml-200-tutorial
             required: true
             type: file
 </code></pre>
-<p><code>/file-content</code> resource represents the file to reproduce when a Jukebox user select a particular song, although, there are tons of ways of modeling this scenario on a RESTful API. We&#39;ve chosen this one for this tutorial purposes. It doesn&#39;t mean it&#39;s a best practice at all.</p>
+<p><code>/file-content</code> resource represents the file to reproduce when a Jukebox user selects a particular song, although, there are tons of ways of modeling this scenario on a RESTful API. We&#39;ve chosen this one for this tutorial purposes. It doesn&#39;t mean it&#39;s a best practice at all.</p>
 <p>As you can see in the POST definition, its body contains two possible content-types.
     The <code>binary/octet-stream</code> simply expects <code>file-content</code> to be sent as a parameter. It&#39;s a valid and popular technique for APIs that supporting files. Unfortunately, it makes the API impossible to call from a web browser (at least with the purpose of uploading a file).</p>
 <p>For the <code>multipart/form-data</code> (and also the <code>application/x-www-form-urlencoded</code>), it is possible to define a map of &quot;formParameters&quot;, defining this map the same way that the rest of the RAML ones (in this case, the &quot;file&quot; field is required and of type &quot;file&quot;).</p>
@@ -471,7 +471,7 @@ permalink: /developers/raml-200-tutorial
         200:
           body:
             application/json:
-              example:
+              example: |
                 { &quot;message&quot;: &quot;The &lt;&lt;resourcePathName|!singularize&gt;&gt; has been properly entered&quot; }
   collection-item:
     description: Entity representing a &lt;&lt;resourcePathName|!singularize&gt;&gt;
