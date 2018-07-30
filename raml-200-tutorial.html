@@ -286,7 +286,7 @@ permalink: /developers/raml-200-tutorial
       queryParameters:
         access_token:
           description: &quot;The access token provided by the authentication application&quot;
-          example: AABBCCDD 
+          example: AABBCCDD
           required: true
           type: string
       body:
@@ -324,7 +324,7 @@ permalink: /developers/raml-200-tutorial
       queryParameters:
         access_token:
           description: &quot;The access token provided by the authentication application&quot;
-          example: AABBCCDD 
+          example: AABBCCDD
           required: true
           type: string
       body:
@@ -453,28 +453,26 @@ permalink: /developers/raml-200-tutorial
         200:
           body:
             application/json:
-              example: |
-                &lt;&lt;exampleCollection&gt;&gt;
+              example: &lt;&lt;exampleCollection&gt;&gt;
     post:
       description: |
         Add a new &lt;&lt;resourcePathName|!singularize&gt;&gt; to Jukebox.
       queryParameters:
         access_token:
           description: &quot;The access token provided by the authentication application&quot;
-          example: AABBCCDD 
+          example: AABBCCDD
           required: true
           type: string
       body:
         application/json:
           type: &lt;&lt;resourcePathName|!singularize&gt;&gt;
-          example: |
-            &lt;&lt;exampleItem&gt;&gt;
+          example: &lt;&lt;exampleItem&gt;&gt;
       responses:
         200:
           body:
             application/json:
-              example: |
-                &lt;&lt;exampleItem&gt;&gt;
+              example:
+                { &quot;message&quot;: &quot;The &lt;&lt;resourcePathName|!singularize&gt;&gt; has been properly entered&quot; }
   collection-item:
     description: Entity representing a &lt;&lt;resourcePathName|!singularize&gt;&gt;
     get:
