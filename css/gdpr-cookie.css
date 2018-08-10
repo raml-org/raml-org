@@ -5,9 +5,10 @@
     color: white;
     font-size: 14px;
     line-height: 1.7em;
-    bottom: 0px;
-    padding: 1rem;
+    bottom: 0;
+    padding: 1rem 1rem 1rem 3rem;
     background: black;
+    opacity: .85;
 }
 .gdprcookie h1,
 .gdprcookie h2 {
