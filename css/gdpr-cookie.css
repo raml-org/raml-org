@@ -9,6 +9,7 @@
     padding: 1rem 1rem 1rem 3rem;
     background: black;
     opacity: .85;
+	z-index:110;
 }
 .gdprcookie h1,
 .gdprcookie h2 {
