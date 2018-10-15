@@ -1866,6 +1866,14 @@ nav.navbar ul {
   right: 32px;
   z-index:100;
   display:none;
+
+  @media screen and (max-width:1199px) and (min-width:768px){
+    right:-5px;
+  }
+
+  @media screen and (max-width:767px){
+    right:8px;
+  }
 }
 
 #one_document_img {
@@ -1877,6 +1885,14 @@ nav.navbar ul {
   right: 69px;
   z-index:100;
   display:none;
+
+  @media screen and (max-width:1199px) and (min-width:768px){
+    right:30px;
+  }
+
+  @media screen and (max-width:767px){
+    right:43px;
+  }
 }
 
 
