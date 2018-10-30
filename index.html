@@ -3,191 +3,98 @@ layout: default
 title:  'Welcome'
 ---
 
-<section class="region-highlighted">
-  <div class="container">
-    <div>
-     <img src="images/homepage_logos.svg" alt="homepage logos" align="center" class="img-responsive" />
-    </div>
-  </div>
-</section>
-
-<section class="homepage-inner-wrapper">
-  <div class="container">
-    <div class="console_img">
-      <img src="images/console.png" alt="RAML Console" class="img-responsive"  />
-    </div>
-
-    <div class = "col-md-12 testimonial">
-      <!--<blockquote><h2>We started using RAML for API specification. It helps us a lot with communicating requirements to our offshore partner. I was comparing it to Swagger and WADL and found that RAML strikes a better balance between technical aspects and human readability … I like the simple API versioning feature of RAML.</h2></blockquote>-->
-      <!--<div class="author_name">Renzo Kottmann</div>-->
-      <!--<div class="author_location">Microbial Genomics and Bioinformatics Research GroupMax Planck Institute for marine Microbiology</div>-->
-
-    </div>
-  </div>
-</section>
-
-
-<section class="map-container">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-5">
-        <img src="images/map.jpg" usemap="#image-map" height="410">
-
-        <map name="image-map" id="imagemap">
-          <area target="" alt="design" title="design" href="#design_desc" coords="-3,90,110,237" shape="rect" id = "one_design">
-          <area target="" alt="Build" title="Build" href="#build_desc" coords="161,-4,275,118" shape="rect" id = "one_build">
-          <area target="" alt="Test" title="Test" href="#test_desc" coords="314,109,431,235" shape="rect" id="one_test">
-          <area target="" alt="document" title="document" href="#document_desc" coords="278,276,393,399" shape="rect" id="one_document">
-          <area target="" alt="Share" title="Share" href="#share_desc" coords="34,282,146,399" shape="rect" id="one_share">
-        </map>
-        <div class="hmapimg" id="one_build_img"></div>
-        <div class="hmapimg" id="one_test_img"></div>
-        <div class="hmapimg" id="one_document_img"></div>
-        <div class="hmapimg" id="one_share_img"></div>
-        <div class="hmapimg" id="one_design_img"></div>
+<section>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-sm-12">
+          <img src="images/homepage_logos.svg" class="img-responsive">
+        </div>
       </div>
-      <div class="col-md-7">
-        <section id="design_desc">
+    </div>  
+  </section>
+  <section id="content-bg-color">
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-md-12 col-sm-12">
+          <h2>Write once. Use many. Creative laziness encouraged.</h2>
+          <p>RESTful API Modeling Language (RAML) makes it easy to manage the whole API lifecycle from design to sharing. It's concise - you only write what you need to define - and reusable. It is machine readable API design that is actually human friendly. </p>
+          <div class="homepage_icons">
+            <a href=""><img src="images/RAMLicondesign.svg" class="design"></a>
+            <a href=""><img src="images/RAMLiconbuild.svg" class="build"></a>
+            <a href=""><img src="images/RAMLicontest.svg" class="contest"></a>
+            <a href=""><img src="images/RAMLicondocument.svg" class="document"></a>
+            <a href=""><img src="images/RAMLiconshare.svg" class="share"></a>
+          </div>
+        </div>
+      </div>  
+    </div>
+  </section>
+  <section>
+    <div class="container-fluid raml-editor">
+      <div class="row">
+        <div class="col-md-7 col-sm-7 editor-block padd_00">
+          <h2>RAML Editor</h2>
+          <div class="box">
+            
+          </div>
+        </div>
+        <div class="col-md-5 col-sm-5 output-block padd_00">
+          <h2>Output</h2>
+          <div class="box">
+            
+          </div>
+        </div>  
+      </div>  
+    </div>
+  </section>
+
+  <section>
+    <div class="container raml-blocks">
+      <div class="row">
+        <div class="col-md-6 col-sm-6">
+          <img src="images/RAMLicondesign.svg" class="design">
           <h2>Use RAML to Design Your API</h2>
-          <div style="height: 150px; overflow: hidden; margin: 30px 0;"><img src="images/design_editor.png" style="margin-top: -10px;" /></div>
-          <div style="width: 500px;">RAML lets you see what your API looks like as you design it, using easy to read plain text.  Without having to write a single line of code you can not only perfect your API design, but also create a fully functional mock for customers, partners, or even your own internal engineers to review and build off of.
-            <div class="learn-more">
-              <a href="/developers/design-your-api">Learn more about how RAML helps you Design the Perfect API</a>
-            </div>
-
+          <p>RAML lets you see what your API looks like as you design it, using easy to read plain text. Without having to write a single line of code you can not only perfect your API design, but also create a fully functional mock for customers, partners, or even your own internal engineers to review and build off of. </p>
+          <a href="#">Learn  about Designing with RAML</a>
         </div>
-        </section>
-
-        <section id="build_desc">
+        <div class="col-md-6 col-sm-6">
+          <a href=""><img src="images/RAMLiconbuild.svg" class="build"></a>
           <h2>Use RAML to Build Your API</h2>
-          <div style="height: 150px; overflow: hidden; margin: 30px 0;"><img src="images/design_build.png" style="margin-top: -100px;" /></div>
-          <div style="width: 500px;">RAML enables developers and engineers to do what they do best – write code.  No more guesswork or getting halfway through your API only to realize the design doesn’t work or is inconsistent.  You can also reduce your time to market (and bug based headaches) by using the many tools available to help you generate the general structure of your API from your RAML files.
-            <div class="learn-more">
-            <a href="/developers/build-your-api">Learn more about how RAML helps you Build Your REST API</a>
-            </div>
-         </div>
-        </section>
-
-        <section id="test_desc">
+          <p>RAML enables developers and engineers to do what they do best – write code. No more guesswork or getting halfway through your API only to realize the design doesn’t work or is inconsistent. You can also reduce your time to market (and bug based headaches) by using the many tools available to help you generate the general structure of your API from your RAML files. </p>
+          <a href="#">Learn  about Designing with RAML</a>
+        </div>  
+      </div>
+      <div class="row">
+        <div class="col-md-6 col-sm-6">
+          <a href=""><img src="images/RAMLicontest.svg" class="contest"></a>
           <h2>Use RAML to Test Your API</h2>
-          <div style="height: 150px; overflow: hidden; margin: 30px 0;"><img src="images/design_tests.png" style="margin-top: -100px;" /></div>
-          <div style="width: 500px;">Most engineers hate writing unit tests. RAML lets you generate a majority of the tests by running a simple shell command.  No more manual tests (although we certainly recommend creating your own), and even better – you can even use third party services such as API Fortress, API Science, Parasoft, Postman, and SmartBear for your testing needs.
-            <div class="learn-more">
-            <a href="/developers/test-your-api">Learn more about how RAML makes Testing your REST API Easy</a>
-            </div>
-         </div>
-        </section>
-
-        <section id="document_desc">
+          <p>Most engineers hate writing unit tests. RAML lets you generate a majority of the tests by running a simple shell command. No more manual tests (although we certainly recommend creating your own), and even better – you can even use third party services such as API Fortress, API Science, Parasoft, Postman, and SmartBear for your testing needs.</p>
+          <a href="#">Learn  about Testing with RAML</a>
+        </div>
+        <div class="col-md-6 col-sm-6">
+          <a href=""><img src="images/RAMLicondocument.svg" class="document"></a>
           <h2>Use RAML to Document Your REST API</h2>
-          <div style="height: 150px; overflow: hidden; margin: 30px 0;"><img src="images/design_document.png" style="margin-top: -125px;" /></div>
-          <div style="width: 500px;">Say goodbye to spending hours writing and maintaining API documentation.  With RAML all of your documentation can be easily generated, letting you provide up-to-date documentation, all at the click of a button.
-            <div class="learn-more">
-            <a href="/developers/document-your-api">Learn More about how RAML helps you Document your API</a>
-            </div>
+          <p>Say goodbye to spending hours writing and maintaining API documentation. With RAML all of your documentation can be easily generated, letting you provide up-to-date documentation, all at the click of a button. </p>
+          <a href="#">Learn  about Documenting with RAML</a>
+        </div>  
+      </div>
+      <div class="row">
+        <div class="col-md-6 col-sm-6">
+          <a href=""><img src="images/RAMLiconshare.svg" class="share"></a>
+          <h2>Use RAML to Share & Support Your API</h2>
+          <p>What good is an API if nobody is using it? RAML helps you provide an even richer experience to your users, including dynamic walk-through examples with the API Notebook, SDKs for the most popular languages, and more. </p>
+          <a href="#">Learn  about Sharing with RAML</a>
         </div>
-        </section>
-
-        <section id="share_desc">
-          <h2>Use RAML to Share &amp; Support Your API</h2>
-          <div style="height: 150px; overflow: hidden; margin: 30px 0;"><img src="images/design_share.png" style="margin-top: -125px;" /></div>
-          <div style="width: 500px;">What good is an API if nobody is using it?  RAML helps you provide an even richer experience to your users, including dynamic walk-through examples with the API Notebook, SDKs for the most popular languages, and more.
-            <div class="learn-more">
-            <a href="/developers/share-support-your-api">Learn more about how RAML helps you Share your REST API</a>
-            </div>
-
-        </div>
-
-      </section>
-
-  </div>
-  </div>
+        <div class="col-md-6 col-sm-6">
+          <div class="bdr">
+            <h1>Hundreds of Open Source Projects</h1>
+            <p>RAML is backed by a large open source community providing hundreds of pre-built, customizable tools for all your RESTful API needs</p>
+            <a href="">Browse Projects</a>
+          </div>  
+        </div>  
+      </div>  
+      <div class="row block-quote">
+        <h1>There are many advantages to taking an API-first development approach. And with the help of tools like RAML, APIs have become more elastic and easier to use.</h1>
+      </div>
     </div>
-</section>
-
-<section class="open_source_proj">
-  <div class="container">
-    <div>
-      <h2>Hundreds of Open Source Projects</h2>
-      <h4>RAML is backed by a large open source community providing hundreds of pre-built, customizable tools for all your RESTful API needs</h4>
-    </div>
-    <!--<div class="row">-->
-
-        <!--<div class="project-block-content">-->
-          <!--<div class="project-inner">-->
-            <!--<h3>API Workbench</h3>-->
-            <!--<h4>MuleSoft</h4>-->
-            <!--<p>License: MuleSoft</p>-->
-
-            <!--<p>Built on Atom, the API Workbench lets you take your design offline, and makes building, testing, documenting, and sharing your API even easier!-->
-            <!--</p>-->
-          <!--</div>-->
-            <!--<a href="http://apiworkbench.com" target="_blank" class="firstlink">Download</a>-->
-        <!--</div>-->
-
-
-
-        <!--<div class="project-block-content">-->
-          <!--<div class="project-inner">-->
-          <!--<h3>swagger2raml</h3>-->
-          <!--<h4>rucek</h4>-->
-          <!--<p>License: Apache 2 Early</p>-->
-
-          <!--<p>Swagger2RAML is an utility to generate RAML from Swagger JSON.</p>-->
-          <!--</div>-->
-          <!--<a href="https://github.com/8x8Cloud/swagger2raml" target="_blank" class="mulelink"><img src="images/github icon-01.svg"  /></a><a href="/projects/projects#q:swagger2raml" class="moreinfo">More Info</a>-->
-        <!--</div>-->
-
-
-
-
-
-        <!--<div class="project-block-content">-->
-          <!--<div class="project-inner">-->
-          <!--<h3>ramlfications</h3>-->
-          <!--<h4>Spotify</h4>-->
-          <!--<p>License: Apache2 STABLE</p>-->
-
-          <!--<p>RAML reference implementation in Python</p>-->
-          <!--</div>-->
-          <!--<a href="https://github.com/spotify/ramlfications" target="_blank" class="mulelink"><img src="images/github icon-01.svg"  /></a><a href="/projects#q:ramlfications" class="moreinfo">More Info</a>-->
-        <!--</div>-->
-
-
-
-
-        <!--<div class="project-block-content">-->
-          <!--<div class="project-inner">-->
-          <!--<h3>RAML to HTML</h3>-->
-          <!--<h4>kevinrenskers</h4>-->
-
-          <!--<p>Licence: MIT STABLE</p>-->
-
-          <!--<p>RAML to HTML is a documentation tool that outputs a single HTML page console based on a RAML definition. it's written in NodeJS and it can be executed as a command line.</p>-->
-          <!--</div>-->
-          <!--<a href="https://github.com/kevinrenskers/raml2html" target="_blank" class="mulelink"><img src="images/github icon-01.svg"  /></a><a href="/projects#q:raml%20to%20html" class="moreinfo">More Info</a>-->
-        <!--</div>-->
-
-
-
-
-        <!--<div class="project-block-content">-->
-          <!--<div class="project-inner">-->
-          <!--<h3>Abao</h3>-->
-          <!--<h4>cybertk</h4>-->
-
-          <!--<p>License: SATA STABLE</p>-->
-
-          <!--<p>A command-line tool for testing API documentation written in RAML format against its backend implementation.-->
-          <!--</p>-->
-          <!--</div>-->
-          <!--<a href="https://github.com/cybertk/abao/" target="_blank" class="mulelink"><img src="images/github icon-01.svg" /></a><a href="/projects#q:abao" class="moreinfo">More Info</a>-->
-        <!--</div>-->
-
-
-    <!--</div>-->
-    <div class="see-all-project">
-      <a href="/projects">See all Projects</a>
-    </div>
-  </div>
-</section>
+  </section>
