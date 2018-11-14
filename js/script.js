@@ -24,6 +24,11 @@
         $this.addClass('active');
       }
     });
+    
+    $('[data-toggle="slide-collapse"]').on('click', function() {
+      $navMenuCont = $($(this).data('target'));
+      $navMenuCont.toggle('slide');
+    });
 
   });
 

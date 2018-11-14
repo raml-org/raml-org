@@ -2,12 +2,13 @@
 
 {% include nav.html %}
 
-<div class="container page-content">
+<div class="container-fluid about-raml">
     <div class="row">
-        <aside class="col-md-3 col-xs-3 col-sm-3" role = "complementary">
-
-
-            {% if page.title == 'RAML 100 Tutorial' or page.title == 'Vendor Support' or page.title == 'RAML 200 Tutorial' %}
+        <aside class="col-md-3 col-sm-12" role = "complementary">
+            <section class="sidebar-menu">
+                {% include about-raml-sidebar.html %}
+            </section>
+            <!-- {% if page.title == 'RAML 100 Tutorial' or page.title == 'Vendor Support' or page.title == 'RAML 200 Tutorial' %}
             <div class="region-sidebar well" data-spy="affix" data-offset-top="105">
                 <section class="ramlapilinks">
                     <div class="raml-links-wrapper">
@@ -40,9 +41,7 @@
                 </section>
 
                 {% if page.title == 'About RAML' or page.title == 'Workgroup' or page.title == 'Legal' %}
-                <section class="sidebar-menu">
-                    {% include about-raml-sidebar.html %}
-                </section>
+                
                 {% endif %}
 
                 {% if page.is_post  or page.title == 'Blogs' or page.title == 'Blog Archives' or page.title == 'Blogs Tag' or page.title == 'Blogs category' %}
@@ -51,13 +50,11 @@
                 </section>
                 {% endif %}
             </div>
-            {% endif %}
-
-
-
+            {% endif %} -->
         </aside>
-        <div class="col-md-9 col-xs-9 col-sm-9 article-content">
-            <h1 class="page-header">{{ page.title }}</h1>
+        <hr style="clear: both;border-color: #EDF0F4;margin: 0 55px;" class="visible-sm">
+        <div class="col-md-7 col-sm-12 col-md-offset-1 about-content-sec">
+            <!-- <h1 class="page-header">{{ page.title }}</h1> -->
             {% if page.is_post  and page.title != 'Blogs' and page.title != 'Blogs Archive' %}
             <div class="sharethis-inline-share-buttons"></div>
             <div class="page-meta">
