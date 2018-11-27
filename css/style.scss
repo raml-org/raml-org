@@ -1921,8 +1921,8 @@ nav.navbar ul {
 @media screen and (min-width: 1600px) {
   .developer, .enterprises,.projects {
     div.top_wrapper {
-      background-size: 38%;
-      background-position: 90% 119%;
+      background-size: auto;
+      background-position: right;
     }
   }
 }
