@@ -617,17 +617,17 @@ div.bottom-wrapper {
 
 .developer {
   div.top_wrapper {
-    background-image: url(/images/developers_hero.svg);
-    background-repeat: no-repeat;
-    background-position: right bottom;
-    color: #ffffff;
+    background-image: none;
+     color: #ffffff;
+    background-color: #282c35;
+    /*background-repeat: no-repeat;
+    background-position: right bottom;   
     -webkit-background-size: 44%;
     -moz-background-size: 44%;
     -o-background-size: 44%;
     background-size: 44%;
-    background-position: 90% 100%;
-    background-color: #282c35;
-    min-height: 475px;
+    background-position: 90% 100%;    
+    min-height: 475px;*/
   }
 
   section.raml-developers {
@@ -645,7 +645,6 @@ div.bottom-wrapper {
       margin-bottom: 35px;
       margin-top: 0;
       font-weight: normal;
-      width: 50%;
       font-size: 18px;
       line-height: 24px;
     }
@@ -1699,9 +1698,7 @@ div.blog_post_content {
     max-width: 500px;
   }
 }
-.container {
-  min-width: 1080px;
-}
+
 
 li.parent_dropdown:hover > .multi-level {
   display: block;
@@ -1928,9 +1925,14 @@ nav.navbar ul {
 }
 
 body {
-  div.top_wrapper {
-    div.container {
-      width: 1080px;
+  @media(min-width: 1200px){
+    .container {
+      min-width: 1080px;
+    }
+    div.top_wrapper {
+      div.container {
+        width: 1080px;
+      }
     }
   }
 }
