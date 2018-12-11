@@ -94,7 +94,7 @@ a.btn_black{border: 0px;border-radius: 2px;background: $sky-blue;color: #fff;pad
 
 header{
   .navbar-inverse{
-    background-color: transparent;border-color:transparent;padding: 20px 30px;
+    background-color: transparent;border-color:transparent;padding: 40px 30px 20px;
     @media(max-width: 767px){
       padding: 20px 0;margin-bottom: 0;
       .navbar-collapse{
@@ -210,7 +210,7 @@ header{
         }
       }
     }
-    #myNavbar{border-color: transparent;}
+    #myNavbar{border-color: transparent;padding: 0;}
   }
 }
 
@@ -221,7 +221,7 @@ header{
   background-position: bottom;
   .tophead-content{
     h1{
-      margin-top: 35px;color: $slate-gray;
+      margin-top: 30px;color: $slate-gray;
         @media(max-width: 767px){
           font-size: 18px;line-height: 25px;margin-top: 10px;
         }
@@ -230,7 +230,7 @@ header{
       font-size: 12px; color:$sky-blue;margin-bottom: 28px;
     }
     .buttons{
-      margin: 55px auto 40px;
+      margin: 40px auto 25px;
       text-align: center;
       width: 420px;
       @media(max-width: 767px){
@@ -238,7 +238,7 @@ header{
         margin: 30px auto 30px;
       }
       a{
-        border: 0px solid;border-radius: 2px; background-color:$sky-blue;color: #fff;padding: 15px 25px;font-size: 16px;letter-spacing: 0.5px;line-height: 19px; text-decoration: none;margin-right: 20px;width: 190px;display: block;float: left;
+        border: 0px solid;border-radius: 2px; background-color:$sky-blue;color: #fff;padding: 15px 25px;font-size: 16px;letter-spacing: 0.5px;line-height: 19px; text-decoration: none;margin-left: 26px;width: 190px;display: block;float: left;
         @media(max-width: 767px){
           width: 190px;display: block;margin:0 auto;margin-bottom: 15px;float: none;
         }
@@ -251,7 +251,7 @@ header{
   .logo {
     width: 14%;
     float: left;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     @media(max-width: 767px){
       width:33.33%;
       img{
@@ -264,7 +264,7 @@ header{
 
 
 #content-bg-color{
-  background-color: $slate-gray;color:#fff;padding: 80px 0 96px;
+  background-color: $slate-gray;color:#fff;padding: 75px 0 85px;
     @media(max-width: 767px){
       padding: 30px 0 50px;      
     }
@@ -325,7 +325,7 @@ header{
     padding: 0 15px;
   }
   h3{
-    letter-spacing: 0.5px;font-family: 'Roboto-Bold';color: $slate-gray;font-size: 24px;width: 353px;line-height: 28px;
+    letter-spacing: 0.5px;font-family: 'Roboto-Bold';color: $slate-gray;font-size: 24px;width: 353px;line-height: 28px;margin-bottom: 20px;
     @media(max-width: 767px){
       width: 100%;
       font-size: 16px;
@@ -381,7 +381,7 @@ header{
     font-size: 14px;line-height: 22px;
   }
   .bdr{
-    border:0px solid;width: 391px;padding: 30px;border-radius: 2px;margin-top: 142px;background-color: #F7FAFF;
+    border:0px solid;width: 350px;padding: 30px;border-radius: 2px;margin-top: 142px;background-color: #F7FAFF;
       @media(max-width: 767px){
         width: 100%!important;margin-top: 50px;padding: 20px;
       }
@@ -390,9 +390,10 @@ header{
       color: $slate-gray;
       font-size: 24px;
       line-height: 28px;
+      font-family: 'Roboto-Bold';
     }
     p{
-      width: 100%;margin-bottom: 20px;
+      width: 100%;margin-bottom: 20px;font-family: 'Roboto-Light';
     }
     a{
       font-size: 16px;line-height: 19px;letter-spacing: 0.5px;border:0px solid;border-radius: 2px;background-color: $sky-blue;width: 220px; color: #fff;display: block;padding: 20px;text-align: center;
@@ -405,12 +406,12 @@ header{
     }
   }
   .block-quote{
-    width: 480px;margin: 140px auto; 
+    width: 480px;margin: 80px auto 120px; 
     @media(max-width: 767px){
           width: 100%;margin: 0;padding-bottom: 30px;
         }
     h1{
-      font-size: 24px;line-height: 36px;color: $slate-gray;position: relative;text-align: center;
+      font-size: 24px;line-height: 36px;color: $slate-gray;position: relative;text-align: center;margin-bottom: 20px;
         @media(max-width: 767px){
           font-size: 14px;line-height: 28px;padding: 50px 37px 0;margin: 0;
         }
@@ -421,7 +422,6 @@ header{
       color: $light-gray;
       font-size: 16px;
       margin-bottom: 0;
-      font-family: 'Roboto-Bold';
     }
     span{
       display: block;
@@ -446,7 +446,7 @@ header{
 }
 
 .footer-sec{
-  padding: 0 30px;
+  padding: 10px 30px;
       @media(max-width: 767px){
         padding: 0 20px;
         .footer-menu{
