@@ -333,6 +333,27 @@ header{
       margin-bottom: 20px;
     }
   }
+  .editor-block{
+    .monaco-editor{
+      background-color: #F7FAFF;
+      .editor-scrollable{
+        .view-lines{
+          .mtk5{
+            color: #00667E;
+            font-family: 'Roboto-Bold';
+          }
+          .mtk22{
+            color: $sky-blue;
+            font-family: 'Roboto-Bold';
+          }
+          .mtk8{
+            color: #D9DFE7;
+            font-family: 'Roboto-Bold';
+          }
+        }
+      }
+    }  
+  }
   img{
     width: 55px;margin-top: 100px;
     @media(max-width: 767px){
