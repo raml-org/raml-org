@@ -94,7 +94,7 @@ a.btn_black{border: 0px;border-radius: 2px;background: $sky-blue;color: #fff;pad
 
 header{
   .navbar-inverse{
-    background-color: transparent;border-color:transparent;padding: 40px 30px 20px;
+    background-color: transparent;border-color:transparent;padding: 20px 30px;
     @media(max-width: 767px){
       padding: 20px 0;margin-bottom: 0;
       .navbar-collapse{
@@ -230,15 +230,15 @@ header{
       font-size: 12px; color:$sky-blue;margin-bottom: 50px;
     }
     .buttons{
-      margin: 40px auto 25px;
+      margin: 40px auto 28px;
       text-align: center;
-      width: 420px;
+      width: 450px;
       @media(max-width: 767px){
         width: 100%;
         margin: 30px auto 30px;
       }
       a{
-        border: 0px solid;border-radius: 2px; background-color:$sky-blue;color: #fff;padding: 20px 25px;font-size: 16px;letter-spacing: 0.5px;line-height: 19px; text-decoration: none;margin-left: 26px;width: 190px;display: block;float: left;
+        border: 0px solid;border-radius: 2px; background-color:$sky-blue;color: #fff;padding: 20px 25px;font-size: 16px;letter-spacing: 0.5px;line-height: 19px; text-decoration: none;margin-left: 25px;width: 190px;display: block;float: left;
         @media(max-width: 767px){
           width: 190px;display: block;margin:0 auto;margin-bottom: 15px;float: none;
         }
@@ -325,7 +325,7 @@ header{
     padding: 0 15px;
   }
   h3{
-    letter-spacing: 0.5px;font-family: 'Roboto-Bold';color: $slate-gray;font-size: 24px;width: 353px;line-height: 28px;margin-bottom: 20px;
+    letter-spacing: 0.5px;font-family: 'Roboto-Bold';color: $slate-gray;font-size: 24px;width: 353px;line-height: 28px;margin-bottom: 20px;margin-top: 25px;
     @media(max-width: 767px){
       width: 100%;
       font-size: 16px;
@@ -341,8 +341,8 @@ header{
   }
   .row-bg-color{
     background-color: #F7FAFF;
-    padding: 100px 0;
-    margin-top: 100px;
+    padding: 105px 0;
+    margin-top: 105px;
     img{
       margin-top: 0;
     }
@@ -355,6 +355,10 @@ header{
     width: 155px;
     text-align: center;
     border-radius: 2px;
+  }
+
+  .more-btn:before{
+    content: "\f105";font-weight: bold;font-family: 'Font Awesome\ 5 Free';font-style: normal;text-decoration: inherit;font-size: 18px;position: absolute;top: 13px;right: 20px;
   }
   .orange{
     color: $orange;
@@ -378,10 +382,10 @@ header{
     }
   }
   a{
-    font-size: 14px;line-height: 22px;
+    font-size: 14px;line-height: 22px;position: relative;
   }
   .bdr{
-    border:0px solid;width: 350px;padding: 30px;border-radius: 2px;margin-top: 142px;background-color: #F7FAFF;
+    border:0px solid;width: 350px;padding: 30px;border-radius: 2px;margin-top: 135px;background-color: #F7FAFF;
       @media(max-width: 767px){
         width: 100%!important;margin-top: 50px;padding: 20px;
       }
@@ -406,7 +410,7 @@ header{
     }
   }
   .block-quote{
-    width: 480px;margin: 80px auto 120px; 
+    width: 480px;margin: 80px auto 118px; 
     @media(max-width: 767px){
           width: 100%;margin: 0;padding-bottom: 30px;
         }
