@@ -317,22 +317,6 @@ header{
     line-height: 16px;  
     text-align: center;
   }
-}
-
-
-.raml-blocks{
-  @media(max-width: 767px){
-    padding: 0 15px;
-  }
-  h3{
-    letter-spacing: 0.5px;font-family: 'Roboto-Bold';color: $slate-gray;font-size: 24px;width: 353px;line-height: 28px;margin-bottom: 20px;margin-top: 25px;
-    @media(max-width: 767px){
-      width: 100%;
-      font-size: 16px;
-      line-height: 19px;
-      margin-bottom: 20px;
-    }
-  }
   .editor-block{
     .monaco-editor{
       background-color: #F7FAFF;
@@ -354,6 +338,22 @@ header{
       }
     }  
   }
+}
+
+
+.raml-blocks{
+  @media(max-width: 767px){
+    padding: 0 15px;
+  }
+  h3{
+    letter-spacing: 0.5px;font-family: 'Roboto-Bold';color: $slate-gray;font-size: 24px;width: 353px;line-height: 28px;margin-bottom: 20px;margin-top: 25px;
+    @media(max-width: 767px){
+      width: 100%;
+      font-size: 16px;
+      line-height: 19px;
+      margin-bottom: 20px;
+    }
+  }  
   img{
     width: 55px;margin-top: 100px;
     @media(max-width: 767px){
