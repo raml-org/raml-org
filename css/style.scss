@@ -169,33 +169,33 @@ header{
         a:hover{
           color: $slate-gray;opacity: 1;
         }
-        li.dropdown{
-          .dropdown-toggle{
-            padding-right: 0;
-          }
-          ul.dropdown-menu{
-            padding: 20px 5px;
-            min-width: 167px;
-            box-shadow: none;
-            border-radius: 2px;
-            background-color: $slate-gray;
-              @media(max-width: 767px){
-                position:relative;display: block;background-color: #fff;box-shadow: none;border: none;
-              }
-            li{
-              a{
-                color:#fff;opacity: 1;padding: 8px 25px;
-                 @media(max-width: 767px){
-                  color:#000; 
-                  font-size: 14px;
-                  line-height: 16px;
-                  font-weight: normal;               
-                 } 
-              }
-              a:hover{color:#fff;}
+      }
+      li.dropdown{
+        .dropdown-toggle{
+          padding-right: 0;
+        }
+        ul.dropdown-menu{
+          padding: 20px 5px;
+          min-width: 167px;
+          box-shadow: none;
+          border-radius: 2px;
+          background-color: $slate-gray;
+            @media(max-width: 767px){
+              position:relative;display: block;background-color: #fff;box-shadow: none;border: none;
             }
+          li{
+            a{
+              color:#fff;opacity: 1;padding: 8px 25px;
+               @media(max-width: 767px){
+                color:#000; 
+                font-size: 14px;
+                line-height: 16px;
+                font-weight: normal;               
+               } 
+            }
+            a:hover{color:#fff;}
           }
-        } 
+        }
       }
       i.fa-github{
         font-size: 26px;line-height: 45px;padding: 0 15px;color: $slate-gray;
