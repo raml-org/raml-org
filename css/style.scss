@@ -36,12 +36,18 @@ $font-face-medium:'Roboto-Medium';
 $font-face-light:'Roboto-Light';
 
 $orange:#FFB647;
+$orangehover:#F09C1A;
 $green:#18F2B2;
 $sky-blue:#26D3FF;
+$sky-blue-hover:#00BEEB;
 $blue-purple:#B2ABF2;
 $slate-gray:#526881;
 $light-gray:#748599;
 $flash-white:#EDF0F4;
+
+a:hover{
+  text-decoration: none!important;
+}
 
 body{
   margin: 0;
@@ -84,7 +90,9 @@ p{
 .padd_00{padding: 0;}
 a.specif_btn{border: 0px solid;border-radius: 4px; background-color: #000;color: #fff;padding: 15px 25px;font-size: 16px;letter-spacing: 0.5px;line-height: 19px; text-decoration: none;}
 a.specif_btn{background-color: $orange !important;}
+a.specif_btn:hover{background-color: $orangehover !important;}
 a.btn_black{border: 0px;border-radius: 2px;background: $sky-blue;color: #fff;padding: 20px;width: 232px;display: block;text-align: center;}
+a.btn_black:hover{background-color: $sky-blue-hover;}
 
 .overlay {
     position: absolute;
@@ -258,6 +266,9 @@ header{
           width: 190px;display: block;margin:0 auto;margin-bottom: 15px;float: none;
         }
       }
+      a:hover{
+        background-color: $sky-blue-hover;
+      }
     }
   }
 }  
@@ -311,7 +322,7 @@ header{
     display: none;
   }
   h1{
-    color: $flash-white; font-family: 'Roboto-Regular';  font-size: 14px;  font-weight: 500; line-height: 16px;margin:0;background: $slate-gray;padding: 20px;border-top: 1px solid #748599;}
+    color: $flash-white; font-family: 'Roboto-Regular';  font-size: 14px;  font-weight: 500; line-height: 16px;margin:0;background: $slate-gray;padding: 20px;border-top: 1px solid #748599;width: 100%;}
   .output-block{
     h4{
       background-color: #EDF0F4;color: #000;
@@ -332,6 +343,9 @@ header{
     line-height: 16px;  
     text-align: center;
   }
+  a.pull-right:hover{
+        background-color: $sky-blue-hover;
+      }
   .editor-block{
     .monaco-editor{
       background-color: #F7FAFF;
@@ -385,7 +399,7 @@ header{
   }
   .more-btn{
     border:2px solid;
-    padding: 10px 20px;
+    padding: 10px 35px 10px 20px;
     margin-top: 30px;
     display: block;
     width: 155px;
@@ -394,7 +408,7 @@ header{
   }
 
   .more-btn:before{
-    content: "\f105";font-weight: bold;font-family: 'Font Awesome\ 5 Free';font-style: normal;text-decoration: inherit;font-size: 18px;position: absolute;top: 13px;right: 20px;
+    content: "\f105";font-weight: bold;font-family: 'Font Awesome\ 5 Free';font-style: normal;text-decoration: inherit;font-size: 18px;position: absolute;top: 9px;right: 20px;
   }
   .orange{
     color: $orange;
@@ -441,6 +455,9 @@ header{
         width: 100%!important;
       }
     }
+    a:hover{
+        background-color: $sky-blue-hover;
+      }
     @media(max-width: 991px){
       width: 331px;
     }
@@ -670,11 +687,14 @@ header{
   }
   .box-color{
     border:0px;border-radius: 2px;background-color: $flash-white;padding: 30px 40px;
+    @media(max-width: 1199px){
+      padding: 15px;
+    }
       @media(max-width: 991px){
         background-color: transparent;
       }
       @media(max-width: 767px){
-        padding: 30px 15px;
+        padding: 30px 0px;
       }
     ul{
       padding: 0;
