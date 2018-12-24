@@ -3,7 +3,7 @@
 
 // add bootstrap variable settings here
 
-@import 'bootstrap';
+@import 'bootstrap/bootstrap';
 
 @font-face{
   font-family: 'Roboto-Regular';
@@ -107,10 +107,10 @@ a.btn_black:hover{background-color: $sky-blue-hover;}
 }
 
 header{
-  .navbar-inverse{
-    background-color: transparent;border-color:transparent;padding: 22px 30px;
+  .navbar-expand-md{
+    background-color: transparent;border-color:transparent;padding: 22px 30px;margin-bottom: 20px;
     @media(max-width: 767px){
-      padding: 20px 0;margin-bottom: 0;
+      padding: 20px 0;margin-bottom: 0;z-index: 999;
       .navbar-collapse{
         position: absolute;top: 0;z-index:999;min-height:100vw;visibility: visible;background:#fff;
       }
@@ -132,31 +132,19 @@ header{
         }
       }
     }
-    .navbar-toggle {
-      @media(max-width: 767px){
-        z-index: 999;
-      }
-      border-color: transparent;
-      @media(max-width: 767px){
-        margin-right: 30px;
-      }
-      span:nth-child(2){
-        width: 20px;
-      }
-      .icon-bar {
-        background-color: #000;width: 26px;height: 4px;border-radius: 4px;
-      }
-    }
-    .navbar-toggle:focus, .navbar-toggle:hover{
-      background-color: transparent;
+    .navbar-toggler-icon{
+      background-image: url("/images/toggle.png");
+      background-size: cover;
+      background-repeat: no-repeat;
     }
     .navbar-nav{
       float: right;
+      width: 100%;
       li{
         @media(max-width: 767px){
           padding:5px 15px;
         }
-        a{
+        a.nav-link{
           font-size: 14px;color: #E5E7EC;line-height: 16px;padding: 15px;
             @media(max-width: 767px){
               opacity: 1;
@@ -171,10 +159,10 @@ header{
             }
           }
         }
-        a:focus{
+        a.nav-link:focus{
           color: $slate-gray;
         }
-        a:hover{
+        a.nav-link:hover{
           color: $slate-gray;opacity: 1;
         }
       }
@@ -182,16 +170,20 @@ header{
         .dropdown-toggle{
           padding-right: 0;
         }
-        ul.dropdown-menu{
+        .dropdown-toggle::after {
+          display: none;
+        }
+        .dropdown-menu{
           padding: 20px 5px;
           min-width: 167px;
           box-shadow: none;
           border-radius: 2px;
           background-color: $slate-gray;
+          position: absolute;
+          left: -88px;
             @media(max-width: 767px){
-              position:relative;display: block;background-color: #fff;box-shadow: none;border: none;
+              position:relative;display: block;background-color: #fff;box-shadow: none;border: none;color: #000;left: 0;padding-top: 0;top: 0;
             }
-          li{
             a{
               color:#fff;opacity: 1;padding: 8px 25px;
                @media(max-width: 767px){
@@ -201,10 +193,11 @@ header{
                 font-weight: normal;               
                } 
             }
-            a:hover{color:#fff;}
+            @media(min-width: 768px){
+              a:hover{color:#fff;background-color: transparent;}
+            } 
           }
         }
-      }
       i.fa-github{
         font-size: 26px;line-height: 45px;padding: 0 15px;color: $slate-gray;
       }
@@ -223,13 +216,13 @@ header{
         float: left;
       }
       .active{
-        a, a:hover, a:focus{
+        a.nav-link, a.nav-link:hover, a.nav-link:focus{
           color: $slate-gray;background-color: transparent;opacity: 1;
         }
       }
       .open{
-        a, a:hover, a:focus{
-          color: $slate-gray  ;background-color: transparent;opacity: 1;
+        a.nav-link, a.nav-link:hover, a.nav-link:focus{
+          color: $slate-gray;background-color: transparent;opacity: 1;
         }
       }
     }
@@ -262,7 +255,7 @@ header{
       }
       a{
         border: 0px solid;border-radius: 2px; background-color:$sky-blue;color: #fff;padding: 20px 25px;font-size: 16px;letter-spacing: 0.5px;line-height: 19px; text-decoration: none;margin-left: 25px;width: 190px;display: block;float: left;
-        @media(max-width: 767px){
+        @media(max-width: 575px){
           width: 190px;display: block;margin:0 auto;margin-bottom: 15px;float: none;
         }
       }
@@ -303,7 +296,7 @@ header{
         }
       }
   h2{
-    margin-bottom: 30px;
+    margin-bottom: 30px;margin-top: 20px;
     @media(max-width: 767px){
       font-size: 18px;line-height: 25px;padding: 0 20px;
     }
@@ -463,12 +456,12 @@ header{
     }
   }
   .block-quote{
-    width: 480px;margin: 80px auto 118px; 
+    width: 480px;margin: 80px auto 137px; 
     @media(max-width: 767px){
           width: 100%;margin: 0;padding-bottom: 30px;
         }
     h1{
-      font-size: 24px;line-height: 36px;color: $slate-gray;position: relative;text-align: center;margin-bottom: 20px;
+      font-size: 24px;line-height: 36px;color: $slate-gray;position: relative;text-align: center;margin-bottom: 20px;margin-top: 15px;
         @media(max-width: 767px){
           font-size: 14px;line-height: 28px;padding: 50px 37px 0;margin: 0;
         }
@@ -486,6 +479,7 @@ header{
       color: $light-gray;
       font-size: 16px;
       font-family: $font-face-light;
+      width: 100%;
     }
     h1:before {
       content: "\f10d";font-weight: bold;font-family: 'Font Awesome\ 5 Free';font-style: normal;text-decoration: inherit;color: #B3B7BF;font-size: 18px;position: absolute;top: 0px;left: -30px;
@@ -517,6 +511,8 @@ header{
     height: auto;
   }    
   ul{
+    display: inline-block;
+    padding: 0;
     @media(max-width: 767px){
       margin-bottom: 0;
     }
@@ -551,7 +547,7 @@ header{
     margin-top: 10px;
   }
   a.top_btn{
-    margin-top: 15px;margin-bottom: 35px;color: $light-gray;position: relative;padding-right: 38px;float: right;clear: both;display: table;
+    margin-top: 10px;margin-bottom: 35px;color: $light-gray;position: relative;padding-right: 38px;float: right;clear: both;display: table;
     @media(max-width: 991px){
       float: none;
     }
@@ -563,7 +559,7 @@ header{
     content: "\f106";font-family: 'Font Awesome\ 5 Free';font-style: normal;font-weight: bold;text-decoration: inherit;color: $light-gray;font-size: 18px;position: absolute;top: -5px;right: 15px;font-size: 20px;
   }
   .social-icons{
-    margin-top: 30px;
+    margin-top: 5px;
     .fab{
       font-size: 24px;margin-right: 15px;color: $slate-gray;
     }
@@ -698,11 +694,11 @@ header{
       }
     ul{
       padding: 0;
-      @media(max-width: 991px){
+      @media(max-width: 768px){
           display: inline-block;
         }
       li{
-        @media(max-width: 991px){
+        @media(max-width: 767px){
           display: inline-block;
           padding-right: 20px;
         }
@@ -720,12 +716,12 @@ header{
   }
   .sidebar-menu{
     h3{
-      @media(max-width: 991px){
+      @media(max-width: 767px){
         display: inline-block;
         float: right;
         margin: 0;
       }
-      @media(max-width: 767px){
+      @media(max-width: 575px){
         display:block;
         float:none;
         margin-top: 20px;

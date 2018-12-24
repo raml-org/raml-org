@@ -1,30 +1,27 @@
 <header>
-     <nav class="navbar navbar-inverse">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="slide-collapse" data-target="#myNavbar">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
+     <nav class="navbar navbar-expand-md navbar-dark">      
           <a class="navbar-brand" href="#"><img src="images/ramllogo.png"></a>
-        </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-          <ul class="nav navbar-nav">
-              <li> <img class="xs-visible nav-logo" src="images/ramllogo.png"> <i class="fab fa-github"></i></li>
-              <li class="active"><a href="#">Projects</a></li>
-              <li><a href="#">Examples</a></li>
-              <li><a href="#">Blog</a></li>
-              <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">About<span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><a href="#">Page 1-1</a></li>
-                  <li><a href="#">Page 1-2</a></li>
-                  <li><a href="#">Page 1-3</a></li>
-                </ul>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav justify-content-end">
+              <li> <img class="d-sm-block d-lg-none d-md-none nav-logo" src="images/ramllogo.png"> <i class="fab fa-github"></i></li>
+              <li class="active nav-item"><a class="nav-link" href="#">Projects</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Examples</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                  About <span class="caret"></span>
+                </a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#">Link 1</a>
+                  <a class="dropdown-item" href="#">Link 2</a>
+                  <a class="dropdown-item" href="#">Link 3</a>
+                </div>
               </li>
           </ul>
         </div>
-      </div>
     </nav> 
 </header>
 

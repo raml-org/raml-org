@@ -4,7 +4,7 @@
 
 <div class="container-fluid about-raml">
     <div class="row">
-        <aside class="col-md-3 col-sm-12" role = "complementary">
+        <aside class="col-lg-3 col-md-4 col-sm-12" role = "complementary">
             <section class="sidebar-menu">
                 {% include about-raml-sidebar.html %}
             </section>
@@ -52,8 +52,8 @@
             </div>
             {% endif %} -->
         </aside>
-        <hr style="clear: both;border-color: #EDF0F4;margin: 0 55px;" class="visible-sm">
-        <div class="col-md-7 col-sm-12 col-md-offset-1 about-content-sec">
+        <hr style="border-color: #EDF0F4;margin: 0 55px;width: 100%;" class="d-none d-sm-block d-md-none">
+        <div class="col-lg-7 col-md-8 col-sm-12 offset-lg-1 about-content-sec">
             <!-- <h1 class="page-header">{{ page.title }}</h1> -->
             {% if page.is_post  and page.title != 'Blogs' and page.title != 'Blogs Archive' %}
             <div class="sharethis-inline-share-buttons"></div>
