@@ -10,7 +10,8 @@
     <link href="{{ site.baseurl }}/css/gdpr-cookie.css" rel=stylesheet>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <script src="{{ site.baseurl }}/js/jquery.min.js"></script>
-    <script src="{{ site.baseurl }}/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="{{ site.baseurl }}/js/bootstrap.min.js"></script>    
     <script src="{{ site.baseurl }}/js/gdpr-cookie.js"></script>
     <script src="{{ site.baseurl }}/js/script.js"></script>     
     <script>
@@ -19,6 +20,15 @@
             $(".over-lay").toggleClass('overlay')
         });
       });
+
+        $(window).scroll(function(){
+            if ($(window).scrollTop() >= 150) {
+                $('.region-sidebar').addClass('affix');
+            }
+            else {
+                $('.region-sidebar').removeClass('affix');
+            }
+        });
     </script>
 </head>
 <body>

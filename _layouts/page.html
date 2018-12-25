@@ -5,43 +5,52 @@
 <div class="container-fluid about-raml">
     <div class="row">
         <aside class="col-lg-3 col-md-4 col-sm-12" role = "complementary">
-            <section class="sidebar-menu">
-                {% include about-raml-sidebar.html %}
-            </section>
-            <!-- {% if page.title == 'RAML 100 Tutorial' or page.title == 'Vendor Support' or page.title == 'RAML 200 Tutorial' %}
-            <div class="region-sidebar well" data-spy="affix" data-offset-top="105">
-                <section class="ramlapilinks">
-                    <div class="raml-links-wrapper">
-                        <a href ="https://github.com/raml-org/raml-spec/blob/master/versions/raml-10/raml-10.md/" target="_blank" class="raml-links" onclick="ga('send', 'event', 'CTA', 'Click', '1.0-spec');">Read the Specification</a>
-                    </div>
-                </section>
-
+            
+            {% if page.title == 'RAML 100 Tutorial' or page.title == 'Vendor Support' or page.title == 'RAML 200 Tutorial' %}
+            <div class="region-sidebar well" data-spy="affix" data-offset-top="205">
                 {% if page.title == 'RAML 100 Tutorial' %}
-                <section class="sidebar-menu">
+                <section class="sidebar-menu box-color">
+                    <section class="ramlapilinks">
+                        <div class="raml-links-wrapper">
+                            <a href ="https://github.com/raml-org/raml-spec/blob/master/versions/raml-10/raml-10.md/" target="_blank" class="raml-links specif_btn" onclick="ga('send', 'event', 'CTA', 'Click', '1.0-spec');">Read the Specification</a>
+                        </div>
+                    </section>
                     {% include raml-100-sidebar.html %}
                 </section>
                 {% endif %}
                 {% if page.title == 'RAML 200 Tutorial' %}
-                <section class="sidebar-menu">
+                <section class="sidebar-menu box-color">
+                    <section class="ramlapilinks">
+                        <div class="raml-links-wrapper">
+                            <a href ="https://github.com/raml-org/raml-spec/blob/master/versions/raml-10/raml-10.md/" target="_blank" class="raml-links specif_btn" onclick="ga('send', 'event', 'CTA', 'Click', '1.0-spec');">Read the Specification</a>
+                        </div>
+                    </section>
                     {% include raml-200-sidebar.html %}
                 </section>
                 {% endif %}
                 {% if page.title == 'Vendor Support' %}
-                <section class="sidebar-menu">
+                <section class="sidebar-menu box-color">
+                    <section class="ramlapilinks">
+                        <div class="raml-links-wrapper">
+                            <a href ="https://github.com/raml-org/raml-spec/blob/master/versions/raml-10/raml-10.md/" target="_blank" class="raml-links specif_btn" onclick="ga('send', 'event', 'CTA', 'Click', '1.0-spec');">Read the Specification</a>
+                        </div>
+                    </section>
                     {% include vendor-support-sidebar.html %}
                 </section>
                 {% endif %}
             </div>
             {% else %}
             <div class="region-sidebar well" >
-                <section class="ramlapilinks">
-                    <div class="raml-links-wrapper">
-                        <a href ="https://github.com/raml-org/raml-spec/blob/master/versions/raml-10/raml-10.md/" target="_blank" class="raml-links" onclick="ga('send', 'event', 'CTA', 'Click', '1.0-spec');">Read the Specification</a>
-                    </div>
-                </section>
-
-                {% if page.title == 'About RAML' or page.title == 'Workgroup' or page.title == 'Legal' %}
                 
+                {% if page.title == 'About RAML' or page.title == 'Workgroup' or page.title == 'Legal' %}
+                    <section class="sidebar-menu box-color">
+                        {% include about-raml-sidebar.html %}
+                        <section class="ramlapilinks">
+                            <div class="raml-links-wrapper">
+                                <a href ="https://github.com/raml-org/raml-spec/blob/master/versions/raml-10/raml-10.md/" target="_blank" class="raml-links specif_btn" onclick="ga('send', 'event', 'CTA', 'Click', '1.0-spec');">1.0 Specification</a>
+                            </div>
+                        </section>
+                    </section>                    
                 {% endif %}
 
                 {% if page.is_post  or page.title == 'Blogs' or page.title == 'Blog Archives' or page.title == 'Blogs Tag' or page.title == 'Blogs category' %}
@@ -50,7 +59,7 @@
                 </section>
                 {% endif %}
             </div>
-            {% endif %} -->
+            {% endif %}
         </aside>
         <hr style="border-color: #EDF0F4;margin: 0 55px;width: 100%;" class="d-none d-sm-block d-md-none">
         <div class="col-lg-7 col-md-8 col-sm-12 offset-lg-1 about-content-sec">
