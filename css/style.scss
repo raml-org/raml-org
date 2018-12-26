@@ -44,6 +44,13 @@ $blue-purple:#B2ABF2;
 $slate-gray:#526881;
 $light-gray:#748599;
 $flash-white:#EDF0F4;
+$lighter-gray:#F7FAFF;
+
+.container-fluid, .container{
+  @media(min-width: 1400px){
+    width: 1140px;
+  }
+}
 
 a:hover{
   text-decoration: none!important;
@@ -62,6 +69,7 @@ li{
       top: 0;
       left: 0;
       position: relative;
+      z-index: 2;
     }
 }
 
@@ -80,6 +88,7 @@ li{
         @media(max-width: 767px){
           display: inline-block;
           padding-right: 20px;
+          width: 100%;
         }
         a{
           font-size: 14px; line-height:26px;color: #8F9299;
@@ -120,7 +129,8 @@ li{
           display:block;
         }
       .dropdown-menu{
-        padding: 10px;        
+        padding: 10px;    
+        width: 250px;    
       }
       .dropdown-toggle {
         border: 2px solid;
@@ -193,6 +203,10 @@ a.btn_black:hover{background-color: $sky-blue-hover;}
 header{
   .navbar-expand-md{
     background-color: transparent;border-color:transparent;padding: 22px 30px;margin-bottom: 20px;
+    @media(min-width: 1200px){
+      width: 1140px;
+      margin: 0 auto;
+    }
     @media(max-width: 767px){
       padding: 20px 0;margin-bottom: 0;z-index: 999;
       .navbar-collapse{
@@ -258,7 +272,7 @@ header{
           display: none;
         }
         .dropdown-menu{
-          padding: 20px 5px;
+          padding: 15px 0px;
           min-width: 167px;
           box-shadow: none;
           border-radius: 2px;
@@ -315,6 +329,10 @@ header{
 }
 
 .tophead-banner{
+  @media(min-width: 1400px){
+    width: 1140px;
+    margin: 0 auto;
+  }
   background-image: url('/images/banner-img__homepage-raml.svg');
   background-size: 100%;
   background-repeat: no-repeat;
@@ -327,10 +345,10 @@ header{
         }
     }
     p{
-      font-size: 12px; color:$sky-blue;margin-bottom: 50px;
+      font-size: 12px; color:$sky-blue;margin-bottom: 46px;
     }
     .buttons{
-      margin: 40px auto 24px;
+      margin: 40px auto 20px;
       text-align: center;
       width: 450px;
       @media(max-width: 767px){
@@ -399,7 +417,7 @@ header{
     display: none;
   }
   h1{
-    color: $flash-white; font-family: 'Roboto-Regular';  font-size: 14px;  font-weight: 500; line-height: 16px;margin:0;background: $slate-gray;padding: 20px;border-top: 1px solid #748599;width: 100%;}
+    color: $light-gray; font-family: 'Roboto-Regular';  font-size: 14px;  font-weight: 500; line-height: 16px;margin:0;background: $lighter-gray;padding: 20px;border-top: 1px solid $light-gray;width: 100%;}
   .output-block{
     h4{
       background-color: #EDF0F4;color: #000;
@@ -424,8 +442,8 @@ header{
         background-color: $sky-blue-hover;
       }
   .editor-block{
+    box-shadow: 1px 0px 3px #808080;
     .monaco-editor{
-      background-color: #F7FAFF;
       .editor-scrollable{
         .view-lines{
           .mtk5{
@@ -467,7 +485,7 @@ header{
     }
   }
   .row-bg-color{
-    background-color: #F7FAFF;
+    background-color:$lighter-gray;
     padding: 105px 0;
     margin-top: 105px;
     img{
@@ -482,22 +500,11 @@ header{
     width: 155px;
     text-align: center;
     border-radius: 2px;
+    color: $slate-gray;
   }
 
   .more-btn:before{
     content: "\f105";font-weight: bold;font-family: 'Font Awesome\ 5 Free';font-style: normal;text-decoration: inherit;font-size: 18px;position: absolute;top: 9px;right: 20px;
-  }
-  .orange{
-    color: $orange;
-  }
-  .green{
-    color: $green;
-  }
-  .sky-blue{
-    color: $sky-blue;
-  }
-  .blue-purple{
-    color: $blue-purple;
   }
   p{
     color: $light-gray;width: 353px;
@@ -512,7 +519,7 @@ header{
     font-size: 14px;line-height: 22px;position: relative;
   }
   .bdr{
-    border:0px solid;width: 350px;padding: 30px;border-radius: 2px;margin-top: 135px;background-color: #F7FAFF;
+    border:0px solid;width: 350px;padding: 30px;border-radius: 2px;margin-top: 135px;background-color: $lighter-gray;
       @media(max-width: 767px){
         width: 100%!important;margin-top: 50px;padding: 20px;
       }
@@ -527,14 +534,11 @@ header{
       width: 100%;margin-bottom: 20px;font-family: $font-face-light;
     }
     a{
-      font-size: 16px;line-height: 19px;letter-spacing: 0.5px;border:0px solid;border-radius: 2px;background-color: $sky-blue;width: 220px; color: #fff;display: block;padding: 20px;text-align: center;
+      font-size: 16px;line-height: 19px;letter-spacing: 0.5px;border:0px solid;border-radius: 2px;background-color: $slate-gray;width: 220px; color: #fff;display: block;padding: 20px;text-align: center;
       @media(max-width: 767px){
         width: 100%!important;
       }
     }
-    a:hover{
-        background-color: $sky-blue-hover;
-      }
     @media(max-width: 991px){
       width: 331px;
     }
@@ -728,10 +732,10 @@ header{
 }
 
 #build-bg-color{
-  background-color: #F7FAFF;
+  background-color: $lighter-gray;
 }
 #document-bg-color{
-  background-color: #F7FAFF;
+  background-color: $lighter-gray;
 }
 
 
