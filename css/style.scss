@@ -46,7 +46,7 @@ $light-gray:#748599;
 $flash-white:#EDF0F4;
 $lighter-gray:#F7FAFF;
 
-.container-fluid, .container{
+.container{
   @media(min-width: 1400px){
     width: 1140px;
   }
@@ -203,7 +203,7 @@ a.btn_black:hover{background-color: $sky-blue-hover;}
 header{
   .navbar-expand-md{
     background-color: transparent;border-color:transparent;padding: 22px 30px;margin-bottom: 20px;
-    @media(min-width: 1200px){
+    @media(min-width: 1400px){
       width: 1140px;
       margin: 0 auto;
     }
@@ -243,7 +243,7 @@ header{
           padding:5px 15px;
         }
         a.nav-link{
-          font-size: 14px;color: #E5E7EC;line-height: 16px;padding: 15px;
+          font-size: 14px;color: $slate-gray;line-height: 16px;padding: 15px;
             @media(max-width: 767px){
               opacity: 1;
               font-size: 18px;
@@ -264,6 +264,9 @@ header{
           color: $slate-gray;opacity: 1;
         }
       }
+      .dropdown:hover>.dropdown-menu {
+          display: block;
+        }
       li.dropdown{
         .dropdown-toggle{
           padding-right: 0;
@@ -271,23 +274,26 @@ header{
         .dropdown-toggle::after {
           display: none;
         }
+        .dropdown-menu.sub-menu{
+          left: 100%;
+          top: 0;
+        }
         .dropdown-menu{
           padding: 15px 0px;
-          min-width: 167px;
+          min-width: 180px;
           box-shadow: none;
           border-radius: 2px;
           background-color: $slate-gray;
           position: absolute;
-          left: -88px;
+          left: 0px;
+          margin: 0;
             @media(max-width: 767px){
               position:relative;display: block;background-color: #fff;box-shadow: none;border: none;color: #000;left: 0;padding-top: 0;top: 0;
             }
             a{
-              color:#fff;opacity: 1;padding: 8px 25px;
+              color:#fff;opacity: 1;padding: 8px 25px;font-size: 14px;line-height: 16px;
                @media(max-width: 767px){
-                color:#000; 
-                font-size: 14px;
-                line-height: 16px;
+                color:#000;        
                 font-weight: normal;               
                } 
             }
@@ -330,8 +336,7 @@ header{
 
 .tophead-banner{
   @media(min-width: 1400px){
-    width: 1140px;
-    margin: 0 auto;
+    background-size: 100% 100%;
   }
   background-image: url('/images/banner-img__homepage-raml.svg');
   background-size: 100%;
@@ -430,7 +435,7 @@ header{
     border: 0px;
     border-radius: 2px;
     padding:10px 20px;
-    background-color: $sky-blue;
+    background-color: $slate-gray;
     color: #FFFFFF;
     font-family: 'Roboto-Regular';
     font-size: 14px;  font-weight: 500; 
@@ -438,9 +443,6 @@ header{
     line-height: 16px;  
     text-align: center;
   }
-  a.pull-right:hover{
-        background-color: $sky-blue-hover;
-      }
   .editor-block{
     box-shadow: 1px 0px 3px #808080;
     .monaco-editor{
@@ -449,18 +451,24 @@ header{
           .mtk5{
             color: #00667E;
             font-family: $font-face-bold;
+            letter-spacing: 1px;
           }
           .mtk22{
             color: $sky-blue;
             font-family: $font-face-bold;
+            letter-spacing: 1px;
           }
           .mtk8{
-            color: #D9DFE7;
+            color: #9EAAB7;
             font-family: $font-face-bold;
+            letter-spacing: 1px;
           }
         }
       }
     }  
+    .line-numbers{
+      color: #9EAAB7;
+    }
   }
 }
 
@@ -585,6 +593,10 @@ header{
 }
 
 .footer-sec{
+  @media(max-width: 1400px){
+    width: 1140px;
+    margin: 0 auto;
+  }
   padding: 10px 30px;
       @media(max-width: 767px){
         padding: 0 20px;

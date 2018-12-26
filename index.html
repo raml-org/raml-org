@@ -21,7 +21,7 @@ title:  'Welcome'
         <div class="logo">
           <img src="images/homepage_logos-5.svg" class="img-fluid">
         </div>
-        <div class="logo">
+        <div class="logo d-none d-md-block">
           <img src="images/homepage_logos-6.svg" class="img-fluid">
         </div>
         <div class="logo">
@@ -51,7 +51,7 @@ title:  'Welcome'
     <div class="container-fluid raml-editor">
       <div class="row">
         <h1 class="text-center">Playground</h1>
-        <a class="pull-right" href="">View Results <i class="fas fa-expand"></i></a>
+        <a class="pull-right" href="">Fullscreen <i class="fas fa-expand"></i></a>
         <div class="col-md-12 col-sm-12 editor-block padd_00">
           <div id="container" style="width:100%;height:346px;"></div>
         </div> 
@@ -123,7 +123,7 @@ title:  'Welcome'
 <script>
   require.config({ paths: { 'vs': '/min/vs' }});
   require(['vs/editor/editor.main'], function() {
-    monaco.editor.defineTheme('myTheme', {
+    monaco.editor.defineTheme('ramlTheme', {
       base: 'vs',
       inherit: true,
       rules: [{ background: 'EDF9FA' }],
@@ -133,16 +133,28 @@ title:  'Welcome'
         'editorCursor.foreground': '#8B0000',
         'editor.lineHighlightBackground': '#0000FF20',
         'editorLineNumber.foreground': '#008800',
-        'editor.selectionBackground': '#88000030',
-        'editor.inactiveSelectionBackground': '#88000015',
-        'list.focusBackground': '#EEEEEE'
+        'editor.selectionBackground': '#DBE8FD',
+        'input.background': '#FFFFFF',
       }
     });
-    monaco.editor.setTheme('myTheme');
+    monaco.editor.setTheme('ramlTheme');
+
     var editor = monaco.editor.create(document.getElementById('container'), {
       value: [
-          '#Add your script',
-          '\ttitle : Title',
+          '#%RAML 1.0',
+          'title : Hello World # required title\n',
+          '/greeting: # optional resource',
+          '\tget: # HTTP method declaration',
+          '\t\tresponse: # Declare a response',
+          '\t\t\t200: #HTTP status code',
+          '\t\t\t\tbody: #declare content of response',
+          '\t\t\t\t\tapplication/json: # media type',
+          '\t\t\t\t\t\t# structural definiation of a response (schema or type)',
+          '\t\t\t\t\t\ttype: object',
+          '\t\t\t\t\t\tproperties:',
+          '\t\t\t\t\t\t\tmessage: string',
+          '\t\t\t\t\t\texample: #example how a response looks like',
+          '\t\t\t\t\t\t\tmessage: "Hello world"'
       ].join('\n'),
       language: 'yaml',
       minimap: {

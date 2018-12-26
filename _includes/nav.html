@@ -1,23 +1,56 @@
 <header>
      <nav class="navbar navbar-expand-md navbar-dark">      
-          <a class="navbar-brand" href="#"><img src="/images/ramllogo.png"></a>
+          <a class="navbar-brand" href="/"><img src="/images/ramllogo.png"></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
           </button>
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
           <ul class="navbar-nav justify-content-end">
-              <li> <img class="d-sm-block d-lg-none d-md-none nav-logo" src="/images/ramllogo.png"> <i class="fab fa-github"></i></li>
-              <li class="active nav-item"><a class="nav-link" href="/projects">Projects</a></li>
+              <li> <a href="/"><img class="d-sm-block d-lg-none d-md-none nav-logo" src="/images/ramllogo.png"> <i class="fab fa-github"></i></a></li>
+
+              <li class="nav-item dropdown">
+                <a class="nav-link" href="/developer">
+                  For Developers <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li class="dropdown"><a href="/developer">Why Raml <span style="border-color: #fff;" class="caret"></a>
+                    <ul class="dropdown-menu sub-menu">
+                      <li><a class="dropdown-item" href="#">Subsubmenu1</a></li>
+                      <li><a class="dropdown-item" href="#">Subsubmenu1</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown"><a href="/developers/raml-100-tutorial">Tutorials</a>
+                    <ul class="dropdown-menu sub-menu">
+                      <li><a class="dropdown-item" href="#">Subsubmenu1</a></li>
+                      <li><a class="dropdown-item" href="#">Subsubmenu1</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="https://github.com/raml-org/raml-spec/blob/master/versions/raml-10/raml-10.md/" target="_blank" onclick="ga('send', 'event', 'CTA', 'Click', '1.0-spec');">Specification</a></li>
+                  <li><a href="/projects">Project Library</a></li>
+                  <li><a href="/developers/books-and-resources">Book and Resources</a></li>
+                  <li><a href="/developers/contributing">Contributing</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link" href="/enterprises">
+                  For Enterprises <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a href="/enterprises">Why RAML</a></li>
+                  <li><a href="/enterprise/vendor-support">Vendor Support</a></li>                 
+                </ul>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="/projects">Projects</a></li>
               <li class="nav-item"><a class="nav-link" href="https://medium.com/raml-api">Blog</a></li>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                <a class="nav-link dropdown-toggle" href="/about-raml">
                   About <span class="caret"></span>
                 </a>
-                <div class="dropdown-menu">
-                  <a class="dropdown-item" href="/about-raml">About RAML</a>
-                  <a class="dropdown-item" href="/workgroup">Workgroup</a>
-                  <a class="dropdown-item" href="/legal">Legal</a>
-                </div>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="/about-raml">About RAML</a></li>
+                  <li><a class="dropdown-item" href="/workgroup">Workgroup</a></li>
+                  <li><a class="dropdown-item" href="/legal">Legal</a></li>
+                </ul>
               </li>
           </ul>
         </div>
