@@ -46,7 +46,7 @@ $light-gray:#748599;
 $flash-white:#EDF0F4;
 $lighter-gray:#F7FAFF;
 
-.container{
+.container, .container-fluid{
   @media(min-width: 1400px){
     width: 1140px;
   }
@@ -251,7 +251,7 @@ header{
               font-weight: 500;
             }
           .caret{
-            border: solid$slate-gray;border-width: 0 2px 2px 0;display: inline-block;padding: 3px; transform: rotate(45deg); -webkit-transform: rotate(45deg);margin-left: 10px;margin-top: -4px;
+            border: solid$slate-gray;border-width: 0 2px 2px 0;display: inline-block;padding: 3px; transform: rotate(45deg); -webkit-transform: rotate(45deg);margin-left: 10px;margin-top: -4px;vertical-align: middle;
             @media(max-width: 767px){
               display: none;
             }
@@ -277,6 +277,9 @@ header{
         .dropdown-menu.sub-menu{
           left: 100%;
           top: 0;
+          li:hover{
+            background: $light-gray;
+          }
         }
         .dropdown-menu{
           padding: 15px 0px;
@@ -291,7 +294,7 @@ header{
               position:relative;display: block;background-color: #fff;box-shadow: none;border: none;color: #000;left: 0;padding-top: 0;top: 0;
             }
             a{
-              color:#fff;opacity: 1;padding: 8px 25px;font-size: 14px;line-height: 16px;
+              color:#fff;opacity: 1;padding: 6px 25px;font-size: 14px;line-height: 16px;display: block;
                @media(max-width: 767px){
                 color:#000;        
                 font-weight: normal;               
@@ -300,6 +303,22 @@ header{
             @media(min-width: 768px){
               a:hover{color:#fff;background-color: transparent;}
             } 
+            li:hover{
+              background: $light-gray;
+            }
+            li.dropdown{
+              .caret{
+                border: solid #fff;
+                border-width: 0 2px 2px 0;
+                display: inline-block;
+                padding: 3px;
+                transform: rotate(-45deg);
+                -webkit-transform: rotate(-45deg);
+                position: absolute;
+                right: 20px;
+                top: 9px;
+              }
+            }
           }
         }
       i.fa-github{
@@ -417,6 +436,9 @@ header{
 }
 
 .raml-editor{
+  @media(min-width: 1400px){
+    width: 100%;
+  }
   position: relative;
   @media(max-width: 767px){
     display: none;
@@ -593,7 +615,7 @@ header{
 }
 
 .footer-sec{
-  @media(max-width: 1400px){
+  @media(min-width: 1400px){
     width: 1140px;
     margin: 0 auto;
   }
