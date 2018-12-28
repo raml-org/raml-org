@@ -469,15 +469,8 @@ header{
     .monaco-editor{
       .editor-scrollable{
         .view-lines{
-          .mtk5{
-            color: #00667E;
+          .mtk26,.mtk23,.mtk21{
             font-family: $font-face-bold;
-            letter-spacing: 1px;
-          }
-          .mtk22{
-            color: $sky-blue;
-            font-family: $font-face-bold;
-            letter-spacing: 1px;
           }
           .mtk8{
             color: #9EAAB7;
