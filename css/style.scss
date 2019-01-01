@@ -184,7 +184,7 @@ p{
 .padd_00{padding: 0;}
 a.specif_btn{border: 0px solid;border-radius: 4px; background-color: #000;color: #fff;padding: 15px 25px;font-size: 16px;letter-spacing: 0.5px;line-height: 19px; text-decoration: none;}
 a.specif_btn{background-color: $sky-blue !important;margin-bottom: 10px;display: table;}
-a.btn_black{border: 0px;border-radius: 2px;background: $sky-blue;color: #fff;padding: 20px;width: 232px;display: block;text-align: center;}
+a.btn_black{border: 0px;border-radius: 2px;background: $sky-blue;color: #fff;padding: 20px 30px;width: 232px;display: block;text-align: center;}
 a.btn_black:hover{background-color: $sky-blue-hover;}
 
 .overlay {
@@ -201,7 +201,7 @@ a.btn_black:hover{background-color: $sky-blue-hover;}
 
 header{
   .navbar-expand-md{
-    background-color: transparent;border-color:transparent;padding: 22px 30px;margin-bottom: 20px;
+    background-color: transparent;border-color:transparent;padding: 30px;
     @media(min-width: 1400px){
       width: 1140px;
       margin: 0 auto;
@@ -700,13 +700,14 @@ header{
 /*developers-sec*/
 
 .developers-sec{
-  margin-top: 35px;
+  padding-top: 50px;
   @media(max-width: 767px){
     margin-top: 0;
   }
   h1{
     color: $slate-gray;
     padding-left: 10px;
+    margin-bottom: 0px;
     @media(max-width: 767px){
       font-size: 18px;
       line-height: 25px;
@@ -722,12 +723,12 @@ header{
 }
 
 #expl-bg-color{
-  background-color: $slate-gray;color: #fff;padding: 70px 0 105px;margin-top: 70px;
+  background-color: $slate-gray;color: #fff;padding: 70px 0 70px;
   @media(max-width: 767px){
     padding: 50px 0;
   }
   img{
-    width: 150px;margin: 0 auto;display: block;
+    width: 165px;margin: 0 auto;display: block; margin-bottom: 36px;
   }
 }
 
@@ -736,15 +737,43 @@ header{
   @media(max-width: 767px){
     padding: 50px 30px;
   }
-  img{
-    width: 100%;  
+  .main-img img{
+    width: 100%;
+    margin-top:20px;
+
+    @media(max-width: 767px){
+      margin-top: 0px;
+    }
   }
+  .test-api{
+    .main-img img{
+      width: 100%;
+      margin-top:64px;
+
+      @media(max-width: 767px){
+        margin-top: 0px;
+      }
+    }
+  }
+
+  .share-support{
+    .main-img img{
+      width: 100%;
+      margin-top:77px;
+
+      @media(max-width: 767px){
+        margin-top: 0px;
+      }
+    }
+  }
+
   .icon{
     width: 52px;
   }
   h3{
     font-family: $font-face-medium;
     color: $slate-gray;
+    margin-top: 20px;
   }
   p{
     margin: 20px 0;
@@ -754,14 +783,32 @@ header{
     color: $slate-gray;
     margin-bottom: 20px;
     display: block;
+    font-size: 14px;
+    text-decoration: underline;
   }
 }
 
 #build-bg-color{
   background-color: $lighter-gray;
+  .desc-block{
+    .main-img img{
+      margin-top: 100px;
+      @media(max-width: 767px){
+        margin-top: 0px;
+      }
+    }
+  }
 }
 #document-bg-color{
   background-color: $lighter-gray;
+  .desc-block{
+    .main-img img{
+      margin-top: 100px;
+      @media(max-width: 767px){
+        margin-top: 0px;
+      }
+    }
+  }
 }
 
 
@@ -776,6 +823,9 @@ header{
   }
   p{
     margin:20px 0;
+  }
+  .center-box{
+    margin: 0 auto;
   }
 }
 
