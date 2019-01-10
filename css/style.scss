@@ -180,7 +180,21 @@ p{
 
 
 .padd_00{padding: 0;}
-a.specif_btn{border: 0px solid;border-radius: 4px; background-color: #000;color: #fff;padding: 15px 25px;font-size: 16px;letter-spacing: 0.5px;line-height: 19px; text-decoration: none;}
+a.specif_btn{
+  border: 0px solid;border-radius: 4px; background-color: #000;color: #fff;padding: 15px 25px;font-size: 16px;letter-spacing: 0.5px;line-height: 19px; text-decoration: none;
+  @media screen and (max-width: 1320px){
+    font-size: 13px;
+    padding: 15px 18px;
+  }
+  @media screen and (max-width: 991px){
+    font-size: 12px;
+    padding: 15px 20px;
+  }
+  @media screen and (max-width: 767px){
+    font-size: 16px;
+    padding:15px 25px;
+  }
+}
 a.specif_btn{background-color: $sky-blue !important;display: table;color: #fff !important;}
 a.btn_black{border: 0px;border-radius: 2px;background: $sky-blue;color: #fff;padding: 20px 30px;width: 232px;display: block;text-align: center;}
 a.btn_black:hover{background-color: $sky-blue-hover;}
@@ -351,10 +365,19 @@ header{
 
 .tophead-banner{
   position: relative;
+  @media(max-width: 767px){
+    background-image: url("/images/banner-img__homepage-raml.svg");
+    background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  }
   @media(min-width: 1400px){
     background-size: 100% 100%;
   }
   .home-banner-image{
+    @media(max-width: 767px){
+      display: none;
+    }
     position: absolute;
     width: 100%;
     left: 0;
@@ -893,6 +916,11 @@ header{
         margin-top: 0px;
       }
     }
+    .icon {
+      @media(max-width: 575px){
+        margin-top: 50px;
+      }      
+    }
   }
 }
 
@@ -937,6 +965,11 @@ header{
       border-bottom: 1px solid #eeeeee;
       color: $slate-gray;
     }
+    hr.d-none.d-sm-block.d-md-none{
+      @media(max-width: 767px){        
+        margin: 0 15px!important;
+      }
+    }
     pre {
       padding: 0.6em 0.8em;
       font-size: 0.9em;
@@ -969,6 +1002,18 @@ header{
         margin-top: 20px;
         }
       }
+
+      .side_bar{
+        @media screen and (max-width: 767px){
+          width: 55%;
+          float:left;          
+        }
+
+        @media screen and (max-width: 575px){
+          width:100%;
+          float:none;
+        }
+      }
     }
     .about-content-sec{
       @media(max-width: 991px){
@@ -985,7 +1030,7 @@ header{
       }
         @media(max-width: 767px){
           background-color: transparent;
-          padding: 30px 0px;
+          padding: 0px 0px 30px;
         }
       ul{
         padding: 0;
@@ -995,7 +1040,11 @@ header{
           @media(max-width: 767px){
             display: inline-block;
             padding-right: 20px;
-            width: 100%;
+            width: auto;
+          }
+
+          @media(max-width: 575px){
+            width:100%;
           }
           a{
             font-size: 14px; line-height:26px;color: #8F9299;
@@ -1008,9 +1057,10 @@ header{
           float: right;
           margin-top: 2px;
         }
-        @media(max-width: 575px){
-          float:none;
+        @media(max-width: 630px){
+          margin-bottom: 10px;
           display:block;
+          float:none;
         }
       }
       .lastsidemenu{
@@ -1019,10 +1069,11 @@ header{
           float: left;
           margin-top: 15px
         }
-        @media(max-width: 575px){
-          float:none;
-          display:block;
-        }
+        @media(max-width: 630px){
+            margin: 0;
+            display:block;
+            float:none;
+          }
       }
       .tutorial_sidebar{
         @media(max-width: 767px){
@@ -1030,10 +1081,10 @@ header{
             margin: 0 20px;
             float: left;
           }
-          @media(max-width: 575px){
-            float:none;
-            margin:0;
+          @media(max-width: 630px){
+            margin: 0;
             display:block;
+            float:none;
           }
         .dropdown-menu{
           padding: 10px;    
@@ -1045,6 +1096,24 @@ header{
           margin-top: 10px;
           margin-bottom: 10px;
           display: table;
+        }
+      }
+    }
+    .vendor-support{
+      h2{
+        margin-bottom: 0;
+        margin-top: 15px;
+      }
+      .col-lg-12{
+        padding: 0;
+        img{
+          margin: 10px 0 20px;
+        }
+        .vendor-text{
+          a{
+           display: block;
+           margin-top: 10px;
+          }
         }
       }
     }
@@ -1155,11 +1224,18 @@ header{
       height: 100px;
       width: 100px;
       background: #f2f2f2;
-    }
+      @media(max-width: 875px){
+        float: none;
+        }
+      }
   }
   .member-info {
     max-width: 50%;
     float: left;
+    @media(max-width: 875px){
+      max-width: 100%;
+      float: none;
+    }
     p {
       padding: 0;
       margin: 0;
