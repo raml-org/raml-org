@@ -2,7 +2,7 @@
 
 {% include nav.html %}
 
-<div class="container-fluid about-raml">
+<div class="container-fluid page-content {{ page.style_class }}">
     <div class="row">
         <aside class="col-lg-3 col-md-4 col-sm-12" role = "complementary">
             
@@ -62,8 +62,8 @@
             {% endif %}
         </aside>
         <hr style="border-color: #EDF0F4;margin: 0 55px;width: 100%;" class="d-none d-sm-block d-md-none">
-        <div class="col-lg-7 col-md-8 col-sm-12 offset-lg-1 about-content-sec">
-            <!-- <h1 class="page-header">{{ page.title }}</h1> -->
+        <div class="col-lg-7 col-md-8 col-sm-12 offset-lg-1 article-content">
+            <h1 class="page-header">{{ page.title }}</h1>
             {% if page.is_post  and page.title != 'Blogs' and page.title != 'Blogs Archive' %}
             <div class="sharethis-inline-share-buttons"></div>
             <div class="page-meta">
