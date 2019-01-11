@@ -102,7 +102,7 @@ pre {
         text-decoration: none;
         color: #337ab7;
         background-color: #fff;
-        border: 1px solid #ddd;
+        border: 1px solid $light-gray;
         margin-left: -1px;
       }
       span{
@@ -120,15 +120,23 @@ pre {
     li:first-child{
       a{
         margin-left: 0;
-        border-bottom-left-radius: 4px;
-        border-top-left-radius: 4px;
+        border-bottom-left-radius: 2px;
+        border-top-left-radius: 2px;
       }
-    }
-    li:first-child{
       span{
         margin-left: 0;
-        border-bottom-left-radius: 4px;
-        border-top-left-radius: 4px;
+        border-bottom-left-radius: 2px;
+        border-top-left-radius: 2px;
+      }
+    }
+    li:last-child{
+      a{
+        border-bottom-right-radius: 2px;
+        border-top-right-radius: 2px;
+      }
+      span{
+        border-bottom-right-radius: 2px;
+        border-top-right-radius: 2px;
       }
     }
 }
@@ -141,7 +149,7 @@ body{
   position: relative;
 }
 a{
-  color: #000;
+  color: $sky-blue;
 }
 ul{
   text-decoration: none;
@@ -156,14 +164,17 @@ h1{
 h2{
   font-size: 24px;
   line-height: 28px;
+  color: $slate-gray;
 }
 h3{
   font-size: 16px;
   line-height: 19px;
+  color: $slate-gray;
 }
 h4{
   font-size: 14px;
   line-height: 16px;
+  color: $slate-gray;
 }
 p{
   font-size: 14px;
@@ -181,7 +192,7 @@ a.specif_btn{
   }
   @media screen and (max-width: 991px){
     font-size: 12px;
-    padding: 15px 20px;
+    padding: 15px 10px;
   }
   @media screen and (max-width: 767px){
     font-size: 16px;
@@ -483,7 +494,7 @@ header{
         }
       }
   h2{
-    margin-bottom: 30px;margin-top: 20px;
+    margin-bottom: 30px;margin-top: 20px;color: #fff;
     @media(max-width: 575px){
       font-size: 18px;line-height: 25px;padding: 0 20px;
     }
@@ -508,7 +519,7 @@ header{
     color: $light-gray; font-family: 'Roboto-Regular';  font-size: 14px;  font-weight: 500; line-height: 16px;margin:0;background: $lighter-gray;padding: 15px;border-top: 1px solid $light-gray;width: 100%;}
   .output-block{
     h4{
-      background-color: #EDF0F4;color: #000;
+      background-color: $flash-white;color: #000;
     }
   }
   a.playground-btn{
@@ -958,7 +969,18 @@ header{
 }
 
 
-/*about-raml*/
+.enterprise{
+  padding: 50px 30px;
+  h1{
+    color: $slate-gray;
+  }
+  h3{
+    font-size: 14px;
+    line-height: 24px;
+    color: $slate-gray;
+  }
+}
+
 .tutorial-page{
   .region-sidebar{
     .sidebar-menu{
@@ -981,6 +1003,30 @@ header{
       }
     }  
   }  
+}
+
+.document-your-api{
+  img{
+    @media(max-width: 575px){
+      float: none !important;
+      margin-bottom: 15px;
+    }
+  }
+}
+
+.page-content.vendor-suppert-page{
+  .region-sidebar{
+    .sidebar-menu.box-color{
+      .tutorial_sidebar{
+        @media(max-width: 767px){
+          margin: 0;
+        }
+      }
+    }
+  }
+  .vendor-text{
+    color: $slate-gray;
+  }
 }
 .page-content {
   padding: 50px 30px;
@@ -1135,7 +1181,7 @@ header{
       .col-lg-12{
         padding: 0;
         img{
-          margin: 10px 0 20px;
+          margin: 25px 0 15px;
         }
         .vendor-text{
           a{
@@ -1145,39 +1191,78 @@ header{
         }
       }
     }
+
+    .books-resources{
+      h3{
+        margin-top: 20px;
+      }
+      sdivong{
+        color: $slate-gray;
+        font-family: 'Roboto-Bold';
+      }
+      span{
+        display: block;
+        color: $slate-gray;
+        font-family: 'Roboto-Light';
+      }
+      .book_pic {
+        img{
+          margin-top: 10px;
+         } 
+      }
+    }
   }
 
 .projectdiv {
-  padding: 55px 0;
+  padding: 45px 30px;
   a{
     color: $sky-blue;
   }
     input#search {
-      width: 400px;
-      height: 45px;
-      border: 1px solid #696868;
+      width: 350px;
+      height: 42px;
+      border: 2px solid $light-gray;
       padding: 0 15px;
+      border-radius: 2px;
+      color: $light-gray;
+      position: absolute;
+      right: 0;
+      top: 48px;
+      @media(max-width: 991px){
+        width:auto;
+        position: relative;
+        left: 0;
+        top: 0;
+      }
     }
     form#submit_form {
       float: right;
+      @media(max-width: 991px){
+        float: left;
+      }
     }
   .projecttab{
+    margin-top: 15px;
     ul.proj_cat{
       list-style: none;
       height: 40px;
       padding: 0;
+      margin-bottom: 48px;
       li{
         float: left;
+        margin-bottom: 15px;
       }
       a {
-        color: #696868;
-        padding: 5px 15px;
+        font-size: 14px;
+        line-height: 16px;
+        color: $slate-gray;
+        padding: 10px 16px;
         text-decoration: none;
       }
       a.active {
         color: #fff;
-        background-color: #585858;
-        border-radius: 9px;
+        background-color: $slate-gray;
+        border-radius: 2px;
         text-decoration: none;
       }
     }
@@ -1185,15 +1270,72 @@ header{
   ul.pagination{
     li{
       a{
-        color: #696868;
+        color: $slate-gray;
       }
     }
+  }
+  .result{
+    .projectblock:hover{
+      border: 2px solid $light-gray;
+    }
+    .projectblock{
+      border-radius: 2px;
+      padding: 30px;
+      margin-bottom: 40px;
+      border: 2px solid $flash-white;
+      h3{
+        font-size: 24px;
+        line-height: 28px;
+        color: $slate-gray;
+        margin-bottom: 20px;
+      }
+      .projtag {
+        border: 1px solid #DBE8FD;
+        border-radius: 2px;
+        padding: 3px 8px;
+        display: table;
+        margin-bottom: 20px;
+        color: #526881;
+        background-color: #DBE8FD;
+      }
+      .projlink{
+        a{
+          background-color: #26D3FF;
+          color: #fff;
+          padding: 20px 25px;
+          font-size: 14px;
+          line-height: 16px;
+          margin-top: 20px;
+          display: table;
+          border-radius: 2px;
+        }  
+      }
+    } 
   }
 }
 
 .projectlinks{
+  background-color: $lighter-gray;
+  box-shadow: 0 0 30px 0 $lighter-gray;
+  border-radius: 2px;
+  padding: 30px;
+  width: 390px;
+  margin: 0 auto;
+  margin-bottom: 46px;
+  text-align: center;
+  @media(max-width: 575px){
+    width: 290px;
+  }
+  .links{
+    text-align: center;
+    display: block;
+  }
   a{
-    color: $sky-blue;
+    color: $slate-gray;
+    font-size: 14px;
+    line-height: 16px;
+    display: inline-block;
+    padding: 0 7.5px;
   }
 }
 
@@ -1201,12 +1343,21 @@ header{
     background: #f6f6f6;
     padding: 29px 0 60px;
     font-size: 16px;
+    .thumbnail{
+      img{
+        margin: 0 auto;
+        display: block;
+      }
+    }
 }
 
 .multiple-teams {
     padding: 82px 0 77px;
     font-size: 16px;
     color: #8a8a8a;
+    @media(max-width: 767px){
+      padding: 50px 0;
+    }
 }
 
 .enterprise-faster {
@@ -1214,6 +1365,15 @@ header{
     background: #2b2b2b;
     color: #8a8a8a;
     font-size: 16px;
+    @media(max-width: 767px){
+      padding: 50px 0;
+    }
+    h2{
+      color: #fff;
+    }
+    p{
+      color: #fff;
+    }
 }
 
 .open-source-com {
@@ -1221,6 +1381,15 @@ header{
     padding: 62px 0 80px;
     color: #ffffff;
     font-size: 16px;
+    @media(max-width: 767px){
+      padding: 50px 0;
+    }
+    h2{
+      color: #fff;
+    }
+    p{
+      color: #fff;
+    }
 }
 
 .eliminate-support {
@@ -1228,6 +1397,9 @@ header{
     color: #8a8a8a;
     padding: 61px 0 82px;
     font-size: 16px;
+    @media(max-width: 767px){
+      padding: 50px 0;
+    }
 }
 
 .do-more-with-less {
@@ -1236,10 +1408,31 @@ header{
     color: #ffffff;
     font-size: 16px;
     text-align: center;
+    h2{
+      color: #fff;
+    }
+    p{
+      color: #fff;
+    }
+    .do-more-content {
+      width: 450px;
+      margin: 0 auto;
+      @media(max-width: 575px){
+        width: 280px;
+      }
+      .raml-links{
+        background: #fff;
+        padding: 15px;
+        border-radius: 2px;
+      }
+  }
 }
 
 .member {
     margin-top: 45px;
+    @media(max-width: 575px){
+      text-align: center;
+    }
   .member-photo{
     img{
       margin: 0 18px 0 0;
@@ -1254,8 +1447,13 @@ header{
       background: #f2f2f2;
       @media(max-width: 875px){
         float: none;
-        }
       }
+      @media(max-width: 575px){
+        margin:0!important;
+        width: 200px;
+        height: auto;
+      }
+    }
   }
   .member-info {
     max-width: 50%;
@@ -1273,10 +1471,12 @@ header{
       margin-top: 3px;
       margin-bottom: 0;
       font-weight: bolder;
+      @media(max-width: 875px){
+        margin-top: 15px;
+      }
     }
     a {
-      display: block;
-      float: left;
+      display: inline-block;
       height: 25px;
       width: 25px;
       margin-top: 3px;
