@@ -54,6 +54,11 @@ $lighter-gray:#F7FAFF;
 
 a:hover{
   text-decoration: none!important;
+  color: $sky-blue;
+}
+
+a{
+  color: $sky-blue;
 }
 li{
   list-style: none;
@@ -147,9 +152,6 @@ body{
   padding: 0;
   font-family: $font-face-regular;
   position: relative;
-}
-a{
-  color: $sky-blue;
 }
 ul{
   text-decoration: none;
@@ -984,6 +986,9 @@ header{
 .tutorial-page{
   .region-sidebar{
     .sidebar-menu{
+      .ramlapilinks {
+        margin-bottom: 10px;
+      }
       @media(max-width: 630px){
         .ramlapilinks {
           display: block;
