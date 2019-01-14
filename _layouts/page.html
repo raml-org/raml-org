@@ -2,13 +2,9 @@
 
 {% include nav.html %}
 
-<div class="container-fluid page-content {{ page.style_class }}">
+<div class="container page-content {{ page.style_class }}">
     <div class="row">
-        {% if page.title == 'About RAML' %}
-            <aside class="col-lg-3 col-md-3 col-sm-12" role = "complementary">
-        {% else %}
-            <aside class="col-lg-3 col-md-4 col-sm-12" role = "complementary">
-        {% endif %}
+        <aside class="col-lg-3 col-md-4 col-sm-12" role = "complementary">
             
             {% if page.title == 'RAML 100 Tutorial' or page.title == 'Vendor Support' or page.title == 'RAML 200 Tutorial' %}
             <div class="region-sidebar well" data-spy="affix" data-offset-top="205">
