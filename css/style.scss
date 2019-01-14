@@ -219,13 +219,13 @@ a.btn_black:hover{background-color: $sky-blue-hover;}
 
 header{
   .navbar-expand-md{
-    background-color: transparent;border-color:transparent;padding: 24px 35px;;
+    background-color: transparent;border-color:transparent;padding: 24px 15px;;
     @media(min-width: 1400px){
       width: 1140px;
       margin: 0 auto;
     }
     @media(max-width: 767px){
-      padding: 20px 0;margin-bottom: 0;z-index: 999;
+      padding: 20px 0;margin-bottom: 0;z-index: 999;max-width:100%;
       .navbar-collapse{
         position: absolute;top: 0;z-index:999;min-height:100vw;visibility: visible;background:#fff;
       }
@@ -380,20 +380,11 @@ header{
 }
 
 .tophead-banner{
-  position: relative;
-  @media(max-width: 767px){
-    background-image: url("/images/banner-img__homepage-raml.svg");
-    background-size: 100%;
-  background-repeat: no-repeat;
-  background-position: bottom;
-  }
+  position: relative;  
   @media(min-width: 1400px){
     background-size: 100% 100%;
   }
   .home-banner-image{
-    @media(max-width: 767px){
-      display: none;
-    }
     position: absolute;
     width: 100%;
     left: 0;
@@ -403,10 +394,22 @@ header{
     .left-banner{
       width: 50%;
       float: left;
+
+      img{
+        @media(max-width: 767px){
+          max-width: 100%; 
+        }        
+      }
     }
     .right-banner{
       width: 50%;
       float: left;
+      
+      img{
+        @media(max-width: 767px){
+          max-width: 86%; 
+        }        
+      }
     }
   }
   .tophead-content{
@@ -494,6 +497,11 @@ header{
             width: 70px;
           }
         }
+
+        @media(max-width: 575px){
+          width: 300px;
+          margin: 0 auto;
+        }
       }
   h2{
     margin-bottom: 30px;margin-top: 20px;color: #fff;
@@ -518,7 +526,7 @@ header{
     display: none;
   }
   h1{
-    color: $light-gray; font-family: 'Roboto-Regular';  font-size: 14px;  font-weight: 500; line-height: 16px;margin:0;background: $lighter-gray;padding: 15px;border-top: 1px solid $light-gray;width: 100%;}
+    color: $light-gray; font-family: 'Roboto-Regular';  font-size: 14px;  font-weight: 500; line-height: 16px;margin:0;background: $lighter-gray;padding: 20px;border-top: 1px solid $light-gray;width: 100%;}
   .output-block{
     h4{
       background-color: $flash-white;color: #000;
@@ -722,9 +730,9 @@ header{
     width: 1140px;
     margin: 0 auto;
   }
-  padding: 10px 30px;
+  padding: 10px 15px;
       @media(max-width: 767px){
-        padding: 0 20px;
+        padding: 0 20px;max-width:100%;
         .footer-menu{
           ul{
             width: 100%; clear: both;display: block;padding-left:0;  padding-top: 20px;

@@ -30,6 +30,14 @@
       $navMenuCont.toggle('slide');
     });
 
+
+    $('.over-lay').on('click',function(){
+      if($(this).hasClass('overlay')){
+        $(this).removeClass('overlay');
+        $('.navbar-toggler').addClass('collapsed');
+        $('.navbar-collapse.collapse').removeClass('show');
+      }
+    });
   });
 
 })(jQuery);
