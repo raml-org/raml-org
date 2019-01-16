@@ -28,6 +28,11 @@
   font-family: 'Roboto-Light';
   src:url('/fonts/Roboto-Light.ttf');
 }
+@font-face{
+  font-family: 'RobotoMono-Regular';
+  src:url('/fonts/RobotoMono-Regular.ttf');
+}
+
 
 
 $font-face-regular:'Roboto-Regular';
@@ -67,6 +72,9 @@ a:hover{
 
 a{
   color: $sky-blue;
+}
+i.fas.fa-expand{
+  margin-left: 8px;
 }
 li{
   list-style: none;
@@ -195,7 +203,7 @@ p{
 
 .padd_00{padding: 0;}
 a.specif_btn{
-  border: 0px solid;border-radius: 4px; background-color: #000;color: #fff;padding: 15px 25px;font-size: 16px;letter-spacing: 0.5px;line-height: 19px; text-decoration: none;
+  border: 0px solid;border-radius: 4px; background-color: #000;color: #fff;padding: 15px 25px;font-size: 16px;letter-spacing: 0.5px;line-height: 19px; text-decoration: none;font-weight: 600;
   @media screen and (max-width: 1320px){
     font-size: 13px;
     padding: 15px 18px;
@@ -209,8 +217,8 @@ a.specif_btn{
     padding:15px 25px;
   }
 }
-a.specif_btn{background-color: $sky-blue !important;display: table;color: #fff !important;}
-a.btn_black{border: 0px;border-radius: 2px;background: $sky-blue;color: #fff;padding: 20px 30px;width: 232px;display: block;text-align: center;}
+a.specif_btn{background-color:$orange !important;display: table;color: #fff !important;}
+a.btn_black{border: 0px;border-radius: 2px;background: $sky-blue;color: #fff;padding: 20px 30px;width: 232px;display: block;text-align: center;font-weight: 600;}
 a.btn_black:hover{background-color: $sky-blue-hover;}
 
 .overlay {
@@ -402,8 +410,11 @@ header{
     .left-banner{
       width: 50%;
       float: left;
-
       img{
+        @media(min-width: 1400px){
+          transform: scale(1.5);
+          transform-origin: 0% 100%; 
+        }
         @media(max-width: 767px){
           max-width: 100%; 
         }        
@@ -411,9 +422,12 @@ header{
     }
     .right-banner{
       width: 50%;
-      float: left;
-      
+      float: left;      
       img{
+        @media(min-width: 1400px){
+          transform: scale(1.5);
+          transform-origin: 100% 100%; 
+        } 
         @media(max-width: 767px){
           max-width: 86%; 
         }        
@@ -446,7 +460,7 @@ header{
           margin: 30px auto 30px;
         }
       a{
-        border: 0px solid;border-radius: 2px; background-color:$sky-blue;color: #fff;padding: 20px 25px;font-size: 16px;letter-spacing: 0.5px;line-height: 19px; text-decoration: none;margin-left: 25px;width: 190px;display: block;float: left;
+        border: 0px solid;border-radius: 2px; background-color:$sky-blue;color: #fff;padding: 20px 25px;font-size: 16px;letter-spacing: 0.5px;line-height: 19px; text-decoration: none;margin-left: 25px;width: 190px;display: block;float: left;font-weight: 600;
         @media(max-width: 767px){
           width: 190px;display: block;margin:0 auto;margin-bottom: 15px;float: none;display: inline-block;margin-left: 30px;
         }
@@ -550,10 +564,12 @@ header{
     background-color: $slate-gray;
     color: #FFFFFF;
     font-family: 'Roboto-Regular';
-    font-size: 14px;  font-weight: 500; 
+    font-size: 14px; 
+    font-weight: 600; 
     letter-spacing: 0.44px; 
     line-height: 16px;  
     text-align: center;
+
   }
   a.playground-btn.no-background{
     background:none;
@@ -567,12 +583,14 @@ header{
       .editor-scrollable{
         .view-lines{
           .mtk26,.mtk23,.mtk21{
-            font-family: $font-face-bold;
+            font-family: 'RobotoMono-Regular';
+            font-weight: 500;
           }
           .mtk8{
             color: #9EAAB7;
-            font-family: $font-face-bold;
+            font-family: 'RobotoMono-Regular';
             letter-spacing: 1px;
+            font-weight: 500;
           }
         }
       }
@@ -592,6 +610,15 @@ header{
       max-width: 100%;
     }
   }
+  .txt-block{
+    margin-top: 100px;
+    @media(max-width: 767px){
+      margin-top: 50px;
+    }
+    @media(max-width: 575px){
+      margin-top: 40px;
+    }
+  }
   .padd_left{
     @media(max-width: 575px){
       padding-left: 25px;
@@ -608,13 +635,7 @@ header{
     }
   }  
   img{
-    width: 55px;margin-top: 100px;
-    @media(max-width: 767px){
-      margin-top: 50px;
-    }
-    @media(max-width: 575px){
-      margin-top: 40px;
-    }
+    width: 55px;
   }
   .row-bg-color{
     background-color:$lighter-gray;
@@ -623,8 +644,10 @@ header{
     img{
       margin-top: 0;
     }
-    .col-md-6.col-sm-6:nth-child(2) img{
-      margin-top: 40px;
+    .col-md-6.col-sm-6.padd_left{
+      @media(max-width: 575px){
+        margin-top: 40px;
+      }
     }
     @media(max-width: 767px){
       padding:50px 0;
@@ -642,6 +665,7 @@ header{
     display: block;
     width: 155px;
     text-align: center;
+    font-weight: 600;
     border-radius: 2px;
     color: $slate-gray;
     @media(max-width: 575px){
@@ -680,7 +704,7 @@ header{
       width: 100%;margin-bottom: 20px;font-family: $font-face-light;
     }
     a{
-      font-size: 16px;line-height: 19px;letter-spacing: 0.5px;border:0px solid;border-radius: 2px;background-color: $slate-gray;width: 220px; color: #fff;display: block;padding: 20px;text-align: center;
+      font-size: 16px;line-height: 19px;letter-spacing: 0.5px;border:0px solid;border-radius: 2px;background-color: $slate-gray;width: 220px; color: #fff;display: block;padding: 20px;text-align: center;font-weight: 600;
       @media(max-width: 767px){
         width: 100%!important;
       }
@@ -992,14 +1016,16 @@ header{
 
 
 .enterprise{
-  padding: 50px 30px;
+  padding: 50px 30px 0;
   h1{
     color: $slate-gray;
+    margin-bottom: 0;
   }
   h3{
     font-size: 14px;
     line-height: 24px;
     color: $slate-gray;
+    margin: 30px 0;
   }
 }
 
@@ -1329,6 +1355,7 @@ header{
           color: #fff;
           padding: 20px 25px;
           font-size: 14px;
+          font-weight: 600;
           line-height: 16px;
           margin-top: 20px;
           display: table;
@@ -1449,6 +1476,7 @@ header{
         background: #fff;
         padding: 15px;
         border-radius: 2px;
+        font-weight: 600;
       }
   }
 }
