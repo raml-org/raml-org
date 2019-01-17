@@ -203,21 +203,13 @@ p{
 
 .padd_00{padding: 0;}
 a.specif_btn{
-  border: 0px solid;border-radius: 4px; background-color: #000;color: #fff;padding: 15px 25px;font-size: 16px;letter-spacing: 0.5px;line-height: 19px; text-decoration: none;font-weight: 600;
-  @media screen and (max-width: 1320px){
-    font-size: 13px;
-    padding: 15px 18px;
-  }
-  @media screen and (max-width: 991px){
-    font-size: 12px;
-    padding: 15px 10px;
-  }
+  border: 0px solid;border-radius: 4px; background-color: #000;color: #fff;padding: 15px 25px;font-size: 11pt;letter-spacing: 0.5px;line-height: 19px; text-decoration: none;font-weight: 600;
   @media screen and (max-width: 767px){
     font-size: 16px;
     padding:15px 25px;
   }
 }
-a.specif_btn{background-color:$orange !important;display: table;color: #fff !important;}
+a.specif_btn{background-color:$sky-blue !important;display: table;color: #fff !important;}
 a.btn_black{border: 0px;border-radius: 2px;background: $sky-blue;color: #fff;padding: 20px 30px;width: 232px;display: block;text-align: center;font-weight: 600;}
 a.btn_black:hover{background-color: $sky-blue-hover;}
 
@@ -262,11 +254,14 @@ header{
         }
       }
     }
-    .navbar-toggler-icon{
-      background-image: url("/images/toggle.png");
-      background-size: cover;
-      background-repeat: no-repeat;
-    }
+    .navbar-toggler{
+      padding-right: 30px;
+      .navbar-toggler-icon{
+        background-image: url("/images/toggle.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+    } 
     .navbar-nav{
       float: right;
       width: 100%;
@@ -276,6 +271,9 @@ header{
         }
         a.nav-link{
           font-size: 14px;color: $slate-gray;line-height: 16px;padding: 15px;
+          @media(max-width: 991px){
+            padding: 12px;
+          }
             @media(max-width: 767px){
               opacity: 1;
               font-size: 18px;
@@ -444,7 +442,9 @@ header{
       }
     }
     p{
-      font-size: 12px; color:$sky-blue;margin-bottom: 48px;
+      font-size: 14px; 
+      color:$sky-blue;
+      margin-bottom: 48px;
        @media(max-width: 575px){
         margin-bottom: 40px;
       }
@@ -458,6 +458,9 @@ header{
       }
       @media(max-width: 575px){
           margin: 30px auto 30px;
+        }
+        .specif_btn{
+          background-color: $orange!important;
         }
       a{
         border: 0px solid;border-radius: 2px; background-color:$sky-blue;color: #fff;padding: 20px 25px;font-size: 16px;letter-spacing: 0.5px;line-height: 19px; text-decoration: none;margin-left: 25px;width: 190px;display: block;float: left;font-weight: 600;
@@ -502,6 +505,10 @@ header{
         margin: 0 auto;
         display: block;
       }
+    }
+    img{
+      margin: 0 auto;
+      display: block;
     }
   }
 }
@@ -622,10 +629,14 @@ header{
   .padd_left{
     @media(max-width: 575px){
       padding-left: 25px;
+      margin-top: 40px;
     }
   }
   h3{
     letter-spacing: 0.5px;font-family: $font-face-bold;color: $slate-gray;font-size: 24px;width: 353px;line-height: 28px;margin-bottom: 20px;margin-top: 25px;
+    @media screen and (max-width: 991px) and (min-width: 768px) {
+      width: 310px;
+    }
     @media(max-width: 767px){
       width: 100%;
       font-size: 16px;
@@ -678,8 +689,8 @@ header{
   }
   p{
     color: $light-gray;width: 353px;
-    @media(max-width: 991px){
-      width: 335px;
+    @media screen and (max-width: 991px) and (min-width: 768px) {
+      width: 310px;
     }
     @media(max-width: 767px){
       width: 100%;
@@ -689,7 +700,7 @@ header{
     font-size: 14px;line-height: 22px;position: relative;
   }
   .bdr{
-    border:0px solid;width: 350px;padding: 30px;border-radius: 2px;margin-top: 135px;background-color: $lighter-gray;
+    border:0px solid;width: 350px;padding: 30px;border-radius: 2px;margin-top: 42px;background-color: $lighter-gray;
       @media(max-width: 767px){
         width: 100%!important;margin-top: 50px;
       }
@@ -774,6 +785,19 @@ header{
   .navbar-brand{
     padding: 0;
     height: auto;
+  }
+  .col-md-4.col-sm-12{
+    @media(max-width: 991px){
+      padding-right: 0;
+    }
+    .right-align{
+      @media(max-width: 991px){
+        padding-top: 50px;
+      }
+      @media(max-width: 767px){
+        padding-top: 10px;
+      }
+    }
   }    
   ul{
     display: inline-block;
@@ -813,7 +837,7 @@ header{
     margin-top: 10px;
   }
   a.top_btn{
-    margin-top: 10px;margin-bottom: 35px;color: $light-gray;position: relative;padding-right: 38px;float: right;clear: both;display: table;font-size: 14px;
+    margin-top: 10px;margin-bottom: 30px;color: $light-gray;position: relative;padding-right: 38px;float: right;clear: both;display: table;font-size: 14px;
     @media(max-width: 991px){
       float: none;
     }
@@ -838,7 +862,7 @@ header{
     }
     @media(max-width: 767px){
       display: table;
-      margin-top: 10px;
+      margin-top: 0px;
     }
   }
   .right-align{
@@ -890,6 +914,9 @@ header{
   }
   img{
     width: 165px;margin: 0 auto;display: block; margin-bottom: 36px;
+  }
+  h3{
+    color: #fff;
   }
 }
 
@@ -1033,7 +1060,7 @@ header{
   .region-sidebar{
     .sidebar-menu{
       .ramlapilinks {
-        margin-bottom: 10px;
+        margin-top: 10px;
       }
       @media(max-width: 630px){
         .ramlapilinks {
@@ -1080,7 +1107,20 @@ header{
   }
 }
 .page-content {
-  padding: 50px 30px;
+  padding: 50px 15px;
+    @media(max-width: 767px){
+      padding: 50px 0;
+    }
+    @media(max-width: 575px){
+      padding: 50px 30px;
+    }
+    .article-content{
+      @media(min-width: 1400px){
+        min-height: -o-calc(100vh - 387px);
+        min-height: -webkit-calc(100vh - 387px);
+        min-height: -moz-calc(100vh - 387px);
+      }
+    }
     .page-header {
       padding-bottom: 10px;
       margin: 13px 0 26px;
@@ -1498,8 +1538,12 @@ header{
       height: 100px;
       width: 100px;
       background: #f2f2f2;
-      @media(max-width: 875px){
+      @media(max-width: 1199px){
         float: none;
+        width: 170px;
+        height: 170px;
+        margin: 0 auto;
+        display: block;
       }
       @media(max-width: 575px){
         margin:0!important;
@@ -1511,9 +1555,10 @@ header{
   .member-info {
     max-width: 50%;
     float: left;
-    @media(max-width: 875px){
+    @media(max-width: 1199px){
       max-width: 100%;
       float: none;
+      text-align: center;
     }
     p {
       padding: 0;
