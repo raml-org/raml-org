@@ -491,9 +491,9 @@ header{
     padding: 0 15px;
   }
   .logo {
-    width: 14%;
+    width: auto;
     float: left;
-    margin-bottom: 15px;
+    margin: 0 auto 15px;
     @media(max-width: 767px){
       width: 16%;
       margin-bottom: 20px;
