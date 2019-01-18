@@ -17,10 +17,6 @@
   src:url('/fonts/Roboto-Regular.ttf');
 }
 @font-face{
-  font-family: 'Roboto-Medium';
-  src:url('/fonts/Roboto-Medium.ttf');
-}
-@font-face{
   font-family: 'Roboto-Bold';
   src:url('/fonts/Roboto-Bold.ttf');
 }
@@ -37,7 +33,6 @@
 
 $font-face-regular:'Roboto-Regular';
 $font-face-bold:'Roboto-Bold';
-$font-face-medium:'Roboto-Medium';
 $font-face-light:'Roboto-Light';
 
 $orange:#FFB647;
@@ -59,12 +54,6 @@ html,body{
   font-kerning: normal;
 }
 
-.container, .container-fluid{
-  @media(min-width: 1400px){
-    width: 1140px;
-  }
-}
-
 a:hover{
   text-decoration: none!important;
   color: $sky-blue;
@@ -79,19 +68,6 @@ i.fas.fa-expand{
 li{
   list-style: none;
 }
-
-/*.affix {
-    top: 20px;
-    position: fixed;
-    z-index: 999;
-    @media(max-width: 767px){
-      width: 100%;
-      top: 0;
-      left: 0;
-      position: relative;
-      z-index: 2;
-    }
-}*/
 
 pre {
     display: block;
@@ -228,24 +204,20 @@ a.btn_black:hover{background-color: $sky-blue-hover;}
 header{
   .navbar-expand-md{
     background-color: transparent;border-color:transparent;padding: 24px 15px;;
-    @media(min-width: 1400px){
-      width: 1140px;
-      margin: 0 auto;
-    }
     @media(max-width: 767px){
-      padding: 20px 0;margin-bottom: 0;z-index: 999;max-width:100%;
+      padding: 20px 0;max-width:100%;
       .navbar-collapse{
-        position: absolute;top: 0;z-index:999;min-height:100vw;visibility: visible;background:#fff;
+        position: absolute;top: 0;z-index:999;min-height:100vw;background:#fff;
       }
       .nav-logo{
-        padding-left: 15px; display: inline-block!important;margin-right: 20px;
+        padding-left: 15px; float:left;margin-top:10px;margin-right: 20px;
       }
     }
-    .container-fluid{
+    /*.container-fluid{
       @media(max-width: 1140px){
         padding-right: 0;
       }
-    }
+    }*/
     .navbar-brand{
       padding: 0;height: auto;
       img{
@@ -258,8 +230,9 @@ header{
       padding-right: 30px;
       .navbar-toggler-icon{
         background-image: url("/images/toggle.png");
-        background-size: cover;
         background-repeat: no-repeat;
+        width: 26px;
+        height: 22px; 
       }
     } 
     .navbar-nav{
@@ -275,10 +248,7 @@ header{
             padding: 12px;
           }
             @media(max-width: 767px){
-              opacity: 1;
-              font-size: 18px;
-              line-height: 21px;
-              font-weight: 500;
+              font-size: 18px;              
             }
           .caret{
             border: solid$slate-gray;border-width: 0 2px 2px 0;display: inline-block;padding: 3px; transform: rotate(45deg); -webkit-transform: rotate(45deg);margin-left: 10px;margin-top: -4px;vertical-align: middle;
@@ -369,15 +339,6 @@ header{
           right: 0;left: auto;
         }
       }
-      .xs-visible{
-        display: none;
-        @media(max-width: 767px){
-          display: inline-block;
-        }
-      }
-      @media(max-width: 767px){
-        float: left;
-      }
       .active{
         a.nav-link, a.nav-link:hover, a.nav-link:focus{
           color: $slate-gray;background-color: transparent;opacity: 1;
@@ -395,9 +356,7 @@ header{
 
 .tophead-banner{
   position: relative;  
-  @media(min-width: 1400px){
-    background-size: 100% 100%;
-  }
+  
   .home-banner-image{
     position: absolute;
     width: 100%;
@@ -427,7 +386,7 @@ header{
           transform-origin: 100% 100%; 
         } 
         @media(max-width: 767px){
-          max-width: 86%; 
+          max-width: 82%; 
         }        
       }
     }
@@ -452,16 +411,14 @@ header{
     .buttons{
       margin: 35px auto 30px;
       text-align: center;
-      width: 450px;
-      @media(max-width: 767px){
-        width: 100%;
+      width: -webkit-fit-content;
+      width: -moz-fit-content;
+      width: fit-content;
+            
+      .specif_btn{
+        background-color: $orange!important;
       }
-      @media(max-width: 575px){
-          margin: 30px auto 30px;
-        }
-        .specif_btn{
-          background-color: $orange!important;
-        }
+
       a{
         border: 0px solid;border-radius: 2px; background-color:$sky-blue;color: #fff;padding: 20px 25px;font-size: 16px;letter-spacing: 0.5px;line-height: 19px; text-decoration: none;margin-left: 25px;width: 190px;display: block;float: left;font-weight: 600;
         @media(max-width: 767px){
@@ -501,10 +458,6 @@ header{
     }
     @media(max-width: 575px){
       width:33.33%;
-      img{
-        margin: 0 auto;
-        display: block;
-      }
     }
     img{
       margin: 0 auto;
@@ -520,10 +473,19 @@ header{
       padding: 30px 0 50px;      
     }
     .homepage_icons{
-        img{
+        svg{
           margin: 0 5px;
           @media(max-width: 767px){
             width: 70px;
+            height: 72px;
+          }
+        }
+
+        a.gray{
+          .svg{
+            path,polygon,rect{
+              fill:#EDF0F4;            
+            }            
           }
         }
 
@@ -546,14 +508,9 @@ header{
   }
 }
 
-.raml-editor{
-  @media(min-width: 1400px){
-    width: 100%;
-  }
+.raml-editor{  
   position: relative;
-  @media(max-width: 575px){
-    display: none;
-  }
+  
   h1{
     color: $light-gray; font-family: 'Roboto-Regular';  font-size: 14px;  font-weight: 500; line-height: 16px;margin:0;background: $lighter-gray;padding: 20px;border-top: 1px solid $light-gray;width: 100%;}
   .output-block{
@@ -617,6 +574,12 @@ header{
       max-width: 100%;
     }
   }
+  .col-md-6.col-sm-6{
+    padding-right: 15%;
+    @media(max-width: 991px){
+      padding-right: 5%;
+    }
+  }
   .txt-block{
     margin-top: 100px;
     @media(max-width: 767px){
@@ -633,12 +596,9 @@ header{
     }
   }
   h3{
-    letter-spacing: 0.5px;font-family: $font-face-bold;color: $slate-gray;font-size: 24px;width: 353px;line-height: 28px;margin-bottom: 20px;margin-top: 25px;
-    @media screen and (max-width: 991px) and (min-width: 768px) {
-      width: 310px;
-    }
+    letter-spacing: 0.5px;font-family: $font-face-bold;color: $slate-gray;font-size: 24px;line-height: 28px;margin-bottom: 20px;margin-top: 25px;
+    
     @media(max-width: 767px){
-      width: 100%;
       font-size: 16px;
       line-height: 19px;
       margin-bottom: 20px;
@@ -688,21 +648,15 @@ header{
     content: "\f105";font-weight: bold;font-family: 'Font Awesome\ 5 Free';font-style: normal;text-decoration: inherit;font-size: 18px;position: absolute;top: 9px;right: 20px;
   }
   p{
-    color: $light-gray;width: 353px;
-    @media screen and (max-width: 991px) and (min-width: 768px) {
-      width: 310px;
-    }
-    @media(max-width: 767px){
-      width: 100%;
-    }
+    color: $light-gray;    
   }
   a{
     font-size: 14px;line-height: 22px;position: relative;
   }
   .bdr{
-    border:0px solid;width: 350px;padding: 30px;border-radius: 2px;margin-top: 42px;background-color: $lighter-gray;
+    border:0px solid;padding: 30px;border-radius: 2px;margin-top: 42px;background-color: $lighter-gray;
       @media(max-width: 767px){
-        width: 100%!important;margin-top: 50px;
+        margin-top: 50px;
       }
     h1{
       margin-top: 0;
@@ -715,23 +669,21 @@ header{
       width: 100%;margin-bottom: 20px;font-family: $font-face-light;
     }
     a{
-      font-size: 16px;line-height: 19px;letter-spacing: 0.5px;border:0px solid;border-radius: 2px;background-color: $slate-gray;width: 220px; color: #fff;display: block;padding: 20px;text-align: center;font-weight: 600;
-      @media(max-width: 767px){
-        width: 100%!important;
-      }
-    }
-    @media(max-width: 991px){
-      width: 331px;
+      font-size: 16px;line-height: 19px;letter-spacing: 0.5px;border:0px solid;border-radius: 2px;background-color: $slate-gray;color: #fff;display: block;padding: 20px;text-align: center;font-weight: 600;
+      
     }
   }
   .block-quote{
-    width: 480px;margin: 80px auto 137px; 
+    margin: 80px auto 137px; 
     @media(max-width: 767px){
-      width: 480px;margin: 80px auto 95px;
+      margin: 80px auto 95px;
     }
     @media(max-width: 575px){
-          width: 100%;margin: 0;padding-bottom: 30px;
-        }
+      margin: 0;padding-bottom: 30px;
+    }
+    .col-lg-6.col-md-8{
+      margin: 0 auto;
+    }
     h1{
       font-size: 24px;line-height: 36px;color: $slate-gray;position: relative;text-align: center;margin-bottom: 20px;margin-top: 15px;
         @media(max-width: 575px){
@@ -739,7 +691,6 @@ header{
         }
     }
     p{
-      width: 100%;
       text-align: center;
       color: $light-gray;
       font-size: 16px;
@@ -750,8 +701,7 @@ header{
       text-align: center;
       color: $light-gray;
       font-size: 16px;
-      font-family: $font-face-light;
-      width: 100%;
+      font-family: $font-face-light;      
     }
     h1:before {
       content: "\f10d";font-weight: bold;font-family: 'Font Awesome\ 5 Free';font-style: normal;text-decoration: inherit;color: #B3B7BF;font-size: 18px;position: absolute;top: 0px;left: -30px;
@@ -769,19 +719,15 @@ header{
 }
 
 .footer-sec{
-  @media(min-width: 1400px){
-    width: 1140px;
-    margin: 0 auto;
-  }
   padding: 10px 15px;
-      @media(max-width: 767px){
-        padding: 0 20px;max-width:100%;
-        .footer-menu{
-          ul{
-            width: 100%; clear: both;display: block;padding-left:0;  padding-top: 20px;
-          }
-        }
+  @media(max-width: 767px){
+    padding: 0 20px;max-width:100%;
+    .footer-menu{
+      ul{
+        clear: both;display: block;padding-left:0;  padding-top: 20px;
       }
+    }
+  }
   .navbar-brand{
     padding: 0;
     height: auto;
@@ -841,9 +787,6 @@ header{
     @media(max-width: 991px){
       float: none;
     }
-     @media(max-width: 767px){
-      display: table;
-     }
   }
   a.top_btn:after {
     content: "\f106";font-family: 'Font Awesome\ 5 Free';font-style: normal;font-weight: bold;text-decoration: inherit;color: $light-gray;font-size: 18px;position: absolute;top: -5px;right: 15px;font-size: 20px;
@@ -861,7 +804,6 @@ header{
       margin-top: 20px;margin-bottom: 0px;
     }
     @media(max-width: 767px){
-      display: table;
       margin-top: 0px;
     }
   }
@@ -924,7 +866,6 @@ header{
   padding: 100px 30px;
   @media(max-width: 767px){
     padding: 50px 30px;
-    width: 100%;
     max-width: 100%;
   }
   .main-img img{
@@ -961,7 +902,6 @@ header{
     width: 52px;
   }
   h3{
-    font-family: $font-face-medium;
     color: $slate-gray;
     margin-top: 20px;
   }
@@ -1058,9 +998,23 @@ header{
 
 .tutorial-page{
   .region-sidebar{
+    .raml-hundred{
+      .tutorial_sidebar{
+        margin: 0 20px 0 0;
+      }
+    }
     .sidebar-menu{
+      h2{
+        font-size: 16pt;
+      }
       .ramlapilinks {
         margin-top: 10px;
+        @media(max-width: 767px){
+          margin-top: 0;
+        }
+        @media(max-width: 630px){
+          margin-top: 10px;
+        }
       }
       @media(max-width: 630px){
         .ramlapilinks {
@@ -1170,12 +1124,10 @@ header{
 
       .side_bar{
         @media screen and (max-width: 767px){
-          width: 55%;
           float:left;          
         }
 
         @media screen and (max-width: 575px){
-          width:100%;
           float:none;
         }
       }
@@ -1207,9 +1159,8 @@ header{
             padding-right: 20px;
             width: auto;
           }
-
           @media(max-width: 575px){
-            width:100%;
+            display:block;
           }
           a{
             font-size: 14px; line-height:26px;color: #8F9299;
@@ -1384,7 +1335,8 @@ header{
         border: 1px solid #DBE8FD;
         border-radius: 2px;
         padding: 3px 8px;
-        display: table;
+        display: inline-block;
+        margin-right: 15px;
         margin-bottom: 20px;
         color: #526881;
         background-color: #DBE8FD;
@@ -1406,18 +1358,10 @@ header{
   }
 }
 
-.projectlinks{
-  background-color: $lighter-gray;
-  box-shadow: 0 0 30px 0 $lighter-gray;
+.projectlinks{  
   border-radius: 2px;
   padding: 30px;
-  width: 390px;
-  margin: 0 auto;
   margin-bottom: 46px;
-  text-align: center;
-  @media(max-width: 575px){
-    width: 290px;
-  }
   .links{
     text-align: center;
     display: block;
@@ -1428,6 +1372,12 @@ header{
     line-height: 16px;
     display: inline-block;
     padding: 0 7.5px;
+  }
+  .projectlinks-bg-color{
+    background-color: $lighter-gray;
+    box-shadow: 0 0 30px 0 $lighter-gray;
+    margin: 0 auto;
+    padding:30px;
   }
 }
 
@@ -1546,7 +1496,6 @@ header{
         display: block;
       }
       @media(max-width: 575px){
-        margin:0!important;
         width: 200px;
         height: auto;
       }
