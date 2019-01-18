@@ -1449,7 +1449,6 @@ header{
     padding: 78px 0 55px;
     color: #ffffff;
     font-size: 16px;
-    text-align: center;
     h2{
       color: #fff;
     }
@@ -1457,11 +1456,7 @@ header{
       color: #fff;
     }
     .do-more-content {
-      width: 450px;
       margin: 0 auto;
-      @media(max-width: 575px){
-        width: 280px;
-      }
       .raml-links{
         background: #fff;
         padding: 15px;
@@ -1497,7 +1492,7 @@ header{
       }
       @media(max-width: 575px){
         width: 200px;
-        height: auto;
+        height: 200px;
       }
     }
   }
