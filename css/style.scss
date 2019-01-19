@@ -175,11 +175,16 @@ p{
   line-height: 24px;
   color: $slate-gray;
 }
-
+/*@media(max-width: 767px){
+  body .container {
+    max-width: 100%;
+    padding: 0 30px;
+  }
+}*/
 
 .padd_00{padding: 0;}
 a.specif_btn{
-  border: 0px solid;border-radius: 4px; background-color: #000;color: #fff;padding: 15px 25px;font-size: 11pt;letter-spacing: 0.5px;line-height: 19px; text-decoration: none;font-weight: 600;
+  border: 0px solid;border-radius: 4px; background-color: #000;color: #fff;padding: 15px 25px;font-size: 12pt;letter-spacing: 0.5px;line-height: 19px; text-decoration: none;font-weight: 600;
   @media screen and (max-width: 767px){
     font-size: 16px;
     padding:15px 25px;
@@ -202,10 +207,12 @@ a.btn_black:hover{background-color: $sky-blue-hover;}
 }
 
 header{
+  margin-bottom: 50px;
   .navbar-expand-md{
     background-color: transparent;border-color:transparent;padding: 24px 15px;;
     @media(max-width: 767px){
-      padding: 20px 0;max-width:100%;
+      padding-top: 20px;
+      padding-bottom: 20px;
       .navbar-collapse{
         position: absolute;top: 0;z-index:999;min-height:100vw;background:#fff;
       }
@@ -220,14 +227,8 @@ header{
     }*/
     .navbar-brand{
       padding: 0;height: auto;
-      img{
-        @media(max-width: 767px){
-          padding-left: 30px;
-        }
-      }
     }
     .navbar-toggler{
-      padding-right: 30px;
       .navbar-toggler-icon{
         background-image: url("/images/toggle.png");
         background-repeat: no-repeat;
@@ -393,7 +394,6 @@ header{
   }
   .tophead-content{
     h1{
-      margin-top: 50px;
       color: $slate-gray;
       margin-bottom:0px;
       @media(max-width: 575px){
@@ -441,12 +441,6 @@ header{
 }  
 
 .homepage-logos{
-  @media(max-width: 767px){
-    padding: 0;
-  }
-  @media(max-width: 575px){
-    padding: 0 15px;
-  }
   .logo {
     width: auto;
     float: left;
@@ -490,7 +484,7 @@ header{
         }
 
         @media(max-width: 575px){
-          width: 300px;
+          width: 260px;
           margin: 0 auto;
         }
       }
@@ -567,13 +561,6 @@ header{
 
 
 .raml-blocks{
-  @media(max-width: 767px){
-    padding: 0 10px;
-    .container{
-      width: 100%;
-      max-width: 100%;
-    }
-  }
   .col-md-6.col-sm-6{
     padding-right: 15%;
     @media(max-width: 991px){
@@ -590,9 +577,10 @@ header{
     }
   }
   .padd_left{
-    @media(max-width: 575px){
-      padding-left: 25px;
-      margin-top: 40px;
+    padding-left: 25px;
+    @media(max-width: 767px){
+      padding-left: 15px;
+      margin-bottom: 40px;
     }
   }
   h3{
@@ -614,11 +602,6 @@ header{
     margin-top: 105px;
     img{
       margin-top: 0;
-    }
-    .col-md-6.col-sm-6.padd_left{
-      @media(max-width: 575px){
-        margin-top: 40px;
-      }
     }
     @media(max-width: 767px){
       padding:50px 0;
@@ -719,9 +702,9 @@ header{
 }
 
 .footer-sec{
-  padding: 10px 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   @media(max-width: 767px){
-    padding: 0 20px;max-width:100%;
     .footer-menu{
       ul{
         clear: both;display: block;padding-left:0;  padding-top: 20px;
@@ -829,9 +812,7 @@ header{
   }
   h1{
     color: $slate-gray;
-    padding-left: 10px;
     margin-bottom: 0px;
-    margin-top: 50px;
     @media(max-width: 767px){
       font-size: 18px;
       line-height: 25px;
@@ -839,13 +820,15 @@ header{
   }
   img{
     margin-top: 25px;
+    @media screen and (max-width: 991px) and (min-width: 576px) {
+      position: absolute;
+      bottom: 0;
+      transform: scale(1.25);
+      z-index: -9;
+    }
   }
   p{
     margin: 30px 0 30px;
-    padding-left: 10px;
-  }
-  h3 > a{
-    margin-left: 10px;
   }
 }
 
@@ -862,14 +845,24 @@ header{
   }
 }
 
-.desc-block{
-  padding: 100px 30px;
+.container.desc-block{
+  padding-top: 100px;
+  padding-bottom: 100px;
   @media(max-width: 767px){
-    padding: 50px 30px;
-    max-width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  .txt-right{
+    @media(min-width: 991px){      
+      float: right;
+    }
+  }
+  .img-left{
+    @media(min-width: 991px){      
+      float: left;
+    }
   }
   .main-img img{
-    width: 100%;
     margin-top:20px;
 
     @media(max-width: 767px){
@@ -878,10 +871,9 @@ header{
   }
   .test-api{
     .main-img img{
-      width: 100%;
       margin-top:64px;
 
-      @media(max-width: 767px){
+      @media(max-width: 991px){
         margin-top: 0px;
       }
     }
@@ -889,10 +881,9 @@ header{
 
   .share-support{
     .main-img img{
-      width: 100%;
       margin-top:77px;
 
-      @media(max-width: 767px){
+      @media(max-width: 991px){
         margin-top: 0px;
       }
     }
@@ -920,39 +911,36 @@ header{
 
 #build-bg-color{
   background-color: $lighter-gray;
+  .row{
+    display: block;
+  }
   .desc-block{
     .main-img img{
       margin-top: 100px;
-      @media(max-width: 767px){
+      @media(max-width: 991px){
         margin-top: 0px;
-      }
-    }
-    .icon{
-      @media(max-width: 575px){
-        margin-top: 50px;
       }
     }
   }
 }
+
 #document-bg-color{
   background-color: $lighter-gray;
+  .row{
+    display: block;
+  }
   .desc-block{
     .main-img img{
       margin-top: 100px;
-      @media(max-width: 767px){
+      @media(max-width: 991px){
         margin-top: 0px;
       }
-    }
-    .icon {
-      @media(max-width: 575px){
-        margin-top: 50px;
-      }      
     }
   }
 }
 
 
-.do_more_less{
+.container.do_more_less{
   padding-bottom: 125px;
     @media(max-width: 767px){
       padding-bottom: 85px;
@@ -982,8 +970,7 @@ header{
 }
 
 
-.enterprise{
-  padding: 50px 30px 0;
+.container.enterprise{
   h1{
     color: $slate-gray;
     margin-bottom: 0;
@@ -1061,13 +1048,6 @@ header{
   }
 }
 .page-content {
-  padding: 50px 15px;
-    @media(max-width: 767px){
-      padding: 50px 0;
-    }
-    @media(max-width: 575px){
-      padding: 50px 30px;
-    }
     .article-content{
       @media(min-width: 1400px){
         min-height: -o-calc(100vh - 387px);
@@ -1121,7 +1101,9 @@ header{
         margin-top: 20px;
         }
       }
-
+      a.dropdown-toggle {
+        color: $slate-gray;
+      }
       .side_bar{
         @media screen and (max-width: 767px){
           float:left;          
@@ -1256,7 +1238,7 @@ header{
   }
 
 .projectdiv {
-  padding: 45px 30px;
+  padding: 45px 15px;
   a{
     color: $sky-blue;
   }
@@ -1532,5 +1514,10 @@ header{
       background-image: url(/images/linkedin.svg);
       background-size: 100%;
     }
+  }
+}
+.page-content.design-your-api .ramlapilinks, .page-content.build-your-api .ramlapilinks, .page-content.test-your-api .ramlapilinks, .page-content.build-your-api .ramlapilinks, .page-content.document-your-api .ramlapilinks, .page-content.support-your-api .ramlapilinks{
+  @media(max-width: 767px){
+    float: left;
   }
 }
