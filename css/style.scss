@@ -303,7 +303,7 @@ header{
               position:relative;display: block;background-color: #fff;box-shadow: none;border: none;color: #000;left: 0;padding-top: 0;top: 0;
             }
             a{
-              color:#fff;opacity: 1;padding: 6px 25px;font-size: 14px;line-height: 16px;display: block;
+              color:#fff;opacity: 1;padding: 6px 25px;font-size: 14px;line-height: 16px;display: block;font-weight: 600;
                @media(max-width: 767px){
                 color:#000;        
                 font-weight: normal;
@@ -845,6 +845,11 @@ header{
       line-height: 25px;
     }
   }
+
+  .overflow-hide{
+    overflow: hidden;
+  }
+
   img{
     margin-top: 25px;
     @media screen and (max-width: 991px) and (min-width: 576px) {
@@ -1346,6 +1351,7 @@ header{
       padding: 30px;
       margin-bottom: 40px;
       border: 2px solid $flash-white;
+      width: 100%;
       h3{
         font-size: 24px;
         line-height: 28px;
