@@ -21,7 +21,7 @@
             $(".over-lay").toggleClass('overlay')
           });
 
-          $( '.navbar-nav' ).doubleTapToGo();
+          $( '.navbar-nav li:has(ul)' ).doubleTapToGo();
       });
 
         $(window).scroll(function(){

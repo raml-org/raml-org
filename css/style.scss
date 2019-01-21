@@ -244,7 +244,7 @@ header{
           padding:0px 15px;
         }
         a.nav-link{
-          font-size: 14px;color: $slate-gray;line-height: 16px;padding: 15px;
+          font-size: 14px;color: $slate-gray;line-height: 16px;padding: 15px;font-weight: 600;
           @media(max-width: 991px){
             padding: 12px;
           }
@@ -262,7 +262,7 @@ header{
           color: $slate-gray;
         }
         a.nav-link:hover{
-          color: $slate-gray;opacity: 1;
+          color: $slate-gray;
         }
       }
       .dropdown:hover>.dropdown-menu {
@@ -283,6 +283,9 @@ header{
           }
           li:hover{
             background: $light-gray;
+            @media(max-width: 767px){
+              background-color: #f8f9fa;
+            }
           }
         }
         .dropdown-menu{
@@ -294,6 +297,8 @@ header{
           position: absolute;
           left: 0px;
           margin: 0;
+          border: 0px;
+          border-radius: 0px;
             @media(max-width: 767px){
               position:relative;display: block;background-color: #fff;box-shadow: none;border: none;color: #000;left: 0;padding-top: 0;top: 0;
             }
@@ -561,12 +566,6 @@ header{
 
 
 .raml-blocks{
-  .col-md-6.col-sm-6{
-    padding-right: 15%;
-    @media(max-width: 991px){
-      padding-right: 5%;
-    }
-  }
   .txt-block{
     margin-top: 100px;
     @media(max-width: 767px){
@@ -576,11 +575,17 @@ header{
       margin-top: 40px;
     }
   }
-  .padd_left{
-    padding-left: 25px;
-    @media(max-width: 767px){
-      padding-left: 15px;
+  .txt-left{
+    padding-right: 7%;
+    @media(max-width: 575px){
+      padding-right: 15px;
       margin-bottom: 40px;
+    }
+  }
+  .txt-right{
+    padding-left: 7%;
+    @media(max-width: 575px){
+      padding-left: 15px;
     }
   }
   h3{
@@ -743,7 +748,7 @@ header{
     li{
       display: inline-block;
       a{
-        font-size: 14px;line-height: 16px;padding: 10px;font-weight: 500;color: $slate-gray;
+        font-size: 14px;line-height: 16px;padding: 10px;font-weight: 500;color: $slate-gray;font-weight: 600;
         @media(max-width: 767px){
           display: block;
         }
@@ -971,6 +976,15 @@ header{
 
 
 .container.enterprise{
+  @media(max-width: 767px){
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  a.specif_btn{
+    @media(max-width: 575px){
+      margin-bottom: 20px;
+    }
+  }
   h1{
     color: $slate-gray;
     margin-bottom: 0;
@@ -993,6 +1007,9 @@ header{
     .sidebar-menu{
       h2{
         font-size: 16pt;
+      }
+      .lastsidemenu{
+        color: $slate-gray;
       }
       .ramlapilinks {
         margin-top: 10px;

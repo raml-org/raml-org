@@ -186,7 +186,7 @@ permalink: /projects
                 } else {
                     join_topic = '<span class="projtag">' + datas[i].topics + '</span>';
                 }
-                project_div = '<div class="col-lg-4 col-md-6 col-sm-6"><div class="projectblock "><div class="projname"><h3>' + project_name + '</h3></div><div class="proj_topics">'+ join_topic +'</div><div class="projdesc"><p>' + project_desc + '</p></div>' +
+                project_div = '<div class="col-lg-4 col-md-6 col-sm-6 d-flex"><div class="projectblock "><div class="projname"><h3>' + project_name + '</h3></div><div class="proj_topics">'+ join_topic +'</div><div class="projdesc"><p>' + project_desc + '</p></div>' +
                             '<div class="projlink"><a href ="' + project_url + '" rel="nofollow">View Project</a></div></div></div> ';
                  if(datas.length <= per_page) {
                      $('div.result').html(project_div);
