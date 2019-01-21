@@ -358,6 +358,28 @@ header{
     }
     #myNavbar{border-color: transparent;padding: 0;}
   }
+
+  .nav-container{
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right:15px;
+    @media screen and (min-width: 576px){
+      max-width: 540px
+    }
+
+    @media screen and (min-width: 768px){
+      max-width: 720px
+    }
+
+    @media screen and (min-width: 992px){
+      max-width: 960px
+    }
+
+    @media screen and (min-width: 1200px){
+      max-width: 1140px
+    }
+  }
 }
 
 .tophead-banner{
@@ -410,7 +432,7 @@ header{
       color:$sky-blue;
       margin-bottom: 48px;
        @media(max-width: 575px){
-        margin-bottom: 40px;
+        margin-bottom: 70px;
       }
     }
     .buttons{
@@ -1341,17 +1363,27 @@ header{
         background-color: #DBE8FD;
       }
       .projlink{
+        display: flex;
+
+        .view-project{
+          margin-right: 25px;
+        }
+
         a{
-          background-color: #26D3FF;
+          background-color: $sky-blue;
           color: #fff;
-          padding: 20px 25px;
+          padding: 20px;
           font-size: 14px;
           font-weight: 600;
           line-height: 16px;
           margin-top: 20px;
           display: table;
           border-radius: 2px;
-        }  
+        }
+
+        a.live-example{
+          background-color: $slate-gray;
+        }
       }
     } 
   }
