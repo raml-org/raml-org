@@ -1609,9 +1609,10 @@ header{
     }
   }
 }
-.page-content.design-your-api .ramlapilinks, .page-content.build-your-api .ramlapilinks, .page-content.test-your-api .ramlapilinks, .page-content.build-your-api .ramlapilinks, .page-content.document-your-api .ramlapilinks, .page-content.support-your-api .ramlapilinks{
+
+.page-content.design-your-api .article-content, .page-content.build-your-api .article-content, .page-content.test-your-api .article-content, .page-content.build-your-api .article-content, .page-content.document-your-api .article-content, .page-content.support-your-api .article-content{
   @media(max-width: 767px){
-    float: left;
+    margin-top: 20px;
   }
 }
 
