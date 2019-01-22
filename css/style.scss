@@ -28,12 +28,17 @@
   font-family: 'RobotoMono-Regular';
   src:url('/fonts/RobotoMono-Regular.ttf');
 }
+@font-face{
+  font-family: 'Roboto-Medium';
+  src:url('/fonts/Roboto-Medium.ttf');
+}
 
 
 
 $font-face-regular:'Roboto-Regular';
 $font-face-bold:'Roboto-Bold';
 $font-face-light:'Roboto-Light';
+$font-face-Medium:'Roboto-Medium';
 
 $orange:#FFB647;
 $orangehover:#F09C1A;
@@ -81,6 +86,9 @@ pre {
     background-color: #f5f5f5;
     border: 1px solid #ccc;
     border-radius: 4px;
+}
+.caret{
+  border: solid$slate-gray;border-width: 0 2px 2px 0;display: inline-block;padding: 3px; transform: rotate(45deg); -webkit-transform: rotate(45deg);margin-left: 10px;margin-top: -4px;vertical-align: middle;
 }
 
 .pagination {
@@ -244,7 +252,7 @@ header{
           padding:0px 15px;
         }
         a.nav-link{
-          font-size: 14px;color: $slate-gray;line-height: 16px;padding: 15px;font-weight: 600;
+          font-size: 14px;color: $slate-gray;line-height: 16px;padding: 15px;font-weight: 600;font-family: $font-face-Medium;
           @media(max-width: 991px){
             padding: 12px;
           }
@@ -252,7 +260,6 @@ header{
               font-size: 18px;              
             }
           .caret{
-            border: solid$slate-gray;border-width: 0 2px 2px 0;display: inline-block;padding: 3px; transform: rotate(45deg); -webkit-transform: rotate(45deg);margin-left: 10px;margin-top: -4px;vertical-align: middle;
             @media(max-width: 767px){
               display: none;
             }
@@ -271,9 +278,6 @@ header{
       li.dropdown{
         .dropdown-toggle{
           padding-right: 0;
-        }
-        .dropdown-toggle::after {
-          display: none;
         }
         .dropdown-menu.sub-menu{
           left: 100%;
@@ -303,7 +307,7 @@ header{
               position:relative;display: block;background-color: #fff;box-shadow: none;border: none;color: #000;left: 0;padding-top: 0;top: 0;
             }
             a{
-              color:#fff;opacity: 1;padding: 6px 25px;font-size: 14px;line-height: 16px;display: block;font-weight: 600;
+              color:#fff;opacity: 1;padding: 6px 25px;font-size: 14px;line-height: 16px;display: block;font-weight: 600;font-family: $font-face-Medium;
                @media(max-width: 767px){
                 color:#000;        
                 font-weight: normal;
@@ -364,10 +368,7 @@ header{
     margin-right: auto;
     padding-left: 15px;
     padding-right:15px;
-    @media screen and (min-width: 576px){
-      max-width: 540px
-    }
-
+    
     @media screen and (min-width: 768px){
       max-width: 720px
     }
@@ -378,6 +379,15 @@ header{
 
     @media screen and (min-width: 1200px){
       max-width: 1140px
+    }
+
+    @media screen and (max-width: 767px){
+      padding-left:0px;
+      max-width:100%;
+
+      .navbar-brand{
+        padding-left: 15px;
+      }
     }
   }
 }
@@ -741,6 +751,9 @@ header{
   .navbar-brand{
     padding: 0;
     height: auto;
+    @media (max-width: 991px){
+      display: block;
+    }
   }
   .col-md-4.col-sm-12{
     @media(max-width: 991px){
@@ -840,10 +853,6 @@ header{
   h1{
     color: $slate-gray;
     margin-bottom: 0px;
-    @media(max-width: 767px){
-      font-size: 18px;
-      line-height: 25px;
-    }
   }
 
   .overflow-hide{
@@ -874,6 +883,19 @@ header{
   }
   h3{
     color: #fff;
+  }
+
+  @media(max-width: 575px){
+    img{
+      margin-bottom: 12px;
+    }
+
+    h3{
+      width: -webkit-fit-content;
+      width: -moz-fit-content;
+      width: fit-content;
+      margin:0 auto 30px auto;
+    }
   }
 }
 
@@ -1122,6 +1144,21 @@ header{
     a{
       color: $sky-blue;
     }
+    a.button{
+      padding: 5px 10px;
+      border: 1px solid #66c4e8;
+      margin-bottom: 20px;
+      text-decoration: none;
+      background: #66c4e8;
+      color: #fff;
+    }
+
+    a.button.info{
+      background: #fff;
+      color: #66c4e8;
+      margin-right: 10px;
+    }
+
     ul{
       list-style:initial;
       li{
@@ -1238,6 +1275,7 @@ header{
           margin-top: 10px;
           margin-bottom: 10px;
           display: table;
+          font-size: 11pt;
         }
       }
     }
@@ -1297,7 +1335,7 @@ header{
       right: 0;
       top: 48px;
       @media(max-width: 991px){
-        width:auto;
+        width:300px;
         position: relative;
         left: 0;
         top: 0;
@@ -1563,7 +1601,7 @@ header{
     a.twitter {
       background-image: url(/images/twitter.svg);
       background-size: 100%;
-      margin-left: 3px;
+      margin-left: 15px;
     }
     a.linkedin {
       background-image: url(/images/linkedin.svg);
@@ -1575,4 +1613,8 @@ header{
   @media(max-width: 767px){
     float: left;
   }
+}
+
+.dropdown-toggle:after {
+  display: none;
 }
