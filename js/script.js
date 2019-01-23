@@ -57,9 +57,10 @@
       $('.homepage_icons a').removeClass('gray');
     });
 
-    setTimeout(function(){ 
+    var t=setInterval(function(){ 
       if($(".raml-editor .editor-block #container").find(".monaco-editor").length) {
         $(".sk-fading-circle").hide();
+        clearInterval(t);
       }
     }, 1000);
   });
