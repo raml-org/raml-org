@@ -56,6 +56,12 @@
     $('.homepage_icons').on('mouseout',function(){
       $('.homepage_icons a').removeClass('gray');
     });
+
+    setTimeout(function(){ 
+      if($(".raml-editor .editor-block #container").find(".monaco-editor").length) {
+        $(".sk-fading-circle").hide();
+      }
+    }, 1000);
   });
 
 })(jQuery);
