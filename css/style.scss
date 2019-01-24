@@ -63,7 +63,12 @@ a:hover{
   text-decoration: none!important;
   color: $sky-blue;
 }
-
+.btn.btn-primary:hover{
+  background-color: $sky-blue-hover;
+}
+.btn.btn-secondary:hover{
+  background-color: $orangehover;
+}
 a{
   color: $sky-blue;
 }
@@ -192,15 +197,13 @@ p{
 
 .padd_00{padding: 0;}
 a.specif_btn{
-  border: 0px solid;border-radius: 4px; background-color: #000;color: #fff;padding: 15px 25px;font-size: 12pt;letter-spacing: 0.5px;line-height: 19px; text-decoration: none;font-weight: 600;
+  border: 0px solid;border-radius: 4px; background-color:$sky-blue;display: table;color: #fff;padding: 15px 25px;font-size: 12pt;letter-spacing: 0.5px;line-height: 19px; text-decoration: none;font-weight: 600;
   @media screen and (max-width: 767px){
     font-size: 16px;
     padding:15px 25px;
   }
 }
-a.specif_btn{background-color:$sky-blue !important;display: table;color: #fff !important;}
-a.btn_black{border: 0px;border-radius: 2px;background: $sky-blue;color: #fff;padding: 20px 30px;width: 232px;display: block;text-align: center;font-weight: 600;}
-a.btn_black:hover{background-color: $sky-blue-hover;}
+a.specif_btn:hover{background-color: $sky-blue-hover;}
 
 .overlay {
     position: absolute;
@@ -302,7 +305,7 @@ header{
           left: 0px;
           margin: 0;
           border: 0px;
-          border-radius: 0px;
+          border-radius: 4px;
             @media(max-width: 767px){
               position:relative;display: block;background-color: #fff;box-shadow: none;border: none;color: #000;left: 0;padding-top: 0;top: 0;
             }
@@ -452,11 +455,7 @@ header{
       width: -webkit-fit-content;
       width: -moz-fit-content;
       width: fit-content;
-            
-      .specif_btn{
-        background-color: $orange!important;
-      }
-
+    
       a{
         border: 0px solid;border-radius: 2px; background-color:$sky-blue;color: #fff;padding: 20px 25px;font-size: 16px;letter-spacing: 0.5px;line-height: 19px; text-decoration: none;margin-left: 25px;width: 190px;display: block;float: left;font-weight: 600;
         @media(max-width: 767px){
@@ -468,6 +467,12 @@ header{
       }
       a:hover{
         background-color: $sky-blue-hover;
+      }
+      a.learn-btn{
+        background-color: $orange;
+      }
+      a.learn-btn:hover{
+        background-color: $orangehover;
       }
       .try_btn{
         @media(max-width: 575px){
@@ -784,7 +789,7 @@ header{
     li{
       display: inline-block;
       a{
-        font-size: 14px;line-height: 16px;padding: 10px;font-weight: 500;color: $slate-gray;font-family: $font-face-medium;
+        font-size: 14px;line-height: 16px;padding: 10px 9px;font-weight: 500;color: $slate-gray;font-family: $font-face-medium;
         @media(max-width: 767px){
           display: block;
         }
@@ -1191,7 +1196,8 @@ header{
       }
       .side_bar{
         @media screen and (max-width: 767px){
-          float:left;          
+          float:left;
+          width: 75%;          
         }
 
         @media screen and (max-width: 575px){
@@ -1207,7 +1213,7 @@ header{
         padding: 0 15px;
       }
     }
-      .region-sidebar{
+    .region-sidebar{
       border:0px;border-radius: 2px;background-color: $flash-white;padding: 30px 35px;
       @media(max-width: 1199px){
         padding: 15px;
@@ -1230,8 +1236,9 @@ header{
             display:block;
           }
           a{
-            font-size: 14px; line-height:26px;color: #8F9299;
+            font-size: 14px; line-height:26px;color: #8F9299;font-family: $font-face-medium;
           }
+          a.active{color: $slate-gray;}
         }
       }
       .ramlapilinks{
@@ -1244,6 +1251,9 @@ header{
           margin-bottom: 10px;
           display:block;
           float:none;
+        }
+        a.specif_btn{
+          color: #fff;
         }
       }
       .lastsidemenu{
@@ -1412,7 +1422,10 @@ header{
       }
       .projlink{
         display: flex;
-
+        @media(max-width: 1199px){
+          display: block;
+          text-align: center;
+        }
         .view-project{
           margin-right: 25px;
 
@@ -1424,17 +1437,25 @@ header{
         a{
           background-color: $sky-blue;
           color: #fff;
-          padding: 20px;
+          margin-top: 20px;
+          border-color: $sky-blue;
+           margin-right: 10px;
+          /*padding: 20px;
           font-size: 14px;
           font-weight: 600;
-          line-height: 16px;
-          margin-top: 20px;
           display: table;
-          border-radius: 2px;
+          line-height: 16px;
+          border-radius: 2px;*/
         }
-
-        a.live-example{
-          background-color: $slate-gray;
+        a:hover{
+          background-color: $sky-blue-hover;
+        }
+        a.btn.btn-secondary{
+          background-color: $orange;
+          border-color: $orange;         
+        }
+        a.btn.btn-secondary:hover{
+          background-color: $orangehover;
         }
       }
     } 
@@ -1532,6 +1553,7 @@ header{
     padding: 78px 0 55px;
     color: #ffffff;
     font-size: 16px;
+    margin-bottom: 10px;
     h2{
       color: #fff;
     }

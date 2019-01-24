@@ -1,0 +1,38 @@
+<div class="side_bar">
+    <h2>For Developers</h2>
+    <ul class="">
+    	<li>
+            {% if page.title == 'Design your API' or page.title == 'Build Your API' or page.title == 'Test Your API' or page.title == 'Document Your API' or page.title == 'Share & Support Your API' %}
+        	   <a href="/developer" class="active">Why Raml</a>
+            {% else %}
+                <a href="/developer">Why Raml</a>
+            {% endif %}
+    	</li>
+        <li>        
+        	<a href="/developers/raml-100-tutorial">Tutorials</a>
+    	</li>
+        </li>
+        <li>        
+            <a href="https://github.com/raml-org/raml-spec/blob/master/versions/raml-10/raml-10.md/">Specification</a>
+        </li>
+        <li>        
+            <a href="/projects">Project Library</a>
+        </li>
+        <li>
+            {% if page.title == 'Books and Resources' %}
+               <a href="/developers/books-and-resources" class="active">Book and Resources</a>
+            {% else %}
+                <a href="/developers/books-and-resources">Book and Resources</a>
+            {% endif %}    
+            
+        </li>
+        <li>
+            {% if page.title == 'Contributing' %}
+               <a href="/developers/contributing" class="active">Contributing</a>
+            {% else %}
+                <a href="/developers/contributing">Contributing</a>
+            {% endif %}      
+            
+        </li>
+    </ul>
+</div>

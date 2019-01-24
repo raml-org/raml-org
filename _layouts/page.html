@@ -14,7 +14,7 @@
                     {% include raml-100-sidebar.html %}
                     <section class="ramlapilinks">
                         <div class="raml-links-wrapper">
-                            <a href ="https://github.com/raml-org/raml-spec/blob/master/versions/raml-10/raml-10.md/" target="_blank" class="raml-links specif_btn" onclick="ga('send', 'event', 'CTA', 'Click', '1.0-spec');">1.0 Specification</a>
+                            <a href ="https://github.com/raml-org/raml-spec/blob/master/versions/raml-10/raml-10.md/" target="_blank" class="raml-links specif_btn" onclick="ga('send', 'event', 'CTA', 'Click', '1.0-spec');">1.0 Spec</a>
                         </div>
                     </section>
                 </section>
@@ -26,7 +26,7 @@
                     {% include raml-200-sidebar.html %}
                     <section class="ramlapilinks">
                         <div class="raml-links-wrapper">
-                            <a href ="https://github.com/raml-org/raml-spec/blob/master/versions/raml-10/raml-10.md/" target="_blank" class="raml-links specif_btn" onclick="ga('send', 'event', 'CTA', 'Click', '1.0-spec');">1.0 Specification</a>
+                            <a href ="https://github.com/raml-org/raml-spec/blob/master/versions/raml-10/raml-10.md/" target="_blank" class="raml-links specif_btn" onclick="ga('send', 'event', 'CTA', 'Click', '1.0-spec');">1.0 Spec</a>
                         </div>
                     </section>
                 </section>
@@ -37,7 +37,7 @@
                     {% include vendor-support-sidebar.html %}
                     <section class="ramlapilinks">
                         <div class="raml-links-wrapper">
-                            <a href ="https://github.com/raml-org/raml-spec/blob/master/versions/raml-10/raml-10.md/" target="_blank" class="raml-links specif_btn" onclick="ga('send', 'event', 'CTA', 'Click', '1.0-spec');">1.0 Specification</a>
+                            <a href ="https://github.com/raml-org/raml-spec/blob/master/versions/raml-10/raml-10.md/" target="_blank" class="raml-links specif_btn" onclick="ga('send', 'event', 'CTA', 'Click', '1.0-spec');">1.0 Spec</a>
                         </div>
                     </section>
                 </section>
@@ -52,7 +52,7 @@
                         {% include about-raml-sidebar.html %}
                         <section class="ramlapilinks">
                             <div class="raml-links-wrapper">
-                                <a href ="https://github.com/raml-org/raml-spec/blob/master/versions/raml-10/raml-10.md/" target="_blank" class="raml-links specif_btn" onclick="ga('send', 'event', 'CTA', 'Click', '1.0-spec');">1.0 Specification</a>
+                                <a href ="https://github.com/raml-org/raml-spec/blob/master/versions/raml-10/raml-10.md/" target="_blank" class="raml-links specif_btn" onclick="ga('send', 'event', 'CTA', 'Click', '1.0-spec');">1.0 Spec</a>
                             </div>
                         </section>
                     </section>   
@@ -67,10 +67,11 @@
 
                 {% if page.title == 'Design your API' or page.title == 'Build Your API' or page.title == 'Test Your API' or page.title == 'Document Your API' or page.title == 'Share & Support Your API' or page.title == 'Books and Resources' or page.title == 'Contributing' %}                    
                     <section class="sidebar-menu box-color">
-                        <h2 class="d-inline-block d-md-none mt-3">{{page.title}}</h2>
+                        <!-- <h2 class="d-inline-block d-md-none mt-3">{{page.title}}</h2> -->
+                        {% include developer-raml-sidebar.html %}
                         <section class="ramlapilinks">
                             <div class="raml-links-wrapper">
-                                <a href ="https://github.com/raml-org/raml-spec/blob/master/versions/raml-10/raml-10.md/" target="_blank" class="raml-links specif_btn" onclick="ga('send', 'event', 'CTA', 'Click', '1.0-spec');">1.0 Specification</a>
+                                <a href ="https://github.com/raml-org/raml-spec/blob/master/versions/raml-10/raml-10.md/" target="_blank" class="raml-links specif_btn" onclick="ga('send', 'event', 'CTA', 'Click', '1.0-spec');">1.0 Spec</a>
                             </div>
                         </section>
                     </section>
@@ -81,12 +82,7 @@
         </aside>
         <hr style="border-color: #EDF0F4;margin: 0 55px;width: 100%;" class="d-sm-block d-md-none">
         <div class="col-lg-7 col-md-8 col-sm-12 offset-lg-1 article-content">
-            {% if page.title == 'Design your API' or page.title == 'Build Your API' or page.title == 'Test Your API' or page.title == 'Document Your API' or page.title == 'Share & Support Your API' or page.title == 'Books and Resources' or page.title == 'Contributing' %}
-                <h1 class="page-header d-none d-md-block">{{ page.title }}</h1>
-            {% else %}
-                <h1 class="page-header">{{ page.title }}</h1>
-            {% endif %}
-
+            <h1 class="page-header">{{ page.title }}</h1>
             {% if page.is_post  and page.title != 'Blogs' and page.title != 'Blogs Archive' %}
             <div class="sharethis-inline-share-buttons"></div>
             <div class="page-meta">
