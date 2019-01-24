@@ -317,6 +317,9 @@ header{
                 padding: 10px 25px;               
                } 
             }
+            a:active{
+              background-color: transparent;
+            }
             @media(min-width: 768px){
               a:hover{color:#fff;background-color: transparent;}
             } 
@@ -1493,13 +1496,16 @@ header{
 }
 
 .ramlenter {
-    background: #f6f6f6;
+    background: $slate-gray;
     padding: 29px 0 60px;
     font-size: 16px;
     .thumbnail{
       img{
         margin: 0 auto;
         display: block;
+      }
+      p{
+        color: #fff;
       }
     }
 }
@@ -1515,38 +1521,25 @@ header{
 
 .enterprise-faster {
     padding: 78px 0 81px;
-    background: #2b2b2b;
+    background: $lighter-gray;
     color: #8a8a8a;
     font-size: 16px;
     @media(max-width: 767px){
       padding: 50px 0;
     }
-    h2{
-      color: #fff;
-    }
-    p{
-      color: #fff;
-    }
 }
 
 .open-source-com {
-    background: #66c4e8;
+    background: #fff;
     padding: 62px 0 80px;
-    color: #ffffff;
     font-size: 16px;
     @media(max-width: 767px){
       padding: 50px 0;
     }
-    h2{
-      color: #fff;
-    }
-    p{
-      color: #fff;
-    }
 }
 
 .eliminate-support {
-    background: #f6f6f6;
+    background: $lighter-gray;
     color: #8a8a8a;
     padding: 61px 0 82px;
     font-size: 16px;
@@ -1556,25 +1549,23 @@ header{
 }
 
 .do-more-with-less {
-    background: #66c4e8;
+    background: #fff;
     padding: 78px 0 55px;
-    color: #ffffff;
     font-size: 16px;
     margin-bottom: 10px;
-    h2{
-      color: #fff;
-    }
-    p{
-      color: #fff;
-    }
     .do-more-content {
       margin: 0 auto;
-      .raml-links{
-        background: #fff;
-        padding: 15px;
-        border-radius: 2px;
-        font-weight: 600;
-      }
+    .raml-links{
+      background: #fff;
+      padding: 15px;
+      border-radius: 2px;
+      font-weight: 600;
+    }
+  }
+  .ramllink-wrapper{
+    a{
+      margin: 0 auto;
+    }
   }
 }
 
