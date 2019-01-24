@@ -452,9 +452,7 @@ header{
     .buttons{
       margin: 35px auto 30px;
       text-align: center;
-      width: -webkit-fit-content;
-      width: -moz-fit-content;
-      width: fit-content;
+      display: inline-block;
     
       a{
         border: 0px solid;border-radius: 2px; background-color:$sky-blue;color: #fff;padding: 20px 25px;font-size: 16px;letter-spacing: 0.5px;line-height: 19px; text-decoration: none;margin-left: 25px;width: 190px;display: block;float: left;font-weight: 600;
@@ -1316,6 +1314,11 @@ header{
       h3{
         margin-top: 20px;
       }
+      h2{
+        a{
+          color: $slate-gray;
+        }
+      }
       sdivong{
         color: $slate-gray;
         font-family: 'Roboto-Bold';
@@ -1328,6 +1331,10 @@ header{
       .book_pic {
         img{
           margin-top: 10px;
+          width: 180px;
+          @media(max-width: 575px){
+            width: auto;
+          }
          } 
       }
     }
