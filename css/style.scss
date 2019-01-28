@@ -55,6 +55,8 @@ $lighter-gray:#F7FAFF;
 $primary: $sky-blue !default;
 $secondary: $orange !default;
 
+/*fonts*/
+
 html,body{
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;
@@ -71,6 +73,8 @@ a:hover{
   background-color: $sky-blue;
   border-color: $sky-blue;
   color: #fff;
+  font-family: $font-face-medium;
+  margin-right: 10px;
 }
 .btn.btn-primary:hover{
   background-color: $sky-blue-hover;
@@ -79,6 +83,7 @@ a:hover{
   background-color: $orange;
   border-color: $orange;
   color: #fff;
+  font-family: $font-face-medium;
 }
 .btn.btn-secondary:hover{
   background-color: $orangehover;
@@ -104,7 +109,7 @@ pre {
     color: #333333;
     background-color: #f5f5f5;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 2px;
 }
 .caret{
   border: solid$slate-gray;border-width: 0 2px 2px 0;display: inline-block;padding: 3px; transform: rotate(45deg); -webkit-transform: rotate(45deg);margin-left: 10px;margin-top: -4px;vertical-align: middle;
@@ -114,7 +119,7 @@ pre {
     display: inline-block;
     padding-left: 0;
     margin: 20px 0;
-    border-radius: 4px;
+    border-radius: 2px;
     clear: both;
     li{
       display: inline;
@@ -211,7 +216,7 @@ p{
 
 .padd_00{padding: 0;}
 a.specif_btn{
-  border: 0px solid;border-radius: 4px; background-color:$sky-blue;display: table;color: #fff;padding: 15px 25px;font-size: 12pt;letter-spacing: 0.5px;line-height: 19px; text-decoration: none;font-weight: 600;
+  border: 0px solid;border-radius: 2px;font-family: $font-face-medium; background-color:$sky-blue;display: table;color: #fff;padding: 15px 25px;font-size: 12pt;letter-spacing: 0.5px;line-height: 19px; text-decoration: none;
   @media screen and (max-width: 767px){
     font-size: 16px;
     padding:15px 25px;
@@ -319,7 +324,7 @@ header{
           left: 0px;
           margin: 0;
           border: 0px;
-          border-radius: 4px;
+          border-radius:2px;
             @media(max-width: 767px){
               position:relative;display: block;background-color: #fff;box-shadow: none;border: none;color: #000;left: 0;padding-top: 0;top: 0;
             }
@@ -472,7 +477,7 @@ header{
       display: inline-block;
     
       a{
-        border: 0px solid;border-radius: 2px; background-color:$sky-blue;color: #fff;padding: 20px 25px;font-size: 16px;letter-spacing: 0.5px;line-height: 19px; text-decoration: none;margin-left: 25px;width: 190px;display: block;float: left;font-weight: 600;
+        border: 0px solid;border-radius: 2px; background-color:$sky-blue;color: #fff;padding: 20px 25px;font-size: 16px;letter-spacing: 0.5px;line-height: 19px; text-decoration: none;margin-left: 25px;width: 190px;display: block;float: left;font-family: $font-face-medium;
         @media(max-width: 767px){
           width: 190px;display: block;margin:0 auto;margin-bottom: 15px;float: none;display: inline-block;margin-left: 30px;
         }
@@ -677,7 +682,7 @@ header{
     display: block;
     width: 155px;
     text-align: center;
-    font-weight: 600;
+    font-family: $font-face-medium;
     border-radius: 2px;
     color: $slate-gray;
     @media(max-width: 575px){
@@ -710,7 +715,7 @@ header{
       width: 100%;margin-bottom: 20px;font-family: $font-face-light;
     }
     a{
-      font-size: 16px;line-height: 19px;letter-spacing: 0.5px;border:0px solid;border-radius: 2px;background-color: $slate-gray;color: #fff;display: block;padding: 20px;text-align: center;font-weight: 600;
+      font-size: 16px;line-height: 19px;letter-spacing: 0.5px;border:0px solid;border-radius: 2px;background-color: $slate-gray;color: #fff;display: block;padding: 20px;text-align: center;font-family: $font-face-medium;
       
     }
   }
@@ -872,29 +877,30 @@ header{
 
 
 /*developers-sec*/
+#developer_top{
+    overflow: hidden;
+  .developers-sec{
+    @media(max-width: 767px){
+      margin-top: 0;
+    }
+    h1{
+      color: $slate-gray;
+      margin-bottom: 0px;
+    }
 
-.developers-sec{
-  overflow: hidden;
-  @media(max-width: 767px){
-    margin-top: 0;
-  }
-  h1{
-    color: $slate-gray;
-    margin-bottom: 0px;
-  }
-
-  img{
-    margin-top: 25px;
-    @media screen and (max-width: 991px) and (min-width: 576px) {
-      position: absolute;
-      bottom: 0;
-      transform: scale(1.25);
+    img{
+      margin-top: 25px;
+      @media screen and (max-width: 991px) and (min-width: 576px) {
+        position: absolute;
+        bottom: 0;
+        transform: scale(1.25);
+      }
+    }
+    p{
+      margin: 30px 0 30px;
     }
   }
-  p{
-    margin: 30px 0 30px;
-  }
-}
+}  
 
 #expl-bg-color{
   background-color: $slate-gray;color: #fff;padding: 73px 0 65px;
@@ -1046,31 +1052,34 @@ header{
   }
 }
 
-
-.container.enterprise{
-  @media(max-width: 767px){
-    padding-top: 30px;
-    padding-bottom: 30px;
-  }
-  @media (max-width: 575px){
-    padding-top:0px;
-  }
-  a.specif_btn{
-    @media(max-width: 575px){
-      margin-bottom: 20px;
+#enterprise_top{
+  .container.enterprise{
+    @media(max-width: 767px){
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+    @media (max-width: 575px){
+      padding-top:0px;
+    }
+    a.specif_btn{
+      @media(max-width: 575px){
+        margin-bottom: 20px;
+      }
+    }
+    h1{
+      color: $slate-gray;
+      margin-bottom: 0;
+    }
+    h3{
+      font-size: 14px;
+      line-height: 24px;
+      color: $slate-gray;
+      margin: 30px 0;
     }
   }
-  h1{
-    color: $slate-gray;
-    margin-bottom: 0;
-  }
-  h3{
-    font-size: 14px;
-    line-height: 24px;
-    color: $slate-gray;
-    margin: 30px 0;
-  }
 }
+
+
 
 .tutorial-page{
   .region-sidebar{
@@ -1178,10 +1187,14 @@ header{
         color: $slate-gray;
       }
     }
-    h2{
-      color: $slate-gray;
-    }
     .sidebar-menu{
+      h2{
+        margin-bottom: .8rem;
+        font-family: $font-face-medium;
+      }
+      ul{
+        margin-bottom: 1.5rem;
+      }
       h3{
         @media(max-width: 767px){
           display: inline-block;
@@ -1239,9 +1252,9 @@ header{
             display:block;
           }
           a{
-            font-size: 14px; line-height:26px;color: #8F9299;font-family: $font-face-medium;
+            font-size: 14px; line-height:26px;color: $slate-gray;font-family: $font-face-medium;opacity: 0.4;
           }
-          a.active{color: $slate-gray;}
+          a.active{color: $slate-gray;opacity: 1;}
         }
       }
       .ramlapilinks{
@@ -1288,7 +1301,7 @@ header{
         }
         .dropdown-toggle {
           border: 2px solid;
-          border-radius: 4px;
+          border-radius: 2px;
           padding: 5px 7px;
           margin-top: 10px;
           margin-bottom: 10px;
@@ -1448,13 +1461,6 @@ header{
 
         a{
           margin-top: 20px;
-          margin-right: 10px;
-          /*padding: 20px;
-          font-size: 14px;
-          font-weight: 600;
-          display: table;
-          line-height: 16px;
-          border-radius: 2px;*/
         }
       }
     } 
