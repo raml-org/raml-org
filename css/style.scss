@@ -50,6 +50,8 @@ $slate-gray:#526881;
 $light-gray:#748599;
 $flash-white:#EDF0F4;
 $lighter-gray:#F7FAFF;
+$black:#000;
+$white:#fff;
 
 /*overriding bootstrap variables */
 $primary: $sky-blue !default;
@@ -72,7 +74,7 @@ a:hover{
 .btn.btn-primary{
   background-color: $sky-blue;
   border-color: $sky-blue;
-  color: #fff;
+  color: $white;
   font-family: $font-face-medium;
   margin-right: 10px;
 }
@@ -82,7 +84,7 @@ a:hover{
 .btn.btn-secondary{
   background-color: $orange;
   border-color: $orange;
-  color: #fff;
+  color: $white;
   font-family: $font-face-medium;
 }
 .btn.btn-secondary:hover{
@@ -130,7 +132,7 @@ pre {
         line-height: 1.428571429;
         text-decoration: none;
         color: #337ab7;
-        background-color: #fff;
+        background-color: $white;
         border: 1px solid $light-gray;
         margin-left: -1px;
       }
@@ -141,7 +143,7 @@ pre {
         line-height: 1.428571429;
         text-decoration: none;
         color: #337ab7;
-        background-color: #fff;
+        background-color: $white;
         border: 1px solid #ddd;
         margin-left: -1px;
       }
@@ -216,7 +218,7 @@ p{
 
 .padd_00{padding: 0;}
 a.specif_btn{
-  border: 0px solid;border-radius: 2px;font-family: $font-face-medium; background-color:$sky-blue;display: table;color: #fff;padding: 15px 25px;font-size: 12pt;letter-spacing: 0.5px;line-height: 19px; text-decoration: none;
+  border: 0px solid;border-radius: 2px;font-family: $font-face-medium; background-color:$sky-blue;display: table;color: $white;padding: 15px 25px;font-size: 12pt;letter-spacing: 0.5px;line-height: 19px; text-decoration: none;
   @media screen and (max-width: 767px){
     font-size: 16px;
     padding:15px 25px;
@@ -244,7 +246,7 @@ header{
       padding-top: 20px;
       padding-bottom: 20px;
       .navbar-collapse{
-        position: absolute;top: 0;z-index:999;min-height:100vw;background:#fff;
+        position: absolute;top: 0;z-index:999;min-height:100vw;background:$white;
       }
       .nav-logo{
         padding-left: 15px; float:left;margin-top:10px;margin-right: 20px;
@@ -326,12 +328,12 @@ header{
           border: 0px;
           border-radius:2px;
             @media(max-width: 767px){
-              position:relative;display: block;background-color: #fff;box-shadow: none;border: none;color: #000;left: 0;padding-top: 0;top: 0;
+              position:relative;display: block;background-color: $white;box-shadow: none;border: none;color: $black;left: 0;padding-top: 0;top: 0;
             }
             a{
-              color:#fff;opacity: 1;padding: 6px 25px;font-size: 14px;line-height: 16px;display: block;font-family: $font-face-medium;
+              color:$white;opacity: 1;padding: 6px 25px;font-size: 14px;line-height: 16px;display: block;font-family: $font-face-medium;
                @media(max-width: 767px){
-                color:#000;        
+                color:$black;        
                 font-weight: normal;
                 padding: 10px 25px;               
                } 
@@ -340,7 +342,7 @@ header{
               background-color: transparent;
             }
             @media(min-width: 768px){
-              a:hover{color:#fff;background-color: transparent;}
+              a:hover{color:$white;background-color: transparent;}
             } 
             li:hover{
               background: $light-gray;
@@ -350,7 +352,7 @@ header{
             }
             li.dropdown{
               .caret{
-                border: solid #fff;
+                border: solid $white;
                 border-width: 0 2px 2px 0;
                 display: inline-block;
                 padding: 3px;
@@ -477,7 +479,7 @@ header{
       display: inline-block;
     
       a{
-        border: 0px solid;border-radius: 2px; background-color:$sky-blue;color: #fff;padding: 20px 25px;font-size: 16px;letter-spacing: 0.5px;line-height: 19px; text-decoration: none;margin-left: 25px;width: 190px;display: block;float: left;font-family: $font-face-medium;
+        border: 0px solid;border-radius: 2px; background-color:$sky-blue;color: $white;padding: 20px 25px;font-size: 16px;letter-spacing: 0.5px;line-height: 19px; text-decoration: none;margin-left: 25px;width: 190px;display: block;float: left;font-family: $font-face-medium;
         @media(max-width: 767px){
           width: 190px;display: block;margin:0 auto;margin-bottom: 15px;float: none;display: inline-block;margin-left: 30px;
         }
@@ -525,7 +527,7 @@ header{
 
 
 #content-bg-color{
-  background-color: $slate-gray;color:#fff;padding: 75px 0 100px;
+  background-color: $slate-gray;color:$white;padding: 75px 0 100px;
     @media(max-width: 575px){
       padding: 30px 0 50px;      
     }
@@ -552,13 +554,13 @@ header{
         }
       }
   h2{
-    margin-bottom: 30px;margin-top: 20px;color: #fff;
+    margin-bottom: 30px;margin-top: 20px;color: $white;
     @media(max-width: 575px){
       font-size: 18px;line-height: 25px;padding: 0 20px;
     }
   }
   p{
-    font-size: 14px;line-height: 24px; width: 445px;margin: 0 auto;margin-bottom: 42.58px;color: #fff;
+    font-size: 14px;line-height: 24px; width: 445px;margin: 0 auto;margin-bottom: 42.58px;color: $white;
     @media(max-width: 575px){
       width: 100%;
     }
@@ -572,7 +574,7 @@ header{
     color: $light-gray; font-family: 'Roboto-Regular';  font-size: 14px;  font-weight: 500; line-height: 16px;margin:0;background: $lighter-gray;padding: 20px;border-top: 1px solid $light-gray;width: 100%;}
   .output-block{
     h4{
-      background-color: $flash-white;color: #000;
+      background-color: $flash-white;color: $black;
     }
   }
   a.playground-btn{
@@ -583,7 +585,7 @@ header{
     border-radius: 2px;
     padding:10px 20px;
     background-color: $slate-gray;
-    color: #FFFFFF;
+    color: $white;
     font-family: 'Roboto-Regular';
     font-size: 14px; 
     font-weight: 600; 
@@ -594,7 +596,7 @@ header{
   }
   a.playground-btn.no-background{
     background:none;
-    color:#000;
+    color:$black;
     font-size:20px;
     top:4px;
   }
@@ -715,7 +717,7 @@ header{
       width: 100%;margin-bottom: 20px;font-family: $font-face-light;
     }
     a{
-      font-size: 16px;line-height: 19px;letter-spacing: 0.5px;border:0px solid;border-radius: 2px;background-color: $slate-gray;color: #fff;display: block;padding: 20px;text-align: center;font-family: $font-face-medium;
+      font-size: 16px;line-height: 19px;letter-spacing: 0.5px;border:0px solid;border-radius: 2px;background-color: $slate-gray;color: $white;display: block;padding: 20px;text-align: center;font-family: $font-face-medium;
       
     }
   }
@@ -903,7 +905,7 @@ header{
 }  
 
 #expl-bg-color{
-  background-color: $slate-gray;color: #fff;padding: 73px 0 65px;
+  background-color: $slate-gray;color: $white;padding: 73px 0 65px;
   @media(max-width: 767px){
     padding: 50px 0;
   }
@@ -911,7 +913,7 @@ header{
     width: 165px;margin: 0 auto;display: block; margin-bottom: 36px;
   }
   h3{
-    color: #fff;
+    color: $white;
   }
 
   @media(max-width: 575px){
@@ -1053,6 +1055,7 @@ header{
 }
 
 #enterprise_top{
+  overflow: hidden;
   .container.enterprise{
     @media(max-width: 767px){
       padding-top: 30px;
@@ -1252,7 +1255,7 @@ header{
             display:block;
           }
           a{
-            font-size: 14px; line-height:26px;color: $slate-gray;font-family: $font-face-medium;opacity: 0.4;
+            font-size: 14px; line-height:28px;color: $slate-gray;font-family: $font-face-medium;opacity: 0.4;
           }
           a.active{color: $slate-gray;opacity: 1;}
         }
@@ -1269,7 +1272,7 @@ header{
           float:none;
         }
         a.specif_btn{
-          color: #fff;
+          color: $white;
         }
       }
       .lastsidemenu{
@@ -1406,7 +1409,7 @@ header{
         text-decoration: none;
       }
       a.active {
-        color: #fff;
+        color: $white;
         background-color: $slate-gray;
         border-radius: 2px;
         text-decoration: none;
@@ -1500,7 +1503,7 @@ header{
         display: block;
       }
       p{
-        color: #fff;
+        color: $white;
       }
     }
 }
@@ -1525,7 +1528,7 @@ header{
 }
 
 .open-source-com {
-    background: #fff;
+    background: $white;
     padding: 62px 0 80px;
     font-size: 16px;
     @media(max-width: 767px){
@@ -1544,14 +1547,14 @@ header{
 }
 
 .do-more-with-less {
-    background: #fff;
+    background: $white;
     padding: 78px 0 55px;
     font-size: 16px;
     margin-bottom: 10px;
     .do-more-content {
       margin: 0 auto;
     .raml-links{
-      background: #fff;
+      background: $white;
       padding: 15px;
       border-radius: 2px;
       font-weight: 600;
