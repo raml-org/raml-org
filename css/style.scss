@@ -51,6 +51,10 @@ $light-gray:#748599;
 $flash-white:#EDF0F4;
 $lighter-gray:#F7FAFF;
 
+/*overriding bootstrap variables */
+$primary: $sky-blue !default;
+$secondary: $orange !default;
+
 html,body{
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;
@@ -63,8 +67,18 @@ a:hover{
   text-decoration: none!important;
   color: $sky-blue;
 }
+.btn.btn-primary{
+  background-color: $sky-blue;
+  border-color: $sky-blue;
+  color: #fff;
+}
 .btn.btn-primary:hover{
   background-color: $sky-blue-hover;
+}
+.btn.btn-secondary{
+  background-color: $orange;
+  border-color: $orange;
+  color: #fff;
 }
 .btn.btn-secondary:hover{
   background-color: $orangehover;
@@ -339,7 +353,7 @@ header{
                 -webkit-transform: rotate(-45deg);
                 position: absolute;
                 right: 20px;
-                top: 9px;
+                top: 14px;
               }
             }
           }
@@ -522,7 +536,7 @@ header{
         a.gray{
           .svg{
             path,polygon,rect{
-              fill:#EDF0F4;            
+              fill:$flash-white;            
             }            
           }
         }
@@ -789,10 +803,16 @@ header{
     }
     li{
       display: inline-block;
+      @media(max-width: 375px){
+        display: block;
+      }
       a{
         font-size: 14px;line-height: 16px;padding: 10px 9px;font-weight: 500;color: $slate-gray;font-family: $font-face-medium;
         @media(max-width: 767px){
           display: block;
+        }
+        @media(max-width: 375px){
+          padding:10px 0;
         }
       }      
     }
@@ -854,6 +874,7 @@ header{
 /*developers-sec*/
 
 .developers-sec{
+  overflow: hidden;
   @media(max-width: 767px){
     margin-top: 0;
   }
@@ -862,17 +883,12 @@ header{
     margin-bottom: 0px;
   }
 
-  .overflow-hide{
-    overflow: hidden;
-  }
-
   img{
     margin-top: 25px;
     @media screen and (max-width: 991px) and (min-width: 576px) {
       position: absolute;
       bottom: 0;
       transform: scale(1.25);
-      z-index: -9;
     }
   }
   p{
@@ -1154,20 +1170,6 @@ header{
     a{
       color: $sky-blue;
     }
-    a.button{
-      padding: 5px 10px;
-      border: 1px solid #66c4e8;
-      margin-bottom: 20px;
-      text-decoration: none;
-      background: #66c4e8;
-      color: #fff;
-    }
-
-    a.button.info{
-      background: #fff;
-      color: #66c4e8;
-      margin-right: 10px;
-    }
 
     ul{
       list-style:initial;
@@ -1286,6 +1288,7 @@ header{
         }
         .dropdown-toggle {
           border: 2px solid;
+          border-radius: 4px;
           padding: 5px 7px;
           margin-top: 10px;
           margin-bottom: 10px;
@@ -1427,14 +1430,13 @@ header{
         display: inline-block;
         margin-right: 15px;
         margin-bottom: 20px;
-        color: #526881;
+        color: $slate-gray;
         background-color: #DBE8FD;
       }
       .projlink{
         display: flex;
         @media(max-width: 1199px){
           display: block;
-          text-align: center;
         }
         .view-project{
           margin-right: 25px;
@@ -1445,27 +1447,14 @@ header{
         }
 
         a{
-          background-color: $sky-blue;
-          color: #fff;
           margin-top: 20px;
-          border-color: $sky-blue;
-           margin-right: 10px;
+          margin-right: 10px;
           /*padding: 20px;
           font-size: 14px;
           font-weight: 600;
           display: table;
           line-height: 16px;
           border-radius: 2px;*/
-        }
-        a:hover{
-          background-color: $sky-blue-hover;
-        }
-        a.btn.btn-secondary{
-          background-color: $orange;
-          border-color: $orange;         
-        }
-        a.btn.btn-secondary:hover{
-          background-color: $orangehover;
         }
       }
     } 
@@ -1637,6 +1626,11 @@ header{
     }
   }
 }
+.build-your-api{
+  .btn.btn-primary{
+    margin-right: 15px;
+  }
+}
 
 .page-content.design-your-api .article-content, .page-content.build-your-api .article-content, .page-content.test-your-api .article-content, .page-content.build-your-api .article-content, .page-content.document-your-api .article-content, .page-content.support-your-api .article-content{
   @media(max-width: 767px){
@@ -1670,7 +1664,7 @@ header{
   margin: 0 auto;
   width: 15%;
   height: 15%;
-  background-color: #526881;
+  background-color: $slate-gray;
   border-radius: 100%;
   -webkit-animation: sk-circleFadeDelay 1.2s infinite ease-in-out both;
           animation: sk-circleFadeDelay 1.2s infinite ease-in-out both;
