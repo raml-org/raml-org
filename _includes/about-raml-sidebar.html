@@ -1,19 +1,27 @@
-<h2>About</h2>
-
-<ul class="vendormenu">
-    <li>
-        {% if page.title == 'Workgroup' %}
-        <a href="/workgroup" class="active">Workgroup</a>
-        {% else %}
-        <a href="/workgroup">Workgroup</a>
-        {% endif %}
-
-    </li>
-    <li>
-        {% if page.title == 'Legal' %}
-        <a href="/legal" class="active">Legal</a>
-        {% else %}
-        <a href="/legal">Legal</a>
-        {% endif %}
-    </li>
-</ul>
+<div class="side_bar">
+    <h2>About</h2>
+    <ul class="">
+    	<li>
+    		{% if page.title == 'About RAML' %}
+               <a href="/about-raml" class="active">About Raml</a>
+            {% else %}
+                <a href="/about-raml">About Raml</a>
+            {% endif %}
+    	</li>
+        <li>
+        	{% if page.title == 'Workgroup' %}
+              <a href="/workgroup" class="active">Workgroup</a>
+            {% else %}
+               <a href="/workgroup">Workgroup</a>
+            {% endif %}      
+    	</li>
+        <li>
+        	{% if page.title == 'Legal' %}
+               <a href="/legal" class="active">Legal</a>
+            {% else %}
+                <a href="/legal">Legal</a>
+            {% endif %}        
+        	
+    	</li>
+    </ul>
+</div>
