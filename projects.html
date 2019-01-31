@@ -17,7 +17,7 @@ permalink: /projects
                 <div class="col-md-6">
                     <form id="submit_form" action="javascript:void(0);">
                         <div class="form-group">
-                            <input type="text" class="" id="search" placeholder="Search.."/><i
+                            <input type="text" class="" id="search" placeholder="Search projects"/><i
                                 class="glyphicon glyphicon-search"></i>
                             <input type="button" id="submit_search" style="display: none">
                         </div>
@@ -34,51 +34,33 @@ permalink: /projects
                     <li><a href="javascript:void(0);" id="document">Document</a> </li>
                     <li><a href="javascript:void(0);" id="parser">Parser</a> </li>
                     <li><a href="javascript:void(0);" id="utilities">Utilities</a> </li>
-                </ul>
-                <ul class="pagination">
-                    <li><a href="javascript:void(0);" id="pre">&#171; Prev</a></li>
-                    <li><a href="javascript:void(0);" id="list"></a></li>
-                    <li><a href="javascript:void(0);" id="next">next &#187;</a></li>
-                </ul>
-                   <div class="result"></div>
+                </ul>                
+                   <div class="result row"></div>
+                   <ul class="pagination">
+                        <li><a href="javascript:void(0);" id="pre">&#171; Prev</a></li>
+                        <li><a href="javascript:void(0);" id="list"></a></li>
+                        <li><a href="javascript:void(0);" id="next">next &#187;</a></li>
+                    </ul>
                    <div class="no_result"></div>
-
-
-
-</div>
+            </div>
 </section>
-        <section class="col-md-12 projectlinks">
-            <div class="row">
-                <div class="col-md-12" style="width: 65%;">
+        <section class="projectlinks">
+            <div class="row text">
+                <div class="col-lg-6 col-md-8 col-sm-10 projectlinks-bg-color text-center">
                     <p><img src="images/githubicon_01.png" /> &nbsp;<strong>Github</strong></p>
-                    <p>Can’t find the RAML project you are searching for on this page? Try looking for it in Github! We created some useful categories to help filter your search. Simply click on one of the links on the bottom and see all the Github projects related to that category. More information can be found <a href="{{ site. projectsgithuburl }}#how-to-add-projects-to-the-projects-page" target="_blank">here</a>.</p>
-                </div>
+                    <p>Can’t find the RAML project you are searching for on this page? Try looking for it in Github! We created some useful categories to help filter your search. Simply click on one of the links on the bottom and see all the Github projects related to that category. More information can be found <a href="{{ site. projectsgithuburl }}#how-to-add-projects-to-the-projects-page" target="_blank">here</a>.</p>                
+                    <div class="links">
+                        <a href="https://github.com/search?utf8=✓&q=topic%3Araml-design" target="_blank" rel="nofollow">Design</a>
+                        <a href="https://github.com/search?utf8=✓&q=topic%3Araml-document" target="_blank" rel="nofollow">Document</a>
+                        <a href="https://github.com/search?utf8=✓&q=topic%3Araml-build" target="_blank" rel="nofollow">Build</a>
+                        <a href = "https://github.com/search?utf8=✓&q=topic%3Araml-parser" target="_blank" rel="nofollow">Parser</a>
+                        <a href="https://github.com/search?utf8=✓&q=topic%3Araml-test" target="_blank" rel="nofollow">Test</a>
+                        <a href="https://github.com/search?utf8=✓&q=topic%3Araml-utilities" target="_blank" rel="nofollow">Utilities</a>
+                    </div>
+                </div>    
             </div>
 
-            <div class="row" style="margin-bottom: 5px;">
-                <div class="col-md-1">
-                    <a href="https://github.com/search?utf8=✓&q=topic%3Araml-design" target="_blank" rel="nofollow">Design</a>
-                </div>
-                <div class="col-md-1">
-                    <a href="https://github.com/search?utf8=✓&q=topic%3Araml-document" target="_blank" rel="nofollow">Document</a>
-                </div>
-            </div>
-            <div class="row" style="margin-bottom: 5px;">
-                <div class="col-md-1">
-                    <a href="https://github.com/search?utf8=✓&q=topic%3Araml-build" target="_blank" rel="nofollow">Build</a>
-                </div>
-                <div class="col-md-1">
-                    <a href = "https://github.com/search?utf8=✓&q=topic%3Araml-parser" target="_blank" rel="nofollow">Parser</a>
-                </div>
-            </div>
-            <div class="row" style="margin-bottom: 5px;">
-                <div class="col-md-1">
-                    <a href="https://github.com/search?utf8=✓&q=topic%3Araml-test" target="_blank" rel="nofollow">Test</a>
-                </div>
-                <div class="col-md-1">
-                    <a href="https://github.com/search?utf8=✓&q=topic%3Araml-utilities" target="_blank" rel="nofollow">Utilities</a>
-                </div>
-            </div>
+            
     </section>
 
 </div>
@@ -192,6 +174,7 @@ permalink: /projects
                 var project_name = datas[i].name;
                 var project_desc = datas[i].description;
                 var project_url = datas[i].url;
+                var live_example = datas[i].live_example;
                 var join_topic;
                 var topic = "";
                 var project_div;
@@ -204,8 +187,12 @@ permalink: /projects
                 } else {
                     join_topic = '<span class="projtag">' + datas[i].topics + '</span>';
                 }
-                project_div = '<div class="projectblock"><div class="row"><div class="projname col-md-2"><h3>' + project_name + '</h3></div><div class="projdesc col-md-8"><p>' + project_desc + '</p></div>' +
-                            '<div class="projlink col-md-2"><a href ="' + project_url + '" rel="nofollow">View Project Page</a></div></div><div class="proj_topics">'+ join_topic +'</div> ';
+                project_div = '<div class="col-lg-4 col-md-6 col-sm-6 d-flex"><div class="projectblock "><div class="projname"><h3>' + project_name + '</h3></div><div class="proj_topics">'+ join_topic +'</div><div class="projdesc"><p>' + project_desc + '</p></div>' +
+                            '<div class="projlink"><a href ="' + project_url + '" rel="nofollow" class="btn btn-primary">View Project</a>';
+                if(live_example != ''){
+                    project_div += '<a href ="' + live_example + '" rel="nofollow" class="btn btn-secondary">Live Example</a>';
+                }
+                project_div += '</div></div></div> ';
                  if(datas.length <= per_page) {
                      $('div.result').html(project_div);
                  } else {

@@ -1,91 +1,78 @@
-<div class="top_wrapper">
-<header role = "banner" id = "header_nav">
-    <div class="container">
-        <div class="navbarright">
-            <ul class="top_menu">
-                <li><a href="https://github.com/search?utf8=%E2%9C%93&q=RAML" target="_blank">GitHub</a></li>
-                <li><a href="https://forum.raml.org" target="_blank">Forum</a></li>
-                <li><a href="/slack">Slack</a></li>
-                <li><a href="https://twitter.com/ramlapi" target="_blank">Twitter</a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="container">
-        <nav class="navbar navbar-inverse">
-            <div>
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="/"><img src = "{{ site.baseurl }}/images/ramllogo.png" /></a>
-                </div>
-                <div id="navbar" class="">
-                    <ul class="nav navbar-nav navbarright">
-                        <li class="parent_dropdown"><a class="dropdown-link parentlink" href="/developer">For Developers <span class="caret"></span></a>
-                            <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
-                                <li class="dropdown-submenu"><a href="/developer" class="dropdown-link">Why Raml <span class="dropdown-caret"></span></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="/developers/design-your-api">Design</a></li>
-                                        <li><a href="/developers/build-your-api">Build</a></li>
-                                        <li><a href="/developers/test-your-api">Test</a></li>
-                                        <li><a href="/developers/document-your-api">Document</a></li>
-                                        <li><a href="/developers/share-support-your-api">Share</a></li>
-                                    </ul>
-                                </li>
+<header>
+     <nav class="nav-container navbar navbar-expand-md navbar-dark">      
+          <a class="navbar-brand" href="/"><img src="/images/logo__raml.svg"></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav justify-content-end">
+              <li> <a href="/" ><img class="d-sm-block d-lg-none d-md-none nav-logo" src="/images/logo__raml.svg"></a><a href="https://github.com/search?utf8=%E2%9C%93&q=RAML"> <i class="fab fa-github"></i></a></li>
 
-                                <li class="dropdown-submenu"><a href="/developers/raml-100-tutorial" class="dropdown-link">Tutorials<span class="dropdown-caret"></span></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="/developers/raml-100-tutorial">RAML 100 Tutorial</a></li>
-                                        <li><a href="/developers/raml-200-tutorial">RAML 200 Tutorial</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="https://github.com/raml-org/raml-spec/blob/master/versions/raml-10/raml-10.md/" target="_blank" onclick="ga('send', 'event', 'CTA', 'Click', '1.0-spec');">Specification</a></li>
-                                <li><a href="/projects">Project Library</a></li>
-                                <li><a href="/developers/books-and-resources">Book and Resources</a></li>
-                                <li><a href="/developers/contributing">Contributing</a></li>
-                            </ul>
-                        </li>
-                        <li class="parent_dropdown"><a class="dropdown-link parentlink" href="/enterprises">For Enterprises <span class="caret"></span></a>
-                            <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
-                                <li><a href="/enterprises">Why RAML</a></li>
-                                <!--<li><a href="/enterprise/raml-news">RAML in the News</a></li>-->
-                                <li><a href="/enterprise/vendor-support">Vendor Support</a></li>
-                            </ul>
-                        </li>
-                        <li class="parent_dropdown"><a class="parentlink" href="/projects">Projects</a></li>
-                        <li class="parent_dropdown"><a class="parentlink" href="https://medium.com/raml-api">Blog</a></li>
-                        <li class="parent_dropdown"><a class="dropdown-link parentlink" href="/about-raml">About <span class="caret"></span></a>
-                            <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
-                                <li><a href="/workgroup">Workgroup</a></li>
-                                <li><a href="/legal">Legal</a></li>
-                            </ul>
-                        </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link" href="/developer">
+                  For Developers <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li class="dropdown"><a href="/developer">Why Raml <span class="caret"></a>
+                    <ul class="dropdown-menu sub-menu">
+                      <li><a href="/developers/design-your-api">Design</a></li>
+                      <li><a href="/developers/build-your-api">Build</a></li>
+                      <li><a href="/developers/test-your-api">Test</a></li>
+                      <li><a href="/developers/document-your-api">Document</a></li>
+                      <li><a href="/developers/share-support-your-api">Share</a></li>
                     </ul>
-                </div>
-            </div>
-        </nav>
-    </div>
+                  </li>
+                  <li class="dropdown"><a href="/developers/raml-100-tutorial">Tutorials <span class="caret"></a>
+                    <ul class="dropdown-menu sub-menu">
+                      <li><a href="/developers/raml-100-tutorial">RAML 100 Tutorial</a></li>
+                      <li><a href="/developers/raml-200-tutorial">RAML 200 Tutorial</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="https://github.com/raml-org/raml-spec/blob/master/versions/raml-10/raml-10.md/" target="_blank" onclick="ga('send', 'event', 'CTA', 'Click', '1.0-spec');">Specification</a></li>
+                  <li><a href="/projects">Project Library</a></li>
+                  <li><a href="/developers/books-and-resources">Book and Resources</a></li>
+                  <li><a href="/developers/contributing">Contributing</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link" href="/enterprises">
+                  For Enterprises <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a href="/enterprises">Why RAML</a></li>
+                  <li><a href="/enterprise/vendor-support">Vendor Support</a></li>                 
+                </ul>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="/projects">Projects</a></li>
+              <li class="nav-item"><a class="nav-link" href="https://medium.com/raml-api">Blog</a></li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="/about-raml">
+                  About <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="/about-raml">About RAML</a></li>
+                  <li><a class="dropdown-item" href="/workgroup">Workgroup</a></li>
+                  <li><a class="dropdown-item" href="/legal">Legal</a></li>
+                </ul>
+              </li>
+          </ul>
+        </div>
+    </nav> 
 </header>
 
-    {% if page.title == 'Welcome' %}
-    <div class="container">
+
+{% if page.title == 'Welcome' %}
         {% include homepage_top.html %}
-    </div>
-    {% endif %}
+{% endif %}
 
-    {% if page.title == 'Developer' %}
-    <div class="container">
-        {% include developer_top.html %}
-    </div>
-    {% endif %}
+{% if page.title == 'Developer' %}
+    {% include developer_top.html %}
+{% endif %}
 
-    {% if page.title == 'Enterprises' %}
-    <div class="container">
-        {% include enterprise_top.html %}
-    </div>
-    {% endif %}
+{% if page.title == 'Enterprises' %}
+    {% include enterprise_top.html %}
+{% endif %}
 
-    {% if page.title == 'Projects' %}
-    <div class="container">
-        {% include project_top.html %}
-    </div>
-    {% endif %}
-
-    </div>
+{% if page.title == 'Projects' %}
+    {% include project_top.html %}
+{% endif %}
