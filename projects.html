@@ -129,7 +129,7 @@ permalink: /projects
                     datas = getData;
                     $('div.result').html('');
                     $('div.no_result').html('');
-                }
+                }                
                 get_jsonData(start,limit,datas);
 
             });
@@ -174,7 +174,7 @@ permalink: /projects
                 var project_name = datas[i].name;
                 var project_desc = datas[i].description;
                 var project_url = datas[i].url;
-                var live_example = datas[i].live_example;
+                var project_secondary_link = datas[i].secondary_link;
                 var join_topic;
                 var topic = "";
                 var project_div;
@@ -189,8 +189,8 @@ permalink: /projects
                 }
                 project_div = '<div class="col-lg-4 col-md-6 col-sm-6 d-flex"><div class="projectblock "><div class="projname"><h3>' + project_name + '</h3></div><div class="proj_topics">'+ join_topic +'</div><div class="projdesc"><p>' + project_desc + '</p></div>' +
                             '<div class="projlink"><a href ="' + project_url + '" rel="nofollow" class="btn btn-primary">View Project</a>';
-                if(live_example != ''){
-                    project_div += '<a href ="' + live_example + '" rel="nofollow" class="btn btn-secondary">Live Example</a>';
+                if(project_secondary_link.url != ''){
+                    project_div += '<a href ="' + project_secondary_link.url + '" rel="nofollow" class="btn btn-secondary">'+project_secondary_link.title+'</a>';
                 }
                 project_div += '</div></div></div> ';
                  if(datas.length <= per_page) {

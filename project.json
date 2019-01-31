@@ -5,7 +5,7 @@
   {
     "name"    : "{{ projects.name }}",
     "url"     : "{{ projects.url }}",
-    "live_example" : "{{ projects.live_example }}",
+    "secondary_link" : { "url": "{{ projects.secondary_link.url }}","title": "{{ projects.secondary_link.title }}" },
     "author"     : "{{ projects.author }}",
     "description"     : "{{ projects.description | escape | strip | strip_newlines }}",
     "topics"     : "{{ projects.topics | join: ', ' }}"
