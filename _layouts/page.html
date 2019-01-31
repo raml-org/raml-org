@@ -2,47 +2,61 @@
 
 {% include nav.html %}
 
-<div class="container page-content">
+<div class="container page-content {{ page.style_class }}">
     <div class="row">
-        <aside class="col-md-3 col-xs-3 col-sm-3" role = "complementary">
-
-
+        <aside class="col-lg-4 col-md-4 col-sm-12" role = "complementary">
+            
             {% if page.title == 'RAML 100 Tutorial' or page.title == 'Vendor Support' or page.title == 'RAML 200 Tutorial' %}
-            <div class="region-sidebar well" data-spy="affix" data-offset-top="105">
-                <section class="ramlapilinks">
-                    <div class="raml-links-wrapper">
-                        <a href ="https://github.com/raml-org/raml-spec/blob/master/versions/raml-10/raml-10.md/" target="_blank" class="raml-links" onclick="ga('send', 'event', 'CTA', 'Click', '1.0-spec');">Read the Specification</a>
-                    </div>
-                </section>
-
+            <div class="region-sidebar well" data-spy="affix" data-offset-top="205">
                 {% if page.title == 'RAML 100 Tutorial' %}
-                <section class="sidebar-menu">
+                <section class="sidebar-menu box-color raml-hundred">
+                    <h2>RAML 100 Tutorial</h2>                    
                     {% include raml-100-sidebar.html %}
+                    <section class="ramlapilinks">
+                        <div class="raml-links-wrapper">
+                            <a href ="https://github.com/raml-org/raml-spec/blob/master/versions/raml-10/raml-10.md/" target="_blank" class="raml-links specif_btn" onclick="ga('send', 'event', 'CTA', 'Click', '1.0-spec');">1.0 Spec</a>
+                        </div>
+                    </section>
                 </section>
+                <div style="clear:both" ;=""></div>
                 {% endif %}
                 {% if page.title == 'RAML 200 Tutorial' %}
-                <section class="sidebar-menu">
+                <section class="sidebar-menu box-color">
+                    <h2>RAML 200 Tutorial</h2>                    
                     {% include raml-200-sidebar.html %}
+                    <section class="ramlapilinks">
+                        <div class="raml-links-wrapper">
+                            <a href ="https://github.com/raml-org/raml-spec/blob/master/versions/raml-10/raml-10.md/" target="_blank" class="raml-links specif_btn" onclick="ga('send', 'event', 'CTA', 'Click', '1.0-spec');">1.0 Spec</a>
+                        </div>
+                    </section>
                 </section>
+                <div style="clear:both";=""></div>
                 {% endif %}
                 {% if page.title == 'Vendor Support' %}
-                <section class="sidebar-menu">
+                <section class="sidebar-menu box-color">                    
                     {% include vendor-support-sidebar.html %}
+                    <section class="ramlapilinks">
+                        <div class="raml-links-wrapper">
+                            <a href ="https://github.com/raml-org/raml-spec/blob/master/versions/raml-10/raml-10.md/" target="_blank" class="raml-links specif_btn" onclick="ga('send', 'event', 'CTA', 'Click', '1.0-spec');">1.0 Spec</a>
+                        </div>
+                    </section>
                 </section>
+                <div style="clear:both" ;=""></div>
                 {% endif %}
             </div>
             {% else %}
             <div class="region-sidebar well" >
-                <section class="ramlapilinks">
-                    <div class="raml-links-wrapper">
-                        <a href ="https://github.com/raml-org/raml-spec/blob/master/versions/raml-10/raml-10.md/" target="_blank" class="raml-links" onclick="ga('send', 'event', 'CTA', 'Click', '1.0-spec');">Read the Specification</a>
-                    </div>
-                </section>
-
+                
                 {% if page.title == 'About RAML' or page.title == 'Workgroup' or page.title == 'Legal' %}
-                <section class="sidebar-menu">
-                    {% include about-raml-sidebar.html %}
-                </section>
+                    <section class="sidebar-menu box-color">
+                        {% include about-raml-sidebar.html %}
+                        <section class="ramlapilinks">
+                            <div class="raml-links-wrapper">
+                                <a href ="https://github.com/raml-org/raml-spec/blob/master/versions/raml-10/raml-10.md/" target="_blank" class="raml-links specif_btn" onclick="ga('send', 'event', 'CTA', 'Click', '1.0-spec');">1.0 Spec</a>
+                            </div>
+                        </section>
+                    </section>   
+                    <div style="clear:both" ;=""></div>                 
                 {% endif %}
 
                 {% if page.is_post  or page.title == 'Blogs' or page.title == 'Blog Archives' or page.title == 'Blogs Tag' or page.title == 'Blogs category' %}
@@ -50,13 +64,24 @@
                     {% include recent-post.html %}
                 </section>
                 {% endif %}
+
+                {% if page.title == 'Design your API' or page.title == 'Build Your API' or page.title == 'Test Your API' or page.title == 'Document Your API' or page.title == 'Share & Support Your API' or page.title == 'Books and Resources' or page.title == 'Contributing' %}                    
+                    <section class="sidebar-menu box-color">
+                        <!-- <h2 class="d-inline-block d-md-none mt-3">{{page.title}}</h2> -->
+                        {% include developer-raml-sidebar.html %}
+                        <section class="ramlapilinks">
+                            <div class="raml-links-wrapper">
+                                <a href ="https://github.com/raml-org/raml-spec/blob/master/versions/raml-10/raml-10.md/" target="_blank" class="raml-links specif_btn" onclick="ga('send', 'event', 'CTA', 'Click', '1.0-spec');">1.0 Spec</a>
+                            </div>
+                        </section>
+                    </section>
+                    <div style="clear:both;"></div>
+                {% endif %}
             </div>
             {% endif %}
-
-
-
         </aside>
-        <div class="col-md-9 col-xs-9 col-sm-9 article-content">
+        <hr style="border-color: #EDF0F4;margin: 0 55px;width: 100%;" class="d-sm-block d-md-none">
+        <div class="col-lg-7 col-md-8 col-sm-12 offset-lg-1 article-content">
             <h1 class="page-header">{{ page.title }}</h1>
             {% if page.is_post  and page.title != 'Blogs' and page.title != 'Blogs Archive' %}
             <div class="sharethis-inline-share-buttons"></div>

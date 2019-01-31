@@ -5,8 +5,9 @@
   {
     "name"    : "{{ projects.name }}",
     "url"     : "{{ projects.url }}",
+    "live_example" : "{{ projects.live_example }}",
     "author"     : "{{ projects.author }}",
-    "description"     : "{{ projects.description | escape | replace: '\n', ' ' | strip }}",
+    "description"     : "{{ projects.description | escape | strip | strip_newlines }}",
     "topics"     : "{{ projects.topics | join: ', ' }}"
   }
 {% if forloop.last %}{% else %},{% endif %}
