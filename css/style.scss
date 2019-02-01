@@ -276,6 +276,9 @@ header{
         height: 22px; 
       }
     } 
+    .navbar-toggler:focus{
+      outline:none;
+    }
     .navbar-nav{
       float: right;
       width: 100%;
@@ -890,6 +893,10 @@ header{
 #developer_top{
     overflow: hidden;
   .developers-sec{
+
+    @media(max-width:991px){
+      padding-bottom:30px;
+    }
     @media(max-width: 767px){
       margin-top: 0;
     }
@@ -1468,10 +1475,6 @@ header{
           @media (max-width: 767px) and (min-width: 576px){
             margin-right: 15px;
           }
-        }
-
-        a{
-          margin-top: 20px;
         }
       }
     } 
