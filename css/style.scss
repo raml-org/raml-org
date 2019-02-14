@@ -257,7 +257,7 @@ header{
         position: absolute;top: 0;z-index:999;min-height:100vw;background:$white;
       }
       .nav-logo{
-        padding-left: 15px; float:left;margin-top:10px;margin-right: 20px;
+        padding-left: 15px; float:left;margin-top:30px;margin-right: 20px;
       }
     }
     /*.container-fluid{
@@ -276,6 +276,9 @@ header{
         height: 22px; 
       }
     } 
+    .navbar-toggler:focus{
+      outline:none;
+    }
     .navbar-nav{
       float: right;
       width: 100%;
@@ -377,6 +380,7 @@ header{
         font-size: 26px;line-height: 45px;padding: 0 15px;color: $slate-gray;
         @media(max-width: 767px){
           margin-bottom: 35px;
+          margin-top: 25px;
         }
       }
       li:last-child{
@@ -421,7 +425,8 @@ header{
       max-width:100%;
 
       .navbar-brand{
-        padding-left: 15px;
+        margin-top: 10px;
+        margin-left: 30px;
       }
     }
   }
@@ -465,9 +470,12 @@ header{
     }
   }
   .tophead-content{
-    h1{
+    h2{
       color: $slate-gray;
       margin-bottom:0px;
+      font-size: 36px;
+      line-height: 42px;
+      font-family: $font-face-light;
       @media(max-width: 575px){
         font-size: 18px;line-height: 25px;margin-top: 20px;
       }
@@ -578,7 +586,7 @@ header{
 .raml-editor{  
   position: relative;
   
-  h1{
+  h2{
     color: $light-gray; font-family: 'Roboto-Regular';  font-size: $font-face-small;  font-weight: 500; line-height: 16px;margin:0;background: $lighter-gray;padding: 20px;border-top: 1px solid $light-gray;width: 100%;}
   .output-block{
     h4{
@@ -623,6 +631,11 @@ header{
             letter-spacing: 1px;
             font-weight: 500;
           }
+        }
+      }
+      .view-overlays{
+        .current-line{
+          background-color:#DBE8FD; 
         }
       }
     }  
@@ -890,6 +903,10 @@ header{
 #developer_top{
     overflow: hidden;
   .developers-sec{
+
+    @media(max-width:991px){
+      padding-bottom:30px;
+    }
     @media(max-width: 767px){
       margin-top: 0;
     }
@@ -1462,16 +1479,15 @@ header{
         @media(max-width: 1199px){
           display: block;
         }
+        a{
+          margin-bottom: 15px;
+        }
         .view-project{
           margin-right: 25px;
 
           @media (max-width: 767px) and (min-width: 576px){
             margin-right: 15px;
           }
-        }
-
-        a{
-          margin-top: 20px;
         }
       }
     } 

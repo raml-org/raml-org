@@ -50,7 +50,9 @@
     visually exposes the API's structure and important patterns and serves as interactive
     API documentation.
   url: https://github.com/mulesoft/api-console
-  live_example: https://mulesoft.github.io/api-console/
+  secondary_link:
+    title: Live Example
+    url: https://mulesoft.github.io/api-console/
   topics:
     - Document
 - name: RAML for JAX-RS
