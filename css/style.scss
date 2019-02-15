@@ -587,7 +587,7 @@ header{
   position: relative;
   
   h2{
-    color: $light-gray; font-family: 'Roboto-Regular';  font-size: $font-face-small;  font-weight: 500; line-height: 16px;margin:0;background: $lighter-gray;padding: 20px;border-top: 1px solid $light-gray;width: 100%;}
+    color: $light-gray; font-family:$font-face-medium;  font-size: $font-face-small;  font-weight: 500; line-height: 16px;margin:0;background: $lighter-gray;padding: 20px;border-top: 1px solid $light-gray;width: 100%;}
   .output-block{
     h4{
       background-color: $flash-white;color: $black;
@@ -602,9 +602,8 @@ header{
     padding:10px 20px;
     background-color: $slate-gray;
     color: $white;
-    font-family: 'Roboto-Regular';
+    font-family: $font-face-medium;
     font-size: $font-face-small; 
-    font-weight: 600; 
     letter-spacing: 0.44px; 
     line-height: 16px;  
     text-align: center;
@@ -861,7 +860,7 @@ header{
     margin-top: 10px;
   }
   a.top_btn{
-    margin-top: 10px;margin-bottom: 30px;color: $light-gray;position: relative;padding-right: 38px;float: right;clear: both;display: table;font-size: $font-face-small;
+    margin-top: 10px;font-family: $font-face-medium; margin-bottom: 30px;color: $light-gray;position: relative;padding-right: 38px;float: right;clear: both;display: table;font-size: $font-face-small;
     @media(max-width: 991px){
       float: none;
     }
