@@ -1,71 +1,34 @@
 # RAML.org Website
 
-> This repository contains the source code for the raml.org website written in Jekyll.
+> This repository contains the source code for the raml.org website written in Jekyll
 
-## To Install jekyll 
+## Requirements
     
-   please check the below links:
-   
-  1. [For mac](https://andytaylor.me/2012/11/03/installing-ruby-and-jekyll/ "for mac").
-  2. [For ubuntu](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-jekyll-development-site-on-ubuntu-16-04 "For ubuntu"). 
+   - Ruby >2.5.x
+   - [Bundler](https://bundler.io) >2.0
+   - [Jekyll](https://jekyllrb.com) >3.8.5
  
-## To Run the jekyll Site locally
+## Running locally
 
-1. Pull the code locally
-2. change to the root directory of the `raml-org` project by running the command in your terminal
+  Pull the code locally:
+  ```
+  $ git clone git@github.com:raml-org/raml-org.git
+  ```
 
-    ```
-    cd raml-org
-    ```
+  Enter directory:
+  ```
+  $ cd raml-org
+  ```
 
-3. remove the below line in blogs/index.html in case you are testing locally 
+  Install all dependencies:
+  ```
+  $ bundle install
+  ```
 
-   ```
-   permalink: /blogs
-   ```
-   
-4. run this command 
-
-   ```
-   bundle install
-   ```
-   
-5. Run this command to build the jekyll site 
-   
-   ```
-   jekyll serve --detach
-   ```
-   
-   currently the site will run with port 4000. 
-   say for example http://localhost:4000.
-   
-   if you want to run the site with port 80. First you need to stop services that are listening to port 80
-   then run the below command:
-   
-   ```
-   jekyll serve --port=80 --detach
-   ```
-
-## To run the jekyll site on the prod or stagging server
-
-1. Pull the code on your server
-2. goto root directory by running the command in your terminal
-    
-   ```
-   cd raml-org
-   ```
-    
-3. run this command 
- 
-   ```
-   bundle install
-   ```
-   
-4. Run this command to build the jekyll site 
-      
-   ```
-   jekyll serve --host=<ip of the server> --port=80 --detach
-   ```
+  Build & run the site:
+  ```
+  $ bundle exec jekyll serve
+  ```
 
 ## How to add projects to the projects page?
 
