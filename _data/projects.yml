@@ -783,14 +783,16 @@
   url: https://github.com/JohanObrink/gulp-raml
   topics:
     - Utilities
-- name: DropWizard RAML View
-  author: OzWolf
+- name: DropWizard RAML
+  author: Wade Pearce
   description: |
-    Allow the adding of an API resource to a DropWizard service that displays
-    the RAML specification for that service in a human-readable format.
-  url: https://github.com/ozwolf-software/dropwizard-raml-view
+    A toolbox of libraries for creating, managing, testing and displaying RAML specifications for DropWizard services.
+  url: https://github.com/ozwolf-software/dropwizard-raml
   topics:
     - Document
+    - Utilities
+    - Design
+    - Test
 - name: RAML Data Type System
   author: MuleSoft
   description: |
