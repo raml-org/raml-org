@@ -964,3 +964,10 @@
   url: https://github.com/patientsknowbest/angular-http-raml
   topics:
     - Test
+- name: hikaku
+  author: codecentric
+  description: |
+    A library that tests if the implementation of a REST-API meets its specification.
+  url: https://github.com/codecentric/hikaku
+  topics:
+    - Test
