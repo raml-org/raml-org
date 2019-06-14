@@ -25,12 +25,10 @@
   url: https://github.com/esh-b/RAML-to-Swagger-Converter
   topics:
     - Utilities
-- name: raml-json-api
+- name: api-generator
   author: Arthur
-  description: |
-    RAML-JSON-API PHP-code generator (based on RAML-types) for Laravel
-    framework, with complete support of JSON-API data format.
-  url: https://github.com/RJAPI/raml-json-api
+  description: PHP-code generator (based on OAS) for Laravel framework, with complete support of JSON-API data format.
+  url: https://github.com/SoliDry/api-generator
   topics:
     - Build
 - name: API Designer
@@ -62,7 +60,7 @@
     these technologies in a way of being able to scaffold a JAVA + JAX-RS application
     based on an existing RAML API definition (Code Generation), or its roundtrip,
     generate the RAML API def
-  url: https://github.com/mulesoft/raml-for-jax-rs
+  url: https://github.com/mulesoft-labs/raml-for-jax-rs
   topics:
     - Build
 - name: RAML2HTML for PHP
@@ -86,7 +84,7 @@
   description: |
     Restlet Studio is a lightweight web-based development environment that
     accelerates the design of APIs.
-  url: http://restlet.com/products/restlet-studio/
+  url: https://restlet.com/modules/studio/
   topics:
     - Design
     - Build
@@ -122,7 +120,7 @@
     RAML Tools for .NET allows developers to easily integrate and consume
     APIs that expose a RAML definition, or create a new ASP.NET Web API implementation
     using a contract-first approach from a previously created RAML definition.
-  url: https://github.com/mulesoft-labs/raml-dotnet-tools
+  url: https://github.com/mulesoft/raml-dotnet-tools
   topics:
     - Build
 - name: raml-server
@@ -177,7 +175,7 @@
   description: |
     APIkit is a declarative toolkit that leverages RAML to facilitate the
     implementation of APIs.
-  url: https://docs.mulesoft.com/anypoint-platform-for-apis/apikit-tutorial#sts=APIkit%20Tutorial
+  url: https://docs.mulesoft.com/api-manager/2.x/#sts=APIkit%20Tutorial
   topics:
     - Build
 - name: RAMSES
@@ -186,7 +184,7 @@
     RAML + Elasticsearch + Pyramid = REST API. Ramses is a library that
     generates a RESTful API using RAML. It uses Pyramid and Nefertari which provides
     ElasticSearch-powered views.
-  url: https://ramses.readthedocs.org/en/latest/
+  url: https://ramses.readthedocs.io/en/latest/
   topics:
     - Build
 - name: RAML JavaScript Parser
@@ -204,13 +202,6 @@
   url: https://github.com/EconomistDigitalSolutions/ramlapi
   topics:
     - Build
-- name: SDK/DOC generator
-  author: IsaaCloud
-  description: |
-    Generate docs or SDKs in Java, JavaScript, and PHP
-  url: https://github.com/isaacloud/sdk-gen
-  topics:
-    - Document
 - name: Spring MVC - RAML Spec Synchroniser Plugin
   author: phoenixNAP
   description: |
@@ -267,7 +258,7 @@
   author: MuleSoft
   description: |
     Template-driven generator of clients for APIs described by RAML.
-  url: https://github.com/mulesoft/raml-client-generator
+  url: https://github.com/mulesoft-labs/raml-client-generator
   topics:
     - Build
 - name: go-raml
@@ -352,16 +343,6 @@
   url: https://github.com/PGSSoft/ramlo
   topics:
     - Document
-- name: LocalAPI
-  author: IsaaCloud
-  description: |
-    LocalAPI is application based on Node.js library and allows for running
-    a fully functional API on the basis of definitions included in a raml file. The
-    application also generates dummy data json files from templates and serve them
-    as a response body in AP
-  url: https://github.com/isaacloud/local-api
-  topics:
-    - Build
 - name: RAML Builder
   author: Eric Neuhauser
   description: |
@@ -374,7 +355,7 @@
   author: MuleSoft
   description: |
     RAML Sublime Plugin is a syntax highlighter for Sublime (the popular text editor).
-  url: https://github.com/mulesoft/raml-sublime-plugin
+  url: https://github.com/mulesoft-labs/raml-sublime-plugin
   topics:
     - Design
 - name: API Designer for Git FS
@@ -407,10 +388,10 @@
   topics:
     - Parsers
 - name: RAML PHP Client Generator
-  author: jayS-de
+  author: jenschude
   description: |
     Generate a PHP API client from RAML.
-  url: https://github.com/jayS-de/raml-php-generator
+  url: https://github.com/jenschude/raml-php-generator
   topics:
     - Build
 - name: sphinx-raml
@@ -460,16 +441,16 @@
     SoapUI is a very popular functional testing tool, broadly used for
     testing any HTTP APIs including both SOAP and REST, as well as JMS, AMF, and JDBC.
     The RAML plugin for SoapUI allows the importing of RAML APIs into SoapUI for testing.
-  url: http://olensmar.blogspot.se/2013/12/a-raml-apihub-plugin-for-soapui.html
+  url: https://olensmar.blogspot.com/2013/12/a-raml-apihub-plugin-for-soapui.html
   topics:
     - Test
 - name: ATOM RAML package
-  author: n4ch03
+  author: nachoesmite
   description: |
     ATOM RAML Package is a plugin (package) for ATOM (Github's text editor)
     that helps the user to write RAML specs by providing highlighting capabilities
     and snippets autocompletion.
-  url: https://github.com/n4ch03/atom-raml
+  url: https://github.com/nachoesmite/atom-raml
   topics:
     - Design
 - name: Ruby RamlParser
@@ -516,7 +497,7 @@
   author: Alvaro Cabrera
   description: |
     Express-based mocking service for RAML development.
-  url: https://github.com/gextech/raml-mockup
+  url: https://github.com/tacoss/raml-mockup
   topics:
     - Test
 - name: RamlParser
@@ -539,7 +520,7 @@
     ramlnova is the next-generation RESTful-APIs Generator software (Laravel
     5.2, golang, etc) that makes you Reduce the 70% server coding workload. It's scalable,
     intelligent, and fast.
-  url: https://github.com/anasinc/ramlnova
+  url: https://github.com/yourstack/ramlnova
   topics:
     - Build
 - name: Raml Ruby Client Generator
@@ -577,7 +558,7 @@
     This project makes the api-designer work with a persistence layer to
     a specified directory, so the users can code into the designer and output into
     filesystem (and version control!).
-  url: https://github.com/mrgamer/express-raml-store
+  url: https://github.com/colthreepv/express-raml-store
   topics:
     - Design
 - name: SBT RAML Plugin
@@ -608,7 +589,7 @@
   description: |
     The Amazon API Gateway Importer lets you create or update Amazon API
     Gateway APIs from a RAML API representation.
-  url: https://github.com/awslabs/aws-apigateway-importer
+  url: https://github.com/amazon-archives/aws-apigateway-importer
   topics:
     - Build
 - name: RAML 1.0 Parser for .NET
@@ -680,7 +661,7 @@
   description: |
     This allows for a raml file to be turned into a client library via
     the javascript-raml-generator node module with gulp even easier!
-  url: https://github.com/bigbam505/gulp-raml-client-generator
+  url: https://github.com/brentm5/gulp-raml-client-generator
   topics:
     - Utilities
 - name: vim-raml
@@ -694,14 +675,14 @@
   author: MuleSoft
   description: |
     Strict and pluginable validation of RAML parameters.
-  url: https://github.com/mulesoft/node-raml-validate
+  url: https://github.com/mulesoft-labs/node-raml-validate
   topics:
     - Test
 - name: eslint-plugin-raml
   author: Nikita Galkin
   description: |
     Eslint rules for RAML. You can use it for testing your RAML in Continuous Integration.
-  url: https://github.com/galk-in/eslint-plugin-raml
+  url: https://github.com/galkin/eslint-plugin-raml
   topics:
     - Utilities
 - name: php-ramlMerge
@@ -731,7 +712,7 @@
   author: Oscar Reyes
   description: |
     A resource code generator for diet with raml
-  url: https://github.com/Nosthertus/diet-raml-generator
+  url: https://github.com/oscarr-reyes/diet-raml-generator
   topics:
     - Build
 - name: generator-ramlang
@@ -768,7 +749,7 @@
     This module contains a lightweight implementation of the type system
     that was introduced with RAML 1.0.  It allows you to to parse, validate , modify
     RAML types, as well as store them back to JSON.
-  url: https://github.com/raml-org/typesystem-ts
+  url: https://github.com/raml-org/raml-typesystem
   topics:
     - Utilities
 - name: metalsmith-raml
@@ -800,13 +781,6 @@
   url: https://github.com/cybertk/ramlev
   topics:
     - Utilities
-- name: Autocode RAML Processor
-  author: Autocode
-  description: |
-    Process models and export them as RAML with Autocode
-  url: https://github.com/crystal/raml
-  topics:
-    - Build
 - name: RAML Lorem-Impsum
   author: Ioannis Charalampidis
   description: |
@@ -879,7 +853,7 @@
   description: |
     A collection of RAML specifications for use to test a RAML Parsers
     capability, or for use when developing your own parser.
-  url: https://github.com/mulesoft-labs/raml-tck
+  url: https://github.com/raml-org/raml-tck
   topics:
     - Parsers
     - Utilities
@@ -895,7 +869,7 @@
   description: |
     UML to RAML generator for MDE toolchains.
     Available as command-line utility and Maven plugin.
-  url: https://github.com/DavideRossi/uml2raml
+  url: https://github.com/morcilab/uml2raml
   topics:
     - Design
 - name: RAML API Tester
@@ -942,12 +916,6 @@
   url: https://github.com/CodeBabyBear/AriesDoc
   topics:
     - Utilities
-- name: uml2raml
-  author: DavideRossi
-  url: https://github.com/DavideRossi/uml2raml
-  description: uml2raml is a tool to convert a UML class diagram to a RAML API specification.
-  topics:
-    - Design
 - name: raml-language-server
   author: MuleSoft
   url: https://github.com/mulesoft-labs/raml-language-server
@@ -1332,12 +1300,6 @@
   description: XML validation API for RAML JS parser
   topics:
     - Tooling
-- name: rest-raml
-  author: sigoden
-  url: https://github.com/sigoden/rest-raml
-  description: Rest API Doc Generator in RAML spec
-  topics:
-    - Documentation
 - name: mast
   author: quantworksinc
   url: https://github.com/quantworksinc/mast
@@ -1468,3 +1430,9 @@
   description: API Spec parser based on AMF. Currently supports RAML 0.8, 1.0 and OAS 2.0.
   topics:
     - Parser
+- name: raml-tck-runner
+  author: MuleSoft
+  url: https://github.com/raml-org/raml-tck-runner
+  description: Run several RAML parsers against raml-tck.
+  topics:
+    - Test
