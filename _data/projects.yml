@@ -180,14 +180,6 @@
   url: https://docs.mulesoft.com/anypoint-platform-for-apis/apikit-tutorial#sts=APIkit%20Tutorial
   topics:
     - Build
-- name: RAML2Wiki
-  author: jhitchcock
-  description: |
-    A simple RAML to Wiki (Confluence / JIRA Markup) documentation generator,
-    written for Node.js.
-  url: https://github.com/jhitchcock/raml2wiki
-  topics:
-    - Document
 - name: RAMSES
   author: Brandicted
   description: |
@@ -278,14 +270,6 @@
   url: https://github.com/mulesoft/raml-client-generator
   topics:
     - Build
-- name: jooby-raml
-  author: Jooby
-  description: |
-    Export Jooby routes to RAML 1.0 and give you live doc and testing wit no extra effort.
-  url: https://github.com/jooby-project/jooby/tree/master/jooby-raml
-  topics:
-    - Test
-    - Document
 - name: go-raml
   author: Alon Diamant
   description: |
@@ -336,7 +320,7 @@
   author: Jumpscale
   description: |
     Server and client generation for RAML 1.0
-  url: ""
+  url: https://github.com/Jumpscale/go-raml
 - name: gulp-RAML2HTML
   author: walling
   description: |
@@ -357,17 +341,9 @@
   description: |
     A reference implementation of a RAML parser in PHP. Compliant with
     RAML 0.8.
-  url: https://github.com/alecsammon/php-raml-parser
+  url: https://github.com/raml-org/raml-php-parser
   topics:
     - Parsers
-- name: RAML2Java
-  author: Juan Desimoni
-  description: |
-    Web app that generate a consumable Java interface based on Retrofit
-    annotations from a RAML spec file.  Requires SBT & Scala 2.11+
-  url: https://github.com/juandesi/raml-to-java-app
-  topics:
-    - Build
 - name: ramlo
   author: PGS Software
   description: |
@@ -566,13 +542,6 @@
   url: https://github.com/anasinc/ramlnova
   topics:
     - Build
-- name: raml-scaffold
-  author: Benjamin Ihrig
-  description: |
-    Scaffolding for RAML
-  url: https://github.com/ihrigb/raml-scaffolding
-  topics:
-    - Build
 - name: Raml Ruby Client Generator
   author: Newell Zhu
   description: |
@@ -651,10 +620,10 @@
   url: https://github.com/raml-org/raml-dotnet-parser-2
   topics:
     - Parsers
-- name: raml-jaxrs
+- name: raml-maven
   author: CJS Common Platform
   description: |
-    RAML to JAXRS generator
+    A plugin for using RAML documents within Maven projects.
   url: https://github.com/cjsCommonPlatform/raml-maven
   topics:
     - Build
@@ -899,19 +868,12 @@
   url: https://github.com/sbcd90/raml-olingo-codegen
   topics:
     - Build
-- name: grunt-raml
-  author: MuleSoft
-  description: |
-    A Grunt Plugin for validating RAML files
-  url: https://github.com/mulesoft-labs/grunt-raml
-  topics:
-    - Utilities
 - name: RAML CLI Validator
   author: A.J. Brown
   description: |
     The command line utility can be used for validating the syntax of
     a RAML file.
-  url: https://github.com/mulesoft-labs/cli
+  url: https://github.com/raml-org/raml-cli
 - name: Test Compatibility Kit for RAML Parsers
   author: MuleSoft
   description: |
