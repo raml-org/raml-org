@@ -20,7 +20,7 @@
 - name: RAML-to-Swagger2-converter
   author: eshwanth
   description: |
-    The goal of RAML-to-Swagger-converter is to provide a tool (in this case, a java project) 
+    The goal of RAML-to-Swagger-converter is to provide a tool (in this case, a java project)
     which supports converting RAML 0.8 API definition to Swagger 2.0 API definition.
   url: https://github.com/esh-b/RAML-to-Swagger-Converter
   topics:
@@ -159,7 +159,7 @@
 - name: Sandbox
   author: Sandbox
   description: |
-    Quick and easy mock RESTful API and SOAP webservices. Generate from API definitions, 
+    Quick and easy mock RESTful API and SOAP webservices. Generate from API definitions,
     instant deploy, collaborative build, and debugging tools for integration.
   url: https://getsandbox.com/
   topics:
@@ -973,3 +973,10 @@
   url: https://github.com/codecentric/hikaku
   topics:
     - Test
+- name: AriesDoc
+  author: Victor.X.Qu
+  description: |
+    AriesDoc helps generating RAML doc file from asp.net core.
+  url: https://github.com/CodeBabyBear/AriesDoc
+  topics:
+    - Utilities
