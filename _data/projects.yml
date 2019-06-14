@@ -942,3 +942,529 @@
   url: https://github.com/CodeBabyBear/AriesDoc
   topics:
     - Utilities
+- name: uml2raml
+  author: DavideRossi
+  url: https://github.com/DavideRossi/uml2raml
+  description: uml2raml is a tool to convert a UML class diagram to a RAML API specification.
+  topics:
+    - Design
+- name: raml-language-server
+  author: MuleSoft
+  url: https://github.com/mulesoft-labs/raml-language-server
+  description: A Language Server that exposes smart RAML language support for various IDEs using the new Language Server Protocol standard
+  topics:
+    - Design
+    - Tooling
+    - Utilities
+- name: restdocs-raml
+  author: ePages-de
+  url: https://github.com/ePages-de/restdocs-raml
+  description: This is an extension that adds RAML (RESTful API Modeling Language) as an output format to Spring REST Docs.
+  topics:
+    - Document
+- name: api-console-cli
+  author: MuleSoft
+  url: https://github.com/mulesoft-labs/api-console-cli
+  description: The command-line tool for the API Console Web Component.
+  topics:
+    - Tooling
+    - Utilities
+    - Document
+- name: raml2json
+  author: infinitecsolutions
+  url: https://github.com/infinitecsolutions/raml2json
+  description: Parse a RAML file to create beautiful json
+  topics:
+    - Tooling
+    - Utilities
+    - Document
+- name: osprey-resources
+  author: MuleSoft
+  url: https://github.com/mulesoft-labs/osprey-resources
+  description: Iterate over RAML resources and generate a middleware router.
+  topics:
+    - Utilities
+    - Build
+    - Tooling
+- name: raml-clj-parser
+  author: zacyang
+  url: https://github.com/zacyang/raml-clj-parser
+  description: This is a RAML parser implemented in clojure, which is based on SnakeYaml library.
+  topics:
+    - Parsers
+- name: raml-parser-cli
+  author: braceslab
+  url: https://github.com/braceslab/raml-parser-cli
+  description: It just wrap raml-1-parser to command line.
+  topics:
+    - Parser
+- name: raml-js-parser
+  author: advanced-rest-client
+  url: https://github.com/advanced-rest-client/raml-js-parser
+  description: The RAML parser (JS version) as a web component.
+  topics:
+    - Parser
+- name: osprey-mock-service
+  author: mulesoft-labs
+  url: https://github.com/mulesoft-labs/osprey-mock-service
+  description: Generate an API mock service from a RAML definition using Osprey.
+  topics:
+    - Test
+    - Tooling
+- name: angular-http-raml
+  author: patientsknowbest
+  url: https://github.com/patientsknowbest/angular-http-raml
+  description: This library provides a RAML-based MockBackend generator for testing Angular 4 applications.
+  topics:
+    - Test
+- name: API-Flow
+  author: luckymarmot
+  url: https://github.com/luckymarmot/API-Flow
+  description: A flow written in ES6 using Immutable to convert between API description formats (Swagger, etc.) and other programs such as cURL command lines.
+  topics:
+    - Utilities
+- name: raml-generator
+  author: MuleSoft
+  url: https://github.com/mulesoft-labs/raml-generator
+  description: Generate files from a RAML document and Handlebars templates
+  topics:
+    - Utilities
+    - Tooling
+    - Generator
+- name: caraml
+  author: daniel-pedersen
+  url: https://github.com/daniel-pedersen/caraml
+  description: Generates an optimized SDK from a RAML specification. Works with modern browsers and node.
+  topics:
+    - Tooling
+    - Generator
+- name: aml2obj
+  author: raml2html
+  url: https://github.com/raml2html/raml2obj
+  description: A thin wrapper around raml-js-parser-2, adding extra properties to the resulting object for use in raml2html and raml2md.
+  topics:
+    - Tooling
+    - Utilities
+- name: osprey-method-handler
+  author: MuleSoft
+  url: https://github.com/mulesoft-labs/osprey-method-handler
+  description: Middleware for validating requests and responses based on a RAML method object.
+  topics:
+    - Tooling
+    - Utilities
+- name: osprey-router
+  author: MuleSoft
+  url: https://github.com/mulesoft-labs/osprey-router
+  description: Simple middleware-style router for RAML based on https://github.com/pillarjs/router
+  topics:
+    - Tooling
+    - Utilities
+- name: raml-path-match
+  author: MuleSoft
+  url: https://github.com/mulesoft-labs/raml-path-match
+  description: Path matching utility based on the RAML spec.
+  topics:
+    - Tooling
+    - Utilities
+- name: raml-examples
+  author: MuleSoft
+  url: https://github.com/raml-org/raml-examples
+  description: This repository contains valid RAML 1.0 examples. These examples are not only part of the spec, but also represent RAML features in different scenarios.
+  topics:
+    - Documentation
+- name: aml-tester
+  author: nidi3
+  url: https://github.com/nidi3/raml-tester
+  description: Test if a request/response matches a given raml definition.
+  topics:
+    - Test
+- name: oas-raml-converter
+  author: MuleSoft
+  url: https://github.com/mulesoft/oas-raml-converter
+  description: This package helps to convert between different API specifications. It was originally forked from the stoplight.io converter.
+  topics:
+    - Tooling
+    - Converter
+- name: stoplight.io
+  author: stoplightio
+  url: https://stoplight.io/
+  description: The Stoplight platform provides a suite of products that cover the entire pre-production API lifecycle. Supports importing RAML files.
+  topics:
+    - Design
+    - Documentation
+- name: ramldt2jsonschema
+  author: MuleSoft
+  url: https://github.com/raml-org/ramldt2jsonschema
+  description: CLI & Library to convert a RAML 1.0 DataType to a JSON Schema Draft 6, and back. (dt2js can still be used to produce draft04 documents if used programatically)
+  topics:
+    - Tooling
+- name: raml-java-client-generator
+  author: MuleSoft
+  url: https://github.com/mulesoft-labs/raml-java-client-generator
+  description: This tool generates a java rest client for a raml based api using a resource api approach. Supports both 0.8 and 1.0 versions of Raml
+  topics:
+    - Tooling
+    - Codegen
+- name: psx-api
+  author: apioo
+  url: https://github.com/apioo/psx-api
+  description: Parse and generate API specification formats
+  topics:
+    - Parsing
+- name: generaptr-cli
+  author: generaptr
+  url: https://github.com/generaptr/generaptr-cli
+  description: generaptr-cli is a node cli package that helps when starting up a project by generating boilerplate code for Express api.
+  topics:
+    - Codegen
+    - Utilities
+- name: raml-tester-proxy
+  author: nidi3
+  url: https://github.com/nidi3/raml-tester-proxy
+  description: A standalone proxy/mock that tests if requests/responses are compliant with a given RAML.
+  topics:
+    - Test
+- name: vim-yaml-folds
+  author: pedrohdz
+  url: https://github.com/pedrohdz/vim-yaml-folds
+  description: Very simple folding configuration for YAML, Puppet/Hiera EYAML, RAML and SaltStack SLS files.
+  topics:
+    - Utilities
+- name: raml-js-validator
+  author: joanvila
+  url: https://github.com/joanvila/raml-js-validator
+  description: Simple RAML 1.0 validator that reads a file containing an API definition and performs a query to each endpoint to check that the RAML matches the backend implementation.
+  topics:
+    - Validator
+- name: raml-cli
+  author: MuleSoft
+  url: https://github.com/raml-org/raml-cli
+  description: A handy command-line tool for RAML enthusiasts.
+  topics:
+    - Tooling
+- name: symfony-skeleton
+  author: kruglikdenis
+  url: https://github.com/kruglikdenis/symfony-skeleton
+  description: Skeleton rest-api based on symfony. Uses RAML for documenting projects.
+  topics:
+    - Documentation
+- name: raml1-doc
+  author: Letsdeal
+  url: https://github.com/Letsdeal/raml1-doc
+  description: Generate HTML doc for REST API using RAML
+  topics:
+    - Documentation
+- name: raml-mock-service
+  author: MuleSoft
+  url: https://github.com/raml-org/raml-mock-service
+  description: Generate an API mock service from a RAML definition using Osprey. This implementation was heavely influenced by MuleSoft's Osprey Mocking Service.
+  topics:
+    - Tooling
+    - Test
+- name: datatype-expansion
+  author: MuleSoft
+  url: https://github.com/raml-org/datatype-expansion
+  description: Often, tools need the full expansion of RAML data types where there are no references. This module gives you a utility tool to expand a given type and create a canonical form.
+  topics:
+    - Tooling
+- name: node-raml-sanitize
+  author: MuleSoft
+  url: https://github.com/mulesoft-labs/node-raml-sanitize
+  description: Strict sanitization of RAML 0.8 named parameters and RAML 1.0 built-in types.
+  topics:
+    - Tooling
+- name: AriesDoc
+  author: CodeBabyBear
+  url: https://github.com/CodeBabyBear/AriesDoc
+  description: AriesDoc is help we generate raml doc file form asp.net core.
+  topics:
+    - Tooling
+- name: jsonapi2raml
+  author: tabone
+  url: https://github.com/tabone/jsonapi2raml
+  description: Utility used to generate RAML v1.0 Documentation for REST APIs that follow the JSON-API spec.
+  topics:
+    - Documentation
+- name: godoc2api
+  author: florenthobein
+  url: https://github.com/florenthobein/godoc2api
+  description: Turn your golang comments into a RAML 1.0 file describing your API
+  topics:
+    - Documentation
+- name: util-raml-code-generator
+  author: paysera
+  url: https://github.com/paysera/util-raml-code-generator
+  description: Generates PHP or JS RESTful Client from RAML API definition
+  topics:
+    - Codegen
+    - Tooling
+- name: oas-raml-converter-service
+  author: Mulesoft
+  url: https://github.com/mulesoft/oas-raml-converter-service
+  description: REST service to expose oas-raml-converter operations
+  topics:
+    - Converter
+- name: apigility-raml-validator
+  author: robertboloc
+  url: https://github.com/robertboloc/apigility-raml-validator
+  description: This is a tool to help validate your Apigility implementation against a RAML specification. This way you can make sure the implementation matches the specification requirements.
+  topics:
+    - Tooling
+- name: raml2apigility
+  author: robertboloc
+  url: https://github.com/robertboloc/raml2apigility
+  description: Apigility scaffolding generator based on a RAML 1.0 specification. The tool will generate the same code the Apigility Admin UI generates but from the command line and based on a RAML specification file.
+  topics:
+    - Tooling
+- name: raml-jstorage
+  author: ggrandes
+  url: https://github.com/ggrandes/raml-jstorage
+  description: RAML-JStorage is a storage backend for RAML API Designer, built on Java to run in any Tomcat (rather than use the APIHub cloud service) with no more dependencies and still be able to collaborate designs.
+  topics:
+    - Server
+- name: RAML-Swift
+  author: cpageler93
+  url: https://github.com/cpageler93/RAML-Swift
+  description: A RAML parser based on YamlSwift written in Swift 4.
+  topics:
+    - Parser
+- name: raml-suggestions
+  author: MuleSoft
+  url: https://github.com/mulesoft-labs/raml-suggestions
+  description: This module provides auto-completion suggestions for RAML
+  topics:
+    - Tooling
+- name: check_api
+  author: Mermade
+  url: https://github.com/Mermade/check_api
+  description: check_api is a simple utility wrapping a collection of API definition format validators. It allows you to validate a local file or remote URL with a single command-line or programmatic invocation.
+  topics:
+    - Validator
+- name: raml-json-enhance-node
+  author: MuleSoft
+  url: https://github.com/mulesoft-labs/raml-json-enhance-node
+  description: A RAML's JSON enhancer node package to enhance JSON output of the RAML parser.
+  topics:
+    - Tooling
+- name: DuckStack
+  author: cpageler93
+  url: https://github.com/cpageler93/DuckStack
+  description: DuckStack is a Code Generator based on ChickGen and RAML-Swift using Quack and ConsulSwift. DuckStack generates Swift Code based on a RAML-File.
+  topics:
+    - Codegen
+- name: leanapi
+  author: bastuijnman
+  url: https://github.com/bastuijnman/leanapi
+  description: LeanAPI generates a nice UI for your API specifications.
+  topics:
+    - Documentation
+- name: raml-definition-system
+  author: MuleSoft
+  url: https://github.com/raml-org/raml-definition-system
+  description: This repository contains a set of interfaces that represents a declarative description of the RAML specification.
+  topics:
+    - Tooling
+- name: raml-annotations
+  author: MuleSoft
+  url: https://github.com/raml-org/raml-annotations
+  description: This repository contains a number of annotations that we, as a community, agreed on and share for others to use.
+  topics:
+    - Specification
+- name: raml2spore
+  author: xmonader
+  url: https://github.com/xmonader/raml2spore
+  description: Convert RAML specs to SPORE
+  topics:
+    - Tooling
+- name: docker-api-console-server
+  author: joshuamarquez
+  url: https://github.com/joshuamarquez/docker-api-console-server
+  description: Docker api-console NGINX based server to render your RAML docs.
+  topics:
+    - Tooling
+- name: docker-api-console
+  author: joshuamarquez
+  url: https://github.com/joshuamarquez/docker-api-console
+  description: Docker image for api-console
+  topics:
+    - Tooling
+- name: gradle-raml-plugin
+  author: netfalo
+  url: https://github.com/netfalo/gradle-raml-plugin
+  description: Gradle Plugin based on the phoenixnap/springmvc-raml-plugin
+  topics:
+    - Tooling
+- name: raml2html-comment-template
+  author: xfenix
+  url: https://github.com/xfenix/raml2html-comment-template
+  description: raml2html theme fork with embeded Disqus comments for each sections (if you want to comment your api, but doesnt want to pay for swagger, anypoint etc.)
+  topics:
+    - Documentation
+- name: raml-to-jaxrs-jsr-250-plugin
+  author: reallyinsane
+  url: https://github.com/reallyinsane/raml-to-jaxrs-jsr-250-plugin
+  description: Plugin for raml-for-jax-rs to generate JSR-250 annotations.
+  topics:
+    - Codegen
+    - Tooling
+- name: raml2schema
+  author: rankun203
+  url: https://github.com/rankun203/raml2schema
+  description: Convert raml 1.0 Types to Schema Draft 4 schemas
+  topics:
+    - Converter
+- name: ramlunit
+  author: ioleo
+  url: https://github.com/ioleo/ramlunit
+  description: Validate RAML and generate JUnit-like report.
+  topics:
+    - Validator
+    - Test
+- name: raml-loader
+  author: nidi3
+  url: https://github.com/nidi3/raml-loader
+  description: Load RAML files using different protocols like Classpath, File system, HTTP, Github, API portal, API designer
+  topics:
+    - Tooling
+- name: raml-xml-validation
+  author: MuleSoft
+  url: https://github.com/mulesoft-labs/raml-xml-validation
+  description: XML validation API for RAML JS parser
+  topics:
+    - Tooling
+- name: rest-raml
+  author: sigoden
+  url: https://github.com/sigoden/rest-raml
+  description: Rest API Doc Generator in RAML spec
+  topics:
+    - Documentation
+- name: mast
+  author: quantworksinc
+  url: https://github.com/quantworksinc/mast
+  description: A RAML configurable API server with hot-reloading.
+  topics:
+    - Test
+    - Server
+- name: raml-dialects-tools
+  author: Pavel-research
+  url: https://github.com/Pavel-research/raml-dialects-tools
+  description: This project contains Java implementation of RAML Vocabularies, RAML Dialects
+  topics:
+    - Tooling
+- name: enunciate-raml
+  author: samblake
+  url: https://github.com/samblake/enunciate-raml
+  description: A RAML generator for http://enunciate.webcohesion.com/
+  topics:
+    - Codegen
+- name: RAML-Swift-CLI
+  author: cpageler93
+  url: https://github.com/cpageler93/RAML-Swift-CLI
+  description: Command Line Interface for RAML-Swift
+  topics:
+    - Tooling
+- name: rapids
+  author: sinoroc
+  url: https://github.com/sinoroc/rapids
+  description: Build automatically documented REST APIs with the Pyramid framework.
+  topics:
+    - Codegen
+- name: raml-typesystem-shapes
+  author: Pavel-research
+  url: https://github.com/Pavel-research/raml-typesystem-shapes
+  description: This repository contains support for domain/shape transformations.
+  topics:
+    - Tooling
+- name: raml2md-templates
+  author: cienet
+  url: https://github.com/cienet/raml2md-templates
+  description: Nunjunks templates of raml2md
+  topics:
+    - Documentation
+- name: wordpress-raml-console
+  author: djuang1
+  url: https://github.com/djuang1/wordpress-raml-console
+  description: This plugin provides the ability to embedd a RAML Console into a WordPress page.
+  topics:
+    - Console
+- name: raml-serverless
+  author: andrewcurioso
+  url: https://github.com/andrewcurioso/raml-serverless
+  description: Work with RAML documentation for Serverless v1.0 projects.
+  topics:
+    - Tooling
+- name: api-add-in
+  author: bayeslife
+  url: https://github.com/bayeslife/api-add-in
+  description: An add in to Sparx EA that allows for modeling and exporting REST APIs as RAML and JSON Schema
+  topics:
+    - Tooling
+- name: raml-rb
+  author: jpb
+  url: https://github.com/jpb/raml-rb
+  description: A RAML parser, implemented in Ruby
+  topics:
+    - Parser
+- name: go-raml-mocker
+  author: tsaikd
+  url: https://github.com/tsaikd/go-raml-mocker
+  description: RAML (1.0) web mock server implementation in golang
+  topics:
+    - Test
+- name: org.ops4j.ramler
+  author: ops4j
+  url: https://github.com/ops4j/org.ops4j.ramler
+  description: A code and documentation generator for the RESTful API Modeling Language (RAML).
+  topics:
+    - Tooling
+    - Codegen
+- name: raml2flow
+  author: a-omsk
+  url: https://github.com/a-omsk/raml2flow
+  description: Generate Flow types from .raml file
+  topics:
+    - Codegen
+    - Converter
+- name: aml
+  author: OnPositive
+  url: https://github.com/OnPositive/aml
+  description: The goal of this project is to provide a set of tools making work with RAML 1.0 files easier from Java as well as generating Java artifacts basing on RAML 1.0 files. At this moment it is a playground for Java Types->RAML conversion and back.
+  topics:
+    - Tooling
+    - Converter
+- name: RAMbLOn
+  author: mattbaird
+  url: https://github.com/mattbaird/RAMbLOn
+  description: A Go (golang) Interactive RAML v1.0 API to HTML Documentation Generator. RamblOn allows you to view the generated RAML based Documentation in a browser and it will automatically update when you save your .raml file.
+  topics:
+    - Documentation
+- name: raml-validate
+  author: AOEpeople
+  url: https://github.com/AOEpeople/raml-validate
+  description: API testing against RAML 1.0 files
+  topics:
+    - Test
+- name: rest-modeling-framework
+  author: vrapio
+  url: https://github.com/vrapio/rest-modeling-framework
+  description: The rest modeling framework provides an EMF based model for RAML api definition files.
+  topics:
+    - Test
+- name: raml2agl
+  author: pjcuadra
+  url: https://github.com/pjcuadra/raml2agl
+  description: This is a Proof of Concept of a Model Driven Development approach to generate Automotive Grade Linux applications and services by defining their interfaces using RAML.
+  topics:
+    - Codegen
+- name: ramlfications-php
+  author: therealgambo
+  url: https://github.com/therealgambo/ramlfications-php
+  description: PHP 7 implementation of the RAML 1.0 Specification heavily influenced from the Spotify Ramlfications design.
+  topics:
+    - Parser
+- name: webapi-parser
+  author: MuleSoft
+  url: https://github.com/raml-org/webapi-parser
+  description: API Spec parser based on AMF. Currently supports RAML 0.8, 1.0 and OAS 2.0.
+  topics:
+    - Parser
