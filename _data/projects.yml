@@ -6,6 +6,9 @@
     It supports both RAML 0.8 and the recently launched RAML 1.0. RAML makes it easy
     to manage the whole API lifecycle.
   url: http://apiworkbench.com/
+  secondary_link:
+    title: Documentation
+    url: http://apiworkbench.com/docs/
   topics:
     - Design
 - name: raml2html
@@ -29,6 +32,9 @@
   author: Arthur
   description: PHP-code generator (based on OAS) for Laravel framework, with complete support of JSON-API data format.
   url: https://github.com/SoliDry/api-generator
+  secondary_link:
+    title: Getting started Demo
+    url: https://youtu.be/kFXVq4CGkEU
   topics:
     - Build
 - name: API Designer
@@ -69,6 +75,9 @@
     RAML 2 HTML for PHP is a simple application that makes use of multiple
     templates to allow you to build and customize your API Docs using RAML.
   url: http://www.mikestowe.com/2014/05/raml-2-html.php
+  secondary_link:
+    title: Demo
+    url: http://www.mikestowe.com/demos/raml2htmlphp/
   topics:
     - Document
 - name: Osprey
@@ -85,6 +94,9 @@
     Restlet Studio is a lightweight web-based development environment that
     accelerates the design of APIs.
   url: https://restlet.com/modules/studio/
+  secondary_link:
+    title: Launch Restlet Studio
+    url: https://studio.restlet.com/
   topics:
     - Design
     - Build
@@ -96,6 +108,9 @@
     gists, so they are versioned, forkable and shareable. It's an example of literate
     programming.
   url: https://api-notebook.anypoint.mulesoft.com
+  secondary_link:
+    title: Examples
+    url: https://api-notebook.anypoint.mulesoft.com/#examples
   topics:
     - Document
 - name: Abao
@@ -111,6 +126,9 @@
   description: |
     RAML reference implementation in Python
   url: https://github.com/spotify/ramlfications
+  secondary_link:
+    title: Documentation
+    url: https://ramlfications.readthedocs.io/en/latest/
   topics:
     - Parsers
     - Document
@@ -160,6 +178,9 @@
     Quick and easy mock RESTful API and SOAP webservices. Generate from API definitions,
     instant deploy, collaborative build, and debugging tools for integration.
   url: https://getsandbox.com/
+  secondary_link:
+    title: Getting Started
+    url: https://getsandbox.com/docs/getting-started
   topics:
     - Test
 - name: Postman
@@ -168,6 +189,9 @@
     Postman is a chrome app that lets you import RAML to easily call and
     test APIs.
   url: https://www.getpostman.com/
+  secondary_link:
+    title: Learning Center
+    url: https://learning.getpostman.com/
   topics:
     - Test
 - name: APIkit 1.0
@@ -209,6 +233,9 @@
     to Generate Server & Client code in Spring from a RAML API descriptor
     and conversely, a RAML API document from the SpringMVC Server implementation.
   url: https://github.com/phoenixnap/springmvc-raml-plugin
+  secondary_link:
+    title: Sample project
+    url: https://github.com/phoenixnap/springmvc-raml-plugin-sample/
   topics:
     - Build
 - name: RAMLSharp
