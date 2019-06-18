@@ -28,7 +28,7 @@ title:  'Welcome'
           <img src="images/homepage_logos-7.svg" class="img-fluid">
         </div>
       </div>
-    </div>  
+    </div>
   </section>
   <section id="content-bg-color">
     <div class="container text-center">
@@ -44,15 +44,14 @@ title:  'Welcome'
             <a href="/developers/share-support-your-api"><img src="images/RAMLiconshare.svg" class="share svg"></a>
           </div>
         </div>
-      </div>  
+      </div>
     </div>
   </section>
   <section>
     <div class="container-fluid raml-editor d-none d-sm-block">
       <div class="row">
         <h2 class="text-center">Playground</h2>
-        <a class="pull-right d-sm-none d-md-block playground-btn" href="">Fullscreen <i class="fas fa-expand"></i></a>
-        <a class="pull-right d-none d-sm-block d-md-none playground-btn no-background" href=""><i class="fas fa-expand"></i></a>
+        <a class="pull-right d-sm-none d-md-block playground-btn try-it-out-btn" href="">Try It Out <i class="fas fa-expand"></i></a>
         <div class="col-md-12 col-sm-12 editor-block padd_00">
           <div id="container" style="width:100%;height:346px;">
             <div class="sk-fading-circle">
@@ -70,8 +69,8 @@ title:  'Welcome'
               <div class="sk-circle12 sk-circle"></div>
             </div>
           </div>
-        </div> 
-      </div>  
+        </div>
+      </div>
     </div>
   </section>
 
@@ -89,7 +88,7 @@ title:  'Welcome'
           <h3>Use RAML to Build Your API</h3>
           <p>RAML enables developers and engineers to do what they do best – write code. No more guesswork or getting halfway through your API only to realize the design doesn’t work or is inconsistent. You can also reduce your time to market (and bug based headaches) by using the many tools available to help you generate the general structure of your API from your RAML files. </p>
           <a class="more-btn green" href="https://raml.org/developers/build-your-api">Learn More</a>
-        </div>  
+        </div>
       </div>
     </div>
     <div class="row-bg-color">
@@ -106,11 +105,11 @@ title:  'Welcome'
               <h3>Use RAML to Document Your REST API</h3>
               <p>Say goodbye to spending hours writing and maintaining API documentation. With RAML all of your documentation can be easily generated, letting you provide up-to-date documentation, all at the click of a button. </p>
               <a class="more-btn sky-blue" href="https://raml.org/developers/document-your-api">Learn More</a>
-            </div>  
+            </div>
           </div>
         </div>
       </div>
-      <div class="container txt-block">  
+      <div class="container txt-block">
         <div class="row">
           <div class="col-md-6 col-sm-6 txt-left">
             <a href=""><img src="images/share-raml.svg" class="share"></a>
@@ -123,17 +122,17 @@ title:  'Welcome'
               <h1>Hundreds of Open Source Projects</h1>
               <p>RAML is backed by a large open source community providing hundreds of pre-built, customizable tools for all your RESTful API needs</p>
               <a href="/projects">Browse Projects</a>
-            </div>  
-          </div>  
+            </div>
+          </div>
         </div>
       </div>
-      <div class="container">  
+      <div class="container">
         <div class="row block-quote">
           <div class="col-lg-6 col-md-8 col-sm-10 text-center">
             <h1>There are many advantages to taking an API-first development approach. And with the help of tools like RAML, APIs have become more elastic and easier to use.</h1>
             <p class="w-100">Jerry Weng</p>
-            <span class="w-100">Co-founder, CHOCOLABS</span> 
-          </div>   
+            <span class="w-100">Co-founder, CHOCOLABS</span>
+          </div>
         </div>
       </div>
   </section>
@@ -239,22 +238,33 @@ title:  'Welcome'
           '#%RAML 1.0',
           'title : Hello World # required title\n',
           '/greeting: # optional resource',
-          '\tget: # HTTP method declaration',
-          '\t\tresponse: # Declare a response',
-          '\t\t\t200: #HTTP status code',
-          '\t\t\t\tbody: #declare content of response',
-          '\t\t\t\t\tapplication/json: # media type',
-          '\t\t\t\t\t\t# structural definiation of a response (schema or type)',
-          '\t\t\t\t\t\ttype: object',
-          '\t\t\t\t\t\tproperties:',
-          '\t\t\t\t\t\t\tmessage: string',
-          '\t\t\t\t\t\texample: #example how a response looks like',
-          '\t\t\t\t\t\t\tmessage: "Hello world"'
+          '  get: # HTTP method declaration',
+          '    responses: # Declare a response',
+          '      200: #HTTP status code',
+          '        body: #declare content of response',
+          '          application/json: # media type',
+          '            # structural definiation of a response (schema or type)',
+          '            type: object',
+          '            properties:',
+          '              message: string',
+          '            example: #example how a response looks like',
+          '              message: "Hello world"'
       ].join('\n'),
       language: 'raml',
       minimap: {
           enabled: false
       }
     });
+
+    const PLAYGROUND_URL = 'https://raml-org.github.io/playground/raml_oas.html';
+    const buttons = document.getElementsByClassName('try-it-out-btn');
+    Array.from(buttons).forEach((btn) => {
+      btn.onclick = () => {
+        const demoUrl = `${PLAYGROUND_URL}?raml=${encodeURIComponent(editor.getValue())}`;
+        window.open(demoUrl);
+        return false;
+      }
+    });
+
   });
 </script>
