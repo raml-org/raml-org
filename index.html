@@ -260,7 +260,11 @@ title:  'Welcome'
     const buttons = document.getElementsByClassName('try-it-out-btn');
     Array.from(buttons).forEach((btn) => {
       btn.onclick = () => {
-        const demoUrl = `${PLAYGROUND_URL}?raml=${encodeURIComponent(editor.getValue())}`;
+        let demoUrl = PLAYGROUND_URL
+        let editorVal = editor.getValue()
+        if (editorVal) {
+          demoUrl += `?raml=${encodeURIComponent(editorVal)}`
+        }
         window.open(demoUrl);
         return false;
       }
