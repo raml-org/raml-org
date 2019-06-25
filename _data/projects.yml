@@ -1,4 +1,5 @@
 - name: API Workbench
+  deprecated: true
   author: MuleSoft
   description: |
     API Workbench, a rich, full-featured integrated development environment
