@@ -13,6 +13,7 @@
   topics:
     - Design
 - name: raml2html
+  deprecated: false
   author: kevinrenskers
   description: |
     raml2html is a documentation tool that outputs a single HTML page console
@@ -22,6 +23,7 @@
   topics:
     - Document
 - name: RAML-to-Swagger2-converter
+  deprecated: false
   author: eshwanth
   description: |
     The goal of RAML-to-Swagger-converter is to provide a tool (in this case, a java project)
@@ -30,6 +32,7 @@
   topics:
     - Utilities
 - name: api-generator
+  deprecated: false
   author: Arthur
   description: PHP-code generator (based on OAS) for Laravel framework, with complete support of JSON-API data format.
   url: https://github.com/SoliDry/api-generator
@@ -39,6 +42,7 @@
   topics:
     - Build
 - name: API Designer
+  deprecated: false
   author: MuleSoft
   description: |
     API Designer is a web-based API development tool that allows API providers
@@ -49,6 +53,7 @@
   topics:
     - Design
 - name: API Console
+  deprecated: false
   author: MuleSoft
   description: |
     API Console is a graphical user interface for a RAML-defined API that
@@ -61,6 +66,7 @@
   topics:
     - Document
 - name: RAML for JAX-RS
+  deprecated: false
   author: MuleSoft
   description: |
     The goal of RAML for JAX-RS is to provide a set of tools to work with
@@ -71,6 +77,7 @@
   topics:
     - Build
 - name: RAML2HTML for PHP
+  deprecated: false
   author: Mike Stowe
   description: |
     RAML 2 HTML for PHP is a simple application that makes use of multiple
@@ -82,6 +89,7 @@
   topics:
     - Document
 - name: Osprey
+  deprecated: false
   author: MuleSoft
   description: |
     Osprey is a JavaScript framework for rapidly building applications
@@ -90,6 +98,7 @@
   topics:
     - Build
 - name: Restlet Studio
+  deprecated: false
   author: Restlet
   description: |
     Restlet Studio is a lightweight web-based development environment that
@@ -102,6 +111,7 @@
     - Design
     - Build
 - name: API Notebook
+  deprecated: false
   author: MuleSoft
   description: |
     API Notebook is a web-based, persistent, JavaScript scripting workspace
@@ -115,6 +125,7 @@
   topics:
     - Document
 - name: Abao
+  deprecated: false
   author: cybertk
   description: |
     Abao is a command-line tool for testing API documentation written in
@@ -123,6 +134,7 @@
   topics:
     - Test
 - name: ramlfications
+  deprecated: false
   author: Spotify
   description: |
     RAML reference implementation in Python
@@ -134,6 +146,7 @@
     - Parsers
     - Document
 - name: RAML Tools for .NET
+  deprecated: false
   author: MuleSoft
   description: |
     RAML Tools for .NET allows developers to easily integrate and consume
@@ -143,6 +156,7 @@
   topics:
     - Build
 - name: raml-server
+  deprecated: false
   author: Franco Arolfo
   description: |
     RAML Server exposes a full fake REST API with zero coding by writing a RAML spec.
@@ -150,6 +164,7 @@
   topics:
     - Build
 - name: Vigia
+  deprecated: false
   author: nogates
   description: |
     Vigia is a adaptable API integration test suite which supports test
@@ -158,6 +173,7 @@
   topics:
     - Test
 - name: swagger2raml
+  deprecated: false
   author: rucek
   description: |
     Swagger2RAML is an utility to generate RAML from Swagger JSON.
@@ -165,6 +181,7 @@
   topics:
     - Utilities
 - name: RAML Java Parser
+  deprecated: false
   author: MuleSoft
   description: |
     A reference implementation of a RAML parser for Java. The parser is
@@ -174,6 +191,7 @@
   topics:
     - Parsers
 - name: Sandbox
+  deprecated: false
   author: Sandbox
   description: |
     Quick and easy mock RESTful API and SOAP webservices. Generate from API definitions,
@@ -185,6 +203,7 @@
   topics:
     - Test
 - name: Postman
+  deprecated: false
   author: Postman
   description: |
     Postman is a chrome app that lets you import RAML to easily call and
@@ -196,6 +215,7 @@
   topics:
     - Test
 - name: APIkit 1.0
+  deprecated: false
   author: MuleSoft
   description: |
     APIkit is a declarative toolkit that leverages RAML to facilitate the
@@ -204,6 +224,7 @@
   topics:
     - Build
 - name: RAMSES
+  deprecated: false
   author: Brandicted
   description: |
     RAML + Elasticsearch + Pyramid = REST API. Ramses is a library that
@@ -213,6 +234,7 @@
   topics:
     - Build
 - name: RAML JavaScript Parser
+  deprecated: true
   author: MuleSoft
   description: |
     Official JavaScript parser for RAML. Supports versions 0.8 and 1.0
@@ -220,6 +242,7 @@
   topics:
     - Parsers
 - name: ramlapi
+  deprecated: false
   author: The Economist Group
   description: |
     This package is designed to work with RAML files and build the appropriate
@@ -228,6 +251,7 @@
   topics:
     - Build
 - name: Spring MVC - RAML Spec Synchroniser Plugin
+  deprecated: false
   author: phoenixNAP
   description: |
     Spring MVC - RAML Spec Synchroniser Plugin. A Maven plugin designed
@@ -240,6 +264,7 @@
   topics:
     - Build
 - name: RAMLSharp
+  deprecated: true
   author: Quicken Loans
   description: |
     This is a tool for ASP.net Web API that will allow you to build RAML documentation.
@@ -247,6 +272,7 @@
   topics:
     - Document
 - name: RAML to Bootstrap
+  deprecated: false
   author: Probe Dock
   description: |
     Generate a Bootstrap page for your API documentation in RAML
@@ -254,6 +280,7 @@
   topics:
     - Document
 - name: RAML Ruby
+  deprecated: false
   author: kgorin @ coub
   description: |
     A reference implementation of a RAML parser in Ruby. It uses Psych
@@ -262,6 +289,7 @@
   topics:
     - Parsers
 - name: Api2Symfony Bundle
+  deprecated: true
   author: Creads
   description: |
     A Symfony2 bundle to automatically generate controllers from RAML API specifications
@@ -269,6 +297,7 @@
   topics:
     - Build
 - name: Gradle RAML Plugin
+  deprecated: false
   author: A.J. Brown
   description: |
     Validate your RAML documentation, and turn it into HTML. Based on raml2html.
@@ -276,6 +305,7 @@
   topics:
     - Utilities
 - name: RAML Client Generator
+  deprecated: false
   author: MuleSoft
   description: |
     Template-driven generator of clients for APIs described by RAML.
@@ -283,6 +313,7 @@
   topics:
     - Build
 - name: go-raml
+  deprecated: false
   author: Alon Diamant
   description: |
     An implementation of a RAML parser for Go. Compliant with RAML 0.8.
@@ -290,6 +321,7 @@
   topics:
     - Parsers
 - name: API Spec Converter
+  deprecated: true
   author: StopLight.io
   description: |
     This package helps to convert between different API specifications (Postman,
@@ -298,6 +330,7 @@
   topics:
     - Utilities
 - name: OAS RAML Converter
+  deprecated: false
   author: MuleSoft
   description: |
     This package helps to convert between different API specifications.
@@ -310,6 +343,7 @@
     title: Live Demo
     url: https://mulesoft.github.io/oas-raml-converter/
 - name: RAML Store
+  deprecated: false
   author: brianmc
   description: |
     This project provides an persistent store for RAML files created using then
@@ -318,6 +352,7 @@
   topics:
     - Design
 - name: API designer using local filesystem
+  deprecated: false
   author: sichvoge
   description: |
     An implementation of MuleSoft's API designer using the local filesystem.
@@ -325,6 +360,7 @@
   topics:
     - Design
 - name: raml2html PHP
+  deprecated: false
   author: LeanLabs
   description: |
     raml2html documentation generator based on PHP
@@ -335,7 +371,10 @@
   topics:
     - Document
 - name: Jumpscale go-raml
+  deprecated: false
   author: Jumpscale
+  topics:
+    - Parsers
   description: |
     Server and client generation for RAML 1.0
   url: https://github.com/Jumpscale/go-raml
@@ -343,6 +382,7 @@
     title: Tutorial
     url: https://github.com/Jumpscale/go-raml/tree/master/docs/tutorial
 - name: gulp-RAML2HTML
+  deprecated: false
   author: walling
   description: |
     A simple gulp plugin to automate the process of generating HTML documentation
@@ -351,6 +391,7 @@
   topics:
     - Utilities
 - name: RAMLRenderer
+  deprecated: false
   author: beno
   description: |
     HTML documentation builder for RAML 1.0 written in Crystal
@@ -358,6 +399,7 @@
   topics:
     - Document
 - name: PHP RAML Parser
+  deprecated: false
   author: alecsammon
   description: |
     A reference implementation of a RAML parser in PHP. Compliant with
@@ -366,6 +408,7 @@
   topics:
     - Parsers
 - name: ramlo
+  deprecated: false
   author: PGS Software
   description: |
     Command line tool based on Node.js for generating RESTful API documentations
@@ -374,6 +417,7 @@
   topics:
     - Document
 - name: RAML Builder
+  deprecated: false
   author: Eric Neuhauser
   description: |
     This tool builds separate RAML, YAML, Schema, and JSON files into a
@@ -382,6 +426,7 @@
   topics:
     - Document
 - name: RAML Sublime Plugin
+  deprecated: false
   author: MuleSoft
   description: |
     RAML Sublime Plugin is a syntax highlighter for Sublime (the popular text editor).
@@ -392,6 +437,7 @@
   topics:
     - Design
 - name: API Designer for Git FS
+  deprecated: false
   author: Stephane
   description: |
     api-designer console fork for pulling github hosted raml/json-schema files.
@@ -399,6 +445,7 @@
   topics:
     - Document
 - name: raml-mocker
+  deprecated: false
   author: David Vega Fontelos
   description: |
     Node module to create random responses to requests based on RAML REST definition.
@@ -406,6 +453,7 @@
   topics:
     - Build
 - name: ramltomd
+  deprecated: false
   author: Diego Gurgel
   description: |
     A RAML to markdown converter made in modejs.
@@ -413,6 +461,7 @@
   topics:
     - Document
 - name: pyraml-parser
+  deprecated: false
   author: an2deg
   description: |
     A reference implementation of a RAML parser for Python. It's based
@@ -421,6 +470,7 @@
   topics:
     - Parsers
 - name: RAML PHP Client Generator
+  deprecated: false
   author: jenschude
   description: |
     Generate a PHP API client from RAML.
@@ -428,6 +478,7 @@
   topics:
     - Build
 - name: sphinx-raml
+  deprecated: false
   author: Pierre Tardy
   description: |
     A sphinx extension to include raml based documentation into a sphinx doc
@@ -435,6 +486,7 @@
   topics:
     - Document
 - name: SCRAML
+  deprecated: false
   author: Atomic BITS
   description: |
     Scraml generates a typesafe Java or Scala client library based on a
@@ -444,6 +496,7 @@
   topics:
     - Build
 - name: PSX Framework
+  deprecated: false
   author: Christoph Kappestein
   description: |
     PSX is a framework written in PHP to create REST APIs. It provides
@@ -456,6 +509,7 @@
   topics:
     - Build
 - name: RAML Maven Plugin
+  deprecated: false
   author: Hubrick
   description: |
     Provides generation of Spring Web resource interfaces based on RAML files.
@@ -463,6 +517,7 @@
   topics:
     - Build
 - name: RAML Parser for .NET
+  deprecated: true
   author: MuleSoft
   description: |
     A RAML Parser implementation in .NET for all CLR languages. The parser
@@ -472,6 +527,7 @@
   topics:
     - Parsers
 - name: SoapUI RAML Plugin
+  deprecated: false
   author: SmartBear
   description: |
     SoapUI is a very popular functional testing tool, broadly used for
@@ -481,6 +537,7 @@
   topics:
     - Test
 - name: ATOM RAML package
+  deprecated: false
   author: nachoesmite
   description: |
     ATOM RAML Package is a plugin (package) for ATOM (Github's text editor)
@@ -490,6 +547,7 @@
   topics:
     - Design
 - name: Ruby RamlParser
+  deprecated: false
   author: ePages
   description: |
     A Ruby based parser for the RAML API modeling language.
@@ -497,6 +555,7 @@
   topics:
     - Parsers
 - name: Ra
+  deprecated: false
   author: Ramses
   description: |
     Ra is a test suite generator and helper library for testing APIs described
@@ -507,6 +566,7 @@
   topics:
     - Test
 - name: Nobel
+  deprecated: false
   author: nohorbee
   description: |
     Nobel (code-generator) creates a REST API for your Arduino board, based
@@ -515,6 +575,7 @@
   topics:
     - Build
 - name: RAML Syntax Highlighting for Visual Studio Code
+  deprecated: false
   author: Jeppe Lund Andersen
   description: |
     This is a RAML syntax highlighting implementation for VS Code based
@@ -523,6 +584,7 @@
   topics:
     - Design
 - name: raml-1-mocker
+  deprecated: false
   author: Artem Soltynskiy
   description: |
     Node module to create mock service based on RAML 1.0 specification.
@@ -530,6 +592,7 @@
   topics:
     - Test
 - name: RAML Mock-ups
+  deprecated: false
   author: Alvaro Cabrera
   description: |
     Express-based mocking service for RAML development.
@@ -537,6 +600,7 @@
   topics:
     - Test
 - name: RamlParser
+  deprecated: false
   author: Nat Chapman
   description: |
     An Elixir parser for RAML API spec files
@@ -544,6 +608,7 @@
   topics:
     - Parsers
 - name: RAML JavaScript Generator
+  deprecated: false
   author: MuleSoft
   description: |
     Generate a JavaScript API client from RAML.
@@ -551,6 +616,7 @@
   topics:
     - Build
 - name: ramlnova
+  deprecated: false
   author: ANAS IT Inc.
   description: |
     ramlnova is the next-generation RESTful-APIs Generator software (Laravel
@@ -560,6 +626,7 @@
   topics:
     - Build
 - name: Raml Ruby Client Generator
+  deprecated: false
   author: Newell Zhu
   description: |
     Auto Generate Ruby Client from Raml.
@@ -567,6 +634,7 @@
   topics:
     - Build
 - name: Rambo
+  deprecated: false
   author: Dana Scheider
   description: |
     Rambo is a gem that generates API contract tests from API docs in RAML.
@@ -574,6 +642,7 @@
   topics:
     - Test
 - name: Brújula
+  deprecated: false
   author: nogates
   description: |
     Yet another Ruby RAML parser aiming for version 1.0 fully support
@@ -581,6 +650,7 @@
   topics:
     - Parsers
 - name: RAML Linter
+  deprecated: false
   author: Quicken Loans
   description: |
     RAML Linter is a static analysis, linter-like, utility that will enforce
@@ -589,6 +659,7 @@
   topics:
     - Design
 - name: express-raml-store
+  deprecated: false
   author: colthreepv
   description: |
     This project makes the api-designer work with a persistence layer to
@@ -598,6 +669,7 @@
   topics:
     - Design
 - name: SBT RAML Plugin
+  deprecated: false
   author: Eigengo
   description: |
     The purpose of this plugin is to provide syntax checking and documentation
@@ -606,6 +678,7 @@
   topics:
     - Document
 - name: RAML Mock Server
+  deprecated: false
   author: OzWolf
   description: |
     Java + JUnit library for running a Mock Server then verifying interactions
@@ -614,6 +687,7 @@
   topics:
     - Test
 - name: go-raml-parser
+  deprecated: false
   author: tsaikd
   description: |
     RAML (1.0) parser implementation in golang
@@ -621,6 +695,7 @@
   topics:
     - Parsers
 - name: Amazon API Gateway Importer
+  deprecated: true
   author: AWS Labs
   description: |
     The Amazon API Gateway Importer lets you create or update Amazon API
@@ -629,6 +704,7 @@
   topics:
     - Build
 - name: RAML 1.0 Parser for .NET
+  deprecated: false
   author: MuleSoft
   description: |
     A RAML Parser implementation in .NET for all CLR languages. The parser
@@ -638,6 +714,7 @@
   topics:
     - Parsers
 - name: raml-maven
+  deprecated: false
   author: CJS Common Platform
   description: |
     A plugin for using RAML documents within Maven projects.
@@ -645,6 +722,7 @@
   topics:
     - Build
 - name: raml-csharp-parser
+  deprecated: false
   author: Martin Pueyo
   description: |
     This project contains a RAML csharp parser compatible with version
@@ -653,6 +731,7 @@
   topics:
     - Parsers
 - name: PHP RAML Server (fork)
+  deprecated: false
   author: jasir
   description: |
     This is an implementation of a Apache/PHP server which takes a RAML
@@ -661,6 +740,7 @@
   topics:
     - Test
 - name: RAML Perl Parser
+  deprecated: false
   author: Sean P Quinlan
   description: |
     Perl parser for RAML API definitions
@@ -668,6 +748,7 @@
   topics:
     - Parsers
 - name: play-raml
+  deprecated: false
   author: Vadim
   description: |
     play-raml is a sbt plugin for play framework 2.4, which replaces the
@@ -677,6 +758,7 @@
   topics:
     - Build
 - name: RAML Cop
+  deprecated: false
   author: thebinarypenguin
   description: |
     A command line tool for validating RAML files. It uses raml-org/raml-js-parser
@@ -685,6 +767,7 @@
   topics:
     - Utilities
 - name: hapi-raml
+  deprecated: false
   author: Dave Irvine
   description: |
     This library will take your RAML, parse it using raml-parser, and then
@@ -693,6 +776,7 @@
   topics:
     - Build
 - name: RAML Client Generator for Gulp
+  deprecated: false
   author: Brent Montague
   description: |
     This allows for a raml file to be turned into a client library via
@@ -701,6 +785,7 @@
   topics:
     - Utilities
 - name: vim-raml
+  deprecated: false
   author: Kenneth Feng
   description: |
     RAML plugin for VIM
@@ -708,6 +793,7 @@
   topics:
     - Design
 - name: RAML Validate
+  deprecated: false
   author: MuleSoft
   description: |
     Strict and pluginable validation of RAML parameters.
@@ -715,6 +801,7 @@
   topics:
     - Test
 - name: eslint-plugin-raml
+  deprecated: false
   author: Nikita Galkin
   description: |
     Eslint rules for RAML. You can use it for testing your RAML in Continuous Integration.
@@ -722,6 +809,7 @@
   topics:
     - Utilities
 - name: php-ramlMerge
+  deprecated: false
   author: Mike Stowe
   description: |
     RAML Merge lets you merge in any included RAML files (!include) into
@@ -730,6 +818,7 @@
   topics:
     - Utilities
 - name: raml-fleece
+  deprecated: false
   author: Janrain
   description: |
     raml-fleece turns RAML into a readable HTML file. It currently supports
@@ -738,6 +827,7 @@
   topics:
     - Document
 - name: raml2pdf-cli
+  deprecated: false
   author: Christian Heindl
   description: |
     Command-line RAML to PDF converter.
@@ -748,6 +838,7 @@
   topics:
     - Utilities
 - name: Diet RAML generator
+  deprecated: false
   author: Oscar Reyes
   description: |
     A resource code generator for diet with raml
@@ -755,6 +846,7 @@
   topics:
     - Build
 - name: generator-ramlang
+  deprecated: true
   author: Syple Technologies
   description: |
     RAMLang is a simple and easy to use command line tool. It's main goal
@@ -765,6 +857,7 @@
   topics:
     - Build
 - name: GULP RAML plugin
+  deprecated: false
   author: JohanObrink
   description: |
     GULP RAML Plugin is a GULP based add-on that allows to parse and validate
@@ -773,6 +866,7 @@
   topics:
     - Utilities
 - name: DropWizard RAML
+  deprecated: false
   author: Wade Pearce
   description: |
     A toolbox of libraries for creating, managing, testing and displaying RAML specifications for DropWizard services.
@@ -783,6 +877,7 @@
     - Design
     - Test
 - name: RAML Data Type System
+  deprecated: true
   author: MuleSoft
   description: |
     This module contains a lightweight implementation of the type system
@@ -792,6 +887,7 @@
   topics:
     - Utilities
 - name: metalsmith-raml
+  deprecated: false
   author: Lotaris SA
   description: |
     This is a plugin for Metalsmith that parses RAML API Specifications
@@ -800,12 +896,14 @@
   topics:
     - Build
 - name: vim-raml
+  deprecated: false
   author: Eric Hopkins
   description: Vim syntax and language settings for RAML
   url: https://github.com/IN3D/vim-raml
   topics:
     - Design
 - name: linter-raml
+  deprecated: false
   author: Cyprien Quilici
   description: |
     Lint RAML documentation on the fly in atom using raml-js-parser
@@ -813,6 +911,7 @@
   topics:
     - Design
 - name: ramlev
+  deprecated: false
   author: cybertk
   description: |
     ramlev is a simple RAML Example Validator, which is used to validate
@@ -821,6 +920,7 @@
   topics:
     - Utilities
 - name: RAML Lorem-Impsum
+  deprecated: false
   author: Ioannis Charalampidis
   description: |
     A simple library and CLI utility for generating random data from RAML
@@ -829,6 +929,7 @@
   topics:
     - Utilities
 - name: raml2mocha
+  deprecated: false
   author: Miles Oldenburg
   description: |
     Automated mocha.js test generation for RAML API specs.
@@ -836,6 +937,7 @@
   topics:
     - Test
 - name: RAML JSON Schema Expander
+  deprecated: false
   author: Adam Newman
   description: |
     This library will expand JSON Schema draft 4 schema references in
@@ -846,6 +948,7 @@
   topics:
     - Utilities
 - name: raml2travis
+  deprecated: false
   author: Innova Co S.à r.l
   description: |
     Travis CI plugin for RAML
@@ -853,6 +956,7 @@
   topics:
     - Utilities
 - name: PAW RAML Specification Importer 0.8
+  deprecated: false
   author: A.J. Brown
   description: |
     A Paw Extension to import RAML 0.8 Specification into Paw.
@@ -863,6 +967,7 @@
   topics:
     - Test
 - name: PAW RAML Specification Importer 1.0
+  deprecated: false
   author: A.J. Brown
   description: |
     A Paw Extension to import RAML 1.0 Specification into Paw.
@@ -873,6 +978,7 @@
   topics:
     - Test
 - name: raml2test
+  deprecated: false
   author: aisensiy
   description: |
     A tool to translate raml to mocha api test
@@ -880,6 +986,7 @@
   topics:
     - Test
 - name: raml-olingo-codegen
+  deprecated: false
   author: Subhobrata Dey
   description: |
     The raml-olingo-codegen project provides a tool to generate a scaffolding
@@ -891,6 +998,7 @@
   topics:
     - Build
 - name: Test Compatibility Kit for RAML Parsers
+  deprecated: false
   author: MuleSoft
   description: |
     A collection of RAML specifications for use to test a RAML Parsers
@@ -903,6 +1011,7 @@
     - Parsers
     - Utilities
 - name: Vrap
+  deprecated: false
   author: vrap.io
   description: |
     Validating Rest API proxy
@@ -913,6 +1022,7 @@
   topics:
     - Test
 - name: uml2raml
+  deprecated: false
   author: Davide Rossi
   description: |
     UML to RAML generator for MDE toolchains.
@@ -921,6 +1031,7 @@
   topics:
     - Design
 - name: RAML API Tester
+  deprecated: false
   author: Michael Fischer
   description: |
     The RAML API Tester (RAT) is a simple javascript library and cli that can
@@ -929,6 +1040,7 @@
   topics:
     - Test
 - name: cookiecutter-raml
+  deprecated: false
   author: genzj
   description: |
     Cookiecutter template for creating a RAML 1.0 project.
@@ -937,6 +1049,7 @@
     - Design
     - Utilities
 - name: hikaku
+  deprecated: false
   author: codecentric
   description: |
     A library that tests if the implementation of a REST-API meets its specification.
@@ -947,6 +1060,7 @@
   topics:
     - Test
 - name: AriesDoc
+  deprecated: false
   author: Victor.X.Qu
   description: |
     AriesDoc helps generating RAML doc file from asp.net core.
@@ -957,6 +1071,7 @@
   topics:
     - Utilities
 - name: raml-language-server
+  deprecated: false
   author: MuleSoft
   url: https://github.com/mulesoft-labs/raml-language-server
   description: A Language Server that exposes smart RAML language support for various IDEs using the new Language Server Protocol standard
@@ -965,6 +1080,7 @@
     - Tooling
     - Utilities
 - name: restdocs-raml
+  deprecated: true
   author: ePages-de
   url: https://github.com/ePages-de/restdocs-raml
   description: This is an extension that adds RAML (RESTful API Modeling Language) as an output format to Spring REST Docs.
@@ -974,6 +1090,7 @@
   topics:
     - Document
 - name: api-console-cli
+  deprecated: false
   author: MuleSoft
   url: https://github.com/mulesoft-labs/api-console-cli
   description: The command-line tool for the API Console Web Component.
@@ -982,6 +1099,7 @@
     - Utilities
     - Document
 - name: raml2json
+  deprecated: false
   author: infinitecsolutions
   url: https://github.com/infinitecsolutions/raml2json
   description: Parse a RAML file to create beautiful json
@@ -990,6 +1108,7 @@
     - Utilities
     - Document
 - name: osprey-resources
+  deprecated: false
   author: MuleSoft
   url: https://github.com/mulesoft-labs/osprey-resources
   description: Iterate over RAML resources and generate a middleware router.
@@ -998,24 +1117,28 @@
     - Build
     - Tooling
 - name: raml-clj-parser
+  deprecated: false
   author: zacyang
   url: https://github.com/zacyang/raml-clj-parser
   description: This is a RAML parser implemented in clojure, which is based on SnakeYaml library.
   topics:
     - Parsers
 - name: raml-parser-cli
+  deprecated: false
   author: braceslab
   url: https://github.com/braceslab/raml-parser-cli
   description: It just wrap raml-1-parser to command line.
   topics:
     - Parser
 - name: raml-js-parser
+  deprecated: true
   author: advanced-rest-client
   url: https://github.com/advanced-rest-client/raml-js-parser
   description: The RAML parser (JS version) as a web component.
   topics:
     - Parser
 - name: osprey-mock-service
+  deprecated: false
   author: mulesoft-labs
   url: https://github.com/mulesoft-labs/osprey-mock-service
   description: Generate an API mock service from a RAML definition using Osprey.
@@ -1023,18 +1146,21 @@
     - Test
     - Tooling
 - name: angular-http-raml
+  deprecated: false
   author: patientsknowbest
   url: https://github.com/patientsknowbest/angular-http-raml
   description: This library provides a RAML-based MockBackend generator for testing Angular 4 applications.
   topics:
     - Test
 - name: API-Flow
+  deprecated: false
   author: luckymarmot
   url: https://github.com/luckymarmot/API-Flow
   description: A flow written in ES6 using Immutable to convert between API description formats (Swagger, etc.) and other programs such as cURL command lines.
   topics:
     - Utilities
 - name: raml-generator
+  deprecated: false
   author: MuleSoft
   url: https://github.com/mulesoft-labs/raml-generator
   description: Generate files from a RAML document and Handlebars templates
@@ -1043,6 +1169,7 @@
     - Tooling
     - Generator
 - name: caraml
+  deprecated: false
   author: daniel-pedersen
   url: https://github.com/daniel-pedersen/caraml
   description: Generates an optimized SDK from a RAML specification. Works with modern browsers and node.
@@ -1050,6 +1177,7 @@
     - Tooling
     - Generator
 - name: aml2obj
+  deprecated: false
   author: raml2html
   url: https://github.com/raml2html/raml2obj
   description: A thin wrapper around raml-js-parser-2, adding extra properties to the resulting object for use in raml2html and raml2md.
@@ -1057,6 +1185,7 @@
     - Tooling
     - Utilities
 - name: osprey-method-handler
+  deprecated: false
   author: MuleSoft
   url: https://github.com/mulesoft-labs/osprey-method-handler
   description: Middleware for validating requests and responses based on a RAML method object.
@@ -1064,6 +1193,7 @@
     - Tooling
     - Utilities
 - name: osprey-router
+  deprecated: false
   author: MuleSoft
   url: https://github.com/mulesoft-labs/osprey-router
   description: Simple middleware-style router for RAML based on https://github.com/pillarjs/router
@@ -1071,6 +1201,7 @@
     - Tooling
     - Utilities
 - name: raml-path-match
+  deprecated: false
   author: MuleSoft
   url: https://github.com/mulesoft-labs/raml-path-match
   description: Path matching utility based on the RAML spec.
@@ -1078,12 +1209,14 @@
     - Tooling
     - Utilities
 - name: raml-examples
+  deprecated: false
   author: MuleSoft
   url: https://github.com/raml-org/raml-examples
   description: This repository contains valid RAML 1.0 examples. These examples are not only part of the spec, but also represent RAML features in different scenarios.
   topics:
     - Documentation
 - name: raml-tester
+  deprecated: false
   author: Stefan Niederhauser
   url: https://github.com/nidi3/raml-tester
   description: Test if a request/response matches a given raml definition.
@@ -1093,6 +1226,7 @@
   topics:
     - Test
 - name: stoplight.io
+  deprecated: false
   author: stoplightio
   url: https://stoplight.io/
   description: The Stoplight platform provides a suite of products that cover the entire pre-production API lifecycle. Supports importing RAML files.
@@ -1100,12 +1234,14 @@
     - Design
     - Documentation
 - name: ramldt2jsonschema
+  deprecated: false
   author: MuleSoft
   url: https://github.com/raml-org/ramldt2jsonschema
   description: CLI & Library to convert a RAML 1.0 DataType to a JSON Schema Draft 6, and back. (dt2js can still be used to produce draft04 documents if used programatically)
   topics:
     - Tooling
 - name: raml-java-client-generator
+  deprecated: false
   author: MuleSoft
   url: https://github.com/mulesoft-labs/raml-java-client-generator
   description: This tool generates a java rest client for a raml based api using a resource api approach. Supports both 0.8 and 1.0 versions of Raml
@@ -1113,12 +1249,14 @@
     - Tooling
     - Codegen
 - name: psx-api
+  deprecated: false
   author: apioo
   url: https://github.com/apioo/psx-api
   description: Parse and generate API specification formats
   topics:
     - Parsing
 - name: generaptr-cli
+  deprecated: false
   author: generaptr
   url: https://github.com/generaptr/generaptr-cli
   description: generaptr-cli is a node cli package that helps when starting up a project by generating boilerplate code for Express api.
@@ -1126,42 +1264,49 @@
     - Codegen
     - Utilities
 - name: raml-tester-proxy
+  deprecated: false
   author: nidi3
   url: https://github.com/nidi3/raml-tester-proxy
   description: A standalone proxy/mock that tests if requests/responses are compliant with a given RAML.
   topics:
     - Test
 - name: vim-yaml-folds
+  deprecated: false
   author: pedrohdz
   url: https://github.com/pedrohdz/vim-yaml-folds
   description: Very simple folding configuration for YAML, Puppet/Hiera EYAML, RAML and SaltStack SLS files.
   topics:
     - Utilities
 - name: raml-js-validator
+  deprecated: false
   author: joanvila
   url: https://github.com/joanvila/raml-js-validator
   description: Simple RAML 1.0 validator that reads a file containing an API definition and performs a query to each endpoint to check that the RAML matches the backend implementation.
   topics:
     - Validator
 - name: raml-cli
+  deprecated: false
   author: MuleSoft
   url: https://github.com/raml-org/raml-cli
   description: A handy command-line tool for RAML enthusiasts.
   topics:
     - Tooling
 - name: symfony-skeleton
+  deprecated: false
   author: kruglikdenis
   url: https://github.com/kruglikdenis/symfony-skeleton
   description: Skeleton rest-api based on symfony. Uses RAML for documenting projects.
   topics:
     - Documentation
 - name: raml1-doc
+  deprecated: true
   author: Letsdeal
   url: https://github.com/Letsdeal/raml1-doc
   description: Generate HTML doc for REST API using RAML
   topics:
     - Documentation
 - name: raml-mock-service
+  deprecated: false
   author: MuleSoft
   url: https://github.com/raml-org/raml-mock-service
   description: Generate an API mock service from a RAML definition using Osprey. This implementation was heavely influenced by MuleSoft's Osprey Mocking Service.
@@ -1169,30 +1314,35 @@
     - Tooling
     - Test
 - name: datatype-expansion
+  deprecated: true
   author: MuleSoft
   url: https://github.com/raml-org/datatype-expansion
   description: Often, tools need the full expansion of RAML data types where there are no references. This module gives you a utility tool to expand a given type and create a canonical form.
   topics:
     - Tooling
 - name: node-raml-sanitize
+  deprecated: false
   author: MuleSoft
   url: https://github.com/mulesoft-labs/node-raml-sanitize
   description: Strict sanitization of RAML 0.8 named parameters and RAML 1.0 built-in types.
   topics:
     - Tooling
 - name: jsonapi2raml
+  deprecated: false
   author: tabone
   url: https://github.com/tabone/jsonapi2raml
   description: Utility used to generate RAML v1.0 Documentation for REST APIs that follow the JSON-API spec.
   topics:
     - Documentation
 - name: godoc2api
+  deprecated: false
   author: florenthobein
   url: https://github.com/florenthobein/godoc2api
   description: Turn your golang comments into a RAML 1.0 file describing your API
   topics:
     - Documentation
 - name: util-raml-code-generator
+  deprecated: false
   author: paysera
   url: https://github.com/paysera/util-raml-code-generator
   description: Generates PHP or JS RESTful Client from RAML API definition
@@ -1200,108 +1350,126 @@
     - Codegen
     - Tooling
 - name: oas-raml-converter-service
+  deprecated: false
   author: Mulesoft
   url: https://github.com/mulesoft/oas-raml-converter-service
   description: REST service to expose oas-raml-converter operations
   topics:
     - Converter
 - name: apigility-raml-validator
+  deprecated: false
   author: robertboloc
   url: https://github.com/robertboloc/apigility-raml-validator
   description: This is a tool to help validate your Apigility implementation against a RAML specification. This way you can make sure the implementation matches the specification requirements.
   topics:
     - Tooling
 - name: raml2apigility
+  deprecated: false
   author: robertboloc
   url: https://github.com/robertboloc/raml2apigility
   description: Apigility scaffolding generator based on a RAML 1.0 specification. The tool will generate the same code the Apigility Admin UI generates but from the command line and based on a RAML specification file.
   topics:
     - Tooling
 - name: raml-jstorage
+  deprecated: false
   author: ggrandes
   url: https://github.com/ggrandes/raml-jstorage
   description: RAML-JStorage is a storage backend for RAML API Designer, built on Java to run in any Tomcat (rather than use the APIHub cloud service) with no more dependencies and still be able to collaborate designs.
   topics:
     - Server
 - name: RAML-Swift
+  deprecated: false
   author: cpageler93
   url: https://github.com/cpageler93/RAML-Swift
   description: A RAML parser based on YamlSwift written in Swift 4.
   topics:
     - Parser
 - name: raml-suggestions
+  deprecated: false
   author: MuleSoft
   url: https://github.com/mulesoft-labs/raml-suggestions
   description: This module provides auto-completion suggestions for RAML
   topics:
     - Tooling
 - name: check_api
+  deprecated: false
   author: Mermade
   url: https://github.com/Mermade/check_api
   description: check_api is a simple utility wrapping a collection of API definition format validators. It allows you to validate a local file or remote URL with a single command-line or programmatic invocation.
   topics:
     - Validator
 - name: raml-json-enhance-node
+  deprecated: false
   author: MuleSoft
   url: https://github.com/mulesoft-labs/raml-json-enhance-node
   description: A RAML's JSON enhancer node package to enhance JSON output of the RAML parser.
   topics:
     - Tooling
 - name: DuckStack
+  deprecated: false
   author: cpageler93
   url: https://github.com/cpageler93/DuckStack
   description: DuckStack is a Code Generator based on ChickGen and RAML-Swift using Quack and ConsulSwift. DuckStack generates Swift Code based on a RAML-File.
   topics:
     - Codegen
 - name: leanapi
+  deprecated: false
   author: bastuijnman
   url: https://github.com/bastuijnman/leanapi
   description: LeanAPI generates a nice UI for your API specifications.
   topics:
     - Documentation
 - name: raml-definition-system
+  deprecated: true
   author: MuleSoft
   url: https://github.com/raml-org/raml-definition-system
   description: This repository contains a set of interfaces that represents a declarative description of the RAML specification.
   topics:
     - Tooling
 - name: raml-annotations
+  deprecated: false
   author: MuleSoft
   url: https://github.com/raml-org/raml-annotations
   description: This repository contains a number of annotations that we, as a community, agreed on and share for others to use.
   topics:
     - Specification
 - name: raml2spore
+  deprecated: false
   author: xmonader
   url: https://github.com/xmonader/raml2spore
   description: Convert RAML specs to SPORE
   topics:
     - Tooling
 - name: docker-api-console-server
+  deprecated: false
   author: joshuamarquez
   url: https://github.com/joshuamarquez/docker-api-console-server
   description: Docker api-console NGINX based server to render your RAML docs.
   topics:
     - Tooling
 - name: docker-api-console
+  deprecated: false
   author: joshuamarquez
   url: https://github.com/joshuamarquez/docker-api-console
   description: Docker image for api-console
   topics:
     - Tooling
 - name: gradle-raml-plugin
+  deprecated: false
   author: netfalo
   url: https://github.com/netfalo/gradle-raml-plugin
   description: Gradle Plugin based on the phoenixnap/springmvc-raml-plugin
   topics:
     - Tooling
 - name: raml2html-comment-template
+  deprecated: false
   author: xfenix
   url: https://github.com/xfenix/raml2html-comment-template
   description: raml2html theme fork with embeded Disqus comments for each sections (if you want to comment your api, but doesnt want to pay for swagger, anypoint etc.)
   topics:
     - Documentation
 - name: raml-to-jaxrs-jsr-250-plugin
+  deprecated: false
   author: reallyinsane
   url: https://github.com/reallyinsane/raml-to-jaxrs-jsr-250-plugin
   description: Plugin for raml-for-jax-rs to generate JSR-250 annotations.
@@ -1309,12 +1477,14 @@
     - Codegen
     - Tooling
 - name: raml2schema
+  deprecated: false
   author: rankun203
   url: https://github.com/rankun203/raml2schema
   description: Convert raml 1.0 Types to Schema Draft 4 schemas
   topics:
     - Converter
 - name: ramlunit
+  deprecated: false
   author: ioleo
   url: https://github.com/ioleo/ramlunit
   description: Validate RAML and generate JUnit-like report.
@@ -1322,18 +1492,21 @@
     - Validator
     - Test
 - name: raml-loader
+  deprecated: false
   author: nidi3
   url: https://github.com/nidi3/raml-loader
   description: Load RAML files using different protocols like Classpath, File system, HTTP, Github, API portal, API designer
   topics:
     - Tooling
 - name: raml-xml-validation
+  deprecated: false
   author: MuleSoft
   url: https://github.com/mulesoft-labs/raml-xml-validation
   description: XML validation API for RAML JS parser
   topics:
     - Tooling
 - name: mast
+  deprecated: false
   author: quantworksinc
   url: https://github.com/quantworksinc/mast
   description: A RAML configurable API server with hot-reloading.
@@ -1341,72 +1514,84 @@
     - Test
     - Server
 - name: raml-dialects-tools
+  deprecated: false
   author: Pavel-research
   url: https://github.com/Pavel-research/raml-dialects-tools
   description: This project contains Java implementation of RAML Vocabularies, RAML Dialects
   topics:
     - Tooling
 - name: enunciate-raml
+  deprecated: false
   author: samblake
   url: https://github.com/samblake/enunciate-raml
   description: A RAML generator for http://enunciate.webcohesion.com/
   topics:
     - Codegen
 - name: RAML-Swift-CLI
+  deprecated: false
   author: cpageler93
   url: https://github.com/cpageler93/RAML-Swift-CLI
   description: Command Line Interface for RAML-Swift
   topics:
     - Tooling
 - name: rapids
+  deprecated: false
   author: sinoroc
   url: https://github.com/sinoroc/rapids
   description: Build automatically documented REST APIs with the Pyramid framework.
   topics:
     - Codegen
 - name: raml-typesystem-shapes
+  deprecated: false
   author: Pavel-research
   url: https://github.com/Pavel-research/raml-typesystem-shapes
   description: This repository contains support for domain/shape transformations.
   topics:
     - Tooling
 - name: raml2md-templates
+  deprecated: false
   author: cienet
   url: https://github.com/cienet/raml2md-templates
   description: Nunjunks templates of raml2md
   topics:
     - Documentation
 - name: wordpress-raml-console
+  deprecated: false
   author: djuang1
   url: https://github.com/djuang1/wordpress-raml-console
   description: This plugin provides the ability to embedd a RAML Console into a WordPress page.
   topics:
     - Console
 - name: raml-serverless
+  deprecated: false
   author: andrewcurioso
   url: https://github.com/andrewcurioso/raml-serverless
   description: Work with RAML documentation for Serverless v1.0 projects.
   topics:
     - Tooling
 - name: api-add-in
+  deprecated: false
   author: bayeslife
   url: https://github.com/bayeslife/api-add-in
   description: An add in to Sparx EA that allows for modeling and exporting REST APIs as RAML and JSON Schema
   topics:
     - Tooling
 - name: raml-rb
+  deprecated: false
   author: jpb
   url: https://github.com/jpb/raml-rb
   description: A RAML parser, implemented in Ruby
   topics:
     - Parser
 - name: go-raml-mocker
+  deprecated: false
   author: tsaikd
   url: https://github.com/tsaikd/go-raml-mocker
   description: RAML (1.0) web mock server implementation in golang
   topics:
     - Test
 - name: org.ops4j.ramler
+  deprecated: false
   author: ops4j
   url: https://github.com/ops4j/org.ops4j.ramler
   description: A code and documentation generator for the RESTful API Modeling Language (RAML).
@@ -1417,6 +1602,7 @@
     - Tooling
     - Codegen
 - name: raml2flow
+  deprecated: false
   author: a-omsk
   url: https://github.com/a-omsk/raml2flow
   description: Generate Flow types from .raml file
@@ -1424,6 +1610,7 @@
     - Codegen
     - Converter
 - name: aml
+  deprecated: false
   author: OnPositive
   url: https://github.com/OnPositive/aml
   description: The goal of this project is to provide a set of tools making work with RAML 1.0 files easier from Java as well as generating Java artifacts basing on RAML 1.0 files. At this moment it is a playground for Java Types->RAML conversion and back.
@@ -1431,42 +1618,49 @@
     - Tooling
     - Converter
 - name: RAMbLOn
+  deprecated: false
   author: mattbaird
   url: https://github.com/mattbaird/RAMbLOn
   description: A Go (golang) Interactive RAML v1.0 API to HTML Documentation Generator. RamblOn allows you to view the generated RAML based Documentation in a browser and it will automatically update when you save your .raml file.
   topics:
     - Documentation
 - name: raml-validate
+  deprecated: false
   author: AOEpeople
   url: https://github.com/AOEpeople/raml-validate
   description: API testing against RAML 1.0 files
   topics:
     - Test
 - name: rest-modeling-framework
+  deprecated: false
   author: vrapio
   url: https://github.com/vrapio/rest-modeling-framework
   description: The rest modeling framework provides an EMF based model for RAML api definition files.
   topics:
     - Test
 - name: raml2agl
+  deprecated: false
   author: pjcuadra
   url: https://github.com/pjcuadra/raml2agl
   description: This is a Proof of Concept of a Model Driven Development approach to generate Automotive Grade Linux applications and services by defining their interfaces using RAML.
   topics:
     - Codegen
 - name: ramlfications-php
+  deprecated: false
   author: therealgambo
   url: https://github.com/therealgambo/ramlfications-php
   description: PHP 7 implementation of the RAML 1.0 Specification heavily influenced from the Spotify Ramlfications design.
   topics:
     - Parser
 - name: webapi-parser
+  deprecated: false
   author: MuleSoft
   url: https://github.com/raml-org/webapi-parser
   description: API Spec parser based on AMF. Currently supports RAML 0.8, 1.0 and OAS 2.0.
   topics:
     - Parser
 - name: raml-tck-runner
+  deprecated: false
   author: MuleSoft
   url: https://github.com/raml-org/raml-tck-runner
   description: Run several RAML parsers against raml-tck.
