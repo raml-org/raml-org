@@ -181,7 +181,7 @@
   topics:
     - Utilities
 - name: RAML Java Parser
-  deprecated: false
+  deprecated: true
   author: MuleSoft
   description: |
     A reference implementation of a RAML parser for Java. The parser is
