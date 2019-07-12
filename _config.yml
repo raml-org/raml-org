@@ -23,8 +23,7 @@ sass:
 
 
 
-exclude:
-- README.md
+exclude:["Gemfile","Gemfile.lock"] 
 
 
 safe: true
