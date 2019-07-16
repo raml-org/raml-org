@@ -1162,7 +1162,7 @@ header{
   }
 }
 
-.page-content.vendor-suppert-page{
+.page-content.vendor-support-page{
   .region-sidebar{
     .sidebar-menu.box-color{
       .tutorial_sidebar{
@@ -1652,6 +1652,24 @@ header{
       background-image: url(/images/twitter.svg);
       background-size: 100%;
       margin-left: 15px;
+    }
+    a.linkedin {
+      background-image: url(/images/linkedin.svg);
+      background-size: 100%;
+    }
+  }
+}
+.contributors {
+  .contributors-list {
+    a {
+      display: inline-block;
+      height: 15px;
+      width: 15px;
+    }
+    a.twitter {
+      background-image: url(/images/twitter.svg);
+      background-size: 100%;
+      margin-left: 5px;
     }
     a.linkedin {
       background-image: url(/images/linkedin.svg);
