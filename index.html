@@ -137,6 +137,7 @@ title:  'Welcome'
       </div>
   </section>
   <script src="/min/vs/loader.js" type="text/javascript"></script>
+  <script src="/js/monaco-hover-utils.js" type="text/javascript"></script>
 <script>
 
   require.config({ paths: { 'vs': '/min/vs' }});
@@ -232,6 +233,10 @@ title:  'Welcome'
       }
     });
     monaco.editor.setTheme('ramlTheme');
+
+    monaco.languages.registerHoverProvider('raml', {
+      provideHover: hoverUtils.hoverProvider
+    });
 
     var editor = monaco.editor.create(document.getElementById('container'), {
       value: [
