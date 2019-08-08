@@ -5,6 +5,13 @@ const hoverUtils = {
     ['^title:', 'A short, plain-text label for the API. Its value is a string.'],
     ['^body:', 'The body of the response.']
   ],
+  /**
+   * Hover Provider for Monaco which calls other functions.
+   *
+   * @param   {monaco.editor.ITextModel} model - Editor text model.
+   * @param   {monaco.Position} model - A position in the editor.
+   * @returns {ProviderResult<Hover>} - Range and contents of a tooltip.
+   */
   hoverProvider: function (model, position) {
     const [desc, descLineNum] = this.findLineDescription(
       model, position.lineNumber)
@@ -12,13 +19,21 @@ const hoverUtils = {
     return {
       range: new monaco.Range(
         descLineNum, model.getLineMinColumn(descLineNum),
-        position.lineNumber, position.column
+        position.lineNumber, model.getLineMaxColumn(position.lineNumber)
       ),
       contents: [
         { value: desc }
       ]
     }
   },
+  /**
+   * Finds line description by comparing line content and its parent
+   * lines content agains regexps from `this.descRegexps`.
+   *
+   * @param   {monaco.editor.ITextModel} model - Editor text model.
+   * @param   {number} lineNumber - Line number to find description for.
+   * @returns {Array<string, number>} - [description, line number].
+   */
   findLineDescription: function (model, lineNumber) {
     if (lineNumber <= 1) {
       return [this.genericDesc, lineNumber]
@@ -29,10 +44,31 @@ const hoverUtils = {
         return [desc, lineNumber]
       }
     }
-    return this.findLineDescription(model, this.findParentLineNum(lineNumber))
+    return this.findLineDescription(
+      model, this.findParentLineNum(model, lineNumber))
   },
-  findParentLineNum: function (lineNumber) {
-    // TODO
-    return lineNumber - 1
+  /**
+   * Finds parent line number for a particular line.
+   * Line B is considered to be a parent of line A if line B contains
+   * less whitespaces than the line A.
+   *
+   * @param  {monaco.editor.ITextModel} model - Editor text model.
+   * @param  {number} lineNumber - Line number to find parent for.
+   * @returns {number} - Parent line number.
+   */
+  findParentLineNum: function (model, lineNumber) {
+    if (lineNumber <= 1) {
+      return lineNumber
+    }
+    const currLine = model.getLineContent(lineNumber)
+    const currWsNum = currLine.length - currLine.trim().length
+
+    const prevLineNumber = lineNumber - 1
+    const prevLine = model.getLineContent(prevLineNumber)
+    const prevWsNum = prevLine.length - prevLine.trim().length
+
+    return prevWsNum < currWsNum
+      ? prevLineNumber
+      : this.findParentLineNum(model, prevLineNumber)
   }
 }
