@@ -235,13 +235,13 @@ title:  'Welcome'
     monaco.editor.setTheme('ramlTheme');
 
     monaco.languages.registerHoverProvider('raml', {
-      provideHover: hoverUtils.hoverProvider
+      provideHover: (m, p) => hoverUtils.hoverProvider(m, p)
     });
 
     var editor = monaco.editor.create(document.getElementById('container'), {
       value: [
           '#%RAML 1.0',
-          'title : Hello World # required title\n',
+          'title: Hello World # required title\n',
           '/greeting: # optional resource',
           '  get: # HTTP method declaration',
           '    responses: # Declare a response',
