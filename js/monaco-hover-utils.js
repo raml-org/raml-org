@@ -1,9 +1,14 @@
 const hoverUtils = {
   genericDesc: 'For every API, start by defining which version of RAML you are using, and then document basic characteristics of you API - the title, baseURI, and version.',
   descRegexps: [
-    ['^responses:', 'The OPTIONAL responses node of a method on a resource describes the possible responses to invoking that method on that resource. The value of responses is a map where each key name represents that a possible HTTP status codes for that method on that resource. The values describe the corresponding responses. Each value is a response declaration.'],
-    ['^title:', 'A short, plain-text label for the API. Its value is a string.'],
-    ['^body:', 'The body of the response.']
+    [/^uses:/, 'Create and pull in namespaced, reusable libraries containing data types, traits, resource types, schemas, examples and more.'],
+    [/^annotationTypes:/, 'Annotations let you add vendor specific functionality without compromising your spec.'],
+    [/^traits:/, 'Traits let you take advantage of code reuse and design patterns.'],
+    [/^resourceTypes:/, 'Resource types let you take advantage of code reuse and design patterns.'],
+    // endpoint url
+    [/^\/((\w|\d)*[{/}]?)+:/, 'Easily define resources and methods, then add as much detail as you want. Apply traits and other patterns, or add parameters and other details specific to each call.'],
+    [/^responses:/, 'Describe expected responses for multiple media types and specify data types or call in pre-defined schemas and examples. Schemas and examples can be defined via a data type, in-line, or externalized with !include.'],
+    [/^description:/, 'Write human-readable, markdown-formatted descriptions throughout your RAML spec, or include entire markdown documentation sections at the root.']
   ],
   /**
    * Hover Provider for Monaco which calls other functions.
