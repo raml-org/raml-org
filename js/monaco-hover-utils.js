@@ -68,6 +68,11 @@ const hoverUtils = {
     const currLine = model.getLineContent(lineNumber)
     const currWsNum = currLine.length - currLine.trim().length
 
+    // Return first line number if document root reached
+    if (currWsNum == 0) {
+      return 1
+    }
+
     const prevLineNumber = lineNumber - 1
     const prevLine = model.getLineContent(prevLineNumber)
     const prevWsNum = prevLine.length - prevLine.trim().length
