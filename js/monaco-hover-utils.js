@@ -8,7 +8,11 @@ const hoverUtils = {
     // endpoint url
     [/^\/((\w|\d)*[{/}]?)+:/, 'Easily define resources and methods, then add as much detail as you want. Apply traits and other patterns, or add parameters and other details specific to each call.'],
     [/^responses:/, 'Describe expected responses for multiple media types and specify data types or call in pre-defined schemas and examples. Schemas and examples can be defined via a data type, in-line, or externalized with !include.'],
-    [/^description:/, 'Write human-readable, markdown-formatted descriptions throughout your RAML spec, or include entire markdown documentation sections at the root.']
+    [/^description:/, 'Write human-readable, markdown-formatted descriptions throughout your RAML spec, or include entire markdown documentation sections at the root.'],
+    [/!include\s/, function (lineContent) {
+      const pieces = lineContent.split('!include')
+      return pieces[pieces.length - 1].trim()
+    }]
   ],
   /**
    * Hover Provider for Monaco which calls other functions.
@@ -18,9 +22,12 @@ const hoverUtils = {
    * @returns {ProviderResult<Hover>} - Range and contents of a tooltip.
    */
   hoverProvider: function (model, position) {
-    const [desc, descLineNum] = this.findLineDescription(
+    let [desc, descLineNum] = this.findLineDescription(
       model, position.lineNumber)
     if (!desc) { return }
+    if (typeof desc === 'function') {
+      desc = desc(model.getLineContent(position.lineNumber))
+    }
     return {
       range: new monaco.Range(
         descLineNum, model.getLineMinColumn(descLineNum),
