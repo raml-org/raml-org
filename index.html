@@ -239,28 +239,22 @@ title:  'Welcome'
     });
 
     var editor = monaco.editor.create(document.getElementById('container'), {
-      value: [
-          '#%RAML 1.0',
-          'title: Hello World # required title\n',
-          '/greeting: # optional resource',
-          '  get: # HTTP method declaration',
-          '    responses: # Declare a response',
-          '      200: #HTTP status code',
-          '        body: #declare content of response',
-          '          application/json: # media type',
-          '            # structural definiation of a response (schema or type)',
-          '            type: object',
-          '            properties:',
-          '              message: string',
-          '            example: #example how a response looks like',
-          '              message: "Hello world"'
-      ].join('\n'),
+      value: '',
       language: 'raml',
       scrollBeyondLastLine: false,
       minimap: {
           enabled: false
       }
     });
+
+    fetch('examples/world-music-api/api.raml')
+      .then(resp => {
+        return resp.body.getReader().read()
+      })
+      .then(cont => {
+        const text = new TextDecoder("utf-8").decode(cont.value)
+        editor.getModel().setValue(text)
+      })
 
     const PLAYGROUND_URL = 'https://raml-org.github.io/playground/raml_oas.html';
     const buttons = document.getElementsByClassName('try-it-out-btn');
