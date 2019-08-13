@@ -248,14 +248,8 @@ title:  'Welcome'
     });
     editor.getModel().updateOptions({ tabSize: 2 });
 
-    fetch('examples/world-music-api/api.raml')
-      .then(resp => {
-        return resp.body.getReader().read()
-      })
-      .then(cont => {
-        const text = new TextDecoder("utf-8").decode(cont.value)
-        editor.getModel().setValue(text)
-      })
+    hoverUtils.fetchText('examples/world-music-api/api.raml')
+      .then(text => editor.getModel().setValue(text))
 
     const PLAYGROUND_URL = 'https://raml-org.github.io/playground/raml_oas.html';
     const buttons = document.getElementsByClassName('try-it-out-btn');

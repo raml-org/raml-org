@@ -81,10 +81,18 @@ const hoverUtils = {
 
     const prevLine = model.getLineContent(prevLineNum)
     const prevWsNum = prevLine.length - prevLine.trim().length
-    console.log(currWsNum, prevWsNum)
 
     return prevWsNum < currWsNum
       ? prevLineNum
       : this.findParentLineNum(model, lineNum, prevLineNum - 1)
+  },
+  fetchText: function (url) {
+    return fetch(url)
+      .then(resp => {
+        return resp.body.getReader().read()
+      })
+      .then(cont => {
+        return new TextDecoder("utf-8").decode(cont.value)
+      })
   }
 }
