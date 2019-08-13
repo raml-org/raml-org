@@ -246,6 +246,7 @@ title:  'Welcome'
           enabled: false
       }
     });
+    editor.getModel().updateOptions({ tabSize: 2 });
 
     fetch('examples/world-music-api/api.raml')
       .then(resp => {

@@ -43,21 +43,21 @@ const hoverUtils = {
    * lines content agains regexps from `this.descRegexps`.
    *
    * @param   {monaco.editor.ITextModel} model - Editor text model.
-   * @param   {number} lineNumber - Line number to find description for.
+   * @param   {number} lineNum - Line number to find description for.
    * @returns {Array<string, number>} - [description, line number].
    */
-  findLineDescription: function (model, lineNumber) {
-    if (lineNumber <= 1) {
-      return [this.genericDesc, lineNumber]
+  findLineDescription: function (model, lineNum) {
+    if (lineNum <= 1) {
+      return [this.genericDesc, lineNum]
     }
-    const lineContent = (model.getLineContent(lineNumber) || '').trim()
+    const lineContent = (model.getLineContent(lineNum) || '').trim()
     for (var [re, desc] of this.descRegexps) {
       if (RegExp(re).test(lineContent)) {
-        return [desc, lineNumber]
+        return [desc, lineNum]
       }
     }
     return this.findLineDescription(
-      model, this.findParentLineNum(model, lineNumber))
+      model, this.findParentLineNum(model, lineNum, lineNum - 1))
   },
   /**
    * Finds parent line number for a particular line.
@@ -65,27 +65,26 @@ const hoverUtils = {
    * less whitespaces than the line A.
    *
    * @param  {monaco.editor.ITextModel} model - Editor text model.
-   * @param  {number} lineNumber - Line number to find parent for.
+   * @param  {number} lineNum - Line number to find parent for.
    * @returns {number} - Parent line number.
    */
-  findParentLineNum: function (model, lineNumber) {
-    if (lineNumber <= 1) {
-      return lineNumber
+  findParentLineNum: function (model, lineNum, prevLineNum) {
+    if (lineNum <= 1) {
+      return lineNum
     }
-    const currLine = model.getLineContent(lineNumber)
+    const currLine = model.getLineContent(lineNum)
     const currWsNum = currLine.length - currLine.trim().length
-
     // Return first line number if document root reached
     if (currWsNum == 0) {
       return 1
     }
 
-    const prevLineNumber = lineNumber - 1
-    const prevLine = model.getLineContent(prevLineNumber)
+    const prevLine = model.getLineContent(prevLineNum)
     const prevWsNum = prevLine.length - prevLine.trim().length
+    console.log(currWsNum, prevWsNum)
 
     return prevWsNum < currWsNum
-      ? prevLineNumber
-      : this.findParentLineNum(model, prevLineNumber)
+      ? prevLineNum
+      : this.findParentLineNum(model, lineNum, prevLineNum - 1)
   }
 }
