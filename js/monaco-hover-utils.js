@@ -9,7 +9,8 @@ const hoverUtils = {
     [/^responses:/, 'Describe expected responses for multiple media types and specify data types or call in pre-defined schemas and examples. Schemas and examples can be defined via a data type, in-line, or externalized with !include.'],
     [/^description:/, 'Write human-readable, markdown-formatted descriptions throughout your RAML spec, or include entire markdown documentation sections at the root.'],
     [/!include\s/, function (lineContent) { return this.loadRefContent(lineContent, '!include') }],
-    [/^uses:/, function (lineContent) { return this.loadRefContent(lineContent, ':', 'Create and pull in namespaced, reusable libraries containing data types, traits, resource types, schemas, examples and more.') }]
+    [/^uses:/, function (lineContent) { return this.loadRefContent(lineContent, ':', 'Create and pull in namespaced, reusable libraries containing data types, traits, resource types, schemas, examples and more.') }],
+    [/^extends:/, function (lineContent) { return this.loadRefContent(lineContent, ':') }]
   ],
   loadRefContent: function (lineContent, sep, defaultDesc) {
     const url = lineContent.split(sep).slice(1).join(sep).trim()
