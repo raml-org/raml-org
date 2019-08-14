@@ -10,8 +10,14 @@ const hoverUtils = {
     [/^responses:/, 'Describe expected responses for multiple media types and specify data types or call in pre-defined schemas and examples. Schemas and examples can be defined via a data type, in-line, or externalized with !include.'],
     [/^description:/, 'Write human-readable, markdown-formatted descriptions throughout your RAML spec, or include entire markdown documentation sections at the root.'],
     [/!include\s/, function (lineContent) {
-      const pieces = lineContent.split('!include')
-      return pieces[pieces.length - 1].trim()
+      const url = lineContent.split('!include').pop().trim()
+      let ext = url.split('.').pop()
+      if (ext === 'xsd') {
+        ext = 'xml'
+      }
+      return this.fetchText(url).then(text => {
+        return '```' + ext + '\n' + text + '\n```'
+      })
     }]
   ],
   /**
@@ -26,17 +32,21 @@ const hoverUtils = {
       model, position.lineNumber)
     if (!desc) { return }
     if (typeof desc === 'function') {
-      desc = desc(model.getLineContent(position.lineNumber))
+      desc = desc.call(this, model.getLineContent(position.lineNumber))
+    } else {
+      desc = Promise.resolve(desc)
     }
-    return {
-      range: new monaco.Range(
-        descLineNum, model.getLineMinColumn(descLineNum),
-        position.lineNumber, model.getLineMaxColumn(position.lineNumber)
-      ),
-      contents: [
-        { value: desc }
-      ]
-    }
+    return desc.then(des => {
+      return {
+        range: new monaco.Range(
+          descLineNum, model.getLineMinColumn(descLineNum),
+          position.lineNumber, model.getLineMaxColumn(position.lineNumber)
+        ),
+        contents: [
+          { value: des }
+        ]
+      }
+    })
   },
   /**
    * Finds line description by comparing line content and its parent
