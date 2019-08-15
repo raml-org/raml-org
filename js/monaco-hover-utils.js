@@ -56,7 +56,6 @@ const hoverUtils = {
         }
       ])
       return {
-        range: range,
         contents: [
           { value: descVal }
         ]
