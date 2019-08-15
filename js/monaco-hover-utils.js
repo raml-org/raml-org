@@ -14,7 +14,6 @@ const hoverUtils = {
     // endpoint url
     [/^\/((\w|\d)*[{/}]?)+:/, 'Easily define resources and methods, then add as much detail as you want. Apply traits and other patterns, or add parameters and other details specific to each call.'],
     [/^responses:/, 'Describe expected responses for multiple media types and specify data types or call in pre-defined schemas and examples. Schemas and examples can be defined via a data type, in-line, or externalized with !include.'],
-    [/^description:/, 'Write human-readable, markdown-formatted descriptions throughout your RAML spec, or include entire markdown documentation sections at the root.'],
     [/!include\s/, function (lineContent) { return this.loadRefContent(lineContent, '!include') }],
     [/^uses:/, function (lineContent) { return this.loadRefContent(lineContent, ':', 'Create and pull in namespaced, reusable libraries containing data types, traits, resource types, schemas, examples and more.') }],
     [/^extends:/, function (lineContent) { return this.loadRefContent(lineContent, ':') }]
@@ -41,9 +40,11 @@ const hoverUtils = {
       desc = Promise.resolve(desc)
     }
     return desc.then(descVal => {
+      const blockEndLineNum = this.findBlockLastLineNum(
+        model, blockStartLineNum, blockStartLineNum + 1)
       const range = new monaco.Range(
         blockStartLineNum, model.getLineMinColumn(blockStartLineNum),
-        position.lineNumber, model.getLineMaxColumn(position.lineNumber)
+        blockEndLineNum, model.getLineMaxColumn(blockEndLineNum)
       )
       this.decorations = editor.deltaDecorations(this.decorations, [
         {
@@ -69,7 +70,7 @@ const hoverUtils = {
    *
    * @param   {monaco.editor.ITextModel} model - Editor text model.
    * @param   {number} blockStartLineNum - Line number which is being hovered over.
-   * @returns {Array<string, number>} - [description, block start line number].
+   * @returns {Array<string, number>} - [description, block first line number].
    */
   findBlockDescription: function (model, blockStartLineNum) {
     if (blockStartLineNum <= 1) {
@@ -81,38 +82,71 @@ const hoverUtils = {
         return [desc, blockStartLineNum]
       }
     }
-    const nextLineNum = this.findParentBlockStartLineNum(
+    const nextLineNum = this.findParentBlockFirstLineNum(
       model, blockStartLineNum, blockStartLineNum - 1)
     return this.findBlockDescription(model, nextLineNum)
   },
 
   /**
-   * Finds parent block start line number for a particular line.
+   * Finds particular line's parent block's first line number.
    * Line B is considered to be a parent of line A if line B contains
    * less whitespaces than the line A.
    *
    * @param  {monaco.editor.ITextModel} model - Editor text model.
    * @param  {number} lineNum - Line number to find parent for.
-   * @param  {number} lookupLineNum - Line to start parent lookup at.
+   * @param  {number} lookupLineNum - Line to perform lookup at.
    * @returns {number} - Parent line number.
    */
-  findParentBlockStartLineNum: function (model, lineNum, lookupLineNum) {
-    if (lineNum <= 1) {
-      return lineNum
+  findParentBlockFirstLineNum: function (model, lineNum, lookupLineNum) {
+    const minLine = 1
+    if (lookupLineNum <= minLine || lineNum <= minLine) {
+      return minLine
     }
-    const currLine = model.getLineContent(lineNum)
-    const currWsNum = currLine.length - currLine.trim().length
-    // Return first line number if document root reached
-    if (currWsNum === 0) {
-      return 1
+    const lineWsNum = this.getLineWsCount(model, lineNum)
+    if (lineWsNum === 0) {
+      return minLine
     }
 
-    const prevLine = model.getLineContent(lookupLineNum)
-    const prevWsNum = prevLine.length - prevLine.trim().length
+    const lookupLineWsNum = this.getLineWsCount(model, lookupLineNum)
 
-    return prevWsNum < currWsNum
+    return lookupLineWsNum < lineWsNum
       ? lookupLineNum
-      : this.findParentBlockStartLineNum(model, lineNum, lookupLineNum - 1)
+      : this.findParentBlockFirstLineNum(model, lineNum, lookupLineNum - 1)
+  },
+
+  /**
+   * Finds block's last line number.
+   * Lookup is done by fiding a number of next block first line and
+   * returning a previous line number.
+   * Having block's first line A, line B is considered the next block
+   * first if it contains less or equal number of whitespace.
+   *
+   * @param  {monaco.editor.ITextModel} model - Editor text model.
+   * @param  {number} firstLineNum - Block first line number.
+   * @param  {number} lookupLineNum - Line to perform lookup at.
+   * @returns {number} - Block last line number.
+   */
+  findBlockLastLineNum: function (model, firstLineNum, lookupLineNum) {
+    const minLine = 1
+    const maxLine = model.getLineCount()
+    if (lookupLineNum >= maxLine ||
+        firstLineNum >= maxLine ||
+        firstLineNum <= minLine) {
+      return maxLine
+    }
+
+    const firstLineWsNum = this.getLineWsCount(model, firstLineNum)
+    const lookupLineWsNum = this.getLineWsCount(model, lookupLineNum)
+
+    return lookupLineWsNum <= firstLineWsNum
+      // Do not include found line because it's a start of the next block
+      ? lookupLineNum - 1
+      : this.findBlockLastLineNum(model, firstLineNum, lookupLineNum + 1)
+  },
+
+  getLineWsCount: function (model, lineNum) {
+    const lineCont = model.getLineContent(lineNum)
+    return lineCont.length - lineCont.trim().length
   },
 
   /**
