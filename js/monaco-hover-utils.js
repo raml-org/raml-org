@@ -1,5 +1,12 @@
 const hoverUtils = {
+
+  // Generic description returned when no description for parent block
+  // is found or root elements like "title:" are hovered over.
   genericDesc: 'For every API, start by defining which version of RAML you are using, and then document basic characteristics of you API - the title, baseURI, and version.',
+
+  // Pairs of [regex, desc] where:
+  //   regex: regular expression to match line content against;
+  //   desc: description to display in a tooltip if line content matches regexp.
   descRegexps: [
     [/^annotationTypes:/, 'Annotations let you add vendor specific functionality without compromising your spec.'],
     [/^traits:/, 'Traits let you take advantage of code reuse and design patterns.'],
@@ -12,20 +19,10 @@ const hoverUtils = {
     [/^uses:/, function (lineContent) { return this.loadRefContent(lineContent, ':', 'Create and pull in namespaced, reusable libraries containing data types, traits, resource types, schemas, examples and more.') }],
     [/^extends:/, function (lineContent) { return this.loadRefContent(lineContent, ':') }]
   ],
+
+  // Monaco editor decorations
   decorations: [],
-  loadRefContent: function (lineContent, sep, defaultDesc) {
-    const url = lineContent.split(sep).slice(1).join(sep).trim()
-    if (url.length < 1) {
-      return Promise.resolve(defaultDesc)
-    }
-    return this.fetchText(url).then(text => {
-      let ext = url.split('.').pop()
-      if (ext === 'xsd') {
-        ext = 'xml'
-      }
-      return '```' + ext + '\n' + text + '\n```'
-    })
-  },
+
   /**
    * Hover Provider for Monaco which calls other functions.
    *
@@ -65,13 +62,14 @@ const hoverUtils = {
       }
     })
   },
+
   /**
    * Finds line description by comparing line content and its parent
    * lines content agains regexps from `this.descRegexps`.
    *
    * @param   {monaco.editor.ITextModel} model - Editor text model.
    * @param   {number} blockStartLineNum - Line number which is being hovered over.
-   * @returns {Array<string, number>} - [description, line number].
+   * @returns {Array<string, number>} - [description, block start line number].
    */
   findBlockDescription: function (model, blockStartLineNum) {
     if (blockStartLineNum <= 1) {
@@ -87,6 +85,7 @@ const hoverUtils = {
       model, blockStartLineNum, blockStartLineNum - 1)
     return this.findBlockDescription(model, nextLineNum)
   },
+
   /**
    * Finds parent block start line number for a particular line.
    * Line B is considered to be a parent of line A if line B contains
@@ -115,6 +114,13 @@ const hoverUtils = {
       ? lookupLineNum
       : this.findParentBlockStartLineNum(model, lineNum, lookupLineNum - 1)
   },
+
+  /**
+   * Requests url and returns response body text.
+   *
+   * @param {string} url - Url from which text response should be fetched.
+   * @returns {Promise<string>} - Response body text.
+   */
   fetchText: function (url) {
     return fetch(url)
       .then(resp => {
@@ -123,5 +129,27 @@ const hoverUtils = {
       .then(cont => {
         return new TextDecoder('utf-8').decode(cont.value)
       })
+  },
+
+  /**
+   * Loads reference content.
+   *
+   * @param {string} lineContent - Content of a line which contains ref.
+   * @param {string} sep - Separator to split line by.
+   * @param {string} defaultDesc - Default description.
+   * @returns {Promise<string>} - Formatted ref content or default description.
+   */
+  loadRefContent: function (lineContent, sep, defaultDesc) {
+    const url = lineContent.split(sep).slice(1).join(sep).trim()
+    if (url.length < 1) {
+      return Promise.resolve(defaultDesc)
+    }
+    return this.fetchText(url).then(text => {
+      let ext = url.split('.').pop()
+      if (ext === 'xsd') {
+        ext = 'xml'
+      }
+      return '```' + ext + '\n' + text + '\n```'
+    })
   }
 }
