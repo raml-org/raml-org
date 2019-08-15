@@ -12,6 +12,7 @@ const hoverUtils = {
     [/^uses:/, function (lineContent) { return this.loadRefContent(lineContent, ':', 'Create and pull in namespaced, reusable libraries containing data types, traits, resource types, schemas, examples and more.') }],
     [/^extends:/, function (lineContent) { return this.loadRefContent(lineContent, ':') }]
   ],
+  decorations: [],
   loadRefContent: function (lineContent, sep, defaultDesc) {
     const url = lineContent.split(sep).slice(1).join(sep).trim()
     if (url.length < 1) {
@@ -30,10 +31,11 @@ const hoverUtils = {
    *
    * @param   {monaco.editor.ITextModel} model - Editor text model.
    * @param   {monaco.Position} model - A position in the editor.
+   * @param   {monaco.editor.IStandaloneCodeEditor} editor - Monaco editor instance.
    * @returns {ProviderResult<Hover>} - Range and contents of a tooltip.
    */
-  hoverProvider: function (model, position) {
-    let [desc, descLineNum] = this.findLineDescription(
+  hoverProvider: function (model, position, editor) {
+    let [desc, blockStartLineNum] = this.findBlockDescription(
       model, position.lineNumber)
     if (!desc) { return }
     if (typeof desc === 'function') {
@@ -42,11 +44,21 @@ const hoverUtils = {
       desc = Promise.resolve(desc)
     }
     return desc.then(descVal => {
+      const range = new monaco.Range(
+        blockStartLineNum, model.getLineMinColumn(blockStartLineNum),
+        position.lineNumber, model.getLineMaxColumn(position.lineNumber)
+      )
+      this.decorations = editor.deltaDecorations(this.decorations, [
+        {
+          range: range,
+          options: {
+            linesDecorationsClassName: 'selected-line-editor-decoration',
+            isWholeLine: true
+          }
+        }
+      ])
       return {
-        range: new monaco.Range(
-          descLineNum, model.getLineMinColumn(descLineNum),
-          position.lineNumber, model.getLineMaxColumn(position.lineNumber)
-        ),
+        range: range,
         contents: [
           { value: descVal }
         ]
@@ -58,48 +70,50 @@ const hoverUtils = {
    * lines content agains regexps from `this.descRegexps`.
    *
    * @param   {monaco.editor.ITextModel} model - Editor text model.
-   * @param   {number} lineNum - Line number to find description for.
+   * @param   {number} blockStartLineNum - Line number which is being hovered over.
    * @returns {Array<string, number>} - [description, line number].
    */
-  findLineDescription: function (model, lineNum) {
-    if (lineNum <= 1) {
-      return [this.genericDesc, lineNum]
+  findBlockDescription: function (model, blockStartLineNum) {
+    if (blockStartLineNum <= 1) {
+      return [this.genericDesc, blockStartLineNum]
     }
-    const lineContent = (model.getLineContent(lineNum) || '').trim()
+    const lineContent = (model.getLineContent(blockStartLineNum) || '').trim()
     for (var [re, desc] of this.descRegexps) {
       if (RegExp(re).test(lineContent)) {
-        return [desc, lineNum]
+        return [desc, blockStartLineNum]
       }
     }
-    return this.findLineDescription(
-      model, this.findParentLineNum(model, lineNum, lineNum - 1))
+    const nextLineNum = this.findParentBlockStartLineNum(
+      model, blockStartLineNum, blockStartLineNum - 1)
+    return this.findBlockDescription(model, nextLineNum)
   },
   /**
-   * Finds parent line number for a particular line.
+   * Finds parent block start line number for a particular line.
    * Line B is considered to be a parent of line A if line B contains
    * less whitespaces than the line A.
    *
    * @param  {monaco.editor.ITextModel} model - Editor text model.
    * @param  {number} lineNum - Line number to find parent for.
+   * @param  {number} lookupLineNum - Line to start parent lookup at.
    * @returns {number} - Parent line number.
    */
-  findParentLineNum: function (model, lineNum, prevLineNum) {
+  findParentBlockStartLineNum: function (model, lineNum, lookupLineNum) {
     if (lineNum <= 1) {
       return lineNum
     }
     const currLine = model.getLineContent(lineNum)
     const currWsNum = currLine.length - currLine.trim().length
     // Return first line number if document root reached
-    if (currWsNum == 0) {
+    if (currWsNum === 0) {
       return 1
     }
 
-    const prevLine = model.getLineContent(prevLineNum)
+    const prevLine = model.getLineContent(lookupLineNum)
     const prevWsNum = prevLine.length - prevLine.trim().length
 
     return prevWsNum < currWsNum
-      ? prevLineNum
-      : this.findParentLineNum(model, lineNum, prevLineNum - 1)
+      ? lookupLineNum
+      : this.findParentBlockStartLineNum(model, lineNum, lookupLineNum - 1)
   },
   fetchText: function (url) {
     return fetch(url)
@@ -107,7 +121,7 @@ const hoverUtils = {
         return resp.body.getReader().read()
       })
       .then(cont => {
-        return new TextDecoder("utf-8").decode(cont.value)
+        return new TextDecoder('utf-8').decode(cont.value)
       })
   }
 }

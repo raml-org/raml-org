@@ -234,10 +234,6 @@ title:  'Welcome'
     });
     monaco.editor.setTheme('ramlTheme');
 
-    monaco.languages.registerHoverProvider('raml', {
-      provideHover: (m, p) => hoverUtils.hoverProvider(m, p)
-    });
-
     var editor = monaco.editor.create(document.getElementById('container'), {
       value: '',
       language: 'raml',
@@ -247,6 +243,10 @@ title:  'Welcome'
       }
     });
     editor.getModel().updateOptions({ tabSize: 2 });
+
+    monaco.languages.registerHoverProvider('raml', {
+      provideHover: (m, p) => hoverUtils.hoverProvider(m, p, editor)
+    });
 
     hoverUtils.fetchText('examples/world-music-api/api.raml')
       .then(text => editor.getModel().setValue(text))

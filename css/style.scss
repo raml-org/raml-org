@@ -52,6 +52,7 @@ $flash-white:#EDF0F4;
 $lighter-gray:#F7FAFF;
 $black:#000;
 $white:#fff;
+$bluish:#DBE8FD;
 
 /*overriding bootstrap variables */
 $primary: $sky-blue !default;
@@ -1831,4 +1832,8 @@ header{
 @keyframes sk-circleFadeDelay {
   0%, 39%, 100% { opacity: 0; }
   40% { opacity: 1; } 
+}
+
+.selected-line-editor-decoration {
+  background-color: $bluish;
 }
