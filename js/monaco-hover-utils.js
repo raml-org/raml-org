@@ -167,13 +167,7 @@ const hoverUtils = {
    * @returns {Promise<string>} - Response body text.
    */
   fetchText: function (url) {
-    return fetch(url)
-      .then(resp => {
-        return resp.body.getReader().read()
-      })
-      .then(cont => {
-        return new TextDecoder('utf-8').decode(cont.value)
-      })
+    return fetch(url).then(resp => resp.text())
   },
 
   /**
