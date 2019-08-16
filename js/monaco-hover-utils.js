@@ -23,6 +23,18 @@ const hoverUtils = {
   decorations: [],
 
   /**
+   * Loads languages to make syntax highlighting work in tooltips.
+   * https://github.com/microsoft/monaco-editor/issues/812#issuecomment-380709445
+   *
+   * @param {Array<string>} languages - Languages to load.
+   */
+  loadLanguages: function (...languages) {
+    languages.forEach(language => {
+      monaco.editor.createModel('', language).dispose()
+    })
+  },
+
+  /**
    * Hover Provider for Monaco which calls other functions.
    *
    * @param   {monaco.editor.ITextModel} model - Editor text model.

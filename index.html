@@ -244,6 +244,7 @@ title:  'Welcome'
     });
     editor.getModel().updateOptions({ tabSize: 2 });
 
+    hoverUtils.loadLanguages('json', 'xml', 'yaml')
     monaco.languages.registerHoverProvider('raml', {
       provideHover: (m, p) => hoverUtils.hoverProvider(m, p, editor)
     });
