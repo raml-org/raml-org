@@ -16,7 +16,13 @@ const hoverUtils = {
     [/^responses:/, 'Describe expected responses for multiple media types and specify data types or call in pre-defined schemas and examples. Schemas and examples can be defined via a data type, in-line, or externalized with !include.'],
     [/!include\s/, function (lineContent) { return this.loadRefContent(lineContent, '!include') }],
     [/^uses:/, function (lineContent) { return this.loadRefContent(lineContent, ':', 'Create and pull in namespaced, reusable libraries containing data types, traits, resource types, schemas, examples and more.') }],
-    [/^extends:/, function (lineContent) { return this.loadRefContent(lineContent, ':') }]
+    [/^extends:/, function (lineContent) { return this.loadRefContent(lineContent, ':') }],
+    [/^types:/, 'A type declaration references another type, or wraps or extends another type by adding functional facets (e.g. properties) or non-functional facets (e.g. a description), or is a type expression that uses other types.'],
+    [/^facets:/, 'Facets express various additional restrictions beyond those which types impose on their instances, such as the optional minimum and maximum facets for numbers, or the enum facet for scalars. In addition to the built-in facets, RAML provides a way to declare user-defined facets for any data type.'],
+    [/^example:/, 'The OPTIONAL example facet can be used to attach an example of a type instance to the type declaration. There are two ways to represent the example facet value: as an explicit description of a specific type instance and as a map that contains additional facets.'],
+    [/^examples:/, 'The OPTIONAL examples facet can be used to attach multiple examples to a type declaration. Its value is a map of key-value pairs, where each key represents a unique identifier for an example and the value is a single example.'],
+    [/^(get:|patch:|put:|post:|delete:|head:|options:)/, 'The OPTIONAL properties get, patch, put, post, delete, head, and options of a resource define its methods; these correspond to the HTTP methods defined in the HTTP version 1.1 specification RFC2616 and its extension, RFC5789.'],
+    [/^securitySchemes:/, 'An optional securitySchemes node is defined for the RAML document root. The value of securitySchemes is a map having key-value pairs that map security scheme names to security scheme declarations. Each authentication pattern supported by the API must be expressed as a component of the securitySchemes node value.']
   ],
 
   // Monaco editor decorations
@@ -155,6 +161,13 @@ const hoverUtils = {
       : this.findBlockLastLineNum(model, firstLineNum, lookupLineNum + 1)
   },
 
+  /**
+   * Get whitespaces count of the line.
+   *
+   * @param  {monaco.editor.ITextModel} model - Editor text model.
+   * @param  {number} lineNum - Line number.
+   * @returns {number} - Number of whitespaces on the line.
+   */
   getLineWsCount: function (model, lineNum) {
     const lineCont = model.getLineContent(lineNum)
     return lineCont.length - lineCont.trim().length
