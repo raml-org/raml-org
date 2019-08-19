@@ -1835,3 +1835,7 @@ header{
   background-color: $bluish;
   width: 7px !important;
 }
+.monaco-editor-hover {
+  background-color: $lighter-gray !important;
+  border-color: $bluish !important;
+}
