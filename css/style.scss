@@ -620,6 +620,14 @@ header{
   .editor-block{
     box-shadow: 1px 0px 3px #808080;
     .monaco-editor{
+      .monaco-editor-hover{
+        background-color: $lighter-gray !important;
+        border-color: $bluish !important;
+      }
+      .selected-line-editor-decoration{
+        background-color: $bluish;
+        width: 7px !important;
+      }
       .editor-scrollable{
         .view-lines{
           .mtk26,.mtk23,.mtk21{
@@ -1829,13 +1837,4 @@ header{
 @keyframes sk-circleFadeDelay {
   0%, 39%, 100% { opacity: 0; }
   40% { opacity: 1; } 
-}
-
-.selected-line-editor-decoration {
-  background-color: $bluish;
-  width: 7px !important;
-}
-.monaco-editor-hover {
-  background-color: $lighter-gray !important;
-  border-color: $bluish !important;
 }
