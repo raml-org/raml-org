@@ -14,9 +14,9 @@ const hoverUtils = {
     // endpoint url
     [/^\/((\w|\d)*[{/}]?)+:/, 'Easily define resources and methods, then add as much detail as you want. Apply traits and other patterns, or add parameters and other details specific to each call.'],
     [/^responses:/, 'Describe expected responses for multiple media types and specify data types or call in pre-defined schemas and examples. Schemas and examples can be defined via a data type, in-line, or externalized with !include.'],
-    [/!include\s/, function (lineContent) { return this.loadRefContent(lineContent, '!include') }],
-    [/^uses:/, function (lineContent) { return this.loadRefContent(lineContent, ':', 'Create and pull in namespaced, reusable libraries containing data types, traits, resource types, schemas, examples and more.') }],
-    [/^extends:/, function (lineContent) { return this.loadRefContent(lineContent, ':') }],
+    [/!include\s/, function (lineContent) { return this.loadRefContent(lineContent) }],
+    [/^uses:/, function (lineContent) { return this.loadRefContent(lineContent,'Create and pull in namespaced, reusable libraries containing data types, traits, resource types, schemas, examples and more.') }],
+    [/^extends:/, function (lineContent) { return this.loadRefContent(lineContent) }],
     [/^types:/, 'A type declaration references another type, or wraps or extends another type by adding functional facets (e.g. properties) or non-functional facets (e.g. a description), or is a type expression that uses other types.'],
     [/^facets:/, 'Facets express various additional restrictions beyond those which types impose on their instances, such as the optional minimum and maximum facets for numbers, or the enum facet for scalars. In addition to the built-in facets, RAML provides a way to declare user-defined facets for any data type.'],
     [/^example:/, 'The OPTIONAL example facet can be used to attach an example of a type instance to the type declaration. There are two ways to represent the example facet value: as an explicit description of a specific type instance and as a map that contains additional facets.'],
@@ -41,14 +41,14 @@ const hoverUtils = {
   },
 
   /**
-   * Hover Provider for Monaco which calls other functions.
+   * Hover Provider "provideHover" method for Monaco.
    *
    * @param   {monaco.editor.ITextModel} model - Editor text model.
    * @param   {monaco.Position} model - A position in the editor.
    * @param   {monaco.editor.IStandaloneCodeEditor} editor - Monaco editor instance.
    * @returns {ProviderResult<Hover>} - Range and contents of a tooltip.
    */
-  hoverProvider: function (model, position, editor) {
+  provideHover: function (model, position, editor) {
     let [desc, blockStartLineNum] = this.findBlockDescription(
       model, position.lineNumber)
     if (!desc) { return }
@@ -187,12 +187,11 @@ const hoverUtils = {
    * Loads reference content.
    *
    * @param {string} lineContent - Content of a line which contains ref.
-   * @param {string} sep - Separator to split line by.
    * @param {string} defaultDesc - Default description.
    * @returns {Promise<string>} - Formatted ref content or default description.
    */
-  loadRefContent: function (lineContent, sep, defaultDesc) {
-    const url = lineContent.split(sep).slice(1).join(sep).trim()
+  loadRefContent: function (lineContent, defaultDesc) {
+    const url = this.parseUrl(lineContent)
     if (url.length < 1) {
       return Promise.resolve(defaultDesc)
     }
@@ -203,5 +202,41 @@ const hoverUtils = {
       }
       return '```' + ext + '\n' + text + '\n```'
     })
+  },
+
+  /**
+   * Parses absolute url from line content.
+   *
+   * @param {string} lineContent - Content of a line.
+   * @returns {string} - Absolute url.
+   */
+  parseUrl: function (lineContent) {
+    let url = lineContent.trim().split(' ').pop()
+    if (!url.startsWith('http')) {
+      const urlObj = new URL(window.location.origin)
+      urlObj.pathname = url
+      return urlObj.href
+    }
+    return url
+  },
+
+  /**
+   * Link Provider "provideLinks" method for Monaco.
+   *
+   * @param   {monaco.editor.ITextModel} model - Editor text model.
+   * @returns {ProviderResult<ILinksList>} - Range and contents of a tooltip.
+   */
+  provideLinks: function (model) {
+    const re = /\S+(.raml|.yaml|.json|.xml|.xsd|.txt)$/
+    const matches = model.findMatches(re, false, true)
+    console.log(matches)
+    const links = matches.map(m => {
+      let lineCont = model.getLineContent(m.range.startLineNumber)
+      return {
+        range: m.range,
+        url: this.parseUrl(lineCont)
+      }
+    })
+    return {links: links}
   }
 }

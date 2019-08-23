@@ -246,7 +246,10 @@ title:  'Welcome'
 
     hoverUtils.loadLanguages('json', 'xml', 'yaml')
     monaco.languages.registerHoverProvider('raml', {
-      provideHover: (m, p) => hoverUtils.hoverProvider(m, p, editor)
+      provideHover: (m, p) => hoverUtils.provideHover(m, p, editor)
+    });
+    monaco.languages.registerLinkProvider('raml', {
+      provideLinks: (m, t) => hoverUtils.provideLinks(m, t)
     });
 
     hoverUtils.fetchText('examples/world-music-api/api.raml')
