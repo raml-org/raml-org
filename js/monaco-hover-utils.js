@@ -229,7 +229,6 @@ const hoverUtils = {
   provideLinks: function (model) {
     const re = /\S+(.raml|.yaml|.json|.xml|.xsd|.txt)$/
     const matches = model.findMatches(re, false, true)
-    console.log(matches)
     const links = matches.map(m => {
       let lineCont = model.getLineContent(m.range.startLineNumber)
       return {
