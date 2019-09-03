@@ -247,7 +247,7 @@ title:  'Welcome'
 
     hoverUtils.loadLanguages('json', 'xml', 'yaml')
     monaco.languages.registerHoverProvider('raml', {
-      provideHover: (m, p) => hoverUtils.provideHover(m, p, editor)
+      provideHover: (m, p) => hoverUtils.provideHover(m, p)
     });
     monaco.languages.registerLinkProvider('raml', {
       provideLinks: (m, t) => hoverUtils.provideLinks(m, t)

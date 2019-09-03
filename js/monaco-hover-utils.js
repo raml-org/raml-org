@@ -69,10 +69,9 @@ const hoverUtils = {
    *
    * @param   {monaco.editor.ITextModel} model - Editor text model.
    * @param   {monaco.Position} model - A position in the editor.
-   * @param   {monaco.editor.IStandaloneCodeEditor} editor - Monaco editor instance.
    * @returns {ProviderResult<Hover>} - Range and contents of a tooltip.
    */
-  provideHover: function (model, position, editor) {
+  provideHover: function (model, position) {
     let [desc, blockStartLineNum] = this.findBlockDescription(
       model, position.lineNumber)
     if (!desc) { return }
@@ -88,7 +87,7 @@ const hoverUtils = {
         blockStartLineNum, model.getLineMinColumn(blockStartLineNum),
         blockEndLineNum, model.getLineMaxColumn(blockEndLineNum)
       )
-      this.decorations = editor.deltaDecorations(this.decorations, [
+      this.decorations = model.deltaDecorations(this.decorations, [
         {
           range: range,
           options: {
