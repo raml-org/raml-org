@@ -595,13 +595,14 @@ header{
     }
   }
   a.playground-btn{
+    z-index: 1;
     position: absolute;
     right: 15px;
     top: 11px;
     border: 0px;
     border-radius: 2px;
     padding:10px 20px;
-    background-color: $slate-gray;
+    background-color: #9EAAB7;
     color: $white;
     font-family: 'Roboto-Regular';
     font-size: $font-face-small; 
@@ -620,10 +621,6 @@ header{
   .editor-block{
     box-shadow: 1px 0px 3px #808080;
     .monaco-editor{
-      .monaco-editor-hover{
-        background-color: $lighter-gray !important;
-        border-color: $bluish !important;
-      }
       .selected-line-editor-decoration{
         background-color: $bluish;
         width: 7px !important;

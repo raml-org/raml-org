@@ -30,27 +30,9 @@ title:  'Welcome'
       </div>
     </div>
   </section>
-  <section id="content-bg-color">
-    <div class="container text-center">
-      <div class="row">
-        <div class="col-md-12 col-sm-12">
-          <h2>Write once. Use many. Creative laziness encouraged.</h2>
-          <p>RESTful API Modeling Language (RAML) makes it easy to manage the whole API lifecycle from design to sharing. It's concise -- you only write what you need to define -- and reusable. It's interoperable: it works with OpenAPI (OAS). </p>
-          <div class="homepage_icons">
-            <a href="/developers/design-your-api"><img src="images/RAMLicondesign.svg" class="design svg"></a>
-            <a href="/developers/build-your-api"><img src="images/RAMLiconbuild.svg" class="build svg"></a>
-            <a href="/developers/test-your-api"><img src="images/RAMLicontest.svg" class="contest svg"></a>
-            <a href="/developers/document-your-api"><img src="images/RAMLicondocument.svg" class="document svg"></a>
-            <a href="/developers/share-support-your-api"><img src="images/RAMLiconshare.svg" class="share svg"></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
   <section>
     <div class="container-fluid raml-editor d-none d-sm-block">
       <div class="row">
-        <h2 class="text-center">Playground</h2>
         <a class="pull-right d-sm-none d-md-block playground-btn try-it-out-btn" href="">Try It Out <i class="fas fa-expand"></i></a>
         <div class="col-md-12 col-sm-12 editor-block padd_00">
           <div id="container" style="width:100%;height:346px;">
@@ -219,17 +201,21 @@ title:  'Welcome'
       rules: [{ background: 'EDF9FA' },
           {token : 'type', foreground: "#26d3ff"},
           {token : 'special', foreground:'#BDB7F4'},
-          {token : 'string', foreground: '#00667e'},
+          {token : 'string', foreground: '#00b3de'},
           {token : 'keyword', foreground: '#cccccc'},
         ],
       colors: {
         'editor.foreground': '#000000',
-        'editor.background': '#f7faff',
+        'editor.background': '#526881',
         'editorCursor.foreground': '#8B0000',
         'editor.lineHighlightBackground': '#0000FF20',
         'editorLineNumber.foreground': '#008800',
         'editor.selectionBackground': '#DBE8FD',
         'input.background': '#FFFFFF',
+        'editor.selectionHighlightBackground': '#DBE8FD',
+        'editor.hoverHighlightBackground': '#DBE8FD',
+        'editorHoverWidget.background': '#F7FAFF',
+        'editorHoverWidget.border': '#DBE8FD'
       }
     });
     monaco.editor.setTheme('ramlTheme');
