@@ -670,6 +670,7 @@ header{
     }
   }
   .txt-right{
+    text-align: center;
     padding-left: 7%;
     @media(max-width: 575px){
       padding-left: 15px;
@@ -686,7 +687,7 @@ header{
     }
   }  
   img{
-    width: 55px;
+    height: 100%;
   }
   .row-bg-color{
     background-color:$lighter-gray;
@@ -743,9 +744,15 @@ header{
     p{
       width: 100%;margin-bottom: 20px;font-family: $font-face-light;
     }
-    a{
-      font-size: $font-h3;line-height: 19px;letter-spacing: 0.5px;border:0px solid;border-radius: 2px;background-color: $slate-gray;color: $white;display: block;padding: 20px;text-align: center;font-family: $font-face-medium;
-      
+  }
+  a.browse-projects-btn{
+    font-size: $font-h3;line-height: 19px;letter-spacing: 0.5px;border:0px solid;border-radius: 2px;background-color: $slate-gray;color: $white;display: block;padding: 20px;text-align: center;font-family: $font-face-medium;
+    margin: 17% 0;
+    @media(max-width: 767px){
+      margin: 50% 0;
+    }
+    @media(max-width: 575px){
+      margin: 0;
     }
   }
   .block-quote{
