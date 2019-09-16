@@ -179,6 +179,9 @@ title:  'Welcome'
       tokenizer:{
         root:[
           [/\/.*(?=:)/,"special"],
+          [/#%.*/,"syntaxTag"],
+          [/\![^ ]*/,"tag"],
+          [/#.*/,"rootComment"],
           {include:"@comment"},
           {include:"@whitespace"},
           [/%[^ ]+.*$/,"meta.directive"],
@@ -239,6 +242,10 @@ title:  'Welcome'
           {token : 'special', foreground:'#BDB7F4'},
           {token : 'string', foreground: '#00b3de'},
           {token : 'keyword', foreground: '#cccccc'},
+          {token : 'number', foreground: '#bdf1a3'},
+          {token : 'syntaxTag', foreground: '#9dd288'},
+          {token : 'tag', foreground: '#9dd288'},
+          {token : 'rootComment', foreground: '#9dd288'}
         ],
       colors: {
         'editor.foreground': '#000000',
