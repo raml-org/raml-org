@@ -232,7 +232,7 @@ title:  'Welcome'
       }
     });
     monaco.editor.defineTheme('ramlTheme', {
-      base: 'hc-black', // vs, vs-dark
+      base: 'vs-dark', // vs, hc-black, vs-dark
       inherit: true,
       rules: [{ background: 'EDF9FA' },
           {token : 'type', foreground: "#26d3ff"},
@@ -252,7 +252,8 @@ title:  'Welcome'
         'editor.hoverHighlightBackground': '#DBE8FD',
         'editorHoverWidget.background': '#F7FAFF',
         'editorHoverWidget.border': '#DBE8FD',
-        'editor.hoverHighlightBackground': '#526881'
+        'editor.hoverHighlightBackground': '#526881',
+        'editorIndentGuide.background': '#9EAAB7'
       }
     });
     monaco.editor.setTheme('ramlTheme');
