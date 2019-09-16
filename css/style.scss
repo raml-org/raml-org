@@ -693,6 +693,15 @@ header{
   }  
   img{
     height: 100%;
+    @media(max-width: 991px){
+      width: 75%;
+    }
+    @media(max-width: 767px){
+      width: 85%;
+    }
+    @media(max-width: 575px){
+      display: none;
+    }
   }
   .row-bg-color{
     background-color:$lighter-gray;
