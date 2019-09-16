@@ -670,11 +670,16 @@ header{
     }
   }
   .txt-right{
-    text-align: center;
     padding-left: 7%;
     @media(max-width: 575px){
       padding-left: 15px;
     }
+  }
+  .img-left{
+    text-align: left;
+  }
+  .img-right{
+    text-align: right;
   }
   h3{
     letter-spacing: 0.5px;font-family: $font-face-bold;color: $slate-gray;font-size: $font-h2;line-height: 28px;margin-bottom: 20px;margin-top: 25px;
