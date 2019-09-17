@@ -621,6 +621,9 @@ header{
   .editor-block{
     box-shadow: 1px 0px 3px #808080;
     .monaco-editor{
+      .monaco-editor-hover{
+        margin-left: 10%;
+      }
       .selected-line-editor-decoration{
         background-color: $bluish;
         width: 7px !important;
