@@ -34,7 +34,7 @@ permalink: /projects
                     <li><a href="javascript:void(0);" id="document">Document</a> </li>
                     <li><a href="javascript:void(0);" id="parser">Parser</a> </li>
                     <li><a href="javascript:void(0);" id="utilities">Utilities</a> </li>
-                </ul>                
+                </ul>
                    <div class="result row"></div>
                    <ul class="pagination">
                         <li><a href="javascript:void(0);" id="pre">&#171; Prev</a></li>
@@ -48,7 +48,7 @@ permalink: /projects
             <div class="row text">
                 <div class="col-lg-6 col-md-8 col-sm-10 projectlinks-bg-color text-center">
                     <p><img src="images/githubicon_01.png" /> &nbsp;<strong>Github</strong></p>
-                    <p>Can’t find the RAML project you are searching for on this page? Try looking for it in Github! We created some useful categories to help filter your search. Simply click on one of the links on the bottom and see all the Github projects related to that category. More information can be found <a href="{{ site. projectsgithuburl }}#how-to-add-projects-to-the-projects-page" target="_blank">here</a>.</p>                
+                    <p>Can’t find the RAML project you are searching for on this page? Try looking for it in Github! We created some useful categories to help filter your search. Simply click on one of the links on the bottom and see all the Github projects related to that category. More information can be found <a href="{{ site. projectsgithuburl }}#how-to-add-projects-to-the-projects-page" target="_blank">here</a>.</p>
                     <div class="links">
                         <a href="https://github.com/search?utf8=✓&q=topic%3Araml-design" target="_blank" rel="nofollow">Design</a>
                         <a href="https://github.com/search?utf8=✓&q=topic%3Araml-document" target="_blank" rel="nofollow">Document</a>
@@ -57,10 +57,10 @@ permalink: /projects
                         <a href="https://github.com/search?utf8=✓&q=topic%3Araml-test" target="_blank" rel="nofollow">Test</a>
                         <a href="https://github.com/search?utf8=✓&q=topic%3Araml-utilities" target="_blank" rel="nofollow">Utilities</a>
                     </div>
-                </div>    
+                </div>
             </div>
 
-            
+
     </section>
 
 </div>
@@ -129,7 +129,7 @@ permalink: /projects
                     datas = getData;
                     $('div.result').html('');
                     $('div.no_result').html('');
-                }                
+                }
                 get_jsonData(start,limit,datas);
 
             });
@@ -187,10 +187,13 @@ permalink: /projects
                 } else {
                     join_topic = '<span class="projtag">' + datas[i].topics + '</span>';
                 }
+                if (!!datas[i].deprecated) {
+                    project_name += ' (deprecated)'
+                }
                 project_div = '<div class="col-lg-4 col-md-6 col-sm-6 d-flex"><div class="projectblock "><div class="projname"><h3>' + project_name + '</h3></div><div class="proj_topics">'+ join_topic +'</div><div class="projdesc"><p>' + project_desc + '</p></div>' +
-                            '<div class="projlink"><a href ="' + project_url + '" rel="nofollow" class="btn btn-primary">View Project</a>';
+                            '<div class="projlink"><a href ="' + project_url + '" rel="nofollow" class="btn btn-primary" target="blank">View Project</a>';
                 if(project_secondary_link.url != ''){
-                    project_div += '<a href ="' + project_secondary_link.url + '" rel="nofollow" class="btn btn-secondary">'+project_secondary_link.title+'</a>';
+                    project_div += '<a href ="' + project_secondary_link.url + '" rel="nofollow" class="btn btn-secondary" target="blank">'+project_secondary_link.title+'</a>';
                 }
                 project_div += '</div></div></div> ';
                  if(datas.length <= per_page) {
