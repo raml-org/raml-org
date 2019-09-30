@@ -182,6 +182,7 @@ title:  'Welcome'
           [/#%.*/,"syntaxTag"],
           [/\![^ ]*/,"tag"],
           [/#.*/,"rootComment"],
+          [/(get|patch|put|post|delete|head|options)\??:/,"httpMethod"],
           {include:"@comment"},
           {include:"@whitespace"},
           [/%[^ ]+.*$/,"meta.directive"],
@@ -245,7 +246,8 @@ title:  'Welcome'
           {token : 'number', foreground: '#bdf1a3'},
           {token : 'syntaxTag', foreground: '#9dd288'},
           {token : 'tag', foreground: '#9dd288'},
-          {token : 'rootComment', foreground: '#9dd288'}
+          {token : 'rootComment', foreground: '#9dd288'},
+          {token : 'httpMethod', foreground: '#ffb647'}
         ],
       colors: {
         'editor.foreground': '#000000',
@@ -254,8 +256,6 @@ title:  'Welcome'
         'editor.lineHighlightForeground': '#4e4e4e',
         'editor.selectionBackground': '#4e4e4e',
         'editor.selectionForeground': '#4e4e4e',
-        'editor.selectionHighlightBackground': '#4e4e4e',
-        'editor.selectionHighlightForeground': '#4e4e4e',
         'editor.inactiveSelectionBackground': '#4e4e4e',
         'editor.hoverHighlightBackground': '#4e4e4e',
         'editor.hoverHighlightForeground': '#4e4e4e',
@@ -274,6 +274,7 @@ title:  'Welcome'
       language: 'raml',
       scrollBeyondLastLine: false,
       renderLineHighlight: "none",
+      occurrencesHighlight: false,
       minimap: {
           enabled: false
       }
