@@ -9,7 +9,7 @@
     "author"     : "{{ projects.author }}",
     "description"     : "{{ projects.description | escape | strip | strip_newlines }}",
     "topics"     : "{{ projects.topics | join: ', ' }}",
-    "deprecated"     : {{ projects.deprecated }}
+    "deprecated"     : {{ projects.deprecated | default: false }}
   }
 {% if forloop.last %}{% else %},{% endif %}
 {% endfor %}
