@@ -8,7 +8,8 @@
     "secondary_link" : { "url": "{{ projects.secondary_link.url }}","title": "{{ projects.secondary_link.title }}" },
     "author"     : "{{ projects.author }}",
     "description"     : "{{ projects.description | escape | strip | strip_newlines }}",
-    "topics"     : "{{ projects.topics | join: ', ' }}"
+    "topics"     : "{{ projects.topics | join: ', ' }}",
+    "deprecated"     : {{ projects.deprecated | default: false }}
   }
 {% if forloop.last %}{% else %},{% endif %}
 {% endfor %}

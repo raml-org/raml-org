@@ -1,27 +1,27 @@
 <div class="side_bar">
     <h2>About</h2>
     <ul class="">
-    	<li>
-    		{% if page.title == 'About RAML' %}
+        <li>
+            {% if page.title == 'About RAML' %}
                <a href="/about-raml" class="active">About Raml</a>
             {% else %}
                 <a href="/about-raml">About Raml</a>
             {% endif %}
-    	</li>
+        </li>
         <li>
-        	{% if page.title == 'Workgroup' %}
-              <a href="/workgroup" class="active">Workgroup</a>
+            {% if page.title == 'Contributors' %}
+              <a href="/contributors" class="active">Contributors</a>
             {% else %}
-               <a href="/workgroup">Workgroup</a>
+               <a href="/contributors">Contributors</a>
             {% endif %}      
-    	</li>
+        </li>
         <li>
-        	{% if page.title == 'Legal' %}
+            {% if page.title == 'Legal' %}
                <a href="/legal" class="active">Legal</a>
             {% else %}
                 <a href="/legal">Legal</a>
             {% endif %}        
-        	
-    	</li>
+            
+        </li>
     </ul>
 </div>
