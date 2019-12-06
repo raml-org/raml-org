@@ -287,7 +287,7 @@ style_class: tutorial-page
       queryParameters:
         access_token:
           description: &quot;The access token provided by the authentication application&quot;
-          example: AABBCCDD 
+          example: AABBCCDD
           required: true
           type: string
       body:
@@ -325,7 +325,7 @@ style_class: tutorial-page
       queryParameters:
         access_token:
           description: &quot;The access token provided by the authentication application&quot;
-          example: AABBCCDD 
+          example: AABBCCDD
           required: true
           type: string
       body:
@@ -454,18 +454,20 @@ style_class: tutorial-page
         200:
           body:
             application/json:
+              example: &lt;&lt;exampleCollection&gt;&gt;
     post:
       description: |
         Add a new &lt;&lt;resourcePathName|!singularize&gt;&gt; to Jukebox.
       queryParameters:
         access_token:
           description: &quot;The access token provided by the authentication application&quot;
-          example: AABBCCDD 
+          example: AABBCCDD
           required: true
           type: string
       body:
         application/json:
           type: &lt;&lt;resourcePathName|!singularize&gt;&gt;
+          example: &lt;&lt;exampleItem&gt;&gt;
       responses:
         200:
           body:
@@ -615,7 +617,7 @@ style_class: tutorial-page
         collection:
           exampleCollection: !include jukebox-include-artist-albums.sample
           exampleItem: {}
-      description: Collection of albulms belonging to the artist
+      description: Collection of albums belonging to the artist
       get:
         description: Get a specific artist&#39;s albums list
 </code></pre>
