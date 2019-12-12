@@ -182,7 +182,12 @@ title:  'Welcome'
           [/#%.*/,"syntaxTag"],
           [/\![^ ]*/,"tag"],
           [/#.*/,"rootComment"],
-          [/(get|patch|put|post|delete|head|options|trace|connect)\??:/,"httpMethod"],
+          [/get\??:/,"methodGET"],
+          [/put\??:/,"methodPUT"],
+          [/post\??:/,"methodPOST"],
+          [/patch\??:/,"methodPATCH"],
+          [/delete\??:/,"methodDELETE"],
+          [/(head|options|trace|connect)\??:/,"methodOther"],
           {include:"@comment"},
           {include:"@whitespace"},
           [/%[^ ]+.*$/,"meta.directive"],
@@ -247,7 +252,13 @@ title:  'Welcome'
           {token : 'syntaxTag', foreground: '#9dd288'},
           {token : 'tag', foreground: '#9dd288'},
           {token : 'rootComment', foreground: '#9dd288'},
-          {token : 'httpMethod', foreground: '#ffb647'}
+
+          {token : 'methodGET', foreground: '#33B333'},
+          {token : 'methodPOST', foreground: '#2196F3'},
+          {token : 'methodPUT', foreground: '#ffa500'},
+          {token : 'methodPATCH', foreground: '#CF5AE3'},
+          {token : 'methodDELETE', foreground: '#FF7669'},
+          {token : 'methodOther', foreground: '#9A9A9A'}
         ],
       colors: {
         'editor.foreground': '#000000',
