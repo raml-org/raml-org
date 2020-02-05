@@ -835,7 +835,7 @@ header{
       display: block;
     }
   }
-  .col-md-4.col-sm-12{
+  .col-md-5.col-sm-12{
     @media(max-width: 991px){
       padding-right: 0;
     }
@@ -867,6 +867,19 @@ header{
       }
       a{
         font-size: $font-face-small;line-height: 16px;padding: 10px 9px;font-weight: 500;color: $slate-gray;font-family: $font-face-medium;
+        @media(max-width: 767px){
+          display: block;
+        }
+        @media(max-width: 375px){
+          padding:10px 0;
+        }
+      }
+      button#ot-sdk-btn {
+        font-size: $font-face-small;line-height: 16px;padding: 10px 9px;font-weight: 500;color: $slate-gray;font-family: $font-face-medium;
+        border: 0px;
+        outline: 0px;
+        background: none;
+        cursor: pointer;
         @media(max-width: 767px){
           display: block;
         }
