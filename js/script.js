@@ -69,6 +69,7 @@
 
 
 // GDPR script
+/*
 jQuery.gdprcookie.init({
   title: "",
   message: "We use cookies to make interactions with our websites and services easy and meaningful, to better understand how they are used and to tailor advertising. You can read more and make your cookie choices <a href='https://forum.raml.org/privacy'>here</a>. By continuing to use this site you are giving us your consent to do this.",
@@ -76,7 +77,7 @@ jQuery.gdprcookie.init({
   delay: 600,
   expires: 1,
   acceptBtnLabel: "X",
-});
+});*/
 
 /*
   * Replace all SVG images with inline SVG
