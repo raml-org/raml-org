@@ -29,7 +29,7 @@
 
 })(jQuery);
 
-
+/*
 // GDPR script
 jQuery.gdprcookie.init({
   title: "",
@@ -39,3 +39,4 @@ jQuery.gdprcookie.init({
   expires: 1,
   acceptBtnLabel: "X",
 });
+*/
