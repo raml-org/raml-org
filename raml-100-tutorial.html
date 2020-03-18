@@ -28,8 +28,8 @@ version: v1
 <p>As a thoughtful API designer, it&#39;s important to consider how your API consumers will use your API. It&#39;s especially important because in many ways, as the API designer YOU control the consumption. For example, consider the functionality of the BookMobile API. You know you want your users to be able to keep track of what they&#39;ve read and their favorites. Users should also be able to discover new books and look at other titles written by their favorite authors. To do this, you define various <em>collections</em> as your <a href="https://github.com/raml-org/raml-spec/blob/master/versions/raml-10/raml-10.md#resources-and-nested-resources">resources</a>.</p>
 <p><strong>Recalling how your API consumers will use your API, enter the following three resources under your root:</strong></p>
 <pre><code class="lang-yaml">/users:
-  /authors:
-  /books:
+/authors:
+/books:
 </code></pre>
 <p>Notice that these resources all begin with a slash (/). In RAML, this is how you indicate a resource. Any methods and parameters nested under these top level resources belong to and act upon that resource. Now, since each of these resources is a collection of individual objects (specific authors, books, and users), we&#39;ll need to define some sub-resources to fill out the collection.</p>
 <p><strong>Nested resources are useful when you want to call out a particular subset of your resource in order to narrow it. For example:</strong></p>
