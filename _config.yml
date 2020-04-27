@@ -22,7 +22,7 @@ sass:
   style:    expanded
 
 
-exclude:["Gemfile","Gemfile.lock"]
+exclude: ["Gemfile","Gemfile.lock"]
 
 
 safe: true
