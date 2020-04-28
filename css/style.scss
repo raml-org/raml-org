@@ -2093,3 +2093,21 @@ a.ramloldlink {
     color: #ffffff;
   }
 }
+
+#ot-sdk-btn {
+    background: none;
+    border: 0px;
+        font-size: 12px;
+    color: #8a8a8a;
+    font-weight: normal;
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+}
+#ot-sdk-btn:focus {
+    outline: 0;
+}
+
+#ot-sdk-btn:hover {
+    color: #337ab7;
+}
