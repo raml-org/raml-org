@@ -584,7 +584,44 @@ header{
   }
 }
 
+#demo-root-container {
+  background-image: linear-gradient(#F9F9F9, #FFFFFF);
+  #playground-btn-block {
+    text-align: center;
+    padding: 30px;
+  }
+  a.playground-btn{
+    max-width: 200px;
+    height: 55px;
+    padding: 0;
+    margin: auto;
+    border: 0px;
+    border-radius: 3px;
+    background-color: #1ad8ff;
+    color: $white;
+    font-family: 'Roboto-Regular';
+    font-size: $font-face-small;
+    font-weight: 600;
+    letter-spacing: 0.44px;
+    line-height: 55px;
+    text-align: center;
+  }
+  #demo-message {
+    text-align: center;
+    padding: 40px;
+    h2 {
+      opacity: 85%;
+    }
+    h3 {
+      opacity: 75%;
+    }
+  }
+}
+
+
 .raml-editor{
+  padding: 0 50px;
+  border-radius: 10px;
   position: relative;
 
   h2{
@@ -593,30 +630,6 @@ header{
     h4{
       background-color: $flash-white;color: $black;
     }
-  }
-  a.playground-btn{
-    z-index: 1;
-    position: absolute;
-    right: 15px;
-    top: 11px;
-    border: 0px;
-    border-radius: 2px;
-    padding:10px 20px;
-    background-color: #9EAAB7;
-    color: $white;
-    font-family: 'Roboto-Regular';
-    font-size: $font-face-small;
-    font-weight: 600;
-    letter-spacing: 0.44px;
-    line-height: 16px;
-    text-align: center;
-
-  }
-  a.playground-btn.no-background{
-    background:none;
-    color:$black;
-    font-size:20px;
-    top:4px;
   }
   .editor-block{
     box-shadow: 1px 0px 3px #808080;

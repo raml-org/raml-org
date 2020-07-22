@@ -32,14 +32,26 @@ title:  'Welcome'
 </section>
 
 <section>
-  <div class="container-fluid raml-editor d-none d-sm-block">
-    <div class="row">
-      <a class="pull-right d-sm-none d-md-block playground-btn try-it-out-btn" href="">Try It Out<i class="fas fa-expand"></i></a>
-      <div class="col-md-12 col-sm-12 editor-block padd_00">
-        <div id="container" style="width:100%;height:519px;">
+  <div class="container-fluid d-none d-sm-block" id="demo-root-container">
+
+    <div class="container-fluid d-none d-sm-block" id="demo-message">
+      <h2>A simple but powerful syntax for modelling APIs</h2>
+      <h3>RAML enables rapid development of APIs using an approachable syntax<br>which can scale from hobby project to enterprise application</h3>
+    </div>
+
+    <div class="container-fluid raml-editor d-none d-sm-block">
+      <div class="row">
+        <div class="col-md-12 col-sm-12 editor-block padd_00">
+          <div id="container" style="width:100%;height:519px;">
+          </div>
         </div>
       </div>
     </div>
+
+    <div class="container-fluid d-none d-sm-block" id="playground-btn-block">
+      <a class="pull-right d-sm-none d-md-block playground-btn try-it-out-btn" href="">Try It Out<i class="fas fa-expand"></i></a>
+    </div>
+
   </div>
 </section>
 
@@ -174,6 +186,7 @@ title:  'Welcome'
           [/patch\??:/,"methodPATCH"],
           [/delete\??:/,"methodDELETE"],
           [/(head|options|trace|connect)\??:/,"methodOther"],
+          [/\d+.:/,"statusCode"],
           {include:"@comment"},
           {include:"@whitespace"},
           [/%[^ ]+.*$/,"meta.directive"],
@@ -227,28 +240,29 @@ title:  'Welcome'
       }
     });
     monaco.editor.defineTheme('ramlTheme', {
-      base: 'vs-dark', // vs, hc-black, vs-dark
+      base: 'vs', // vs, hc-black, vs-dark
       inherit: true,
       rules: [{ background: 'EDF9FA' },
-          {token : 'type', foreground: "#26d3ff"},
-          {token : 'special', foreground:'#BDB7F4'},
-          {token : 'string', foreground: '#00b3de'},
-          {token : 'keyword', foreground: '#cccccc'},
-          {token : 'number', foreground: '#bdf1a3'},
-          {token : 'syntaxTag', foreground: '#9dd288'},
-          {token : 'tag', foreground: '#9dd288'},
-          {token : 'rootComment', foreground: '#9dd288'},
+          {token : 'type', foreground: "#5385f3"},
+          {token : 'special', foreground:'#63646a'},
+          {token : 'string', foreground: '#63646a'},
+          {token : 'keyword', foreground: '#5385f3'},
+          {token : 'number', foreground: '#b99b5a'},
+          {token : 'statusCode', foreground: '#b99b5a'},
+          {token : 'syntaxTag', foreground: '#5385f3'},
+          {token : 'tag', foreground: '#63646a'}, // Tags like !include
+          {token : 'rootComment', foreground: '#5385f3'},
 
-          {token : 'methodGET', foreground: '#33B333'},
-          {token : 'methodPOST', foreground: '#2196F3'},
-          {token : 'methodPUT', foreground: '#ffa500'},
-          {token : 'methodPATCH', foreground: '#CF5AE3'},
-          {token : 'methodDELETE', foreground: '#FF7669'},
-          {token : 'methodOther', foreground: '#9A9A9A'}
+          {token : 'methodGET', foreground: '#5385f3'},
+          {token : 'methodPOST', foreground: '#5385f3'},
+          {token : 'methodPUT', foreground: '#5385f3'},
+          {token : 'methodPATCH', foreground: '#5385f3'},
+          {token : 'methodDELETE', foreground: '#5385f3'},
+          {token : 'methodOther', foreground: '#5385f3'}
         ],
       colors: {
         'editor.foreground': '#000000',
-        'editor.background': '#526881',
+        'editor.background': '#FBFBFB',
         'editor.lineHighlightBackground': '#4e4e4e',
         'editor.lineHighlightForeground': '#4e4e4e',
         'editor.selectionBackground': '#4e4e4e',
