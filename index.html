@@ -152,7 +152,6 @@ title:  'Welcome'
   </div>
 </section>
 <script src="/min/vs/loader.js" type="text/javascript"></script>
-<script src="/js/monaco-hover-utils.js" type="text/javascript"></script>
 
 <script>
 
@@ -186,7 +185,9 @@ title:  'Welcome'
           [/patch\??:/,"methodPATCH"],
           [/delete\??:/,"methodDELETE"],
           [/(head|options|trace|connect)\??:/,"methodOther"],
-          [/\d+.:/,"statusCode"],
+          [/\d+:/,"statusCode"],
+          [/\(.+\):/,"annotation"],
+          [/\w+\/\w+:/,"contentType"],
           {include:"@comment"},
           {include:"@whitespace"},
           [/%[^ ]+.*$/,"meta.directive"],
@@ -246,12 +247,14 @@ title:  'Welcome'
           {token : 'type', foreground: "#5385f3"},
           {token : 'special', foreground:'#63646a'},
           {token : 'string', foreground: '#63646a'},
+          {token : 'contentType', foreground: '#63646a'},
           {token : 'keyword', foreground: '#5385f3'},
           {token : 'number', foreground: '#b99b5a'},
           {token : 'statusCode', foreground: '#b99b5a'},
           {token : 'syntaxTag', foreground: '#5385f3'},
           {token : 'tag', foreground: '#63646a'}, // Tags like !include
           {token : 'rootComment', foreground: '#5385f3'},
+          {token : 'annotation', foreground: '#63646a'},
 
           {token : 'methodGET', foreground: '#5385f3'},
           {token : 'methodPOST', foreground: '#5385f3'},
@@ -263,20 +266,20 @@ title:  'Welcome'
       colors: {
         'editor.foreground': '#000000',
         'editor.background': '#FBFBFB',
-        'editor.lineHighlightBackground': '#4e4e4e',
-        'editor.lineHighlightForeground': '#4e4e4e',
-        'editor.selectionBackground': '#4e4e4e',
-        'editor.selectionForeground': '#4e4e4e',
-        'editor.selectionHighlightBackground': '#4e4e4e',
-        'editor.selectionHighlightForeground': '#4e4e4e',
-        'editor.inactiveSelectionBackground': '#4e4e4e',
-        'editor.hoverHighlightBackground': '#4e4e4e',
-        'editor.hoverHighlightForeground': '#4e4e4e',
+        'editor.lineHighlightBackground': '#eafbff',
+        'editor.lineHighlightForeground': '#eafbff',
+        'editor.selectionBackground': '#eafbff',
+        'editor.selectionForeground': '#eafbff',
+        'editor.selectionHighlightBackground': '#eafbff',
+        'editor.selectionHighlightForeground': '#eafbff',
+        'editor.inactiveSelectionBackground': '#eafbff',
+        'editor.hoverHighlightBackground': '#eafbff',
+        'editor.hoverHighlightForeground': '#eafbff',
         'editorCursor.foreground': '#8B0000',
         'editorLineNumber.foreground': '#008800',
         'input.background': '#FFFFFF',
         'editorHoverWidget.background': '#F7FAFF',
-        'editorHoverWidget.border': '#4e4e4e',
+        'editorHoverWidget.border': '#eafbff',
         'editorIndentGuide.background': '#9EAAB7'
       }
     });
@@ -289,6 +292,7 @@ title:  'Welcome'
       scrollBeyondLastLine: false,
       renderLineHighlight: "none",
       occurrencesHighlight: false,
+      renderIndentGuides: false,
       links: false,
       minimap: {
           enabled: false
@@ -296,15 +300,8 @@ title:  'Welcome'
     });
     editor.getModel().updateOptions({ tabSize: 2 });
 
-    hoverUtils.loadLanguages('json', 'xml', 'yaml')
-    monaco.languages.registerHoverProvider('raml', {
-      provideHover: (m, p) => hoverUtils.provideHover(m, p)
-    });
-    monaco.languages.registerLinkProvider('raml', {
-      provideLinks: (m, t) => hoverUtils.provideLinks(m, t)
-    });
-
-    hoverUtils.fetchText('examples/world-music-api/api.raml')
+    fetch('examples/world-music-api/api.raml')
+      .then(resp => resp.text())
       .then(text => editor.getModel().setValue(text))
 
     const PLAYGROUND_URL = 'https://raml-org.github.io/playground/learn_raml.html';
