@@ -611,6 +611,7 @@ header{
     padding: 40px;
     h2 {
       opacity: 85%;
+      font-size: 22px;
     }
     h3 {
       opacity: 75%;
@@ -632,7 +633,21 @@ header{
     }
   }
   .editor-block{
-    box-shadow: 1px 0px 3px #808080;
+    border-width: 1px;
+    border-color: #d3d5d9;
+    border-style: solid;
+    overflow: hidden;
+    border-radius: 10px;
+    padding-top: 10px;
+
+    .indexPageEditorLineDecoration {
+      background: #03d7ff;
+      width: 5px!important;
+      left: 0!important;
+    }
+    .line-numbers {
+      width: 30px!important;
+    }
     .monaco-editor{
       .monaco-editor-hover{
         margin-left: 10%;
