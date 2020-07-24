@@ -585,7 +585,6 @@ header{
 }
 
 #demo-root-container {
-  background-image: linear-gradient(#F9F9F9, #FFFFFF);
   #playground-btn-block {
     text-align: center;
     padding: 30px;
@@ -607,6 +606,7 @@ header{
     text-align: center;
   }
   #demo-message {
+    background-image: linear-gradient(#F9F9F9, #FFFFFF);
     text-align: center;
     padding: 40px;
     h2 {
@@ -624,7 +624,17 @@ header{
   padding: 0 50px;
   border-radius: 10px;
   position: relative;
+  background-color: #fbfbfb;
 
+  #container {
+    border-width: 1px;
+    border-color: #d3d5d9;
+    border-style: solid;
+    border-radius: 10px;
+    padding-top: 10px;
+    width:60%;
+    height:630px;
+  }
   h2{
     color: $light-gray; font-family: 'Roboto-Regular';  font-size: $font-face-small;  font-weight: 500; line-height: 16px;margin:0;background: $lighter-gray;padding: 20px;border-top: 1px solid $light-gray;width: 100%;}
   .output-block{
@@ -633,12 +643,7 @@ header{
     }
   }
   .editor-block{
-    border-width: 1px;
-    border-color: #d3d5d9;
-    border-style: solid;
     overflow: hidden;
-    border-radius: 10px;
-    padding-top: 10px;
 
     .indexPageEditorLineDecoration {
       background: #03d7ff;
@@ -679,6 +684,69 @@ header{
     }
     .line-numbers{
       color: #9EAAB7;
+    }
+
+    /* Editor code tips */
+    #editor-tips-wrapper {
+      margin-top: 10px; /* Compensate #container padding-top. */
+      position: absolute;
+      width: 100%;
+      height: 100%;
+
+      .tip-wrapper {
+        width: 100%;
+        position: absolute;
+        z-index: 999;
+        left: 5px;
+      }
+      .tip-background {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        background-color: #808080;
+        left: 0;
+        top: 0;
+        opacity: 0.1;
+      }
+      .tip-wrapper:hover {
+        cursor: pointer;
+      }
+      .tip-wrapper:hover .tip-background {
+        background-color: #03d7ff;
+      }
+      .tip-text {
+        opacity: 80%;
+        height: 100%;
+        width: 40%;
+        padding-left: 10px;
+        position: absolute;
+        right: 0;
+      }
+      /*
+        Editor line hight is 20px, thus all the numbers are multiples of 20px.
+        See "lineHeight" in index.html;
+      */
+      .one-line {
+        height: 20px;
+        line-height: 20px;
+      }
+      .two-lines {
+        height: 40px;
+        line-height: 40px;
+      }
+      .three-lines {
+        height: 60px;
+        line-height: 60px;
+      }
+      .four-lines {
+        height: 80px;
+        line-height: 80px;
+      }
+      .five-lines {
+        height: 100px;
+        line-height: 100px;
+      }
+      /* END Editor code tips */
     }
   }
 }

@@ -42,8 +42,14 @@ title:  'Welcome'
     <div class="container-fluid raml-editor d-none d-sm-block">
       <div class="row">
         <div class="col-md-12 col-sm-12 editor-block padd_00">
-          <div id="container" style="width:100%;height:519px;">
+
+          <!-- Editor code tips -->
+          <div id="editor-tips-wrapper">
+
           </div>
+          <!-- END Editor code tips -->
+
+          <div id="container"></div>
         </div>
       </div>
     </div>
@@ -264,23 +270,20 @@ title:  'Welcome'
           {token : 'methodOther', foreground: '#5385f3'}
         ],
       colors: {
-        'editor.foreground': '#fbfbfb',
+        'editor.foreground': '#FBFBFB',
         'editor.background': '#FBFBFB',
-        'editor.lineHighlightBackground': '#eafbff',
-        'editor.lineHighlightForeground': '#eafbff',
-        'editor.selectionBackground': '#eafbff',
-        'editor.selectionForeground': '#eafbff',
-        'editor.selectionHighlightBackground': '#eafbff',
-        'editor.selectionHighlightForeground': '#eafbff',
-        'editor.inactiveSelectionBackground': '#eafbff',
-        'editor.hoverHighlightBackground': '#eafbff',
-        'editor.hoverHighlightForeground': '#eafbff',
-        'editorCursor.foreground': '#8B0000',
-        'editorLineNumber.foreground': '#008800',
-        'input.background': '#fbfbfb',
-        'editorHoverWidget.background': '#F7FAFF',
-        'editorHoverWidget.border': '#eafbff',
-        'editorIndentGuide.background': '#9EAAB7'
+        'editor.lineHighlightBackground': '#efefef',
+        'editor.lineHighlightForeground': '#efefef',
+        'editor.selectionBackground': '#efefef',
+        'editor.selectionForeground': '#efefef',
+        'editor.selectionHighlightBackground': '#efefef',
+        'editor.selectionHighlightForeground': '#efefef',
+        'editor.inactiveSelectionBackground': '#efefef',
+        'editor.hoverHighlightBackground': '#efefef',
+        'editor.hoverHighlightForeground': '#efefef',
+        'editorCursor.foreground': '#FBFBFB',
+        'editorLineNumber.foreground': '#FBFBFB',
+        'input.background': '#FBFBFB'
       }
     });
     monaco.editor.setTheme('ramlTheme');
@@ -290,19 +293,20 @@ title:  'Welcome'
       language: 'raml',
       readOnly: true,
       scrollBeyondLastLine: false,
-      // renderLineHighlight: "none",
+      renderLineHighlight: "none",
       occurrencesHighlight: false,
       renderIndentGuides: false,
       overviewRulerBorder: false,
       folding: false,
       links: false,
+      lineHeight: 20,
       minimap: {
-          enabled: false
+        enabled: false
       }
     });
     editor.getModel().updateOptions({ tabSize: 2 });
 
-    fetch('examples/world-music-api/api.raml')
+    fetch('examples/mobile-order-api.raml')
       .then(resp => resp.text())
       .then(text => editor.getModel().setValue(text))
       .then(() => {
@@ -310,6 +314,7 @@ title:  'Welcome'
           isWholeLine: true,
           linesDecorationsClassName: 'indexPageEditorLineDecoration'
         }
+        // Editor tips decorations
         editor.deltaDecorations([], [
           { range: new monaco.Range(2, 1, 3, 1), options: decorOptions }
         ])
