@@ -631,9 +631,9 @@ header{
     border-color: #d3d5d9;
     border-style: solid;
     border-radius: 10px;
-    padding-top: 10px;
-    width:60%;
-    height:630px;
+    width:59%;
+    height:655px;
+    overflow: hidden;
   }
   h2{
     color: $light-gray; font-family: 'Roboto-Regular';  font-size: $font-face-small;  font-weight: 500; line-height: 16px;margin:0;background: $lighter-gray;padding: 20px;border-top: 1px solid $light-gray;width: 100%;}
@@ -654,8 +654,12 @@ header{
       width: 30px!important;
     }
     .monaco-editor{
+      border-radius: 10px;
       .monaco-editor-hover{
         margin-left: 10%;
+      }
+      .overflow-guard {
+        border-radius: 10px;
       }
       .selected-line-editor-decoration{
         background-color: $bluish;
@@ -688,7 +692,6 @@ header{
 
     /* Editor code tips */
     #editor-tips-wrapper {
-      margin-top: 10px; /* Compensate #container padding-top. */
       position: absolute;
       width: 100%;
       height: 100%;
@@ -698,6 +701,7 @@ header{
         position: absolute;
         z-index: 999;
         left: 5px;
+        display: table;
       }
       .tip-background {
         height: 100%;
@@ -715,36 +719,20 @@ header{
         background-color: #03d7ff;
       }
       .tip-text {
-        opacity: 80%;
+        display: table;
         height: 100%;
         width: 40%;
         padding-left: 10px;
+        padding-right: 10px;
         position: absolute;
         right: 0;
-      }
-      /*
-        Editor line hight is 20px, thus all the numbers are multiples of 20px.
-        See "lineHeight" in index.html;
-      */
-      .one-line {
-        height: 20px;
-        line-height: 20px;
-      }
-      .two-lines {
-        height: 40px;
-        line-height: 40px;
-      }
-      .three-lines {
-        height: 60px;
-        line-height: 60px;
-      }
-      .four-lines {
-        height: 80px;
-        line-height: 80px;
-      }
-      .five-lines {
-        height: 100px;
-        line-height: 100px;
+        a {
+          text-decoration: underline;
+        }
+        p {
+          display: table-cell;
+          vertical-align: middle;
+        }
       }
       /* END Editor code tips */
     }

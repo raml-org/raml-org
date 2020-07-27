@@ -45,12 +45,54 @@ title:  'Welcome'
 
           <!-- Editor code tips -->
           <div id="editor-tips-wrapper">
-            <div class="tip-wrapper two-lines" style="top:20px;">
+
+            <div class="tip-wrapper" data-startline="2" data-lastslines="3">
               <div class="tip-background"></div>
               <div class="tip-text">
-                Name your API, specify its version and base URL
+                <p>Name your API, specify its version and base URL</p>
               </div>
             </div>
+
+            <div class="tip-wrapper" data-startline="9" data-lastslines="3">
+              <div class="tip-background"></div>
+              <div class="tip-text">
+                <p>Specify reusable types to avoid</p>
+              </div>
+            </div>
+
+            <div class="tip-wrapper" data-startline="13" data-lastslines="10">
+              <div class="tip-background"></div>
+              <div class="tip-text">
+                <p>Model your endpoints with access information, HTTP verbs, parameters, example responses <a href="https://raml-org.github.io/playground/learn_raml.html" target="blank">and more</a></p>
+              </div>
+            </div>
+
+            <div class="tip-wrapper" data-startline="29" data-lastslines="4">
+              <div class="tip-background"></div>
+              <div class="tip-text">
+                <p>Model multiple response types including JSON & XML within a single interface</p>
+              </div>
+            </div>
+
+            <script type="text/javascript">
+              // Allign tips with editor lines decoration. See "deltaDecorations" in this doc.
+              (function () {
+                // Editor line-height is 20px. See "lineHeight" in this doc.
+                const editorLineHeight = 20;
+                const tips = Array.from(document.getElementsByClassName('tip-wrapper'));
+                tips.forEach(tip => {
+                  // Adjust top offset
+                  const startline = parseInt(tip.dataset.startline);
+                  const offset = (startline - 1) * editorLineHeight;
+                  tip.style.top = offset.toString() + 'px';
+
+                  // Adjust height
+                  const lastslines = parseInt(tip.dataset.lastslines);
+                  const height = lastslines * editorLineHeight;
+                  tip.style.height = height.toString() + 'px';
+                });
+              })();
+            </script>
           </div>
           <!-- END Editor code tips -->
 
@@ -321,9 +363,14 @@ title:  'Welcome'
         }
         // Editor tips decorations
         editor.deltaDecorations([], [
-          { range: new monaco.Range(2, 1, 3, 1), options: decorOptions }
+          { range: new monaco.Range(2, 1, 4, 1), options: decorOptions },
+          { range: new monaco.Range(9, 1, 11, 1), options: decorOptions },
+          { range: new monaco.Range(13, 1, 22, 1), options: decorOptions },
+          { range: new monaco.Range(29, 1, 32, 1), options: decorOptions }
         ])
       })
+
+    window.addEventListener('resize', () => { editor.layout() });
 
     const PLAYGROUND_URL = 'https://raml-org.github.io/playground/learn_raml.html';
     const buttons = document.getElementsByClassName('try-it-out-btn');
