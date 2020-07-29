@@ -590,20 +590,22 @@ header{
     padding: 30px;
   }
   a.playground-btn{
-    max-width: 200px;
+    max-width: 190px;
     height: 55px;
     padding: 0;
     margin: auto;
     border: 0px;
     border-radius: 3px;
-    background-color: #1ad8ff;
+    background-color: $sky-blue;
     color: $white;
-    font-family: 'Roboto-Regular';
-    font-size: $font-face-small;
-    font-weight: 600;
-    letter-spacing: 0.44px;
+    font-family: $font-face-medium;
+    font-size: $font-h3;
+    letter-spacing: 0.5px;
     line-height: 55px;
     text-align: center;
+  }
+  a.playground-btn:hover {
+    background-color: $sky-blue-hover;
   }
   #demo-message {
     background-image: linear-gradient(#F9F9F9, #FFFFFF);
