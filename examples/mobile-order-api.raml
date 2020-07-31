@@ -4,7 +4,7 @@ baseUri: http://localhost:8081/api
 version: 1.0
 
 uses:
-  assets: examples/assets.lib.raml
+  assets: assets.lib.raml
 
 annotationTypes:
   monitoringInterval:
@@ -29,4 +29,4 @@ annotationTypes:
             application/json:
               type: assets.Order
             application/xml:
-              type: !include examples/schemas/order.xsd
+              type: !include schemas/order.xsd
