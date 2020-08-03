@@ -83,7 +83,7 @@ title:  'Welcome'
                 tips.forEach(tip => {
                   // Adjust top offset
                   const startline = parseInt(tip.dataset.startline);
-                  const offset = (startline - 1) * editorLineHeight;
+                  const offset = (startline - 1) * editorLineHeight + 1;
                   tip.style.top = offset.toString() + 'px';
 
                   // Adjust height
@@ -345,6 +345,7 @@ title:  'Welcome'
       occurrencesHighlight: false,
       renderIndentGuides: false,
       overviewRulerBorder: false,
+      lineNumbersMinChars: 3,
       folding: false,
       links: false,
       lineHeight: 20,
