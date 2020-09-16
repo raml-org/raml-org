@@ -32,14 +32,79 @@ title:  'Welcome'
 </section>
 
 <section>
-  <div class="container-fluid raml-editor d-none d-sm-block">
-    <div class="row">
-      <a class="pull-right d-sm-none d-md-block playground-btn try-it-out-btn" href="">Try It Out<i class="fas fa-expand"></i></a>
-      <div class="col-md-12 col-sm-12 editor-block padd_00">
-        <div id="container" style="width:100%;height:519px;">
+  <div class="container-fluid d-none d-sm-block" id="demo-root-container">
+
+    <div class="container-fluid d-none d-sm-block" id="demo-message">
+      <h2>A simple but powerful syntax for modelling APIs</h2>
+      <h3>RAML enables rapid development of APIs using an approachable syntax<br>which can scale from hobby project to enterprise application</h3>
+    </div>
+
+    <div class="container-fluid raml-editor d-none d-sm-block">
+      <div class="row">
+        <div class="col-md-12 col-sm-12 editor-block padd_00">
+
+          <!-- Editor code tips -->
+          <div id="editor-tips-wrapper">
+
+            <div class="tip-wrapper" data-startline="2" data-lastslines="3">
+              <div class="tip-background"></div>
+              <div class="tip-text">
+                <p>Name your API, specify its version and base URL</p>
+              </div>
+            </div>
+
+            <div class="tip-wrapper" data-startline="9" data-lastslines="3">
+              <div class="tip-background"></div>
+              <div class="tip-text">
+                <p>Specify reusable types to avoid duplication and redundancy</p>
+              </div>
+            </div>
+
+            <div class="tip-wrapper" data-startline="13" data-lastslines="10">
+              <div class="tip-background"></div>
+              <div class="tip-text">
+                <p>Model your endpoints with access information, HTTP verbs, parameters, example responses <a href="https://raml-org.github.io/playground/learn_raml.html" target="blank">and more</a></p>
+              </div>
+            </div>
+
+            <div class="tip-wrapper" data-startline="29" data-lastslines="4">
+              <div class="tip-background"></div>
+              <div class="tip-text">
+                <p>Model multiple response types including JSON & XML within a single interface</p>
+              </div>
+            </div>
+
+            <script type="text/javascript">
+              // Allign tips with editor lines decoration. See "deltaDecorations" in this doc.
+              (function () {
+                // Editor line-height is 20px. See "lineHeight" in this doc.
+                const editorLineHeight = 20;
+                const tips = Array.from(document.getElementsByClassName('tip-wrapper'));
+                tips.forEach(tip => {
+                  // Adjust top offset
+                  const startline = parseInt(tip.dataset.startline);
+                  const offset = (startline - 1) * editorLineHeight + 1;
+                  tip.style.top = offset.toString() + 'px';
+
+                  // Adjust height
+                  const lastslines = parseInt(tip.dataset.lastslines);
+                  const height = lastslines * editorLineHeight;
+                  tip.style.height = height.toString() + 'px';
+                });
+              })();
+            </script>
+          </div>
+          <!-- END Editor code tips -->
+
+          <div id="container"></div>
         </div>
       </div>
     </div>
+
+    <div class="container-fluid d-none d-sm-block" id="playground-btn-block">
+      <a class="pull-right d-sm-none d-md-block playground-btn try_btn try-it-out-btn" href="">Try It Out<i class="fas fa-expand"></i></a>
+    </div>
+
   </div>
 </section>
 
@@ -140,7 +205,6 @@ title:  'Welcome'
   </div>
 </section>
 <script src="/min/vs/loader.js" type="text/javascript"></script>
-<script src="/js/monaco-hover-utils.js" type="text/javascript"></script>
 
 <script>
 
@@ -174,6 +238,9 @@ title:  'Welcome'
           [/patch\??:/,"methodPATCH"],
           [/delete\??:/,"methodDELETE"],
           [/(head|options|trace|connect)\??:/,"methodOther"],
+          [/\d+:/,"statusCode"],
+          [/\(.+\):/,"annotation"],
+          [/\w+\/\w+:/,"contentType"],
           {include:"@comment"},
           {include:"@whitespace"},
           [/%[^ ]+.*$/,"meta.directive"],
@@ -227,43 +294,44 @@ title:  'Welcome'
       }
     });
     monaco.editor.defineTheme('ramlTheme', {
-      base: 'vs-dark', // vs, hc-black, vs-dark
+      base: 'vs', // vs, hc-black, vs-dark
       inherit: true,
       rules: [{ background: 'EDF9FA' },
-          {token : 'type', foreground: "#26d3ff"},
-          {token : 'special', foreground:'#BDB7F4'},
-          {token : 'string', foreground: '#00b3de'},
-          {token : 'keyword', foreground: '#cccccc'},
-          {token : 'number', foreground: '#bdf1a3'},
-          {token : 'syntaxTag', foreground: '#9dd288'},
-          {token : 'tag', foreground: '#9dd288'},
-          {token : 'rootComment', foreground: '#9dd288'},
+          {token : 'type', foreground: "#5385f3"},
+          {token : 'operators', foreground: "#5385f3"},
+          {token : 'special', foreground:'#63646a'},
+          {token : 'string', foreground: '#63646a'},
+          {token : 'contentType', foreground: '#63646a'},
+          {token : 'keyword', foreground: '#5385f3'},
+          {token : 'number', foreground: '#b99b5a'},
+          {token : 'statusCode', foreground: '#b99b5a'},
+          {token : 'syntaxTag', foreground: '#5385f3'},
+          {token : 'tag', foreground: '#63646a'}, // Tags like !include
+          {token : 'rootComment', foreground: '#5385f3'},
+          {token : 'annotation', foreground: '#63646a'},
 
-          {token : 'methodGET', foreground: '#33B333'},
-          {token : 'methodPOST', foreground: '#2196F3'},
-          {token : 'methodPUT', foreground: '#ffa500'},
-          {token : 'methodPATCH', foreground: '#CF5AE3'},
-          {token : 'methodDELETE', foreground: '#FF7669'},
-          {token : 'methodOther', foreground: '#9A9A9A'}
+          {token : 'methodGET', foreground: '#5385f3'},
+          {token : 'methodPOST', foreground: '#5385f3'},
+          {token : 'methodPUT', foreground: '#5385f3'},
+          {token : 'methodPATCH', foreground: '#5385f3'},
+          {token : 'methodDELETE', foreground: '#5385f3'},
+          {token : 'methodOther', foreground: '#5385f3'}
         ],
       colors: {
-        'editor.foreground': '#000000',
-        'editor.background': '#526881',
-        'editor.lineHighlightBackground': '#4e4e4e',
-        'editor.lineHighlightForeground': '#4e4e4e',
-        'editor.selectionBackground': '#4e4e4e',
-        'editor.selectionForeground': '#4e4e4e',
-        'editor.selectionHighlightBackground': '#4e4e4e',
-        'editor.selectionHighlightForeground': '#4e4e4e',
-        'editor.inactiveSelectionBackground': '#4e4e4e',
-        'editor.hoverHighlightBackground': '#4e4e4e',
-        'editor.hoverHighlightForeground': '#4e4e4e',
-        'editorCursor.foreground': '#8B0000',
-        'editorLineNumber.foreground': '#008800',
-        'input.background': '#FFFFFF',
-        'editorHoverWidget.background': '#F7FAFF',
-        'editorHoverWidget.border': '#4e4e4e',
-        'editorIndentGuide.background': '#9EAAB7'
+        'editor.foreground': '#FBFBFB',
+        'editor.background': '#FBFBFB',
+        'editor.lineHighlightBackground': '#efefef',
+        'editor.lineHighlightForeground': '#efefef',
+        'editor.selectionBackground': '#efefef',
+        'editor.selectionForeground': '#efefef',
+        'editor.selectionHighlightBackground': '#efefef',
+        'editor.selectionHighlightForeground': '#efefef',
+        'editor.inactiveSelectionBackground': '#efefef',
+        'editor.hoverHighlightBackground': '#efefef',
+        'editor.hoverHighlightForeground': '#efefef',
+        'editorCursor.foreground': '#FBFBFB',
+        'editorLineNumber.foreground': '#FBFBFB',
+        'input.background': '#FBFBFB'
       }
     });
     monaco.editor.setTheme('ramlTheme');
@@ -275,23 +343,36 @@ title:  'Welcome'
       scrollBeyondLastLine: false,
       renderLineHighlight: "none",
       occurrencesHighlight: false,
+      renderIndentGuides: false,
+      overviewRulerBorder: false,
+      lineNumbersMinChars: 3,
+      folding: false,
       links: false,
+      lineHeight: 20,
       minimap: {
-          enabled: false
+        enabled: false
       }
     });
     editor.getModel().updateOptions({ tabSize: 2 });
 
-    hoverUtils.loadLanguages('json', 'xml', 'yaml')
-    monaco.languages.registerHoverProvider('raml', {
-      provideHover: (m, p) => hoverUtils.provideHover(m, p)
-    });
-    monaco.languages.registerLinkProvider('raml', {
-      provideLinks: (m, t) => hoverUtils.provideLinks(m, t)
-    });
-
-    hoverUtils.fetchText('examples/world-music-api/api.raml')
+    fetch('examples/mobile-order-api.raml')
+      .then(resp => resp.text())
       .then(text => editor.getModel().setValue(text))
+      .then(() => {
+        const decorOptions = {
+          isWholeLine: true,
+          linesDecorationsClassName: 'indexPageEditorLineDecoration'
+        }
+        // Editor tips decorations
+        editor.deltaDecorations([], [
+          { range: new monaco.Range(2, 1, 4, 1), options: decorOptions },
+          { range: new monaco.Range(9, 1, 11, 1), options: decorOptions },
+          { range: new monaco.Range(13, 1, 22, 1), options: decorOptions },
+          { range: new monaco.Range(29, 1, 32, 1), options: decorOptions }
+        ])
+      })
+
+    window.addEventListener('resize', () => { editor.layout() });
 
     const PLAYGROUND_URL = 'https://raml-org.github.io/playground/learn_raml.html';
     const buttons = document.getElementsByClassName('try-it-out-btn');

@@ -1,0 +1,32 @@
+#%RAML 1.0
+title: Mobile Order API
+baseUri: http://localhost:8081/api
+version: 1.0
+
+uses:
+  assets: assets.lib.raml
+
+annotationTypes:
+  monitoringInterval:
+    type: integer
+
+/orders:
+  displayName: Orders
+  get:
+    is: [ assets.paging ]
+    (monitoringInterval): 30
+    description: Lists all orders of a specific user
+    queryParameters:
+      userId:
+        type: string
+        description: use to query all orders of a user
+  post:
+  /{orderId}:
+    get:
+      responses:
+        200:
+          body:
+            application/json:
+              type: assets.Order
+            application/xml:
+              type: !include schemas/order.xsd
