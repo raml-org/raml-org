@@ -6,10 +6,7 @@
     (IDE) for designing, building, testing, documenting and sharing RESTful HTTP APIs.
     It supports both RAML 0.8 and the recently launched RAML 1.0. RAML makes it easy
     to manage the whole API lifecycle.
-  url: http://apiworkbench.com/
-  secondary_link:
-    title: Documentation
-    url: http://apiworkbench.com/docs/
+  url: https://github.com/mulesoft-labs/api-workbench
   topics:
     - Design
 - name: raml2html
