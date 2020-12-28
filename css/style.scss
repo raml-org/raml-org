@@ -953,6 +953,21 @@ header{
         @media(max-width: 375px){
           padding:10px 0;
         }
+        button#ot-sdk-btn {
+          background: none;
+          border: 0px;
+          outline: 0;
+          font-size: 12px;
+          color: #8a8a8a;
+          font-weight: normal;
+          display: block;
+          padding: 10px 15px;
+          text-decoration: none;
+          cursor: pointer;
+        }
+        button#ot-sdk-btn:hover {
+        color: #337ab7;
+        }
       }
       button#ot-sdk-btn {
         font-size: $font-face-small;line-height: 16px;padding: 10px 9px;font-weight: 500;color: $slate-gray;font-family: $font-face-medium;
@@ -1826,4 +1841,32 @@ header{
 }
 .monaco-scrollable-element>.scrollbar>.slider:hover {
   background: #9eaab7!important;
+}
+
+a.ramloldlink {
+  font-size: 12px;
+  color: #fff;
+
+  &:hover {
+    text-decoration: none;
+    color: #ffffff;
+  }
+}
+
+#ot-sdk-btn {
+    background: none;
+    border: 0px;
+        font-size: 12px;
+    color: #8a8a8a;
+    font-weight: normal;
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+}
+#ot-sdk-btn:focus {
+    outline: 0;
+}
+
+#ot-sdk-btn:hover {
+    color: #337ab7;
 }

@@ -67,7 +67,6 @@
 
 })(jQuery);
 
-
 /*
   * Replace all SVG images with inline SVG
   */
@@ -99,4 +98,3 @@ $(function() {
     }, 'xml');
   });
 })
-
