@@ -1485,3 +1485,25 @@
   description: Run several RAML parsers against raml-tck.
   topics:
     - Test
+- name: APIMatic Developer Experience Portal
+  author: APIMatic
+  url: https://www.apimatic.io/developer-experience-portal
+  description: |
+    Build beautiful, customizable developer portals packed with SDKs, API Documentation, Code Samples, API Explorer and a lot more using only your Raml Specification
+  topics:
+    - Document
+- name: APIMatic Code Generation
+  author: APIMatic
+  url: https://www.apimatic.io/continuous-code-generation
+  description: |
+    Generate API Clients and SDKs for your Raml APIs in a matter of seconds. Build Code Generation into CI/CD pipeline for seamless integrations.
+  topics:
+    - Build
+- name: APIMatic Transformer
+  author: APIMatic
+  url: https://www.apimatic.io/transformer
+  description: |
+    Convert API specifications from one format to another. Supports RAML, OpenApi/Swagger, API Blueprint, WSDL, WADL, Postman Collections, Google Discovery, Mashery IO Docs and HAR
+  topics:
+    - Utilities
+
