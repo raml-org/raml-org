@@ -1870,3 +1870,19 @@ a.ramloldlink {
 #ot-sdk-btn:hover {
     color: #337ab7;
 }
+
+.cpra-link {
+  &:after{
+    content: '';
+    background-image: url('/images/icon-cpra.svg');
+    width: 26px;
+    height: 16px;
+    position: absolute;
+    background-size: 26px 16px;
+    background-repeat:no-repeat;
+    margin-left: 8px;
+    @media screen and (min-width: 768px){
+      margin-top: 4px;
+    }
+  }
+}
